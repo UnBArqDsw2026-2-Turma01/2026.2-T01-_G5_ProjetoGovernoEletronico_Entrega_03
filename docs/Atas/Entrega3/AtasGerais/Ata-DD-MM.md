@@ -38,5 +38,5 @@ A reunião foi realizada com o objetivo de [descrever brevemente o objetivo prin
 ---
 
 | Nome do Membro | Contribuição | Data | Commit |
-| -- | -- | -- | -- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Organização do repositorio | 10/09/2026 | [ c45763c ]( https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c45763c71060778bbf82771c1a542808c315274b ) | 
+| :--- | :--- | :--- | :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 17/09/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) | 
