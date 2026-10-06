@@ -12,6 +12,7 @@
 | Modelo (UML) | Seção "Versão Final" desta página |
 | Código | [PREENCHER: link para a pasta do código no repositório](https://github.com/ORGANIZACAO/REPOSITORIO/tree/main/caminho) |
 | Vídeo do padrão em execução | [PREENCHER: link do vídeo](https://link-do-video) |
+| Fluxo utilizado | [fluxograma.md](./fluxograma.md) |
 | Relato de IA Generativa | [IA.md](./IA.md) |
 
 ---
@@ -56,7 +57,7 @@
 
 ### Onde o Padrão foi Aplicado
 
-[PREENCHER] Descreva qual parte do sistema recebeu o padrão e qual problema real do projeto ele resolve.
+[PREENCHER] Descreva qual parte do sistema recebeu o padrão e qual problema real do projeto ele resolve, relacionando com o fluxo selecionado em [fluxograma.md](./fluxograma.md).
 
 ### Rastreabilidade e Elos com Outros Artefatos
 

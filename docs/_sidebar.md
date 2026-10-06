@@ -91,13 +91,16 @@
     - [2.2 Participações](./2-Modelagem/2.2.ParticipacoesModelagem.md)
     - [2.3 Iniciativas Extras](./2-Modelagem/2.3.IniciativasExtras.md)
 
-- **3. Padrões de Projetos**
+- **3. Padrões de Projeto**
     - 3.1 Relatório
-        - [3.1.1. SubEquipe_01](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/GoFCriacional.md)
+        - [3.1.1. SubEquipe_01](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
+            - [GoF Criacional](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/GoFCriacional.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/IA.md)
-        - [3.1.2. SubEquipe_02](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/GoFEstrutural.md)
+        - [3.1.2. SubEquipe_02](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/fluxograma.md)
+            - [GoF Estrutural](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/GoFEstrutural.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/IA.md)
-        - [3.1.3. SubEquipe_03](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/GoFComportamental.md)
+        - [3.1.3. SubEquipe_03](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/fluxograma.md)
+            - [GoF Comportamental](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/GoFComportamental.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/IA.md)
     - [3.2 Participações](./3-PadroesDeProjetos/3.2.ParticipacoesPadroesDeProjetos.md)
     - [3.3 Iniciativas Extras](./3-PadroesDeProjetos/3.3.IniciativasExtras.md)
