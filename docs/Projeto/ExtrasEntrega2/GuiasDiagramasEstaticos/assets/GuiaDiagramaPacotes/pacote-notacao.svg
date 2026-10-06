@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" width="760" height="270" role="img" aria-label="Notação do pacote UML: forma colapsada e forma expandida">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:17px;font-weight:600}
+    .nn{font-size:13px;font-weight:600}
+    .s{font-size:11px;font-weight:600}
+    .cap{font-size:13px;fill:#4a5c50}
+    .hd{font-size:12px;fill:#0d4722;font-weight:700;letter-spacing:1px}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .pk2{fill:#ffffff;stroke:#3f7a57;stroke-width:1.5}
+    .tab2{fill:#e9f2ec;stroke:#3f7a57;stroke-width:1.5}
+  </style>
+  <rect width="760" height="270" fill="#ffffff"/>
+
+  <text class="hd" x="70" y="40">1. PACOTE COLAPSADO</text>
+  <rect class="tab" x="70" y="62" width="88" height="20"/>
+  <rect class="pk"  x="70" y="82" width="240" height="84"/>
+  <text class="n" x="190" y="130" text-anchor="middle">Integração</text>
+  <text class="cap" x="70" y="196">O conteúdo não é mostrado, então o</text>
+  <text class="cap" x="70" y="214">nome fica no corpo do retângulo.</text>
+
+  <text class="hd" x="430" y="40">2. PACOTE EXPANDIDO</text>
+  <rect class="tab" x="430" y="52" width="128" height="22"/>
+  <text class="nn" x="442" y="68">Integração</text>
+  <rect class="pk"  x="430" y="74" width="270" height="132"/>
+
+  <rect class="tab2" x="452" y="92" width="52" height="13"/>
+  <rect class="pk2"  x="452" y="105" width="108" height="34"/>
+  <text class="s" x="506" y="126" text-anchor="middle">AuthGovBr</text>
+
+  <rect class="tab2" x="578" y="92" width="52" height="13"/>
+  <rect class="pk2"  x="578" y="105" width="108" height="34"/>
+  <text class="s" x="632" y="126" text-anchor="middle">IntegracaoRNDS</text>
+
+  <rect class="tab2" x="515" y="152" width="52" height="13"/>
+  <rect class="pk2"  x="515" y="165" width="108" height="34"/>
+  <text class="s" x="569" y="186" text-anchor="middle">Notificacoes</text>
+
+  <text class="cap" x="430" y="236">O nome sobe para a aba e o corpo passa a ser usado</text>
+  <text class="cap" x="430" y="254">para desenhar os elementos contidos no pacote.</text>
+</svg>

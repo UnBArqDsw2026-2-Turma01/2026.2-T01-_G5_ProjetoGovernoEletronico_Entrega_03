@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 352" width="780" height="352" role="img" aria-label="Dois critérios de decomposição: por camada e por funcionalidade">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:13px;font-weight:600}
+    .cap{font-size:12px;fill:#4a5c50}
+    .hd{font-size:13px;fill:#0d4722;font-weight:700;letter-spacing:1px}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .pk2{fill:#fdf8e6;stroke:#a07c00;stroke-width:2}
+    .tab2{fill:#f7ecc4;stroke:#a07c00;stroke-width:2}
+    .bar{fill:#f0e4bd;stroke:#c9a83c;stroke-width:1}
+    .tiny{font-size:9px;fill:#6b5a1e}
+  </style>
+  <rect width="780" height="352" fill="#ffffff"/>
+
+  <text class="hd" x="70" y="40">POR CAMADA</text>
+  <rect class="tab" x="70" y="62"  width="48" height="12"/>
+  <rect class="pk"  x="70" y="74"  width="250" height="38"/>
+  <text class="n" x="195" y="98" text-anchor="middle">Apresentação</text>
+  <rect class="tab" x="70" y="128" width="48" height="12"/>
+  <rect class="pk"  x="70" y="140" width="250" height="38"/>
+  <text class="n" x="195" y="164" text-anchor="middle">Aplicação</text>
+  <rect class="tab" x="70" y="194" width="48" height="12"/>
+  <rect class="pk"  x="70" y="206" width="250" height="38"/>
+  <text class="n" x="195" y="230" text-anchor="middle">Domínio</text>
+  <rect class="tab" x="70" y="260" width="48" height="12"/>
+  <rect class="pk"  x="70" y="272" width="250" height="38"/>
+  <text class="n" x="195" y="296" text-anchor="middle">Integração</text>
+
+  <text class="cap" x="70" y="338">A estrutura técnica aparece uma única vez.</text>
+
+  <text class="hd" x="440" y="40">POR FUNCIONALIDADE</text>
+
+  <rect class="tab2" x="440" y="62" width="44" height="12"/>
+  <rect class="pk2"  x="440" y="74" width="96" height="236"/>
+  <text class="n" x="488" y="96" text-anchor="middle">Vacinas</text>
+  <rect class="bar" x="452" y="112" width="72" height="30"/><text class="tiny" x="488" y="131" text-anchor="middle">apresentação</text>
+  <rect class="bar" x="452" y="150" width="72" height="30"/><text class="tiny" x="488" y="169" text-anchor="middle">aplicação</text>
+  <rect class="bar" x="452" y="188" width="72" height="30"/><text class="tiny" x="488" y="207" text-anchor="middle">domínio</text>
+  <rect class="bar" x="452" y="226" width="72" height="30"/><text class="tiny" x="488" y="245" text-anchor="middle">integração</text>
+
+  <rect class="tab2" x="556" y="62" width="44" height="12"/>
+  <rect class="pk2"  x="556" y="74" width="96" height="236"/>
+  <text class="n" x="604" y="96" text-anchor="middle">Exames</text>
+  <rect class="bar" x="568" y="112" width="72" height="30"/><text class="tiny" x="604" y="131" text-anchor="middle">apresentação</text>
+  <rect class="bar" x="568" y="150" width="72" height="30"/><text class="tiny" x="604" y="169" text-anchor="middle">aplicação</text>
+  <rect class="bar" x="568" y="188" width="72" height="30"/><text class="tiny" x="604" y="207" text-anchor="middle">domínio</text>
+  <rect class="bar" x="568" y="226" width="72" height="30"/><text class="tiny" x="604" y="245" text-anchor="middle">integração</text>
+
+  <rect class="tab2" x="672" y="62" width="44" height="12"/>
+  <rect class="pk2"  x="672" y="74" width="96" height="236"/>
+  <text class="n" x="720" y="96" text-anchor="middle">Consultas</text>
+  <rect class="bar" x="684" y="112" width="72" height="30"/><text class="tiny" x="720" y="131" text-anchor="middle">apresentação</text>
+  <rect class="bar" x="684" y="150" width="72" height="30"/><text class="tiny" x="720" y="169" text-anchor="middle">aplicação</text>
+  <rect class="bar" x="684" y="188" width="72" height="30"/><text class="tiny" x="720" y="207" text-anchor="middle">domínio</text>
+  <rect class="bar" x="684" y="226" width="72" height="30"/><text class="tiny" x="720" y="245" text-anchor="middle">integração</text>
+
+  <text class="cap" x="440" y="338">Cada área repete a mesma estrutura por dentro.</text>
+</svg>

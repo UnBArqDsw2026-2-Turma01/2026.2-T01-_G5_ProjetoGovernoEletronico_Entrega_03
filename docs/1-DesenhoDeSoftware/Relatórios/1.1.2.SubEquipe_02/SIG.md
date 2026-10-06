@@ -1,0 +1,96 @@
+# SIG (NFR Framework)
+
+Nesta seção, apresenta-se a versão finalizada do **Softgoal Interdependency Graph (SIG)** utilizando a notação do **NFR Framework** para a avaliação dos requisitos não-funcionais do sistema.
+
+![SIG na notação do NFR Framework](../assets/subequipe02-fluxos/SIG/SegundaVersaoSigSub2.drawio.png)
+
+### Legenda e Tipos de Elementos do SIG
+
+- **Softgoals de Requisito (Nuvem de Borda Fina):** Objetivos de qualidade
+- **Operacionalizações (Nuvem de Borda Grossa):** Soluções técnicas e escolhas de arquitetura
+- **Claims (Nuvem Tracejada):** Justificativas e argumentos de projeto.
+- **Tipos de Contribuição:**
+  - **`++` (Make):** Satisfaz fortemente o softgoal.
+  - **`+` (Help):** Contribuição positiva parcial.
+  - **`-` (Hurt):** Prejudica parcialmente o softgoal.
+  - **`--` (Break):** Compromete severamente o softgoal.
+
+---
+
+### Participante
+| Nome do Membro |
+| :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) |
+
+### Metodologia
+O trabalho focou na identificação, decomposição e análise de impactos de requisitos não-funcionais críticos para o sistema. Para esta versão, concentramos os esforços nas dimensões de **Segurança** e **Usabilidade**, aplicando a notação do *NFR Framework* para evidenciar soluções técnicas (operacionalizações) e seus *trade-offs*.
+
+### NFR Framework
+Gráfico de Interdependência de Softgoals (SIG) construído na notação do NFR Framework.
+
+**Estrutura Modelada:**
+
+* **Nós Principais (Softgoals):**
+  * **Segurança:** Focado na proteção, integridade e governança das informações do usuário.
+  * **Usabilidade:** Focado na eficiência, agilidade e facilidade de navegação.
+
+* **Nós de Decomposição (Sub-Softgoals):**
+  1. **Confidencialidade:** Garantia de proteção contra o vazamento de dados sensíveis.
+  2. **Controle de Acesso:** Restrição de recursos e funcionalidades com base em permissões de usuário.
+  3. **Privacidade (LGPD):** Conformidade com os direitos de transparência, tratamento e consentimento de dados.
+  4. **Localização de Dados:** Facilidade para o usuário encontrar informações históricas e registros.
+  5. **Velocidade de Acesso:** Agilidade no tempo de resposta do sistema.
+
+* **Operacionalizações (Soluções Técnicas):**
+  * *Criptografia e Mascaramento de Dados* (`++` em Confidencialidade)
+  * *Filtro de Saída e Sanitização da IA* (`++` em Confidencialidade)
+  * *Controle de Acesso Baseado em Papéis (RBAC)* (`++` em Controle de Acesso)
+  * *Termo de Consentimento* (`++` em Privacidade LGPD)
+  * *Gestão de Cookies* (`++` em Privacidade LGPD)
+  * *IA com Leitura e Extração de Históricos* (`++` em Localização de Dados, `+` em Velocidade de Acesso)
+  * *Chamada API Externa* (`-` em Velocidade de Acesso)
+
+## Embasamento Metodológico 
+  SERRANO, Milene; SERRANO, Maurício. [Requisitos – Aula 17: NFR Framework](https://drive.google.com/file/d/1barJrSu7LXNuprttazBs7J7nVgCTgul8/view). Material de aula. Universidade de Brasília (UnB) - Faculdade do Gama (FGA).  
+
+
+## Histórico de Versionamento
+
+### Versão 1.0 (v1)
+
+![SIG na notação do NFR Framework](../assets/subequipe02-fluxos/SIG/PrimeiraVersaoSigSubGrupo2.drawio.png)
+
+#### Quem fez a versão
+
+- [Gustavo Fornaciari](https://github.com/GUGOFO)
+
+#### O que mudou da versão anterior
+- Definição inicial do escopo de requisitos não-funcionais (NFR) e mapeamento dos Softgoals principais.
+
+---
+
+### Versão 2.0 (v2)
+
+![SIG na notação do NFR Framework](../assets/subequipe02-fluxos/SIG/SegundaVersaoSigSub2.drawio.png)
+
+#### Quem fez a versão
+
+- [Gustavo Fornaciari](https://github.com/GUGOFO)
+- [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) 
+- [Victor Leandro](https://github.com/Afrontoso)
+
+#### O que mudou da versão anterior
+
+* **Separação de Softgoals Raiz:** Divisão em dois domínios independentes (**Segurança** e **Usabilidade**).
+* **Decomposição da Segurança:** Desmembramento em **Confidencialidade**, **Controle de Acesso** e **Privacidade (LGPD)**.
+* **Novas Operacionalizações:** Inclusão de Sanitização da IA, RBAC, Termo de Consentimento e Gestão de Cookies.
+* **Ajuste no Trade-off:** O conflito negativo (`--`) da IA agora aponta diretamente para **Confidencialidade**.
+
+---
+
+| Nome do Membro | Contribuição | Data | Commit |
+| :--- | :--- | :--- | :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 17/08/2026 | [16f12f9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_01/tree/16f12f934a85996e1045dc30a5bf5ce656c91e1a) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionando SIG versão 1 | 27/08/2026 | [0443497](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_01/tree/044349759eb7d474dfe120128d1e0b9f58d87fe9) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionar primeira versão a nova pagina | 27/08/2026 | [53bcda0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_01/tree/53bcda06f6d49c1cc5620e584b0a992641caba5b) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO), [Victor Leandro](https://github.com/Afrontoso) e [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Adicionar contribuicoes da Ana e Victor para V2 | 28/08/2026 | [d29ecf8](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_01/tree/53bcda06f6d49c1cc5620e584b0a992641caba5b) |

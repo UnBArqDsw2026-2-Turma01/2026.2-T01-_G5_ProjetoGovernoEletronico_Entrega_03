@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 340" width="780" height="340" role="img" aria-label="Dependência cíclica entre dois pacotes e a correção com uma abstração compartilhada">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:14px;font-weight:600}
+    .cap{font-size:12px;fill:#4a5c50}
+    .bad{font-size:13px;fill:#b23b2e;font-weight:700;letter-spacing:1px}
+    .good{font-size:13px;fill:#0d4722;font-weight:700;letter-spacing:1px}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .pkb{fill:#fdf2f0;stroke:#b23b2e;stroke-width:2}
+    .tabb{fill:#f7ddd8;stroke:#b23b2e;stroke-width:2}
+    .depb{stroke:#b23b2e;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#red)}
+    .dep{stroke:#0d4722;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#grn)}
+  </style>
+  <defs>
+    <marker id="red" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#b23b2e" stroke-width="1.8"/>
+    </marker>
+    <marker id="grn" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#0d4722" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="780" height="340" fill="#ffffff"/>
+
+  <text class="bad" x="90" y="40">✗  DEPENDÊNCIA CÍCLICA</text>
+  <rect class="tabb" x="120" y="70" width="56" height="16"/>
+  <rect class="pkb"  x="120" y="86" width="170" height="50"/>
+  <text class="n" x="205" y="117" text-anchor="middle">Pedidos</text>
+
+  <path class="depb" d="M155,136 L155,196"/>
+  <path class="depb" d="M255,196 L255,136"/>
+
+  <rect class="tabb" x="120" y="198" width="56" height="16"/>
+  <rect class="pkb"  x="120" y="214" width="170" height="50"/>
+  <text class="n" x="205" y="245" text-anchor="middle">Clientes</text>
+
+  <text class="cap" x="90" y="292">Os dois passam a mudar juntos: na prática</text>
+  <text class="cap" x="90" y="310">viraram um pacote só, mal desenhado.</text>
+
+  <text class="good" x="420" y="40">✓  ABSTRAÇÃO COMPARTILHADA</text>
+  <rect class="tab" x="420" y="70" width="50" height="16"/>
+  <rect class="pk"  x="420" y="86" width="140" height="50"/>
+  <text class="n" x="490" y="117" text-anchor="middle">Pedidos</text>
+
+  <rect class="tab" x="610" y="70" width="50" height="16"/>
+  <rect class="pk"  x="610" y="86" width="140" height="50"/>
+  <text class="n" x="680" y="117" text-anchor="middle">Clientes</text>
+
+  <path class="dep" d="M490,136 L490,180 L560,180 L560,222"/>
+  <path class="dep" d="M680,136 L680,180 L645,180 L645,222"/>
+
+  <rect class="tab" x="490" y="206" width="50" height="16"/>
+  <rect class="pk"  x="490" y="222" width="180" height="50"/>
+  <text class="n" x="580" y="253" text-anchor="middle">Contratos</text>
+
+  <text class="cap" x="420" y="292">Os dois dependem da mesma abstração,</text>
+  <text class="cap" x="420" y="310">e nenhum depende do outro.</text>
+</svg>

@@ -1,13 +1,92 @@
-<!-- docs/_sidebar.md -->
+<!-- /_sidebar.md -->
 
-- [Home](/docs)
-- [Projetos](/docs/Projeto/Projeto.md)
+- **Projeto**
+    - [Entrega 1](./Projeto/ExtrasEntrega1/README.md)
+        - [Padrão de Commits](/Projeto/ExtrasEntrega1/PadraoDeCommits.md)
+        - [Política de Branches](/Projeto/ExtrasEntrega1/PolíticaDeBranches.md)
+        - [Projetos da Disciplina](/Projeto/ExtrasEntrega1/ProjetosDisciplina.md)
+        - [Possíveis Projetos](/Projeto/ExtrasEntrega1/PossiveisProjetos.md)
+        - [Guia BPMN](/Projeto/ExtrasEntrega1/GuiaBPMN.md)
+        - [Guia Rich Picture](/Projeto/ExtrasEntrega1/GuiaRichPicture.md)
+        - [Guia SIG | NFR Framework](/Projeto/ExtrasEntrega1/GuiaNFR.md)
+    - [Entrega 2](./Projeto/ExtrasEntrega2/README.md)
+        - [Guias de Diagramas Estáticos](./Projeto/ExtrasEntrega2/README.md)
+            - [Diagrama de Classes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaClasses.md)
+            - [Diagrama de Componentes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaComponentes.md)
+            - [Diagrama de Pacotes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaPacotes.md)
+        - [Guias de Diagramas Dinâmicos](./Projeto/ExtrasEntrega2/README.md)
+            - [Diagrama de Atividades](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaAtividades.md)
+            - [Diagrama de Colaboração](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaColaboracao.md)
+            - [Diagrama de Estados](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaEstados.md)
+            - [Diagrama de Sequência](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaSequencia.md)
 
-- **Base**
-  - [1. Desenho de Software (Padrões de Projeto)](/docs/Base/1.PadroesDeProjeto.md)
+
+- **Atas**
+    - Entrega 1
+        - [Atas Grupo](./Atas/Entrega1/AtasGerais/README.md)
+            - [Ata - 20 de agosto](./Atas/Entrega1/AtasGerais/Ata-20-08.md)
+            - [Ata - 24 de agosto](./Atas/Entrega1/AtasGerais/Ata-24-08.md)
+            - [Ata - 27 de agosto](./Atas/Entrega1/AtasGerais/Ata-27-08.md)
+        - [Atas SubEquipe 1](./Atas/Entrega1/AtasSub1/README.md)
+            - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub1/Ata-25-08.md)
+        - [Atas SubEquipe 2](./Atas/Entrega1/AtasSub2/README.md)
+            - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub2/Ata-25-08.md)
+        - [Atas SubEquipe 3](./Atas/Entrega1/AtasSub3/README.md)
+            - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub3/Ata-25-08.md)
+    - Entrega 2
+        - [Atas Grupo](./Atas/Entrega2/AtasGerais/README.md)
+            - [Ata - 14 de Setembro](./Atas/Entrega2/AtasGerais/Ata-14-09.md)
+        - [Atas SubEquipe 1](./Atas/Entrega2/AtasSub1/README.md)
+            - [Ata - 14 de Setembro](./Atas/Entrega2/AtasSub1/Ata-14-09.md)
+        - [Atas SubEquipe 2](./Atas/Entrega2/AtasSub2/README.md)
+            - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub2/Ata-15-09.md)
+        - [Atas SubEquipe 3](./Atas/Entrega2/AtasSub3/README.md)
+            - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub3/Ata-15-09.md)
+            - [Ata - 17 de Setembro](./Atas/Entrega2/AtasSub3/Ata-17-09.md)
+    - [Modelo de Ata](./Atas/Atas-Modelo.md)
+
+- **1. Desenho de Software**
+  - 1.1 Relatório
+      - 1.1.1. SubEquipe_01
+        - [Artefatos Generalistas](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.1.Artefatos%20Generalistas.md)
+        - [SIG | NFR](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.2.NFR.md)
+        - [BPMN](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.3.BPMN.md)
+        - [IA Generativa](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.4.IAGenerativa.md)
+      - 1.1.2. SubEquipe_02
+        - [Artefatos Generalistas](./1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/RichPicture.md)
+        - [SIG | NFR](./1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/SIG.md)
+        - [BPMN](./1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/BPMN.md)
+        - [IA Generativa](./1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/IA.md)
+      - 1.1.3. SubEquipe_03
+        - [Artefatos Generalistas](./1-DesenhoDeSoftware/Relatórios/1.1.3.SubEquipe_03/RichPicture.md)
+        - [SIG | NFR](./1-DesenhoDeSoftware/Relatórios/1.1.3.SubEquipe_03/SIG.md)
+        - [BPMN](./1-DesenhoDeSoftware/Relatórios/1.1.3.SubEquipe_03/BPMN.md)
+        - [IA Generativa](./1-DesenhoDeSoftware/Relatórios/1.1.3.SubEquipe_03/IA.md)
+  - [1.2. Participações](./1-DesenhoDeSoftware/1.2.ParticipacoesBase.md)
+  - [1.3. Iniciativas Extras](./1-DesenhoDeSoftware/1.3.IniciativasExtras.md)
+
+- **2. Modelagem**
+    - 2.1 Relatório
+        - [2.1.1. SubEquipe_01](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/fluxograma.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md)
+            - [IA Generativa](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/IA.md)
+        - [2.1.2. SubEquipe_02](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/fluxograma.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemDinamica.md)
+            - [IA Generativa](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/IA.md)
+        - [2.1.3. SubEquipe_03](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/fluxograma.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemDinamica.md)
+            - [IA Generativa](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/IA.md)
+    - [2.2 Participações](./2-Modelagem/2.2.ParticipacoesModelagem.md)
+    - [2.3 Iniciativas Extras](./2-Modelagem/2.3.IniciativasExtras.md)
+
+- **3. Padrões de Projetos**
+  - [3. Padrões de Projetos](/docs//1.PadroesDeProjeto.md)
   - Relatórios
-      - [1.1.1. SubEquipe_01](/docs/Base/Relatórios/1.1.1.SubEquipe_01.md)
-      - [1.1.2. SubEquipe_02](/docs/Base/Relatórios/1.1.2.SubEquipe_02.md)
-      - [1.1.3. SubEquipe_03](/docs/Base/Relatórios/1.1.3.SubEquipe_03.md)
-  - [1.2. Participações - Padrões de Projeto](/docs/Base/1.2.ParticipacoesPadroesDeProjeto.md)
-  - [1.3. Iniciativas Extras - Padrões de Projeto](/docs/Base/1.3.IniciativasExtras.md)
+      - [1.1.1. SubEquipe_01](/docs/3-PadroesDeProjeto/Relatórios/1.1.1.SubEquipe_01.md)
+      - [1.1.2. SubEquipe_02](/docs/3-PadroesDeProjeto/Relatórios/1.1.2.SubEquipe_02.md)
+      - [1.1.3. SubEquipe_03](/docs/3-PadroesDeProjeto/Relatórios/1.1.3.SubEquipe_03.md)
+  - [1.2. Participações - Padrões de Projeto](/docs/3-PadroesDeProjeto/1.2.ParticipacoesPadroesDeProjeto.md)
+  - [1.3. Iniciativas Extras - Padrões de Projeto](/docs/3-PadroesDeProjeto/1.3.IniciativasExtras.md)

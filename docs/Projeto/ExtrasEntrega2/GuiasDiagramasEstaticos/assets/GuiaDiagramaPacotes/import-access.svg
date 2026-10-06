@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 342" width="780" height="342" role="img" aria-label="Diferença entre import e access: import é repassado para quem depende do cliente, access não é">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:14px;font-weight:600}
+    .st{font-size:13px;font-weight:600;fill:#0d4722}
+    .cap{font-size:13px;fill:#4a5c50}
+    .ok{font-size:13px;font-weight:600;fill:#0d4722}
+    .no{font-size:13px;font-weight:600;fill:#b23b2e}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .dep{stroke:#0d4722;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#open)}
+    .see{stroke:#0d4722;stroke-width:1.6;stroke-dasharray:3 4;fill:none}
+    .seeno{stroke:#b23b2e;stroke-width:1.6;stroke-dasharray:3 4;fill:none}
+  </style>
+  <defs>
+    <marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#0d4722" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="780" height="342" fill="#ffffff"/>
+
+  <rect class="tab" x="60" y="60" width="56" height="16"/>
+  <rect class="pk"  x="60" y="76" width="150" height="46"/>
+  <text class="n" x="135" y="105" text-anchor="middle">App</text>
+
+  <path class="dep" d="M210,99 L305,99"/>
+  <text class="st" x="257" y="90" text-anchor="middle">«import»</text>
+
+  <rect class="tab" x="310" y="60" width="56" height="16"/>
+  <rect class="pk"  x="310" y="76" width="150" height="46"/>
+  <text class="n" x="385" y="105" text-anchor="middle">Servicos</text>
+
+  <path class="dep" d="M460,99 L555,99"/>
+  <text class="st" x="507" y="90" text-anchor="middle">«import»</text>
+
+  <rect class="tab" x="560" y="60" width="56" height="16"/>
+  <rect class="pk"  x="560" y="76" width="150" height="46"/>
+  <text class="n" x="635" y="105" text-anchor="middle">Modelo</text>
+
+  <path class="see" d="M135,122 L135,146 L635,146 L635,122"/>
+  <text class="ok" x="385" y="166" text-anchor="middle">App consegue referenciar Modelo — «import» é público e se propaga</text>
+
+  <rect class="tab" x="60" y="212" width="56" height="16"/>
+  <rect class="pk"  x="60" y="228" width="150" height="46"/>
+  <text class="n" x="135" y="257" text-anchor="middle">App</text>
+
+  <path class="dep" d="M210,251 L305,251"/>
+  <text class="st" x="257" y="242" text-anchor="middle">«import»</text>
+
+  <rect class="tab" x="310" y="212" width="56" height="16"/>
+  <rect class="pk"  x="310" y="228" width="150" height="46"/>
+  <text class="n" x="385" y="257" text-anchor="middle">Servicos</text>
+
+  <path class="dep" d="M460,251 L555,251"/>
+  <text class="st" x="507" y="242" text-anchor="middle">«access»</text>
+
+  <rect class="tab" x="560" y="212" width="56" height="16"/>
+  <rect class="pk"  x="560" y="228" width="150" height="46"/>
+  <text class="n" x="635" y="257" text-anchor="middle">Modelo</text>
+
+  <path class="seeno" d="M135,274 L135,298 L635,298 L635,274"/>
+  <line x1="371" y1="284" x2="399" y2="312" stroke="#b23b2e" stroke-width="2.4"/>
+  <line x1="399" y1="284" x2="371" y2="312" stroke="#b23b2e" stroke-width="2.4"/>
+  <text class="no" x="385" y="326" text-anchor="middle">App NÃO enxerga Modelo — «access» é privado e para em Servicos</text>
+</svg>

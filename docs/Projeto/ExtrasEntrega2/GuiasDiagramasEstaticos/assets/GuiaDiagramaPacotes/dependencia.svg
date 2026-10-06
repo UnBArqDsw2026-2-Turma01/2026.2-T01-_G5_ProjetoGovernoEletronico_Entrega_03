@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" width="760" height="240" role="img" aria-label="Dependência entre pacotes: seta tracejada do cliente para o fornecedor">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:16px;font-weight:600}
+    .st{font-size:14px;font-weight:600;fill:#0d4722}
+    .rl{font-size:12px;font-weight:700;fill:#a07c00;letter-spacing:1px}
+    .cap{font-size:13px;fill:#4a5c50}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .dep{stroke:#0d4722;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#open)}
+  </style>
+  <defs>
+    <marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#0d4722" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="760" height="240" fill="#ffffff"/>
+
+  <rect class="tab" x="80" y="66" width="72" height="18"/>
+  <rect class="pk"  x="80" y="84" width="180" height="58"/>
+  <text class="n" x="170" y="120" text-anchor="middle">Relatorios</text>
+  <text class="rl" x="170" y="168" text-anchor="middle">CLIENTE</text>
+  <text class="cap" x="170" y="188" text-anchor="middle">quem depende</text>
+
+  <path class="dep" d="M260,113 L495,113"/>
+  <text class="st" x="378" y="103" text-anchor="middle">«use»</text>
+
+  <rect class="tab" x="500" y="66" width="72" height="18"/>
+  <rect class="pk"  x="500" y="84" width="180" height="58"/>
+  <text class="n" x="590" y="120" text-anchor="middle">Persistencia</text>
+  <text class="rl" x="590" y="168" text-anchor="middle">FORNECEDOR</text>
+  <text class="cap" x="590" y="188" text-anchor="middle">quem é usado</text>
+
+  <text class="cap" x="380" y="222" text-anchor="middle">A ponta aberta aponta para o fornecedor: uma mudança em Persistencia pode quebrar Relatorios.</text>
+</svg>

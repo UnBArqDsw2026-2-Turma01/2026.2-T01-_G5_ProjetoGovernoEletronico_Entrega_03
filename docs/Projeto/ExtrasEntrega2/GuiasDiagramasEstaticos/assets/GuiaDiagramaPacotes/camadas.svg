@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 580" width="780" height="580" role="img" aria-label="Exemplo de arquitetura em camadas com pacote transversal, fronteira do sistema e sistema externo">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .n{font-size:15px;font-weight:600}
+    .stx{font-size:11px;fill:#4a5c50;font-style:italic}
+    .st{font-size:12px;font-weight:600;fill:#0d4722}
+    .cap{font-size:12px;fill:#4a5c50}
+    .fr{font-size:12px;font-weight:700;fill:#8a8f8b;letter-spacing:1px}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .pkx{fill:#fdf8e6;stroke:#a07c00;stroke-width:2}
+    .tabx{fill:#f7ecc4;stroke:#a07c00;stroke-width:2}
+    .pke{fill:#fafafa;stroke:#6b7280;stroke-width:2;stroke-dasharray:7 5}
+    .tabe{fill:#efefef;stroke:#6b7280;stroke-width:2;stroke-dasharray:7 5}
+    .dep{stroke:#0d4722;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#open)}
+    .depx{stroke:#a07c00;stroke-width:1.8;stroke-dasharray:7 5;fill:none;marker-end:url(#openx)}
+    .depe{stroke:#6b7280;stroke-width:2;stroke-dasharray:9 6;fill:none;marker-end:url(#opene)}
+  </style>
+  <defs>
+    <marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#0d4722" stroke-width="1.8"/>
+    </marker>
+    <marker id="openx" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#a07c00" stroke-width="1.8"/>
+    </marker>
+    <marker id="opene" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse">
+      <path d="M1,1 L11,6 L1,11" fill="none" stroke="#6b7280" stroke-width="1.8"/>
+    </marker>
+  </defs>
+  <rect width="780" height="580" fill="#ffffff"/>
+
+  <rect x="40" y="30" width="700" height="412" rx="10" fill="none" stroke="#b9c3bc" stroke-width="2" stroke-dasharray="6 6"/>
+  <text class="fr" x="56" y="22">FRONTEIRA DO SISTEMA</text>
+
+  <rect class="tab" x="70" y="70" width="70" height="16"/>
+  <rect class="pk"  x="70" y="86" width="330" height="54"/>
+  <text class="stx" x="235" y="106" text-anchor="middle">«camada»</text>
+  <text class="n"   x="235" y="127" text-anchor="middle">Apresentação</text>
+
+  <path class="dep" d="M235,140 L235,157"/>
+  <text class="st" x="248" y="154">«use»</text>
+
+  <rect class="tab" x="70" y="160" width="70" height="16"/>
+  <rect class="pk"  x="70" y="176" width="330" height="54"/>
+  <text class="stx" x="235" y="196" text-anchor="middle">«camada»</text>
+  <text class="n"   x="235" y="217" text-anchor="middle">Aplicação</text>
+
+  <path class="dep" d="M235,230 L235,247"/>
+  <text class="st" x="248" y="244">«use»</text>
+
+  <rect class="tab" x="70" y="250" width="70" height="16"/>
+  <rect class="pk"  x="70" y="266" width="330" height="54"/>
+  <text class="stx" x="235" y="286" text-anchor="middle">«camada»</text>
+  <text class="n"   x="235" y="307" text-anchor="middle">Domínio</text>
+
+  <path class="dep" d="M235,320 L235,337"/>
+  <text class="st" x="248" y="334">«use»</text>
+
+  <rect class="tab" x="70" y="340" width="70" height="16"/>
+  <rect class="pk"  x="70" y="356" width="330" height="54"/>
+  <text class="stx" x="235" y="376" text-anchor="middle">«camada»</text>
+  <text class="n"   x="235" y="397" text-anchor="middle">Integração</text>
+
+  <rect class="tabx" x="500" y="72" width="86" height="18"/>
+  <rect class="pkx"  x="500" y="90" width="190" height="316"/>
+  <text class="stx" x="595" y="248" text-anchor="middle">«transversal»</text>
+  <text class="n"   x="595" y="270" text-anchor="middle">Comum</text>
+
+  <path class="depx" d="M400,113 L496,113"/>
+  <path class="depx" d="M400,203 L496,203"/>
+  <path class="depx" d="M400,293 L496,293"/>
+  <path class="depx" d="M400,383 L496,383"/>
+
+  <path class="depe" d="M235,410 L235,472"/>
+  <text class="st" x="248" y="446">«use»</text>
+
+  <rect class="tabe" x="110" y="475" width="86" height="18"/>
+  <rect class="pke"  x="110" y="493" width="250" height="54"/>
+  <text class="stx" x="235" y="513" text-anchor="middle">«sistema externo»</text>
+  <text class="n"   x="235" y="534" text-anchor="middle">ServicoDeTerceiro</text>
+
+  <text class="cap" x="400" y="572" text-anchor="middle">Dependências sempre no mesmo sentido, nenhum ciclo, e o que é de terceiro fica fora da fronteira.</text>
+</svg>

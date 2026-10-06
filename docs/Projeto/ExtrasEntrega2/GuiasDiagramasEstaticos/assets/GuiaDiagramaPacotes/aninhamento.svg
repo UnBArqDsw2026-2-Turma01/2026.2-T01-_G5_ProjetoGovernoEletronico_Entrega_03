@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 310" width="760" height="310" role="img" aria-label="Duas formas de representar aninhamento de pacotes: por contenção e pelo símbolo de círculo cruzado">
+  <style>
+    text{font-family:'Segoe UI',Helvetica,Arial,sans-serif;fill:#1b3824}
+    .nn{font-size:13px;font-weight:600}
+    .s{font-size:12px;font-weight:600}
+    .cap{font-size:13px;fill:#4a5c50}
+    .hd{font-size:12px;fill:#0d4722;font-weight:700;letter-spacing:1px}
+    .pk{fill:#f7faf8;stroke:#0d4722;stroke-width:2}
+    .tab{fill:#dce9e0;stroke:#0d4722;stroke-width:2}
+    .pk2{fill:#ffffff;stroke:#3f7a57;stroke-width:1.5}
+    .tab2{fill:#e9f2ec;stroke:#3f7a57;stroke-width:1.5}
+    .ln{stroke:#0d4722;stroke-width:1.8;fill:none}
+  </style>
+  <rect width="760" height="310" fill="#ffffff"/>
+
+  <text class="hd" x="50" y="38">POR CONTENÇÃO</text>
+  <rect class="tab" x="50" y="56" width="104" height="20"/>
+  <text class="nn" x="62" y="71">Sistema</text>
+  <rect class="pk"  x="50" y="76" width="300" height="178"/>
+
+  <rect class="tab2" x="76" y="102" width="56" height="14"/>
+  <rect class="pk2"  x="76" y="116" width="120" height="42"/>
+  <text class="s" x="136" y="142" text-anchor="middle">Apresentação</text>
+
+  <rect class="tab2" x="212" y="102" width="56" height="14"/>
+  <rect class="pk2"  x="212" y="116" width="120" height="42"/>
+  <text class="s" x="272" y="142" text-anchor="middle">Domínio</text>
+
+  <rect class="tab2" x="144" y="174" width="56" height="14"/>
+  <rect class="pk2"  x="144" y="188" width="120" height="42"/>
+  <text class="s" x="204" y="214" text-anchor="middle">Integração</text>
+
+  <text class="cap" x="50" y="282">Desenhar um pacote dentro do outro já significa</text>
+  <text class="cap" x="50" y="300">que ele pertence ao pacote externo.</text>
+
+  <text class="hd" x="440" y="38">PELO SÍMBOLO ⊕</text>
+  <rect class="tab" x="520" y="56" width="70" height="18"/>
+  <rect class="pk"  x="520" y="74" width="150" height="46"/>
+  <text class="s" x="595" y="103" text-anchor="middle">Sistema</text>
+
+  <path class="ln" d="M595,120 L595,140"/>
+  <circle cx="595" cy="154" r="14" fill="#ffffff" stroke="#0d4722" stroke-width="1.8"/>
+  <path class="ln" d="M581,154 L609,154 M595,140 L595,168"/>
+  <path class="ln" d="M595,168 L595,186 M470,186 L695,186 M470,186 L470,204 M695,186 L695,204"/>
+
+  <rect class="tab2" x="410" y="204" width="50" height="14"/>
+  <rect class="pk2"  x="410" y="218" width="120" height="42"/>
+  <text class="s" x="470" y="244" text-anchor="middle">Apresentação</text>
+
+  <rect class="tab2" x="640" y="204" width="50" height="14"/>
+  <rect class="pk2"  x="640" y="218" width="110" height="42"/>
+  <text class="s" x="695" y="244" text-anchor="middle">Domínio</text>
+
+  <text class="cap" x="400" y="290">Mesma informação, sem precisar desenhar</text>
+  <text class="cap" x="400" y="308">um pacote grande em volta dos filhos.</text>
+</svg>
