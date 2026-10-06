@@ -1,0 +1,133 @@
+# Uso de Inteligência Artificial Generativa | GoF Criacional
+
+---
+
+## 1. Descrição e Objetivo
+
+[PREENCHER] Registrar o apoio e o uso de ferramentas de IA Generativa na entrega de Padrões de Projeto (GoF Criacionais) pela SubEquipe 01, com transparência, senso crítico e rastreabilidade: o que foi pedido, o que foi obtido e o que a equipe decidiu manter, corrigir ou descartar.
+
+---
+
+## 2. Metodologia do Foco
+
+[PREENCHER] Explicar como foram coletados os relatos e dados de uso (individual, assíncrono, em reunião etc.).
+
+### Ferramentas Empregadas
+
+* **[PREENCHER: ferramenta e versão]:** [PREENCHER: para que foi usada]
+* **[PREENCHER: ferramenta e versão]:** [PREENCHER: para que foi usada]
+
+---
+
+## 3. Experimentos com IA Generativa nesta Entrega
+
+Adicione um experimento para cada uso relevante da IA (modelagem, código, execução, revisão), copiando o bloco abaixo.
+
+### Experimento 01: [PREENCHER: título]
+
+#### Objetivo:
+
+[PREENCHER]
+
+#### Prompt Utilizado:
+
+```
+[PREENCHER: prompt]
+```
+
+#### Resultado Obtido:
+
+[PREENCHER]
+
+#### Análise Crítica e Intervenção Humana:
+
+[PREENCHER] O que a IA acertou, o que errou ou omitiu, e o que a equipe corrigiu manualmente.
+
+---
+
+## 4. Análise Crítica e Lições Aprendidas
+
+* **Cobertura Conceitual:** [PREENCHER]
+* **Aderência ao Padrão e à UML:** [PREENCHER]
+* **Qualidade do Código Gerado e Execução:** [PREENCHER]
+* **Influência do Prompting:** [PREENCHER]
+* **Confiabilidade e Validação:** [PREENCHER]
+* **Limites do Experimento:** [PREENCHER]
+
+---
+
+## 5. Pontos de Vista Individuais
+
+Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da IA Generativa.
+
+### Resumo por Integrante
+
+| Integrante | O que aprendi | Uso de IA Generativa |
+| --- | --- | --- |
+| [Artur Galdino](https://github.com/ArturFGaldino) | [PREENCHER] | [PREENCHER] |
+| [Giovani Coelho](https://github.com/Gotc2607) | [PREENCHER] | [PREENCHER] |
+| [João Leles](https://github.com/joaoleless) | [PREENCHER] | [PREENCHER] |
+| [Nicole Jovita](https://github.com/nicolejovita) | [PREENCHER] | [PREENCHER] |
+
+---
+
+### Detalhamento
+
+### Artur Galdino
+
+* **GitHub:** [@ArturFGaldino](https://github.com/ArturFGaldino)
+
+* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+
+* **Lições Aprendidas:** [PREENCHER]
+
+---
+
+### Giovani Coelho
+
+* **GitHub:** [@Gotc2607](https://github.com/Gotc2607)
+
+* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+
+* **Lições Aprendidas:** [PREENCHER]
+
+---
+
+### João Leles
+
+* **GitHub:** [@joaoleless](https://github.com/joaoleless)
+
+* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+
+* **Lições Aprendidas:** [PREENCHER]
+
+---
+
+### Nicole Jovita
+
+* **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
+
+* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+
+* **Lições Aprendidas:** [PREENCHER]
+
+---
+
+## 6. Síntese do Aprendizado da Subequipe
+
+[PREENCHER]
+
+---
+
+## 7. Referências e Ferramentas Utilizadas
+
+1. [PREENCHER]: ferramenta, endereço e data de acesso.
+2. [PREENCHER]
+
+---
+
+## Histórico de Versionamento
+
+| Nome do Membro | Contribuição | Data | Commit |
+| :--- | :--- | :--- | :--- |
+| [PREENCHER: Nome](https://github.com/usuario) | [PREENCHER: o que foi feito] | DD/MM/AAAA | [hash](https://github.com/ORGANIZACAO/REPOSITORIO/commit/hash) |
