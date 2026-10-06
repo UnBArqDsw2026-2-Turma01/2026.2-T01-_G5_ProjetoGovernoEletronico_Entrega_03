@@ -83,7 +83,7 @@
     - [2.3 Iniciativas Extras](./2-Modelagem/2.3.IniciativasExtras.md)
 
 - **3. Padrões de Projetos**
-  - 3.1 Relatório
+    - 3.1 Relatório
         - [3.1.1. SubEquipe_01](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
             - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemEstatica.md)
             - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemDinamica.md)
