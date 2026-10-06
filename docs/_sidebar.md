@@ -43,6 +43,15 @@
         - [Atas SubEquipe 3](./Atas/Entrega2/AtasSub3/README.md)
             - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub3/Ata-15-09.md)
             - [Ata - 17 de Setembro](./Atas/Entrega2/AtasSub3/Ata-17-09.md)
+    - Entrega 3
+        - [Atas Grupo](./Atas/Entrega3/AtasGerais/README.md)
+            - [Ata - DD de Mes](./Atas/Entrega3/AtasGerais/Ata-DD-MM.md)
+        - [Atas SubEquipe 1](./Atas/Entrega3/AtasSub1/README.md)
+            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub1/Ata-DD-MM.md)
+        - [Atas SubEquipe 2](./Atas/Entrega3/AtasSub2/README.md)
+            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub2/Ata-DD-MM.md)
+        - [Atas SubEquipe 3](./Atas/Entrega3/AtasSub3/README.md)
+            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub3/Ata-DD-MM.md)\
     - [Modelo de Ata](./Atas/Atas-Modelo.md)
 
 - **1. Desenho de Software**
@@ -84,17 +93,11 @@
 
 - **3. Padrões de Projetos**
     - 3.1 Relatório
-        - [3.1.1. SubEquipe_01](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
-            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemEstatica.md)
-            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemDinamica.md)
-            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/IA.md)
-        - [3.1.2. SubEquipe_02](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/fluxograma.md)
-            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/ModelagemEstatica.md)
-            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/ModelagemDinamica.md)
-            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/IA.md)
-        - [3.1.3. SubEquipe_03](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/fluxograma.md)
-            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/ModelagemEstatica.md)
-            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/ModelagemDinamica.md)
-            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/IA.md)
-    - [3.2 Participações](./3-PadroesDeProjeto/3.2.ParticipacoesModelagem.md)
-    - [3.3 Iniciativas Extras](./3-PadroesDeProjeto/3.3.IniciativasExtras.md)
+        - [3.1.1. SubEquipe_01](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/GoFCriacional.md)
+            - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/IA.md)
+        - [3.1.2. SubEquipe_02](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/GoFEstrutural.md)
+            - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/IA.md)
+        - [3.1.3. SubEquipe_03](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/GoFComportamental.md)
+            - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/IA.md)
+    - [3.2 Participações](./3-PadroesDeProjetos/3.2.ParticipacoesPadroesDeProjetos.md)
+    - [3.3 Iniciativas Extras](./3-PadroesDeProjetos/3.3.IniciativasExtras.md)
