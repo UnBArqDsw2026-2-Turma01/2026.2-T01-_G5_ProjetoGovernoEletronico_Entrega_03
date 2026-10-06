@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Organização ARQDSW
-    url: https://github.com/UnBArqDsw2022-1
-    about: Organização referente ao semestre de 2022-1.
+  - name: Padrão de Commits e Política de Branches
+    url: https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/blob/main/docs/Projeto/ExtrasEntrega1/PadraoDeCommits.md
+    about: Consulte antes de abrir uma issue ou PR para seguir o padrão do grupo.

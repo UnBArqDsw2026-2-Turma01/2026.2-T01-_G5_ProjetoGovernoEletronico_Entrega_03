@@ -1,24 +1,29 @@
+## Descrição
 
-Describe the big picture of your changes here to communicate to the maintainers why we should accept this pull request. If it fixes a bug or resolves a feature request, be sure to link to that issue.
+Descreva brevemente o que foi modelado ou documentado nesta PR. Indique qual processo, subsistema ou diagrama está sendo entregue e o racional por trás do artefato.
 
-## Types of changes
+---
 
-What types of changes does your code introduce to <repo_name>?
-_Put an `x` in the boxes that apply_
+## Issue Relacionada
 
-- [ ] Bugfix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation Update (if none of the other choices apply)
+Relacione esta PR com a issue correspondente do planejamento da Entrega 2.
 
-## Checklist
+Closes # [Número da Issue]
 
-_Put an `x` in the boxes that apply. You can also fill these out after creating the PR. If you're unsure about any of them, don't hesitate to ask. We're here to help! This is simply a reminder of what we are going to look for before merging your code._
+---
 
-- [ ] I have read the CONTRIBUTING.md doc.
-- [ ] I have added necessary documentation (if appropriate).
-- [ ] Any dependent changes have been merged and published in downstream modules.
+## Tipo de Mudança
 
-## Further comments
+Selecione o tipo de mudança que esta PR introduz. Marque com um 'x' dentro dos colchetes (`[x]`):
 
-If this is a relatively large or complex change, kick off the discussion by explaining why you chose the solution you did and what alternatives you considered, etc...
+* [ ] **Modelagem UML Estática** (Diagramas de Classes, Pacotes ou Componentes)
+* [ ] **Modelagem UML Dinâmica** (Diagramas de Sequência, Colaboração, Atividades ou Estados)
+* [ ] **IA Generativa** (Documentação sobre o uso, prompts, validações e suporte de ferramentas de IA generativa na entrega)
+* [ ] **Refatoração de Modelagem** (Ajustes em diagramas anteriores com base no feedback ou evolução da arquitetura)
+* [ ] **Documentação** (Atualização de artefatos textuais, especificação de cenários ou guias no diretório de `docs/`)
+
+---
+
+### Notas Adicionais (Opcional)
+
+Se houver alguma decisão de projeto complexa, pontos em aberto que exigem atenção dos revisores ou instruções de como visualizar os arquivos editáveis, detalhe-os aqui.
