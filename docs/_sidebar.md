@@ -83,10 +83,18 @@
     - [2.3 Iniciativas Extras](./2-Modelagem/2.3.IniciativasExtras.md)
 
 - **3. Padrões de Projetos**
-  - [3. Padrões de Projetos](/docs//1.PadroesDeProjeto.md)
-  - Relatórios
-      - [1.1.1. SubEquipe_01](/docs/3-PadroesDeProjeto/Relatórios/1.1.1.SubEquipe_01.md)
-      - [1.1.2. SubEquipe_02](/docs/3-PadroesDeProjeto/Relatórios/1.1.2.SubEquipe_02.md)
-      - [1.1.3. SubEquipe_03](/docs/3-PadroesDeProjeto/Relatórios/1.1.3.SubEquipe_03.md)
-  - [1.2. Participações - Padrões de Projeto](/docs/3-PadroesDeProjeto/1.2.ParticipacoesPadroesDeProjeto.md)
-  - [1.3. Iniciativas Extras - Padrões de Projeto](/docs/3-PadroesDeProjeto/1.3.IniciativasExtras.md)
+  - 3.1 Relatório
+        - [3.1.1. SubEquipe_01](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
+            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/ModelagemDinamica.md)
+            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.1.SubEquipe_01/IA.md)
+        - [3.1.2. SubEquipe_02](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/fluxograma.md)
+            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/ModelagemDinamica.md)
+            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.2.SubEquipe_02/IA.md)
+        - [3.1.3. SubEquipe_03](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/fluxograma.md)
+            - [Modelagem Estática](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/ModelagemDinamica.md)
+            - [IA Generativa](./3-PadroesDeProjeto/Relatórios/3.1.3.SubEquipe_03/IA.md)
+    - [3.2 Participações](./3-PadroesDeProjeto/3.2.ParticipacoesModelagem.md)
+    - [3.3 Iniciativas Extras](./3-PadroesDeProjeto/3.3.IniciativasExtras.md)
