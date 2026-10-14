@@ -27,3 +27,9 @@ npm run build
 ```
 
 Registrar aqui os trechos relevantes, os resultados dos testes e o commit/PR correspondente. O código fonte permanece na pasta `codigo/`; esta página apenas documenta e aponta para ele.
+
+## Histórico de Versionamento
+
+| Nome do Membro | Contribuição | Data | Commit |
+| :--- | :--- | :--- | :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |

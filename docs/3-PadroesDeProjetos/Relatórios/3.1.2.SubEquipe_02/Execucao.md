@@ -14,10 +14,8 @@ A demonstração deve mostrar o padrão **Composite** em execução no fluxo **N
 
 Adicionar prints ou logs reais, descrevendo o comportamento observado e como ele confirma a aplicação do padrão.
 
-## Checklist
+## Histórico de Versionamento
 
-- [ ] Projeto inicia localmente.
-- [ ] Padrão pode ser observado em execução.
-- [ ] Testes foram executados e seus resultados registrados.
-- [ ] Vídeo gravado e acessível.
-- [ ] Evidências e materiais estão disponíveis offline.
+| Nome do Membro | Contribuição | Data | Commit |
+| :--- | :--- | :--- | :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
