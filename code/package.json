@@ -1,0 +1,12 @@
+{
+  "name": "code",
+  "private": true,
+  "scripts": {
+    "dev:criacional": "npm --prefix criacional run dev",
+    "dev:estrutural": "npm --prefix estrutural run dev",
+    "dev:comportamental": "npm --prefix comportamental run dev",
+    "test:criacional": "npm --prefix criacional test",
+    "test:estrutural": "npm --prefix estrutural test",
+    "test:comportamental": "npm --prefix comportamental test"
+  }
+}
