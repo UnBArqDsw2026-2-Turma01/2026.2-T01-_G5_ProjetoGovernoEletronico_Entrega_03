@@ -2,21 +2,21 @@
 
 ---
 
-## Participantes da SubEquipe 2
+## Participantes da SubEquipe 02
 
 | Nome do Membro |
 | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 | [Victor Leandro](https://github.com/Afrontoso) |
-
+| [Julia Oliveira Patricio](https://github.com/juliapat18) |
 ---
 
 ## Mapeamento do Fluxo
 
 ### Nome do Fluxo
 
-[PREENCHER: nome do fluxo]
+Navegação Principal e Dashboard Pós-Login
 
 ### Origem e Justificativa da Escolha
 

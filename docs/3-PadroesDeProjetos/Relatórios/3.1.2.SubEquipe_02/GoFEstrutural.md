@@ -1,4 +1,16 @@
-# GoF Estrutural | [PREENCHER: nome do padrão]
+# GoF Estrutural | Composite
+
+## Figma / Miro Usado
+
+<iframe 
+  width="768" 
+  height="432" 
+  src="" 
+  frameborder="0" 
+  scrolling="no" 
+  allow="fullscreen; clipboard-read; clipboard-write" 
+  allowfullscreen>
+</iframe>
 
 ---
 
@@ -7,11 +19,11 @@
 | Item | Informação |
 | :--- | :--- |
 | Foco | Padrões de Projeto GoF Estruturais + IA Generativa |
-| Padrão escolhido | [PREENCHER: nome do padrão] (Adapter, Bridge, Composite, Decorator, Facade, Flyweight ou Proxy) |
+| Padrão escolhido | Composite (Adapter, Bridge, Composite, Decorator, Facade, Flyweight ou Proxy) |
 | Subequipe responsável | SubEquipe 02 |
 | Modelo (UML) | Seção "Versão Final" desta página |
-| Código | [PREENCHER: link para a pasta do código no repositório](https://github.com/ORGANIZACAO/REPOSITORIO/tree/main/caminho) |
-| Vídeo do padrão em execução | [PREENCHER: link do vídeo](https://link-do-video) |
+| Código | `codigo/estrutural/` (a criar na raiz do repositório) |
+| Vídeo do padrão em execução | A preencher após a gravação da execução |
 | Fluxo utilizado | [fluxograma.md](./fluxograma.md) |
 | Relato de IA Generativa | [IA.md](./IA.md) |
 
@@ -32,7 +44,7 @@
 | [Gustavo Fornaciari](https://github.com/GUGOFO) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 | [Victor Leandro](https://github.com/Afrontoso) |
-
+| [Julia Oliveira Patricio](https://github.com/juliapat18) |
 ---
 
 ## Fundamentação Teórica
@@ -43,13 +55,13 @@
 
 ### O Padrão Escolhido
 
-* **Nome e classificação:** [PREENCHER]
-* **Intenção:** [PREENCHER]
-* **Problema que resolve:** [PREENCHER]
-* **Solução proposta:** [PREENCHER]
-* **Estrutura e participantes do padrão:** [PREENCHER]
-* **Consequências (vantagens e desvantagens):** [PREENCHER]
-* **Quando usar:** [PREENCHER]
+* **Nome e classificação:** Composite — GoF Estrutural.
+* **Intenção:** compor objetos em estruturas de árvore e permitir que clientes tratem objetos individuais e composições de maneira uniforme.
+* **Problema que resolve:** representar um dashboard com seções que contêm cartões sem duplicar a lógica de renderização e consulta.
+* **Solução proposta:** definir `ElementoDeTela` como componente comum, `CartaoDeAtalho` como folha, `Secao` como composto e `Dashboard` como raiz.
+* **Estrutura e participantes do padrão:** `ElementoDeTela`, `CartaoDeAtalho`, `Secao` e `Dashboard`.
+* **Consequências (vantagens e desvantagens):** uniformiza operações recursivas e facilita adicionar componentes; pode tornar o desenho mais geral e exigir cuidado com operações válidas para folhas e compostos.
+* **Quando usar:** quando o dashboard precisa organizar seções e cartões hierarquicamente e executar operações uniformes sobre toda a árvore.
 
 ---
 
@@ -57,7 +69,7 @@
 
 ### Onde o Padrão foi Aplicado
 
-[PREENCHER] Descreva qual parte do sistema recebeu o padrão e qual problema real do projeto ele resolve, relacionando com o fluxo selecionado em [fluxograma.md](./fluxograma.md).
+O padrão é aplicado à Navegação Principal e ao Dashboard Pós-Login do Meu SUS Digital. O dashboard contém seções como Minha Saúde, Mini apps e Conteúdo, cada uma com cartões de atalho. A árvore permite renderizar recursivamente, contar itens e buscar cartões com uma interface comum.
 
 ### Rastreabilidade e Elos com Outros Artefatos
 
@@ -129,7 +141,7 @@
 
 ### Vídeo do Padrão em Execução
 
-[PREENCHER: link do vídeo](https://link-do-video)
+A preencher após a gravação da execução
 
 ### Evidências da Execução
 
@@ -138,25 +150,6 @@
 <center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
 
 Lembrete: salvar previamente o vídeo, o código e os demais artefatos no computador que será levado à apresentação, evitando problemas com a internet da Universidade.
-
----
-
-## Participação de Toda a Equipe neste Foco
-
-Todos os membros da equipe devem constar nesta tabela, com a sua participação em modelagem, código e execução (rodando) neste foco.
-
-| Nome do Membro | Modelagem | Código | Execução (Rodando) | Comprobatório |
-| :--- | :--- | :--- | :--- | :--- |
-| [Artur Galdino](https://github.com/ArturFGaldino) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Giovani Coelho](https://github.com/Gotc2607) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [João Leles](https://github.com/joaoleless) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Nicole Jovita](https://github.com/nicolejovita) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Victor Leandro](https://github.com/Afrontoso) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Gabriel Mota Oliveira](https://github.com/Gabro-MO) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Yasmim de Souza Santos](https://github.com/eii-yahs) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
 
 ---
 

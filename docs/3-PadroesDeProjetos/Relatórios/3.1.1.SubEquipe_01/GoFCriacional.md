@@ -1,4 +1,16 @@
-# GoF Criacional | [PREENCHER: nome do padrão]
+# GoF Criacional | Factory Method
+
+## Figma / Miro Usado
+
+<iframe 
+  width="768" 
+  height="432" 
+  src="" 
+  frameborder="0" 
+  scrolling="no" 
+  allow="fullscreen; clipboard-read; clipboard-write" 
+  allowfullscreen>
+</iframe>
 
 ---
 
@@ -7,11 +19,11 @@
 | Item | Informação |
 | :--- | :--- |
 | Foco | Padrões de Projeto GoF Criacionais + IA Generativa |
-| Padrão escolhido | [PREENCHER: nome do padrão] (Abstract Factory, Builder, Factory Method, Prototype ou Singleton) |
+| Padrão escolhido | Factory Method (Abstract Factory, Builder, Factory Method, Prototype ou Singleton) |
 | Subequipe responsável | SubEquipe 01 |
 | Modelo (UML) | Seção "Versão Final" desta página |
-| Código | [PREENCHER: link para a pasta do código no repositório](https://github.com/ORGANIZACAO/REPOSITORIO/tree/main/caminho) |
-| Vídeo do padrão em execução | [PREENCHER: link do vídeo](https://link-do-video) |
+| Código | `codigo/criacional/` (a criar na raiz do repositório) |
+| Vídeo do padrão em execução | A preencher após a gravação da execução |
 | Fluxo utilizado | [fluxograma.md](./fluxograma.md) |
 | Relato de IA Generativa | [IA.md](./IA.md) |
 
@@ -33,18 +45,17 @@
 | [Giovani Coelho](https://github.com/Gotc2607) |
 | [João Leles](https://github.com/joaoleless) |
 | [Nicole Jovita](https://github.com/nicolejovita) |
-
 ---
 
 ## Fundamentação Teórica
 
 ### O que são os Padrões GoF Criacionais
 
-[PREENCHER] Explique brevemente qual é o propósito dos padrões GoF Criacionais e o que os diferencia das demais categorias.
+Os padrões GoF criacional tratam de soluções recorrentes para problemas de criação de objetos.
 
 ### O Padrão Escolhido
 
-* **Nome e classificação:** [PREENCHER]
+* **Nome e classificação:** Factory Method — GoF Criacional.
 * **Intenção:** [PREENCHER]
 * **Problema que resolve:** [PREENCHER]
 * **Solução proposta:** [PREENCHER]
@@ -95,6 +106,14 @@
 
 [PREENCHER] O que foi modificado e por que foi modificado.
 
+### Versão 4
+
+![Imagem Versão 4](../assets/subequipe01-padroes/versao-4.png)
+
+<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
+
+[PREENCHER] O que foi modificado e por que foi modificado.
+
 ---
 
 ## Código
@@ -130,7 +149,7 @@
 
 ### Vídeo do Padrão em Execução
 
-[PREENCHER: link do vídeo](https://link-do-video)
+A preencher após a gravação da execução
 
 ### Evidências da Execução
 
@@ -139,25 +158,6 @@
 <center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
 
 Lembrete: salvar previamente o vídeo, o código e os demais artefatos no computador que será levado à apresentação, evitando problemas com a internet da Universidade.
-
----
-
-## Participação de Toda a Equipe neste Foco
-
-Todos os membros da equipe devem constar nesta tabela, com a sua participação em modelagem, código e execução (rodando) neste foco.
-
-| Nome do Membro | Modelagem | Código | Execução (Rodando) | Comprobatório |
-| :--- | :--- | :--- | :--- | :--- |
-| [Artur Galdino](https://github.com/ArturFGaldino) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Giovani Coelho](https://github.com/Gotc2607) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [João Leles](https://github.com/joaoleless) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Nicole Jovita](https://github.com/nicolejovita) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Victor Leandro](https://github.com/Afrontoso) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Gabriel Mota Oliveira](https://github.com/Gabro-MO) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
-| [Yasmim de Souza Santos](https://github.com/eii-yahs) | [PREENCHER] | [PREENCHER] | [PREENCHER] | [PREENCHER] |
 
 ---
 

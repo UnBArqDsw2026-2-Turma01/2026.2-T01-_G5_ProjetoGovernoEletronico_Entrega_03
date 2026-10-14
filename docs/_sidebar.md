@@ -93,14 +93,26 @@
 
 - **3. Padrões de Projeto**
     - 3.1 Relatório
-        - [3.1.1. SubEquipe_01](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
+        - 3.1.1. SubEquipe_01
+            - [Fluxograma](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)
             - [GoF Criacional](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/GoFCriacional.md)
+            - [Código](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Codigo.md)
+            - [Execução](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Execucao.md)
+            - [Participação](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Participacao.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/IA.md)
-        - [3.1.2. SubEquipe_02](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/fluxograma.md)
+        - 3.1.2. SubEquipe_02
+            - [Fluxograma](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/fluxograma.md)
             - [GoF Estrutural](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/GoFEstrutural.md)
+            - [Código](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/Codigo.md)
+            - [Execução](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/Execucao.md)
+            - [Participação](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/Participacao.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.2.SubEquipe_02/IA.md)
-        - [3.1.3. SubEquipe_03](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/fluxograma.md)
+        - 3.1.3. SubEquipe_03
+            - [Fluxograma](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/fluxograma.md)
             - [GoF Comportamental](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/GoFComportamental.md)
+            - [Código](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Codigo.md)
+            - [Execução](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Execucao.md)
+            - [Participação](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Participacao.md)
             - [IA Generativa](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/IA.md)
     - [3.2 Participações](./3-PadroesDeProjetos/3.2.ParticipacoesPadroesDeProjetos.md)
     - [3.3 Iniciativas Extras](./3-PadroesDeProjetos/3.3.IniciativasExtras.md)

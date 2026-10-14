@@ -2,21 +2,20 @@
 
 ---
 
-## Participantes da SubEquipe 3
+## Participantes da SubEquipe 03
 
 | Nome do Membro |
 | :--- |
 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) |
 | [Gabriel Mota Oliveira](https://github.com/Gabro-MO) |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs) |
-
 ---
 
 ## Mapeamento do Fluxo
 
 ### Nome do Fluxo
 
-[PREENCHER: nome do fluxo]
+Acesso à Rede de Saúde e Consulta de Conteúdo
 
 ### Origem e Justificativa da Escolha
 

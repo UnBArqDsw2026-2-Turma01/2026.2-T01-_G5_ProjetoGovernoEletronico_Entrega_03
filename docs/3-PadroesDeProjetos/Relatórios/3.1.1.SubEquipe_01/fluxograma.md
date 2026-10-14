@@ -2,7 +2,7 @@
 
 ---
 
-## Participantes da SubEquipe 1
+## Participantes da SubEquipe 01
 
 | Nome do Membro |
 | :--- |
@@ -10,14 +10,13 @@
 | [Giovani Coelho](https://github.com/Gotc2607) |
 | [João Leles](https://github.com/joaoleless) |
 | [Nicole Jovita](https://github.com/nicolejovita) |
-
 ---
 
 ## Mapeamento do Fluxo
 
 ### Nome do Fluxo
 
-[PREENCHER: nome do fluxo]
+Autenticação, Consentimento (LGPD) e Busca de Histórico Clínico
 
 ### Origem e Justificativa da Escolha
 
