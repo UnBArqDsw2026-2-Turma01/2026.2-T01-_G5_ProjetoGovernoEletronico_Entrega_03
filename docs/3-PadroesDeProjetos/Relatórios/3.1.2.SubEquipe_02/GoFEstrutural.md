@@ -14,21 +14,6 @@
 
 ---
 
-## Resumo da Entrega
-
-| Item | Informação |
-| :--- | :--- |
-| Foco | Padrões de Projeto GoF Estruturais + IA Generativa |
-| Padrão escolhido | Composite (Adapter, Bridge, Composite, Decorator, Facade, Flyweight ou Proxy) |
-| Subequipe responsável | SubEquipe 02 |
-| Modelo (UML) | Seção "Versão Final" desta página |
-| Código | `codigo/estrutural/` (a criar na raiz do repositório) |
-| Vídeo do padrão em execução | A preencher após a gravação da execução |
-| Fluxo utilizado | [fluxograma.md](./fluxograma.md) |
-| Relato de IA Generativa | [IA.md](./IA.md) |
-
----
-
 ## Versão Final
 
 ![Versão final do modelo do padrão Estrutural](../assets/subequipe02-padroes/versao-final.png)
@@ -105,60 +90,6 @@ O padrão é aplicado à Navegação Principal e ao Dashboard Pós-Login do Meu 
 <center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
 
 [PREENCHER] O que foi modificado e por que foi modificado.
-
----
-
-## Código
-
-### Localização no Repositório
-
-[PREENCHER: link para a pasta do código](https://github.com/ORGANIZACAO/REPOSITORIO/tree/main/caminho)
-
-### Mapeamento do Modelo para o Código
-
-| Elemento do modelo | Arquivo no código | Papel no padrão |
-| :--- | :--- | :--- |
-| [PREENCHER] | [PREENCHER: link](https://link) | [PREENCHER] |
-
-### Trechos Principais
-
-```
-[PREENCHER: trecho do código mais relevante do padrão]
-```
-
-[PREENCHER] Explique o trecho e como ele concretiza o padrão.
-
-### Como Executar
-
-1. Pré-requisitos: [PREENCHER]
-2. Instalação: [PREENCHER]
-3. Comando para rodar: [PREENCHER]
-4. Resultado esperado: [PREENCHER]
-
----
-
-## Execução (Rodando)
-
-### Vídeo do Padrão em Execução
-
-A preencher após a gravação da execução
-
-### Evidências da Execução
-
-![Evidência da execução](../assets/subequipe02-padroes/execucao-1.png)
-
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
-
-Lembrete: salvar previamente o vídeo, o código e os demais artefatos no computador que será levado à apresentação, evitando problemas com a internet da Universidade.
-
----
-
-## Senso Crítico
-
-* **Pontos fortes do padrão neste contexto:** [PREENCHER]
-* **Limitações e riscos:** [PREENCHER]
-* **Alternativas consideradas e motivo do descarte:** [PREENCHER]
-* **Quando não usar o padrão:** [PREENCHER]
 
 ---
 
