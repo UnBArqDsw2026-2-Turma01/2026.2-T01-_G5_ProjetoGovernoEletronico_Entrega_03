@@ -3,8 +3,14 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   test: {
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
+    environment: 'node',
+    pool: 'threads',
+    isolate: false,
   },
 })

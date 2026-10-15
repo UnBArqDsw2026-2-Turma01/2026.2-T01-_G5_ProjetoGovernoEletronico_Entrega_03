@@ -1,0 +1,438 @@
+:root {
+  --ion-color-primary: #0070D1;
+  --ion-color-primary-shade: #003771;
+  --ion-color-primary-tint: #EDF6FD;
+  --ion-color-dark: #484649;
+  --ion-color-dark-shade: #1C1B1F;
+  --ion-color-dark-tint: #787579;
+  --ion-color-light: #EFF1F4;
+  --ion-color-medium: #AAACAE;
+  --background-main: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-main);
+  color: #1C1B1F;
+}
+
+.meusus-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR OFICIAL DO MEU SUS DIGITAL */
+.meusus-sidebar {
+  width: 280px;
+  background-color: #FFFFFF;
+  border-right: 1px solid #D9D9D9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.meusus-sidebar .menu-header {
+  padding: 2rem 2rem 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.meusus-sidebar .logo {
+  max-width: 80%;
+  height: auto;
+}
+
+.meusus-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.meusus-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 24px;
+  margin: 0.5rem 0 0.5rem 1rem;
+  border-radius: 0 16px 16px 0;
+  color: #16497F;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.meusus-menu-item.active {
+  background: #E7F2FB;
+  color: #0070D1;
+}
+
+.meusus-menu-item:hover {
+  background: rgba(225, 242, 255, 0.5);
+}
+
+.meusus-sidebar .bottom-box {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #F0F0F0;
+}
+
+.meusus-sidebar .logo-govbr {
+  width: 110px;
+  height: auto;
+}
+
+/* ÁREA DE CONTEÚDO PRINCIPAL */
+.meusus-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  min-width: 0;
+}
+
+/* HEADER SUPERIOR (Olá, Artur) */
+.meusus-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  border-bottom: 1px solid #EDF6FD;
+  background: #FFFFFF;
+}
+
+.box-welcome {
+  font-size: 16px;
+  color: #1C1B1F;
+}
+
+.box-welcome b {
+  color: #0070D1;
+}
+
+.box-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.box-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.box-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.box-info label {
+  font-weight: 700;
+  font-size: 12px;
+  color: #1C1B1F;
+}
+
+.box-info span {
+  font-size: 11px;
+  color: #787579;
+}
+
+.box-foto img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F4F7FC;
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0070D1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SUBHEADER (Toolbar com Voltar e Título) */
+.meusus-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  border-bottom: 1px solid #EDF6FD;
+  background: #FFFFFF;
+}
+
+.meusus-btn-voltar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #484649;
+  font-size: 18px;
+  padding: 6px;
+}
+
+.meusus-subheader-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #484649;
+}
+
+.meusus-btn-ajuda {
+  background: none;
+  border: none;
+  color: #0070D1;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* BANNER CARTEIRA */
+.banner-carteira {
+  padding: 1.25rem 1.5rem;
+}
+
+.banner-carteira img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.banner-carteira img:hover {
+  transform: translateY(-2px);
+}
+
+/* MENU HORIZONTAL DE ABAS */
+.menu-horizontal {
+  display: flex;
+  border-bottom: 1px solid #EDF6FD;
+  margin: 0 1.5rem 1rem 1.5rem;
+}
+
+.menu-horizontal .btn-tab {
+  padding: 12px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #AAACAE;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.menu-horizontal .btn-tab.active {
+  color: #0070D1;
+  border-bottom: 2px solid #0070D1;
+  font-weight: 600;
+}
+
+/* SESSÃO DE CONTEÚDO */
+.box-title {
+  background: #F4F6F8;
+  padding: 8px 1.5rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: #484649;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* CARD DA CARTEIRA DE VACINAÇÃO */
+.box-certificado {
+  margin: 1.25rem 1.5rem;
+  max-width: 480px;
+  border-bottom: 1px solid #EDF6FD;
+  padding-bottom: 1.5rem;
+}
+
+.box-certificado > span {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1C1B1F;
+}
+
+.btn-certificado {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border: 1px solid #CBDFFA;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.btn-certificado:hover {
+  border-color: #0070D1;
+  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.08);
+}
+
+.btn-certificado span {
+  font-weight: 700;
+  font-size: 13px;
+  color: #484649;
+}
+
+.certificado-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.certificado-icon span {
+  font-weight: 500;
+  font-size: 12px;
+  color: #0070D1;
+}
+
+/* LISTA DE VACINAS (TELA DE DETALHE) */
+.vacinas-container {
+  padding: 1rem 1.5rem;
+  max-width: 600px;
+}
+
+.card-vacina {
+  display: flex;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid #CBDFFA;
+  border-radius: 12px;
+  background: #FFFFFF;
+  margin-bottom: 14px;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card-vacina:hover {
+  border-color: #0070D1;
+  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.08);
+}
+
+.card-vacina .img-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #EDF6FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0070D1;
+  flex-shrink: 0;
+}
+
+.card-vacina .info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card-vacina .line-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-vacina .dose {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0070D1;
+  background: #EDF6FD;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.card-vacina .data {
+  font-size: 11px;
+  font-weight: 500;
+  color: #787579;
+}
+
+.card-vacina .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1C1B1F;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card-vacina .inst {
+  font-size: 11px;
+  color: #484649;
+  font-weight: 500;
+}
+
+/* BANNER FLUTUANTE GOF CRIACIONAL */
+.gof-dock {
+  background: #F0FDF4;
+  border-bottom: 1px solid #BBF7D0;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.gof-dock-tag {
+  background: #16A34A;
+  color: #FFFFFF;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.gof-btn-action {
+  background: #0070D1;
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* RODAPÉ INSTITUCIONAL ACADÊMICO */
+.meusus-footer {
+  margin-top: auto;
+  padding: 20px 28px;
+  border-top: 1px solid #EDF6FD;
+  background-color: #FAFCFE;
+  text-align: center;
+  color: #555657;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.meusus-footer p {
+  margin: 0;
+}
+
+.meusus-footer strong {
+  color: #0070D1;
+}
+
+.meusus-footer-sub {
+  margin-top: 4px !important;
+  font-size: 11px;
+  color: #787579;
+}
+
