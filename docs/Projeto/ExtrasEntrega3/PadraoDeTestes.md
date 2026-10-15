@@ -309,4 +309,4 @@ Commit/PR: [hash](link)
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Giovani Coelho](https://github.com/Gotc2607) | Criação do documento de padrão de testes | 15/10/2026 | |
+| [Giovani Coelho](https://github.com/Gotc2607) | Criação do documento de padrão de testes | 15/10/2026 | [5ed7f8a](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/5ed7f8aa0da521de0efb95754c7e2c1581190de2) |

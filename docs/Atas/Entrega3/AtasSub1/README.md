@@ -40,4 +40,5 @@ A reunião teve como objetivo entender o escopo da terceira entrega (padrão **G
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Organização do repositorio | 10/09/2026 | [ c45763c ]( https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c45763c71060778bbf82771c1a542808c315274b ) |
-| [Giovani Coelho](https://github.com/Gotc2607) | Atualização do README com a ata de 14/10 | 15/10/2026 | |
+| [Giovani Coelho](https://github.com/Gotc2607) | Atualização do README com a ata de 14/10 | 15/10/2026 | [af1505d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af1505d8acaf85a042ec6ed622858889c5451176) |
+| [Giovani Coelho](https://github.com/Gotc2607) | Correção do link da ata para caminho absoluto | 15/10/2026 | [5ed7f8a](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/5ed7f8aa0da521de0efb95754c7e2c1581190de2) |
