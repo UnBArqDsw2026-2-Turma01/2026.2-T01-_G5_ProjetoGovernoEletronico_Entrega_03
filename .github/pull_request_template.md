@@ -1,29 +1,75 @@
-## Descrição
+# [SubEquipe 0X - GoF XXXXX] <Título Resumido da PR>
 
-Descreva brevemente o que foi modelado ou documentado nesta PR. Indique qual processo, subsistema ou diagrama está sendo entregue e o racional por trás do artefato.
+## Descrição
+Descreva sucintamente as alterações introduzidas nesta PR (Modelagem UML, Código React/TypeScript, Testes ou Documentação do Padrão GoF).
 
 ---
 
 ## Issue Relacionada
-
-Relacione esta PR com a issue correspondente do planejamento da Entrega 2.
-
 Closes # [Número da Issue]
 
 ---
 
-## Tipo de Mudança
-
-Selecione o tipo de mudança que esta PR introduz. Marque com um 'x' dentro dos colchetes (`[x]`):
-
-* [ ] **Modelagem UML Estática** (Diagramas de Classes, Pacotes ou Componentes)
-* [ ] **Modelagem UML Dinâmica** (Diagramas de Sequência, Colaboração, Atividades ou Estados)
-* [ ] **IA Generativa** (Documentação sobre o uso, prompts, validações e suporte de ferramentas de IA generativa na entrega)
-* [ ] **Refatoração de Modelagem** (Ajustes em diagramas anteriores com base no feedback ou evolução da arquitetura)
-* [ ] **Documentação** (Atualização de artefatos textuais, especificação de cenários ou guias no diretório de `docs/`)
+## Subequipe Responsável (Marque com 'x')
+- [ ] **SubEquipe 01** - GoF Criacional (*Factory Method*)
+- [ ] **SubEquipe 02** - GoF Estrutural (*Composite*)
+- [ ] **SubEquipe 03** - GoF Comportamental (*Strategy*)
 
 ---
 
-### Notas Adicionais (Opcional)
+## Focos Atingidos (Marque com 'x')
+- [ ] **Modelagem UML** (Diagrama de Classes V1, V2, V3, Final ou Sequência)
+- [ ] **Código Fonte (React/TypeScript)** (Núcleo em `padrao/`, dados em `dominio/` ou UI em `ui/`)
+- [ ] **Testes Unitários & Interface** (Suíte `Vitest` / `React Testing Library`)
+- [ ] **Execução & Vídeo** (Evidências em `Execucao.md` e gravações)
+- [ ] **Documentação & IA Generativa** (`Modelagem.md`, `Codigo.md`, `IA.md`, etc.)
 
-Se houver alguma decisão de projeto complexa, pontos em aberto que exigem atenção dos revisores ou instruções de como visualizar os arquivos editáveis, detalhe-os aqui.
+---
+
+## Instruções de Teste e Execução do Código
+
+Para testar esta fatia localmente:
+
+1. Navegue até o mini-projeto da subequipe correspondente:
+```bash
+# SubEquipe 01 (Criacional)
+cd code/criacional
+
+# SubEquipe 02 (Estrutural)
+cd code/estrutural
+
+# SubEquipe 03 (Comportamental)
+cd code/comportamental
+```
+
+2. Instale as dependências e rode os testes unitários:
+```bash
+npm install
+npm test
+```
+
+3. Execute o ambiente de desenvolvimento em React:
+```bash
+npm run dev
+```
+
+---
+
+## Revisor Indicado (Integrante da mesma Subequipe)
+
+#### SubEquipe 01 (Criacional)
+- [ ] @ArturFGaldino
+- [ ] @Gotc2607
+- [ ] @joaoleless
+- [ ] @nicolejovita
+
+#### SubEquipe 02 (Estrutural)
+- [ ] @GUGOFO
+- [ ] @AnaBeatriz
+- [ ] @VictorLeandro
+- [ ] @JuliaPetrosa
+
+#### SubEquipe 03 (Comportamental)
+- [ ] @DaviUrsulino
+- [ ] @GabrielMota
+- [ ] @YasmimSantos
