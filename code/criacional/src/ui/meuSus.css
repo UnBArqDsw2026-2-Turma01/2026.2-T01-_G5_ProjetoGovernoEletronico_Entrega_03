@@ -436,3 +436,185 @@ body {
   color: #787579;
 }
 
+/* FATIA DE EXAMES LABORATORIAIS (Versão 2 - Giovani Coelho) */
+.exames-container {
+  padding: 1rem 1.5rem;
+  max-width: 680px;
+}
+
+.card-exame {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 1px solid #CBDFFA;
+  border-radius: 12px;
+  background: #FFFFFF;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 112, 209, 0.04);
+}
+
+.card-exame:hover {
+  border-color: #0070D1;
+  box-shadow: 0 4px 14px rgba(0, 112, 209, 0.1);
+}
+
+.card-exame-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.exame-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #E8F4FD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0070D1;
+  flex-shrink: 0;
+}
+
+.exame-title-area {
+  flex: 1;
+}
+
+.exame-title-area h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1B1F;
+}
+
+.exame-subinfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: #5F6368;
+}
+
+.badge-categoria {
+  background: #F1F3F4;
+  color: #3C4043;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-status {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-status.liberado {
+  background: #E6F4EA;
+  color: #137333;
+}
+
+.badge-status.em-analise {
+  background: #FEF7E0;
+  color: #B06000;
+}
+
+.exame-body {
+  border-top: 1px dashed #E0E7ED;
+  padding-top: 10px;
+}
+
+.exame-metadados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: #484649;
+  margin-bottom: 10px;
+}
+
+.exame-metadados strong {
+  color: #1C1B1F;
+}
+
+.exame-laudo-box {
+  background: #F8FBFD;
+  border-left: 3px solid #0070D1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #2D3748;
+  margin-bottom: 10px;
+}
+
+.parametros-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.parametros-table th {
+  text-align: left;
+  background: #F4F6F8;
+  padding: 6px 10px;
+  color: #484649;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.parametros-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #F0F4F8;
+  color: #1C1B1F;
+}
+
+.badge-parametro-normal {
+  background: #E6F4EA;
+  color: #137333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.badge-parametro-alterado {
+  background: #FCE8E6;
+  color: #C5221F;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.banner-exames-card {
+  margin: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #0070D1 0%, #004D99 100%);
+  color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0, 112, 209, 0.25);
+  max-width: 630px;
+}
+
+.banner-exames-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.banner-exames-info p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
