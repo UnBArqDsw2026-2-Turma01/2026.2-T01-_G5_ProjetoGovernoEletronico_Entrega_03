@@ -22,38 +22,43 @@
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 | [Victor Leandro](https://github.com/Afrontoso) |
 | [Julia Oliveira Patricio](https://github.com/juliapat18) |
+
 ---
 
 ## Fundamentação Teórica
 
 ### O que são os Padrões GoF Estruturais
 
-[PREENCHER] Explique brevemente qual é o propósito dos padrões GoF Estruturais e o que os diferencia das demais categorias.
+Os padrões GoF (*Gang of Four*) estruturais descrevem maneiras de organizar classes e objetos para formar estruturas maiores, reduzindo o acoplamento e facilitando mudanças e manutenção. Diferenciam-se dos padrões criacionais, que tratam da criação de objetos, e dos comportamentais, que enfatizam a comunicação e a distribuição de responsabilidades entre objetos. Entre os padrões estruturais apresentados no material da disciplina estão Adapter, Bridge, Composite, Decorator, Facade, Flyweight e Proxy.
 
 ### O Padrão Escolhido
 
-* **Nome e classificação:** Composite — GoF Estrutural.
-* **Intenção:** compor objetos em estruturas de árvore e permitir que clientes tratem objetos individuais e composições de maneira uniforme.
-* **Problema que resolve:** representar um dashboard com seções que contêm cartões sem duplicar a lógica de renderização e consulta.
-* **Solução proposta:** definir `ElementoDeTela` como componente comum, `CartaoDeAtalho` como folha, `Secao` como composto e `Dashboard` como raiz.
-* **Estrutura e participantes do padrão:** `ElementoDeTela`, `CartaoDeAtalho`, `Secao` e `Dashboard`.
-* **Consequências (vantagens e desvantagens):** uniformiza operações recursivas e facilita adicionar componentes; pode tornar o desenho mais geral e exigir cuidado com operações válidas para folhas e compostos.
-* **Quando usar:** quando o dashboard precisa organizar seções e cartões hierarquicamente e executar operações uniformes sobre toda a árvore.
+- **Nome e classificação:** Composite — GoF Estrutural.
+- **Intenção:** compor objetos em estruturas hierárquicas de árvore e permitir que clientes tratem objetos individuais e composições por meio de uma interface comum.
+- **Problema que resolve:** representar uma interface de dashboard com seções que contêm cartões de atalho sem precisar implementar operações de renderização e consulta de maneira independente para cada nível da hierarquia.
+- **Solução proposta:** definir `ElementoDeTela` como interface comum, `CartaoDeAtalho` como folha (*Leaf*), `Secao` como composto (*Composite*) e `Dashboard` como raiz da composição.
+- **Participantes:** `ElementoDeTela`, `CartaoDeAtalho`, `Secao` e `Dashboard`.
+- **Consequências:** facilita percorrer e operar sobre a árvore de forma uniforme e permite acrescentar novos tipos de elementos. Em contrapartida, uma abstração muito genérica pode aumentar a complexidade e exige definir quais operações fazem sentido para folhas e compostos.
+- **Quando usar:** quando a interface precisa organizar itens individuais e grupos de itens em níveis hierárquicos, tratando-os de forma uniforme.
 
 ---
 
 ## Contexto de Aplicação no Projeto
 
-### Onde o Padrão foi Aplicado
+### Onde o Padrão será aplicado
 
-O padrão é aplicado à Navegação Principal e ao Dashboard Pós-Login do Meu SUS Digital. O dashboard contém seções como Minha Saúde, Mini apps e Conteúdo, cada uma com cartões de atalho. A árvore permite renderizar recursivamente, contar itens e buscar cartões com uma interface comum.
+O Composite será aplicado conceitualmente à **Navegação Principal e ao Dashboard Pós-Login do Meu SUS Digital**, conforme o escopo definido no template da entrega. A interface pode ser organizada em seções, como **Minha Saúde**, **Mini apps** e **Conteúdo**, com cartões de atalho dentro de cada seção.
 
 ### Rastreabilidade e Elos com Outros Artefatos
 
-| Artefato relacionado | Link | Relação com o padrão |
+| Artefato relacionado | Link no repositório | Relação com o padrão |
 | :--- | :--- | :--- |
-| [PREENCHER: ex. diagrama de classes da Modelagem] | [PREENCHER: link](https://link) | [PREENCHER] |
-| [PREENCHER: ex. requisito ou fluxo da Base] | [PREENCHER: link](https://link) | [PREENCHER] |
+| Rich Picture (Entrega 1) | [`RichPicture.md`](../../1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/RichPicture.md) | Contextualiza o cidadão, o Meu SUS Digital e as necessidades de acesso a serviços de saúde. Ajuda a justificar uma navegação que agrupe serviços de forma compreensível. |
+| SIG / NFR Framework (Entrega 1) | [`SIG.md`](../../1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/SIG.md) | Registra preocupações de usabilidade, localização de dados, velocidade de acesso, segurança e privacidade. A organização hierárquica deve apoiar a localização de funções sem ignorar esses atributos. |
+| BPMN (Entrega 1) | [`BPMN.md`](../../1-DesenhoDeSoftware/Relatórios/1.1.2.SubEquipe_02/BPMN.md) | Descreve, por engenharia reversa, o fluxo entre cidadão e sistema e os caminhos de acesso a serviços. O Composite trata da estrutura da interface que apresenta esses serviços, não substitui o fluxo BPMN. |
+| Modelagem Estática — Diagrama de Pacotes (Entrega 2) | [`ModelagemEstatica.md`](../../2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemEstatica.md) | Organiza o sistema em camadas de Apresentação, Aplicação, Domínio e Integração, além de um pacote transversal. A proposta Composite fica principalmente no contexto de apresentação; não altera por si só a arquitetura em camadas. |
+| Modelagem Dinâmica — Diagrama de Atividades (Entrega 2) | [`ModelagemDinamica.md`](../../2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemDinamica.md) | Descreve a navegação pós-login e as ações do usuário/sistema. A modelagem Composite representa a estrutura dos elementos exibidos, enquanto o diagrama de atividades representa o fluxo de comportamento. |
+| Fluxograma / fluxo de interface (Entrega 3) | [`fluxograma.md`](./fluxograma.md) | Deve ligar os passos de navegação às seções e cartões correspondentes. A rastreabilidade específica dos passos será completada quando o fluxo de V1 estiver preenchido. |
 
 ---
 
@@ -61,44 +66,45 @@ O padrão é aplicado à Navegação Principal e ao Dashboard Pós-Login do Meu 
 
 ### Versão 1
 
-![Imagem Versão 1](../assets/subequipe02-padroes/versao-1.png)
+![Diagrama UML de classes da V1 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V1.png)
 
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
+**Legenda:** Figura 1 — Diagrama UML inicial do padrão Composite aplicado conceitualmente ao Dashboard Pós-Login do Meu SUS Digital. ElementoDeTela define a interface comum; CartaoDeAtalho representa a folha (Leaf); Secao representa o composto (Composite), agrupando elementos da interface; e Dashboard organiza as seções de nível superior. As setas tracejadas indicam realização de interface e os losangos preenchidos indicam composição.
 
-[PREENCHER] Explique o que foi feito e por que, quais elementos UML foram usados e como o modelo representa o padrão aplicado ao projeto.
+#### O que foi feito
+
+A V1 estabelece somente os participantes essenciais do padrão: `ElementoDeTela` define operações comuns; `CartaoDeAtalho` representa uma folha; `Secao` agrupa elementos por meio de uma coleção; e `Dashboard` mantém as seções de nível superior. O diagrama utiliza interface UML, operações, atributos, relações de implementação e a relação de composição entre a seção e seus elementos.
+
+O objetivo desta primeira versão é validar a estrutura básica e manter o modelo simples o suficiente para evoluir nas próximas iterações. Ainda não são especificados detalhes de implementação, permissões, persistência, integração com serviços externos, estados de carregamento ou regras completas de navegação. As operações `renderizar`, `contarElementos` e `buscarPorId` são propostas conceituais para ilustrar o tratamento uniforme da árvore; seus contratos e retornos deverão ser refinados junto com o código.
 
 ### Versão 2
 
-![Imagem Versão 2](../assets/subequipe02-padroes/versao-2.png)
-
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
-
-[PREENCHER] O que foi modificado e por que foi modificado.
+**A desenvolver.** Registrar a revisão da V1, as mudanças feitas nas relações UML, os novos atributos/operações e a justificativa de cada alteração. Manter a rastreabilidade com os artefatos anteriores.
 
 ### Versão 3
 
-![Imagem Versão 3](../assets/subequipe02-padroes/versao-3.png)
+**A desenvolver.** Refinar a modelagem conforme o feedback da V2 e a implementação inicial. Conferir se as operações recursivas e a hierarquia correspondem ao comportamento esperado.
 
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
+### Versão 4
 
-[PREENCHER] O que foi modificado e por que foi modificado.
+**A desenvolver.** Consolidar o modelo após validação com o código e a execução local. Documentar limitações conhecidas, decisões finais e eventuais diferenças entre a proposta conceitual e a implementação.
 
 ---
 
 ## Metodologia
 
-[PREENCHER] Explicar qual a metodologia seguida pela equipe para fazer este trabalho (modelagem, código e execução) e, caso tenha alguma particularidade, explicar ela.
+A modelagem parte dos artefatos produzidos nas entregas anteriores da SubEquipe 02. O Rich Picture e o SIG ajudam a recuperar o contexto e as preocupações de qualidade; o BPMN registra os processos observados por engenharia reversa; e os diagramas de pacotes e atividades descrevem, respectivamente, a organização lógica e o fluxo de navegação.
 
-"Seguindo a geral e --extra da subequipe--..."
+A primeira versão foi mantida em nível conceitual, usando um diagrama de classes UML para representar os papéis do Composite. O desenho pode ser importado para o Figma e ajustado visualmente. Nas próximas versões, o grupo deverá revisar o diagrama em conjunto, relacionar as classes às telas/fluxos identificados e validar a consistência entre modelo, código e execução local. A evolução deve ser registrada por commits e Pull Requests, conforme o fluxo de trabalho discutido pela subequipe.
 
-Registros do trabalho em equipe (atas, vídeos de reuniões, checklists): [PREENCHER: links]
+**Registros do trabalho em equipe:** [Ata de reunião de 14/10/2026](../../../Atas/Entrega3/AtasSub2/Ata-14-10.md). Incluir links para as conversas de IA, capturas de tela, reuniões e PRs efetivamente utilizados, quando disponíveis.
 
 ---
 
-### Embasamento teórico para criação:
+## Embasamento teórico para criação
 
-1. [PREENCHER: referência no padrão ABNT, ex.: GAMMA, Erich et al. Padrões de Projeto: soluções reutilizáveis de software orientado a objetos. Porto Alegre: Bookman, 2000.]
-2. [PREENCHER]
+1. GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. *Design Patterns: Elements of Reusable Object-Oriented Software*. Reading: Addison-Wesley, 1995.
+2. SERRANO, Milene. *Arquitetura e Desenho de Software — Aula: GoFs Estruturais*. Material de aula, Universidade de Brasília, s.d. (slides fornecidos à equipe).
+3. FREEMAN, Eric et al. *Head First Design Patterns*. 2. ed. Sebastopol: O’Reilly Media, 2020.
 
 ---
 
@@ -106,5 +112,19 @@ Registros do trabalho em equipe (atas, vídeos de reuniões, checklists): [PREEN
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Estruturação inicial do relatório e elaboração da modelagem Composite V1 | 15/10/2026 | A preencher após o commit da V1 |
+| [Victor Leandro](https://github.com/Afrontoso) | Modelagem Composite V2 | A definir | A preencher |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Modelagem Composite V3 | A definir | A preencher |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Modelagem Composite V4 | A definir | A preencher |
+
+---
+
+## Melhorias previstas para as próximas versões
+
+- **V2 — consistência UML:** revisar se `Dashboard` deve implementar `ElementoDeTela` ou atuar apenas como cliente/raiz; explicitar multiplicidades e composições; definir se `Secao` pode conter outra `Secao`.
+- **V2 — operações:** detalhar contratos de `adicionar`, `remover`, `renderizar`, `contarElementos` e `buscarPorId`, incluindo o comportamento de uma folha.
+- **V3 — alinhamento com a interface:** relacionar os nomes das seções e cartões às telas e aos fluxos observados nas entregas anteriores; registrar evidências e limites da engenharia reversa.
+- **V3 — qualidade:** discutir acessibilidade/usabilidade e como a hierarquia facilita localizar serviços, sem afirmar ganhos de desempenho sem medição.
+- **V4 — validação com código:** conferir se as classes implementadas correspondem ao diagrama; documentar testes de composição, busca, remoção e renderização recursiva.
+- **V4 — rastreabilidade completa:** substituir referências genéricas por links/IDs específicos de telas, passos de fluxo, requisitos ou issues; verificar os caminhos dos links no repositório.
+- **Todas as versões:** registrar autor, data, commit/PR, motivação das mudanças e uma imagem exportada do Figma.
