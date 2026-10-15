@@ -19,6 +19,7 @@
             - [Diagrama de Colaboração](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaColaboracao.md)
             - [Diagrama de Estados](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaEstados.md)
             - [Diagrama de Sequência](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaSequencia.md)
+    - [Entrega 3](./Projeto/ExtrasEntrega3/README.md)
 
 
 - **Atas**
