@@ -1,23 +1,23 @@
 # [SubEquipe 0X - GoF XXXXX] <Título Resumido da PR>
 
-## 📌 Descrição
+## Descrição
 Descreva sucintamente as alterações introduzidas nesta PR (Modelagem UML, Código React/TypeScript, Testes ou Documentação do Padrão GoF).
 
 ---
 
-## 🔀 Issue Relacionada
+## Issue Relacionada
 Closes # [Número da Issue]
 
 ---
 
-## 👥 Subequipe Responsável (Marque com 'x')
+## Subequipe Responsável (Marque com 'x')
 - [ ] **SubEquipe 01** - GoF Criacional (*Factory Method*)
 - [ ] **SubEquipe 02** - GoF Estrutural (*Composite*)
 - [ ] **SubEquipe 03** - GoF Comportamental (*Strategy*)
 
 ---
 
-## 🎯 Focos Atingidos (Marque com 'x')
+## Focos Atingidos (Marque com 'x')
 - [ ] **Modelagem UML** (Diagrama de Classes V1, V2, V3, Final ou Sequência)
 - [ ] **Código Fonte (React/TypeScript)** (Núcleo em `padrao/`, dados em `dominio/` ou UI em `ui/`)
 - [ ] **Testes Unitários & Interface** (Suíte `Vitest` / `React Testing Library`)
@@ -26,7 +26,7 @@ Closes # [Número da Issue]
 
 ---
 
-## 🧪 Instruções de Teste e Execução do Código
+## Instruções de Teste e Execução do Código
 
 Para testar esta fatia localmente:
 
@@ -55,7 +55,7 @@ npm run dev
 
 ---
 
-## 👥 Revisor Indicado (Integrante da mesma Subequipe)
+## Revisor Indicado (Integrante da mesma Subequipe)
 
 #### SubEquipe 01 (Criacional)
 - [ ] @ArturFGaldino
