@@ -2,15 +2,7 @@
 
 ## Figma / Miro Usado
 
-<iframe 
-  width="768" 
-  height="432" 
-  src="" 
-  frameborder="0" 
-  scrolling="no" 
-  allow="fullscreen; clipboard-read; clipboard-write" 
-  allowfullscreen>
-</iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/kjXYSBRLXLl5yAYva4prVm/GoF-Estrutural?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
 ---
 
