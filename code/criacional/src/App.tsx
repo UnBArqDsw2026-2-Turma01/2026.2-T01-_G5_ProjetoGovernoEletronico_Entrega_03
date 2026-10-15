@@ -1,10 +1,13 @@
 import { useMemo, useState } from 'react';
 import { BuscadorDeVacinas } from './padrao/BuscadorDeVacinas';
+import { BuscadorDeExames } from './padrao/BuscadorDeExames';
 import type { CartaoVacina } from './padrao/CartaoVacina';
+import type { ResultadoExame } from './padrao/ResultadoExame';
 import { vacinasOficiaisArturMock } from './dominio/vacinasMock';
+import { examesOficiaisGiovaniMock } from './dominio/examesMock';
 import './ui/meuSus.css';
 
-type TelaAtiva = 'primeiraPagina' | 'detalheCarteira';
+type TelaAtiva = 'primeiraPagina' | 'detalheCarteira' | 'exames';
 type AbaAtiva = 'documentos' | 'historico';
 
 export function App() {
@@ -12,18 +15,23 @@ export function App() {
   const [abaAtual, setAbaAtual] = useState<AbaAtiva>('documentos');
   const [mostrarDockGof, setMostrarDockGof] = useState<boolean>(true);
   const [logGof, setLogGof] = useState<string>(
-    'BuscadorDeVacinas.ts instanciou CartaoVacina.ts'
+    'Factory Method pronto: BuscadorDeVacinas (V1) e BuscadorDeExames (V2) ativos.'
   );
 
-  // Instância do Criador Concreto (GoF Factory Method)
-  const buscador = useMemo(() => new BuscadorDeVacinas(), []);
+  // Instâncias dos Criadores Concretos (GoF Factory Method)
+  const buscadorVacinas = useMemo(() => new BuscadorDeVacinas(), []);
+  const buscadorExames = useMemo(() => new BuscadorDeExames(), []);
 
-  // Lista de instâncias de CartaoVacina criadas em lote pelo Factory Method
+  // Listas de instâncias concretas criadas em lote pelo Factory Method (processarRegistros)
   const [vacinasInstanciadas, setVacinasInstanciadas] = useState<CartaoVacina[]>(() => {
-    return buscador.processarRegistros(vacinasOficiaisArturMock) as CartaoVacina[];
+    return buscadorVacinas.processarRegistros(vacinasOficiaisArturMock) as CartaoVacina[];
   });
 
-  // Demonstração interativa do Factory Method em tempo de execução
+  const [examesInstanciados, setExamesInstanciados] = useState<ResultadoExame[]>(() => {
+    return buscadorExames.processarRegistros(examesOficiaisGiovaniMock) as ResultadoExame[];
+  });
+
+  // Demonstração interativa do Factory Method em tempo de execução para Vacinas (V1)
   const handleAdicionarNovaVacina = () => {
     const doses = ['Dose Anual', 'Reforço', 'Dose Única'];
     const novas = [
@@ -46,11 +54,68 @@ export function App() {
       codigoCNES: '0010456',
     };
 
-    // Chamada explícita ao Factory Method
-    const novoRegistro = buscador.criarRegistroClinico(payload) as CartaoVacina;
+    const novoRegistro = buscadorVacinas.criarRegistroClinico(payload) as CartaoVacina;
     setVacinasInstanciadas((prev) => [novoRegistro, ...prev]);
     setLogGof(
-      `✓ [Factory Method]: Instanciado "${novoRegistro.imunobiologico}" (${novoRegistro.dose}) via BuscadorDeVacinas.criarRegistroClinico()`
+      `✓ [V1 Factory Method]: Instanciado "${novoRegistro.imunobiologico}" (${novoRegistro.dose}) via BuscadorDeVacinas.criarRegistroClinico()`
+    );
+  };
+
+  // Demonstração interativa do Factory Method em tempo de execução para Exames (V2 - Giovani Coelho)
+  const handleAdicionarNovoExame = () => {
+    const catalogoNovos = [
+      {
+        nome: 'Hemoglobina Glicada (HbA1c)',
+        cat: 'Bioquímica Clínica',
+        lab: 'LACEN/DF - Unidade Central',
+        resp: 'Dra. Camila Vasconcelos',
+        params: [
+          { nome: 'HbA1c', resultado: '5.4', unidadeMedida: '%', valorReferencia: '< 5.7%', situacao: 'NORMAL' as const },
+        ],
+        laudo: 'Controle glicêmico dos últimos 90 dias dentro dos parâmetros normais.',
+      },
+      {
+        nome: '25-Hidroxivitamina D (Vitamina D Total)',
+        cat: 'Imunologia / Hormônios',
+        lab: 'Laboratório Regional de Sobradinho - SES/DF',
+        resp: 'Dr. Roberto Meireles',
+        params: [
+          { nome: 'Vitamina D (25-OH-D)', resultado: '34.2', unidadeMedida: 'ng/mL', valorReferencia: '20 a 60 ng/mL', situacao: 'NORMAL' as const },
+        ],
+        laudo: 'Nível sérico de vitamina D suficiente.',
+      },
+      {
+        nome: 'Hormônio Tireoestimulante (TSH Ultra Sensível)',
+        cat: 'Endocrinologia Laboratorial',
+        lab: 'LACEN/DF - Núcleo de Patologia',
+        resp: 'Dra. Amanda Fontes',
+        params: [
+          { nome: 'TSH', resultado: '2.15', unidadeMedida: 'µUI/mL', valorReferencia: '0.40 a 4.50 µUI/mL', situacao: 'NORMAL' as const },
+        ],
+        laudo: 'Função tireoidiana em eutireoidismo.',
+      },
+    ];
+
+    const sorteio = catalogoNovos[Math.floor(Math.random() * catalogoNovos.length)];
+
+    const payload = {
+      id: `exm-${Date.now()}`,
+      dataRegistro: new Date().toISOString(),
+      nomeExame: sorteio.nome,
+      categoriaExame: sorteio.cat,
+      laboratorio: sorteio.lab,
+      statusResultado: 'Liberado' as const,
+      responsavelTecnico: sorteio.resp,
+      numeroSolicitacao: `SOL-2024-${Math.floor(10000 + Math.random() * 90000)}`,
+      codigoCNES: '0010456',
+      parametros: sorteio.params,
+      laudoConclusivo: sorteio.laudo,
+    };
+
+    const novoRegistro = buscadorExames.criarRegistroClinico(payload) as ResultadoExame;
+    setExamesInstanciados((prev) => [novoRegistro, ...prev]);
+    setLogGof(
+      `✓ [V2 Factory Method]: Instanciado "${novoRegistro.nomeExame}" (${novoRegistro.categoriaExame}) via BuscadorDeExames.criarRegistroClinico()`
     );
   };
 
@@ -69,7 +134,7 @@ export function App() {
 
           <ul className="meusus-menu-list">
             <li
-              className={`meusus-menu-item ${telaAtual === 'primeiraPagina' ? 'active' : ''}`}
+              className={`meusus-menu-item ${telaAtual === 'primeiraPagina' || telaAtual === 'detalheCarteira' ? 'active' : ''}`}
               onClick={() => setTelaAtual('primeiraPagina')}
             >
               <svg width="22" height="22" viewBox="0 0 30 31" fill="currentColor">
@@ -79,8 +144,24 @@ export function App() {
                   d="M4.09 10.86C3.38 11.19 2.51 10.92 2.15 10.26C1.8 9.6 2.09 8.8 2.8 8.47L14.35 3.14C14.76 2.95 15.24 2.95 15.65 3.14L27.2 8.47C27.91 8.8 28.2 9.6 27.85 10.26C27.49 10.92 26.62 11.19 25.91 10.86L15 5.82L4.09 10.86ZM23.82 11.37L15.96 8.18C15.36 7.94 14.65 7.94 14.04 8.18L6.18 11.37C5.46 11.67 5 12.27 5 12.93V25.39C5 26.61 5 27.25 5.32 27.6C5.7 28 6.5 28 8.21 28H12V23.67C12 22.19 13.34 21 15 21C16.66 21 18 22.19 18 23.67V28H21.79C23.67 28 24.45 28 24.77 27.62C25 27.34 25 26.88 25 26.08V12.93C25 12.27 24.54 11.67 23.82 11.37Z"
                 />
               </svg>
-              <span>Início</span>
+              <span>Vacinas (V1)</span>
             </li>
+
+            <li
+              className={`meusus-menu-item ${telaAtual === 'exames' ? 'active' : ''}`}
+              onClick={() => setTelaAtual('exames')}
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2v6a2 2 0 0 0 2 2h6" />
+                <path d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10l6 6v6a2 2 0 0 1-2 2" />
+                <path d="M6 18h12" />
+                <path d="M6 14h12" />
+                <path d="M6 10h6" />
+                <path d="M9 22h6" />
+              </svg>
+              <span>Exames (V2)</span>
+            </li>
+
             <li className="meusus-menu-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
@@ -104,15 +185,23 @@ export function App() {
           <div className="gof-dock">
             <div>
               <span className="gof-dock-tag">GoF Criacional</span>
-              <strong>Factory Method:</strong> {logGof} ({vacinasInstanciadas.length} instâncias ativas)
+              <strong>Factory Method:</strong> {logGof} | ({vacinasInstanciadas.length} Vacinas, {examesInstanciados.length} Exames)
             </div>
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
               <button onClick={handleAdicionarNovaVacina} className="gof-btn-action">
-                ⚡ Instanciar Nova Vacina
+                ⚡ +Vacina (V1)
+              </button>
+              <button
+                onClick={handleAdicionarNovoExame}
+                className="gof-btn-action"
+                style={{ backgroundColor: '#16A34A' }}
+              >
+                ⚡ +Exame (V2)
               </button>
               <button
                 onClick={() => setMostrarDockGof(false)}
                 style={{ background: 'none', border: 'none', color: '#166534', cursor: 'pointer' }}
+                title="Fechar barra"
               >
                 ✕
               </button>
@@ -123,13 +212,13 @@ export function App() {
         {/* Header Superior Oficial (Olá, Usuário) */}
         <div className="meusus-top-header">
           <div className="box-welcome">
-            Olá, <b>Usuário</b>
+            Olá, <b>Giovani Coelho</b>
           </div>
           <div className="box-actions">
             <div className="box-card">
               <div className="box-info">
-                <label>Nome do Usuário</label>
-                <span>CPF: 000.000.000-00</span>
+                <label>Giovani Coelho</label>
+                <span>CPF: ***.325.000-**</span>
               </div>
               <div className="box-foto">
                 <img src="/avatar-default.svg" alt="Avatar Usuário" />
@@ -286,6 +375,120 @@ export function App() {
           </div>
         )}
 
+        {/* ======================================================== */}
+        {/* TELA 3: FATIA DE EXAMES LABORATORIAIS (Versão 2 - Giovani) */}
+        {/* ======================================================== */}
+        {telaAtual === 'exames' && (
+          <div>
+            <div className="meusus-subheader">
+              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('primeiraPagina')}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="meusus-subheader-title">Exames Laboratoriais</span>
+              <button className="meusus-btn-ajuda">Ajuda</button>
+            </div>
+
+            <div className="banner-exames-card">
+              <div className="banner-exames-info">
+                <h3>Rede Nacional de Dados em Saúde (RNDS)</h3>
+                <p>
+                  Resultados e laudos de exames processados pelo padrão <strong>Factory Method</strong> (BuscadorDeExames).
+                </p>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontSize: '24px', fontWeight: 800 }}>{examesInstanciados.length}</span>
+                <div style={{ fontSize: '11px', opacity: 0.9 }}>Laudos Disponíveis</div>
+              </div>
+            </div>
+
+            <div className="box-title" style={{ margin: '0 1.5rem 1rem 1.5rem' }}>
+              <span>Laudos e Resultados Clínicos ({examesInstanciados.length})</span>
+            </div>
+
+            <div className="exames-container">
+              {examesInstanciados.map((exame) => (
+                <div key={exame.id} className="card-exame">
+                  <div className="card-exame-header">
+                    <div className="exame-icon-box">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M6 18h12" />
+                        <path d="M10 2v7.5L4.5 19.5A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-2.5L14 9.5V2" />
+                        <path d="M8.5 2h7" />
+                        <path d="M7 16h10" />
+                      </svg>
+                    </div>
+                    <div className="exame-title-area">
+                      <h4>{exame.nomeExame}</h4>
+                      <div className="exame-subinfo">
+                        <span className="badge-categoria">{exame.categoriaExame}</span>
+                        <span>•</span>
+                        <span>{exame.laboratorio}</span>
+                      </div>
+                    </div>
+                    <span className={`badge-status ${exame.statusResultado === 'Liberado' ? 'liberado' : 'em-analise'}`}>
+                      {exame.statusResultado}
+                    </span>
+                  </div>
+
+                  <div className="exame-body">
+                    <div className="exame-metadados">
+                      <div>
+                        <strong>Data de Coleta/Liberação:</strong> {exame.dataRegistro.toLocaleDateString('pt-BR')}
+                      </div>
+                      <div>
+                        <strong>Solicitação:</strong> {exame.numeroSolicitacao ?? 'N/A'}
+                      </div>
+                      <div>
+                        <strong>Responsável:</strong> {exame.responsavelTecnico}
+                      </div>
+                      <div>
+                        <strong>Metodologia:</strong> {exame.metodologia}
+                      </div>
+                    </div>
+
+                    {exame.laudoConclusivo && (
+                      <div className="exame-laudo-box">
+                        <strong>Parecer Técnico:</strong> {exame.laudoConclusivo}
+                      </div>
+                    )}
+
+                    {exame.parametros && exame.parametros.length > 0 && (
+                      <table className="parametros-table">
+                        <thead>
+                          <tr>
+                            <th>Parâmetro</th>
+                            <th>Resultado</th>
+                            <th>Unidade</th>
+                            <th>Valor de Referência</th>
+                            <th>Situação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {exame.parametros.map((param, idx) => (
+                            <tr key={idx}>
+                              <td><strong>{param.nome}</strong></td>
+                              <td>{param.resultado}</td>
+                              <td>{param.unidadeMedida ?? '-'}</td>
+                              <td>{param.valorReferencia ?? '-'}</td>
+                              <td>
+                                <span className={param.situacao === 'NORMAL' ? 'badge-parametro-normal' : 'badge-parametro-alterado'}>
+                                  {param.situacao ?? 'NORMAL'}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Rodapé Acadêmico Institucional */}
         <footer className="meusus-footer">
           <p>
@@ -293,7 +496,7 @@ export function App() {
             Universidade de Brasília (UnB - FGA)
           </p>
           <p className="meusus-footer-sub">
-            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method)
+            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method - Versão 2: Artur Galdino & Giovani Coelho)
           </p>
         </footer>
       </main>
