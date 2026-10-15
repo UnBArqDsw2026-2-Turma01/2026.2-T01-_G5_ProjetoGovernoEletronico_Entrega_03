@@ -48,4 +48,4 @@ Teste de interface com React Testing Library e trecho do componente `ui/` ficam 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Implementação do núcleo do Strategy (CriterioDeBusca, BuscaDeEstabelecimentos), testes e documentação do mapeamento modelo-código | 15/10/2026 | *(preencher no commit)* |
+| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Implementação do núcleo do Strategy (CriterioDeBusca, BuscaDeEstabelecimentos), testes e documentação do mapeamento modelo-código | 15/10/2026 | [0403bc3](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/0403bc3b776fedea710dfa2aa03967dd4a183041) |
