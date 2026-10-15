@@ -120,15 +120,31 @@ A Versão 1 estabelece a correspondência formal entre a estrutura canônica do 
 
 ---
 
-### 6.2. Versão 2 — Diagrama de Classes Aplicado (Giovani Coelho) `[PLACEHOLDER]`
+### 6.2. Versão 2 — Diagrama de Classes Aplicado (Giovani Coelho)
 
-Evolução do diagrama apresentando a nomenclatura aplicada aos componentes do Meu SUS Digital com a adição da fatia de Exames Laboratoriais:
-- Nova classe de produto concreto `ResultadoExame` realizando `RegistroClinico`.
-- Nova classe criadora concreta `BuscadorDeExames` herdando de `BuscadorDeHistorico`.
+A Versão 2 evolui o diagrama de classes UML para o **Diagrama Aplicado**, incorporando ao catálogo do Meu SUS Digital a fatia de **Exames Laboratoriais** da Rede Nacional de Dados em Saúde (RNDS) e comprovando na prática o princípio *Open/Closed* (Aberto para Extensão, Fechado para Modificação):
 
 ![Diagrama de Classes GoF Criacional - Versão 2](../assets/subequipe01-padroes/modelagem/versao-2.png)
 
-<center><strong>Legenda:</strong> Figura 3 - Modelagem UML do Factory Method — Versão 2: Diagrama Aplicado com Vacinas e Exames (Autoria: Giovani Coelho - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 3 - Modelagem UML do Factory Method — Versão 2: Diagrama Aplicado com Vacinas e Exames Laboratoriais, estereótipos formais e princípios GRASP (Autoria: Giovani Coelho).</center>
+
+- **Mapeamento de Participantes no Domínio Clínico:**
+  - `Creator` --> `BuscadorDeHistorico`: Classe abstrata que declara o método fábrica abstrato `criarRegistroClinico()` e a operação de alto nível de processamento em lote `processarRegistros()`.
+  - `Product` --> `RegistroClinico`: Interface que padroniza o contrato amigável de exibição de todos os registros de saúde no sistema (*Protected Variations*).
+  - `ConcreteCreator 1` --> `BuscadorDeVacinas`: Criador concreto da fatia de Vacinas e Imunizações (V1).
+  - `ConcreteProduct 1` --> `CartaoVacina`: Produto concreto que encapsula dados de doses, imunobiológicos e lotes (V1).
+  - `ConcreteCreator 2` --> `BuscadorDeExames`: **Novo Criador Concreto da Versão 2**, especializado na busca de exames laboratoriais. Sobrescreve o Factory Method `criarRegistroClinico()` para converter a carga bruta de laudos em instâncias de `ResultadoExame` (*GRASP: Creator*).
+  - `ConcreteProduct 2` --> `ResultadoExame`: **Novo Produto Concreto da Versão 2**, representando laudos de Patologia Clínica, Hematologia, Bioquímica e Virologia. Encapsula metadados diagnósticos, metodologia analítica, parecer técnico e a lista de parâmetros clínicos com valores de referência.
+- **Elementos e Notação UML Utilizados:**
+  - Interface `<<interface>>` `RegistroClinico` com métodos e atributos públicos (`+`).
+  - Classe Abstrata `{abstract}` `BuscadorDeHistorico` com métodos abstratos em itálico/indicados com asterisco.
+  - Generalização/Herança (`--|>`) de `BuscadorDeHistorico` por `BuscadorDeVacinas` e `BuscadorDeExames` com linha sólida e ponta triangular oca (*GRASP: Polymorphism*).
+  - Realização (`..|>`) de `RegistroClinico` por `CartaoVacina` e `ResultadoExame` com linha tracejada e ponta triangular oca.
+  - Dependência de Instanciação (`..>`) com estereótipo `<<instantiates>>` associada ao princípio *GRASP: Creator* conectando cada criador ao seu respectivo produto.
+  - Dependência de Uso (`..>`) com estereótipo `<<uses>>` da classe base criadora para o produto abstrato.
+- **Conformidade com Princípios de Projeto:**
+  - **Open/Closed Principle (OCP):** A inclusão de exames laboratoriais foi realizada sem necessidade de alterar a interface `RegistroClinico` ou a classe abstrata `BuscadorDeHistorico`, demonstrando a extensibilidade inerente do padrão GoF.
+  - **Low Coupling & High Cohesion:** Cada criador concreto foca estritamente na validação e montagem do seu produto clínico, mantendo a camada de visualização desacoplada de estruturas internas de dados da RNDS.
 
 ---
 
@@ -184,3 +200,4 @@ Registros das atas de reunião e planejamento interno estão documentados em [Pl
 | `1.0` | 15/10/2026 | Elaboração completa da fundamentação teórica, contexto de aplicação no Meu SUS Digital, documentação detalhada da Versão 1 de modelagem UML (Artur Galdino) e estruturação dos placeholders formais para as Versões 2, 3 e 4 | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
 | `1.1` | 15/10/2026 | Padronização e harmonização da numeração sequencial contínua das Figuras 1 a 5 | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
 | `1.2` | 15/10/2026 | Enriquecimento da documentação com senso crítico de alternativas (Abstract Factory, Builder, Singleton), padrões GRASP (Creator, Low Coupling, High Cohesion, Protected Variations), rastreabilidade com Diagramas de Pacotes e Colaboração, e nomenclatura de versões (Genérico, Aplicado, Refinado) | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
+| `2.0` | 15/10/2026 | Documentação da Versão 2 de modelagem UML (Giovani Coelho): Diagrama de Classes Aplicado com a inclusão de Exames Laboratoriais (BuscadorDeExames e ResultadoExame), mapeamento de papéis GoF, notação UML e princípios GRASP | [Giovani Coelho](https://github.com/Gotc2607) | [`775ef48`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/775ef48) |
