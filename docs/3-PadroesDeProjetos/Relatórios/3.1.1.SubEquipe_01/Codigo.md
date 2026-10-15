@@ -9,6 +9,13 @@ O mini-projeto independente da SubEquipe 01 está localizado no diretório [`cod
 - [`code/criacional/src/ui/`](file:///code/criacional/src/ui/): Componentes visuais em React com estilização CSS fiel ao design system oficial do **Meu SUS Digital** e do **Gov.br**.
 - [`code/criacional/src/padrao/__tests__/`](file:///code/criacional/src/padrao/__tests__/): Suíte de testes unitários automatizados com **Vitest**.
 
+### 1.1. Princípios GRASP Aplicados no Código
+
+A distribuição de responsabilidades nas classes foi pautada diretamente pelos padrões **GRASP** (*General Responsibility Assignment Software Patterns*):
+- **Creator:** A responsabilidade de instanciar `CartaoVacina` foi delegada exclusivamente ao criador concreto `BuscadorDeVacinas`, pois este possui o contexto dos dados brutos recebidos da RNDS para validar e compor o registro clínico.
+- **Low Coupling (Baixo Acoplamento) & High Cohesion (Alta Coesão):** O núcleo em `src/padrao/` é estritamente isolado de dependências visuais, bibliotecas de terceiros ou frameworks. A camada de UI (`App.tsx`) interage somente com o contrato abstrato de alto nível, permitindo que novas categorias clínicas sejam plugadas sem modificar o cliente.
+- **Protected Variations (Variações Protegidas):** A interface `RegistroClinico` atua como uma barreira protetora para o sistema contra divergências e formatos variantes de dados providos por serviços de saúde.
+
 ---
 
 ## 2. Planejamento das Versões de Código
@@ -24,7 +31,6 @@ Para atender ao critério de divisão equilibrada e trabalho individual avaliáv
 
 ---
 
-> [!NOTE]
 > **Aviso sobre as imagens do código:** Todas as figuras desta seção apresentam **apenas trechos ilustrativos e recortes parciais** do código-fonte para destacar a estrutura do padrão GoF Factory Method. O código completo, tipado e executável está disponível diretamente nos arquivos do diretório [`code/criacional/`](file:///code/criacional/).
 
 ---
@@ -161,3 +167,4 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
 | `0.1` | 14/10/2026 | Estruturação do template inicial de documentação de código | [Gustavo Fornaciari](https://github.com/GUGOFO) | SubEquipe 01 |
 | `1.0` | 15/10/2026 | Implementação da Versão 1: Núcleo abstrato do Factory Method, fatia de Vacinas, 11 testes unitários com Vitest, interface Meu SUS Digital e estruturação dos placeholders V2, V3 e V4 com fotos | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
 | `1.1` | 15/10/2026 | Ajuste nas legendas e notas das figuras indicando explicitamente trechos parciais de código e padronização da numeração sequencial das Figuras 1 a 8 | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
+| `1.2` | 15/10/2026 | Documentação dos princípios GRASP (Creator, Low Coupling, High Cohesion, Protected Variations) aplicados à arquitetura do código | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
