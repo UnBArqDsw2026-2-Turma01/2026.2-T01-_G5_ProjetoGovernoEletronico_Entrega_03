@@ -17,4 +17,4 @@ Qualidade: Excelente, Boa, Regular, Ruim ou Nula. Cada comprobatório deve ser u
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Registra comprobatório do foco Código (PR #16) | 15/10/2026 | *(preencher no commit)* |
+| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Registra comprobatório do foco Código (PR #16) | 15/10/2026 | [8b79848](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/8b7984897225e4e0af5feb5e5c88682ce413a20a) |
