@@ -66,6 +66,13 @@ Ao selecionar o cartão de vacinas, o usuário é direcionado para a visualizaç
 
 <center><strong>Legenda:</strong> Figura 4 - Visualização da Carteira de Vacinação Digital com detalhamento de doses e acionamento interativo do Factory Method (Autoria: Artur Galdino).</center>
 
+### 3.5. Embasamento Teórico da Execução e Testes (Versão 1)
+
+A estratégia de testes e execução da Versão 1 apoia-se em conceitos consolidados de verificação e validação de software:
+- **Pirâmide de Testes (Fowler, 2012; Cohn, 2009):** Priorização de testes unitários rápidos e determinísticos na base da pirâmide. O núcleo do Factory Method é validado diretamente em memória sem necessidade de renderizar o DOM ou subir servidores HTTP.
+- **Padrão Estrutural AAA (Arrange-Act-Assert, Wake, 2001):** Cada caso de teste segue a divisão clara em três etapas: preparação dos dados de entrada (payload simulado da RNDS), execução da ação (chamada ao Factory Method) e verificação das propriedades do objeto criado (`toBeInstanceOf(CartaoVacina)`).
+- **Hermeticidade e Reprodutibilidade:** Os testes são 100% isolados de APIs externas e de rede, garantindo que o build e a execução sejam reproduzíveis em qualquer máquina local ou esteira de CI/CD sem dependência de credenciais Gov.br ativas.
+
 ---
 
 ## 4. Versão 2 — Evidências de Execução de Exames (Giovani Coelho)
@@ -93,6 +100,18 @@ A interface gráfica do Meu SUS Digital foi expandida para contemplar o catálog
 
 <center><strong>Legenda:</strong> Figura 6 - Interface do Meu SUS Digital em execução exibindo os laudos de exames laboratoriais processados via Factory Method (Autoria: Giovani Coelho).</center>
 
+### 4.3. Embasamento Teórico da Execução e Testes (Versão 2)
+
+A suíte expandida de execução e testes da Versão 2 incorpora os seguintes princípios teóricos:
+- **Princípios F.I.R.S.T. para Testes Unitários (Martin, 2008):**
+  - *Fast (Rápido):* A suíte completa de 27 testes é executada pelo Vitest em aproximadamente 2 segundos.
+  - *Independent (Independente):* Nenhum teste compartilha estado mutável global ou depende da ordem de execução de outros testes.
+  - *Repeatable (Repetível):* Execução determinística em qualquer ambiente, sem dependência de banco de dados ou variáveis de ambiente voláteis.
+  - *Self-Validating (Auto-validável):* Saídas booleanas explícitas aprovado/reprovado sem necessidade de inspeção manual de logs.
+  - *Timely (Oportuno):* Construídos em conjunto com as classes do padrão, guiando o refinamento de interfaces e contratos clínicos.
+- **Testes de Integração Centrados no Usuário (Dodds, 2018):** Nos testes de interface em `App.test.tsx` com React Testing Library, a verificação não inspeciona detalhes internos de implementação ou estado do React, mas simula o comportamento real do cidadão (navegar até a aba de Exames e clicar no acionamento dinâmico do Dock GoF), validando a integração completa entre a camada de apresentação e o Factory Method.
+- **Teste de Regressão e Validação de Contrato:** A adição dos 16 novos testes da Versão 2 não apenas comprovou o correto funcionamento da fatia de exames, mas atuou como teste de regressão garantindo que os 11 testes da fatia de vacinas (V1) continuassem 100% aprovados, assegurando a integridade contínua do padrão GoF.
+
 ---
 
 ## 5. Versão 3 — Evidências de Execução de Medicamentos (João Leles) `[PLACEHOLDER]`
@@ -117,9 +136,18 @@ Demonstração da execução do histórico integrado e do seletor dinâmico:
 
 <center><strong>Legenda:</strong> Figura 8 - Evidência de testes consolidados e visão unificada do histórico de saúde em execução (Autoria: Nicole Jovita - Em breve).</center>
 
+## 7. Bibliografia
+
+1. FOWLER, Martin. **TestPyramid**. MartinFowler.com, 2012. Disponível em: <https://martinfowler.com/bliki/TestPyramid.html>. Acesso em: 15 out. 2026.
+2. COHN, Mike. **Succeeding with Agile: Software Development Using Scrum**. Boston: Addison-Wesley, 2009.
+3. MARTIN, Robert C. **Clean Code: A Handbook of Agile Software Craftsmanship**. Upper Saddle River: Prentice Hall, 2008.
+4. BECK, Kent. **Test Driven Development: By Example**. Boston: Addison-Wesley, 2002.
+5. WAKE, William C. **Refactoring Workbook**. Boston: Addison-Wesley, 2001.
+6. DODDS, Kent C. **Testing Implementation Details**. KentCDodds.com, 2018. Disponível em: <https://kentcdodds.com/blog/testing-implementation-details>. Acesso em: 15 out. 2026.
+
 ---
 
-## 7. Histórico de Versionamento
+## 8. Histórico de Versionamento
 
 | Versão | Data | Descrição / Contribuição | Autor(es) | Commit(s) |
 | :---: | :---: | :--- | :--- | :--- |
@@ -127,3 +155,4 @@ Demonstração da execução do histórico integrado e do seletor dinâmico:
 | `1.0` | 15/10/2026 | Registro das evidências visuais de execução da Versão 1 (Vitest, build e telas do Meu SUS Digital), substituição de saídas de texto por fotos e inclusão de placeholders estruturados para V2, V3 e V4 | [Artur Galdino](https://github.com/ArturFGaldino) | [`d6cfdcd`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d6cfdcd), [`4f6e55c`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4f6e55c) |
 | `1.1` | 15/10/2026 | Padronização e harmonização das legendas e da numeração sequencial das Figuras 1 a 7 | [Artur Galdino](https://github.com/ArturFGaldino) | [`4f6e55c`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4f6e55c) |
 | `2.0` | 15/10/2026 | Registro das evidências de execução da Versão 2: 27 testes aprovados no Vitest (16 novos testes da fatia de exames e interface), build estático e captura da interface de laudos laboratoriais do Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`f8166ef`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f8166ef), [`4bdef88`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4bdef88) |
+| `2.1` | 15/10/2026 | Inclusão de embasamento teórico de testes e execução para as Versões 1 e 2 (Pirâmide de Testes, Padrão AAA, Princípios FIRST, Testes Centrados no Usuário) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
