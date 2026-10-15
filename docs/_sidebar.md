@@ -20,6 +20,7 @@
             - [Diagrama de Estados](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaEstados.md)
             - [Diagrama de Sequência](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaSequencia.md)
     - [Entrega 3](./Projeto/ExtrasEntrega3/README.md)
+        - [Padrão de Testes (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoDeTestes.md)
 
 
 - **Atas**
@@ -48,7 +49,7 @@
         - [Atas Grupo](./Atas/Entrega3/AtasGerais/README.md)
             - [Ata - 13 de Outubro](./Atas/Entrega3/AtasGerais/Ata-13-10.md)
         - [Atas SubEquipe 1](./Atas/Entrega3/AtasSub1/README.md)
-            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub1/Ata-DD-MM.md)
+            - [Ata - 14 de Outubro](./Atas/Entrega3/AtasSub1/Ata-14-10.md)
         - [Atas SubEquipe 2](./Atas/Entrega3/AtasSub2/README.md)
             - [Ata - 14 de Outubro](./Atas/Entrega3/AtasSub2/Ata-14-10.md)
         - [Atas SubEquipe 3](./Atas/Entrega3/AtasSub3/README.md)
