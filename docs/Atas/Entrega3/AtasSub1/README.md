@@ -17,7 +17,7 @@ Esta pasta contém o registro das atas de reuniões e alinhamentos internos espe
 
 | Data | Ata | Participantes | Principais Definições |
 | -- | -- | -- | -- |
-| 14/10/2026 | [Ata - 14 de Outubro](./Ata-14-10.md) | Giovani, Nicole e João Leles | Escopo do GoF Criacional, divisão em versões completas (V1 a V4) feitas em sequência, testes como parte do código, experimentos com IA e iniciativas extras |
+| 14/10/2026 | [Ata - 14 de Outubro](/Atas/Entrega3/AtasSub1/Ata-14-10.md) | Giovani, Nicole e João Leles | Escopo do GoF Criacional, divisão em versões completas (V1 a V4) feitas em sequência, testes como parte do código, experimentos com IA e iniciativas extras |
 
 ### Resumo da Reunião de 14/10
 
