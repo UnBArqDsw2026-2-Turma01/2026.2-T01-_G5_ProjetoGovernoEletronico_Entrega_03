@@ -87,13 +87,11 @@ O padrão foi aplicado no subsistema de **Histórico de Saúde e Emissão de Doc
 
 | Artefato Relacionado | Referência / Link | Relação com o Padrão GoF e Princípios GRASP |
 | :--- | :--- | :--- |
-| **Fluxograma de Processo (Entrega 2)** | [fluxograma.md](./fluxograma.md) | O Factory Method é acionado na etapa posterior à verificação de consentimento LGPD, processando a carga de dados brutos retornada pela RNDS. |
-| **Diagrama de Classes da Modelagem (Entrega 2)** | [2.1.2.DiagramaDeClasses.md](../../2-Modelagem/2.1.2.DiagramaDeClasses.md) | Evolução das entidades preliminares de saúde para um design desacoplado com fábricas especializadas e polimorfismo. |
-| **Diagrama de Pacotes (Entrega 2)** | [2.1.1.DiagramaDePacotes.md](../../2-Modelagem/2.1.1.DiagramaDePacotes.md) | Fundamenta a separação em camadas arquiteturais (UI, Domínio Clínico e Núcleo do Padrão), garantindo Baixo Acoplamento e Alta Coesão. |
-| **Diagrama de Colaboração (Entrega 2)** | [2.1.4.DiagramaDeColaboracao.md](../../2-Modelagem/2.1.4.DiagramaDeColaboracao.md) | Mapeia o fluxo de mensagens entre o cidadão autenticado, o controlador de histórico e a RNDS no momento da busca. |
-| **Requisitos de Negócio e LGPD (Entrega 1)** | [1.1.Requisitos.md](../../1-DesenhoDeSoftware/1.1.Requisitos.md) | Garante a segregação e integridade dos dados sensíveis de saúde ao manipular cada categoria com seu produto especializado. |
-| **Código Fonte do Padrão** | [Codigo.md](./Codigo.md) | Implementação executável das classes modeladas no diagrama. |
-| **Execução e Testes** | [Execucao.md](./Execucao.md) | Validação da instanciação dinâmica e dos testes automatizados. |
+| **Fluxograma de Processo (Entrega 2)** | [fluxograma.md](docs/3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md) | O Factory Method é acionado na etapa posterior à verificação de consentimento LGPD, processando a carga de dados brutos retornada pela RNDS. |
+| **Diagrama de Pacotes (Entrega 2)** | [2.1.1.DiagramaDePacotes.md](../../../2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md) | Fundamenta a separação em camadas arquiteturais (UI, Domínio Clínico e Núcleo do Padrão), garantindo Baixo Acoplamento e Alta Coesão. |
+| **Diagrama de Colaboração (Entrega 2)** | [2.1.4.DiagramaDeColaboracao.md](../../../2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md) | Mapeia o fluxo de mensagens entre o cidadão autenticado, o controlador de histórico e a RNDS no momento da busca. |
+| **Código Fonte e Pull Request** | [Codigo.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Codigo.md), [PR #19](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/19) | Implementação executável das classes modeladas no diagrama e Pull Request da Versão 1. |
+| **Execução e Testes** | [Execucao.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Execucao.md) | Validação da instanciação dinâmica e dos testes automatizados. |
 
 ---
 
@@ -163,7 +161,7 @@ A SubEquipe 01 adotou uma metodologia iterativa e incremental de fatiamento arqu
 2. **Atuação nos Três Focos Obrigatórios:** Cada membro é diretamente responsável pelos 3 focos de sua versão: **Modelagem UML**, **Código Fonte** e **Execução/Evidências**.
 3. **Padrão de Qualidade e Isolamento:** O código foi construído em repositório desacoplado (`code/criacional/`), garantindo execução offline e testes automatizados sem acoplamento a serviços externos.
 
-Registros das atas de reunião e planejamento interno estão documentados em [Planejamento de Issues](docs/3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/PlanejamentoIssues.md).
+Registros das atas de reunião e planejamento interno estão documentados em [Planejamento de Issues](#/3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/PlanejamentoIssues).
 
 ---
 
@@ -179,10 +177,10 @@ Registros das atas de reunião e planejamento interno estão documentados em [Pl
 
 ## 9. Histórico de Versionamento
 
-| Versão | Data | Descrição / Contribuição | Autor(es) | Revisor(es) |
+| Versão | Data | Descrição / Contribuição | Autor(es) | Commit(s) |
 | :---: | :---: | :--- | :--- | :--- |
-| `0.1` | 06/10/2026 | Início do template do trabalho | [Gustavo Fornaciari](https://github.com/GUGOFO) | SubEquipe 01 |
-| `0.2` | 14/10/2026 | Template mais detalhado de padrões GoF | [Gustavo Fornaciari](https://github.com/GUGOFO) | SubEquipe 01 |
-| `1.0` | 15/10/2026 | Elaboração completa da fundamentação teórica, contexto de aplicação no Meu SUS Digital, documentação detalhada da Versão 1 de modelagem UML (Artur Galdino) e estruturação dos placeholders formais para as Versões 2, 3 e 4 | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
-| `1.1` | 15/10/2026 | Padronização e harmonização da numeração sequencial contínua das Figuras 1 a 5 | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
-| `1.2` | 15/10/2026 | Enriquecimento da documentação com senso crítico de alternativas (Abstract Factory, Builder, Singleton), padrões GRASP (Creator, Low Coupling, High Cohesion, Protected Variations), rastreabilidade com Diagramas de Pacotes e Colaboração, e nomenclatura de versões (Genérico, Aplicado, Refinado) | [Artur Galdino](https://github.com/ArturFGaldino) | SubEquipe 01 |
+| `0.1` | 06/10/2026 | Início do template do trabalho | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`18b6195`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/18b61958e419b67f95469d4a704ddcb9629b9803) |
+| `0.2` | 14/10/2026 | Template mais detalhado de padrões GoF | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`7c66f78`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
+| `1.0` | 15/10/2026 | Elaboração completa da fundamentação teórica, contexto de aplicação no Meu SUS Digital, documentação detalhada da Versão 1 de modelagem UML (Artur Galdino) e estruturação dos placeholders formais para as Versões 2, 3 e 4 | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
+| `1.1` | 15/10/2026 | Padronização e harmonização da numeração sequencial contínua das Figuras 1 a 5 | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
+| `1.2` | 15/10/2026 | Enriquecimento da documentação com senso crítico de alternativas (Abstract Factory, Builder, Singleton), padrões GRASP (Creator, Low Coupling, High Cohesion, Protected Variations), rastreabilidade com Diagramas de Pacotes e Colaboração, e nomenclatura de versões (Genérico, Aplicado, Refinado) | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
