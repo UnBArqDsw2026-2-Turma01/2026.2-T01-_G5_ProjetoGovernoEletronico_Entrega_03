@@ -95,7 +95,7 @@ body {
   min-width: 0;
 }
 
-/* HEADER SUPERIOR (Olá, Artur) */
+/* HEADER SUPERIOR (Olá, Usuário) */
 .meusus-top-header {
   display: flex;
   justify-content: space-between;
@@ -436,7 +436,7 @@ body {
   color: #787579;
 }
 
-/* FATIA DE EXAMES LABORATORIAIS (Versão 2 - Giovani Coelho) */
+/* FATIA DE EXAMES LABORATORIAIS (Versão 2) */
 .exames-container {
   padding: 1rem 1.5rem;
   max-width: 680px;

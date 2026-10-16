@@ -3,8 +3,8 @@ import { BuscadorDeVacinas } from './padrao/BuscadorDeVacinas';
 import { BuscadorDeExames } from './padrao/BuscadorDeExames';
 import type { CartaoVacina } from './padrao/CartaoVacina';
 import type { ResultadoExame } from './padrao/ResultadoExame';
-import { vacinasOficiaisArturMock } from './dominio/vacinasMock';
-import { examesOficiaisGiovaniMock } from './dominio/examesMock';
+import { vacinasMock } from './dominio/vacinasMock';
+import { examesMock } from './dominio/examesMock';
 import './ui/meuSus.css';
 
 type TelaAtiva = 'primeiraPagina' | 'detalheCarteira' | 'exames';
@@ -24,11 +24,11 @@ export function App() {
 
   // Listas de instâncias concretas criadas em lote pelo Factory Method (processarRegistros)
   const [vacinasInstanciadas, setVacinasInstanciadas] = useState<CartaoVacina[]>(() => {
-    return buscadorVacinas.processarRegistros(vacinasOficiaisArturMock) as CartaoVacina[];
+    return buscadorVacinas.processarRegistros(vacinasMock) as CartaoVacina[];
   });
 
   const [examesInstanciados, setExamesInstanciados] = useState<ResultadoExame[]>(() => {
-    return buscadorExames.processarRegistros(examesOficiaisGiovaniMock) as ResultadoExame[];
+    return buscadorExames.processarRegistros(examesMock) as ResultadoExame[];
   });
 
   // Demonstração interativa do Factory Method em tempo de execução para Vacinas (V1)
@@ -61,7 +61,7 @@ export function App() {
     );
   };
 
-  // Demonstração interativa do Factory Method em tempo de execução para Exames (V2 - Giovani Coelho)
+  // Demonstração interativa do Factory Method em tempo de execução para Exames (Versão 2)
   const handleAdicionarNovoExame = () => {
     const catalogoNovos = [
       {
@@ -212,12 +212,12 @@ export function App() {
         {/* Header Superior Oficial (Olá, Usuário) */}
         <div className="meusus-top-header">
           <div className="box-welcome">
-            Olá, <b>Giovani Coelho</b>
+            Olá, <b>Usuário</b>
           </div>
           <div className="box-actions">
             <div className="box-card">
               <div className="box-info">
-                <label>Giovani Coelho</label>
+                <label>Usuário</label>
                 <span>CPF: ***.325.000-**</span>
               </div>
               <div className="box-foto">
@@ -376,7 +376,7 @@ export function App() {
         )}
 
         {/* ======================================================== */}
-        {/* TELA 3: FATIA DE EXAMES LABORATORIAIS (Versão 2 - Giovani) */}
+        {/* TELA 3: FATIA DE EXAMES LABORATORIAIS (Versão 2) */}
         {/* ======================================================== */}
         {telaAtual === 'exames' && (
           <div>
@@ -496,7 +496,7 @@ export function App() {
             Universidade de Brasília (UnB - FGA)
           </p>
           <p className="meusus-footer-sub">
-            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method - Versão 2: Artur Galdino & Giovani Coelho)
+            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method - Versão 2)
           </p>
         </footer>
       </main>

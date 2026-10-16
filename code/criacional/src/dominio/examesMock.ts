@@ -1,6 +1,6 @@
 /**
  * Dados simulados do histórico de exames laboratoriais do cidadão na RNDS (Rede Nacional de Dados em Saúde).
- * Modelados com base nos padrões do DATASUS e laudos reais do Meu SUS Digital para a Versão 2 (Giovani Coelho).
+ * Modelados com base nos padrões do DATASUS e laudos reais do Meu SUS Digital para a Versão 2.
  */
 
 export interface ExameMockItem {
@@ -25,9 +25,9 @@ export interface ExameMockItem {
   [key: string]: unknown;
 }
 
-export const examesOficiaisGiovaniMock: ExameMockItem[] = [
+export const examesOficiaisMock: ExameMockItem[] = [
   {
-    id: 'exm-giovani-01',
+    id: 'exm-usr-01',
     nomeExame: 'Hemograma Completo com Contagem de Plaquetas',
     categoriaExame: 'Hematologia',
     laboratorio: 'Laboratório Central de Saúde Pública do DF (LACEN/DF)',
@@ -47,7 +47,7 @@ export const examesOficiaisGiovaniMock: ExameMockItem[] = [
     ],
   },
   {
-    id: 'exm-giovani-02',
+    id: 'exm-usr-02',
     nomeExame: 'Glicemia de Jejum',
     categoriaExame: 'Bioquímica Clínica',
     laboratorio: 'Laboratório Regional de Taguatinga - SES/DF',
@@ -63,7 +63,7 @@ export const examesOficiaisGiovaniMock: ExameMockItem[] = [
     ],
   },
   {
-    id: 'exm-giovani-03',
+    id: 'exm-usr-03',
     nomeExame: 'Perfil Lipídico / Lipidograma Completo',
     categoriaExame: 'Bioquímica Clínica',
     laboratorio: 'Laboratório Regional de Taguatinga - SES/DF',
@@ -82,7 +82,7 @@ export const examesOficiaisGiovaniMock: ExameMockItem[] = [
     ],
   },
   {
-    id: 'exm-giovani-04',
+    id: 'exm-usr-04',
     nomeExame: 'Painel Molecular RT-PCR para Vírus Respiratórios',
     categoriaExame: 'Biologia Molecular / Virologia',
     laboratorio: 'Laboratório Central de Saúde Pública do DF (LACEN/DF)',
@@ -101,4 +101,4 @@ export const examesOficiaisGiovaniMock: ExameMockItem[] = [
   },
 ];
 
-export const examesMock = examesOficiaisGiovaniMock;
+export const examesMock = examesOficiaisMock;
