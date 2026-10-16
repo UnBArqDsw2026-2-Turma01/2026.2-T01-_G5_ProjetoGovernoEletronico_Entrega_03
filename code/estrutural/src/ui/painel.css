@@ -44,38 +44,7 @@ body {
 }
 
 .gof-contagem {
-  margin: 0 0 12px;
-}
-
-.gof-busca {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-
-.gof-busca input {
-  flex: 1 1 220px;
-  padding: 8px 10px;
-  border: 1px solid var(--borda);
-  border-radius: 6px;
-  font: inherit;
-}
-
-.gof-busca button {
-  padding: 8px 16px;
-  border: 0;
-  border-radius: 6px;
-  background: var(--azul);
-  color: #fff;
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.gof-resultado {
-  min-height: 1.5em;
-  margin-top: 10px;
+  margin: 0;
 }
 
 .secao {

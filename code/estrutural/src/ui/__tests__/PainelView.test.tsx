@@ -1,6 +1,5 @@
 // Autoria: Victor Leandro (@Afrontoso) — testes da interface do painel (commit cf84aac)
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import { criarPainelSimulado } from '../../dominio/painelSimulado'
 import { PainelView } from '../PainelView'
@@ -26,24 +25,5 @@ describe('PainelView', () => {
     render(<PainelView painel={painel} />)
 
     expect(screen.getByText(String(painel.contarElementos()))).toBeInTheDocument()
-  })
-
-  it('encontra uma seção aninhada pelo id usando buscarPorId()', async () => {
-    render(<PainelView painel={criarPainelSimulado()} />)
-
-    await userEvent.type(screen.getByLabelText('buscarPorId()'), 'mais-servicos')
-    await userEvent.click(screen.getByRole('button', { name: 'Buscar' }))
-
-    expect(screen.getByRole('status')).toHaveTextContent('Encontrado: Mais serviços')
-    expect(screen.getByRole('status')).toHaveTextContent('Seção (composto), com 3 elemento(s)')
-  })
-
-  it('avisa quando o id não existe', async () => {
-    render(<PainelView painel={criarPainelSimulado()} />)
-
-    await userEvent.type(screen.getByLabelText('buscarPorId()'), 'inexistente')
-    await userEvent.click(screen.getByRole('button', { name: 'Buscar' }))
-
-    expect(screen.getByRole('status')).toHaveTextContent('Nenhum elemento com o id inexistente')
   })
 })
