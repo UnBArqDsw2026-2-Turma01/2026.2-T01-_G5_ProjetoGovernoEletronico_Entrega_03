@@ -75,5 +75,5 @@ SERRANO, Milene. **Arquitetura e desenho de software: aula GoFs estruturais**. U
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Adição do guia de GoF estrutural — Parte 1 | 16/10/2026 | |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Adição do guia de GoF Estrutural | 16/10/2026 | [b237eef](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b237eef) |
 
