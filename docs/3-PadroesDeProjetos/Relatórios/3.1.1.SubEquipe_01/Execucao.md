@@ -123,26 +123,25 @@ Com a fatia de Medicamentos e Farmácia Popular, a suíte passou a contar com **
 - [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts): 7 testes validando herança, sobreposição do Factory Method, processamento em lote, payloads nulos/parciais e receitas com múltiplos itens.
 - Testes de regressão das Versões 1 e 2 (vacinas, exames e interface): 27 testes, todos mantidos aprovados.
 
-```bash
-cd code/criacional
-npm install
-npx vitest run   # Test Files 7 passed (7) | Tests 43 passed (43)
-npx tsc --noEmit # sem erros de tipagem
-```
-
 ![Execução dos Testes Automatizados Vitest - V3](../assets/subequipe01-padroes/execucao/v3-vitest-testes.png)
 
 <center><strong>Legenda:</strong> Figura 7 - Evidência de execução dos 43 testes com aprovação de 100% no Vitest (Autoria: João Leles).</center>
 
-### 5.2. Interface Gráfica — Receitas e Dispensações da Farmácia Popular
+### 5.2. Validação de Build e Checagem Estática de Tipos
+
+![Build de Produção e Tipagem estática - V3](../assets/subequipe01-padroes/execucao/v3-vitest-build.png)
+
+<center><strong>Legenda:</strong> Figura 8 - Evidência do build estático de produção e checagem de tipos compilado com sucesso (Autoria: João Leles).</center>
+
+### 5.3. Interface Gráfica — Receitas e Dispensações da Farmácia Popular
 
 A interface do Meu SUS Digital ganhou a aba **Medicamentos**, que exibe as dispensações do cidadão (anti-hipertensivos, antidiabéticos, estatinas etc.) com estabelecimento, prescritor, itens, posologia e quantidade. O botão `⚡ +Medicamento (V3)` no Dock GoF aciona em tempo de execução o método fábrica [`BuscadorDeMedicamentos.criarRegistroClinico()`](file:///code/criacional/src/padrao/BuscadorDeMedicamentos.ts), instanciando novas receitas dinamicamente.
 
 ![Execução da Fatia de Medicamentos](../assets/subequipe01-padroes/execucao/v3-execucao-medicamentos.png)
 
-<center><strong>Legenda:</strong> Figura 8 - Interface do Meu SUS Digital exibindo as dispensações de medicamentos processadas via Factory Method (Autoria: João Leles).</center>
+<center><strong>Legenda:</strong> Figura 9 - Interface do Meu SUS Digital exibindo as dispensações de medicamentos processadas via Factory Method (Autoria: João Leles).</center>
 
-### 5.3. Embasamento Teórico da Execução e Testes (Versão 3)
+### 5.4. Embasamento Teórico da Execução e Testes (Versão 3)
 
 - **Padrão AAA (Beck, 2002):** Todos os 16 novos testes seguem Arrange-Act-Assert.
 - **Teste de Regressão:** A inclusão da terceira fatia não quebrou nenhum dos 27 testes anteriores, comprovando empiricamente o princípio Aberto/Fechado do Factory Method.
