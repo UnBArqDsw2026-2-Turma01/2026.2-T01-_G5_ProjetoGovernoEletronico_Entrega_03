@@ -107,7 +107,21 @@ Ficaram para as próximas versões: associar as seções e os cartões às telas
 
 ### Versão 3
 
-**A desenvolver.** Refinar a modelagem conforme o feedback da V2 e a implementação inicial. Conferir se as operações recursivas e a hierarquia correspondem ao comportamento esperado.
+![Diagrama UML de classes da V3 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V3.png)
+
+**Legenda:** Figura 3 — Diagrama UML do padrão Composite com foco na extensibilidade da interface do Meu SUS Digital. A versão inclui duas novas classes concretas, `MiniAppLeaf` e `CardFaqLeaf`, que permitem representar diferentes componentes visuais sem alterar a estrutura das classes existentes.
+
+#### O que foi feito
+
+Na V3, o diagrama foi ampliado com duas novas classes folha (`Leaf`), aproximando a estrutura do padrão Composite dos componentes presentes na interface do Meu SUS Digital e facilitando sua implementação com React e TypeScript.
+
+- **`MiniAppLeaf`**: representa os cartões dos miniaplicativos disponíveis na plataforma, como *Acolhe Mais+*, *Peso Saudável* e *Equidade SUS*. Seus atributos são `nomeApp`, `descricao` e `icone`.
+
+- **`CardFaqLeaf`**: representa os cartões de perguntas frequentes, que apresentam dúvidas e respostas para orientar os usuários. Seus atributos são `pergunta`, `resposta` e `categoria`.
+
+A inclusão dessas classes demonstra como o padrão Composite permite adicionar novos tipos de componentes sem precisar modificar as classes que já existem. Tanto `Secao` quanto `Dashboard` continuam trabalhando com os elementos por meio da interface comum `ElementoDeTela`, mantendo a organização e a flexibilidade da estrutura.
+
+Dessa forma, a V3 evidencia o Princípio Aberto/Fechado (OCP), segundo o qual o sistema deve permitir a inclusão de novas funcionalidades sem exigir alterações constantes no código existente. 
 
 ### Versão 4
 
@@ -141,6 +155,7 @@ A primeira versão foi mantida em nível conceitual, usando um diagrama de class
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 | 15/10/2026 | [d0c9c93](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d0c9c93a69658413b70bb7395db5c5d9bdd26a84) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 2 | 15/10/2026 | [1aed3f4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/1aed3f4e382a5fc9601bc0377684a12e2586e436) |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Versão 3 | 16/10/2026 | |
 
 ---
 
