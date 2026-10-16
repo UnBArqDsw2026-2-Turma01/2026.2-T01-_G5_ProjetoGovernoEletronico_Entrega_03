@@ -154,15 +154,19 @@ A Versão 2 evolui o diagrama de classes UML para o **Diagrama Aplicado**, incor
 
 ---
 
-### 6.3. Versão 3 — Diagrama Refinado (João Leles) `[PLACEHOLDER]`
+### 6.3. Versão 3 — Diagrama Refinado (João Leles)
 
-Refinamento do modelo após validação da implementação e integração da fatia de Medicamentos e Farmácia Popular:
-- Nova classe de produto concreto `ReceitaMedicamento` realizando `RegistroClinico`.
-- Nova classe criadora concreta `BuscadorDeMedicamentos` herdando de `BuscadorDeHistorico`.
+A Versão 3 refina o diagrama após a validação da implementação, incorporando a fatia de **Medicamentos e Farmácia Popular** como terceira hierarquia paralela Creator/Product:
+
+- **`ReceitaMedicamento` «ConcreteProduct»**: realiza `RegistroClinico` (`tipo = 'MEDICAMENTO'`) e compõe `ItemMedicamento[]` (agregação 1..*).
+- **`BuscadorDeMedicamentos` «ConcreteCreator»**: herda de `BuscadorDeHistorico` e sobrepõe `criarRegistroClinico()`, com dependência «create» para `ReceitaMedicamento`.
+- **Cliente (`App.tsx`)**: continua dependendo apenas das abstrações, agora com três criadores concretos.
+
+- **Embasamento Teórico (Versão 3):** a terceira extensão sem alteração do núcleo confirma o OCP; a substituibilidade de `ReceitaMedicamento` por `RegistroClinico` atende ao LSP; e a atribuição da criação ao `BuscadorDeMedicamentos`, que detém os dados de inicialização, segue o GRASP *Creator* (Larman, 2004).
 
 ![Diagrama de Classes GoF Criacional - Versão 3](../assets/subequipe01-padroes/modelagem/versao-3.png)
 
-<center><strong>Legenda:</strong> Figura 4 - Modelagem UML do Factory Method — Versão 3: Diagrama Refinado com Medicamentos (Autoria: João Leles - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 4 - Modelagem UML do Factory Method — Versão 3: Diagrama Refinado com Medicamentos (Autoria: João Leles).</center>
 
 ---
 
@@ -211,3 +215,4 @@ Registros das atas de reunião e planejamento interno estão documentados em [Pl
 | `1.2` | 15/10/2026 | Enriquecimento da documentação com senso crítico de alternativas (Abstract Factory, Builder, Singleton), padrões GRASP (Creator, Low Coupling, High Cohesion, Protected Variations), rastreabilidade com Diagramas de Pacotes e Colaboração, e nomenclatura de versões (Genérico, Aplicado, Refinado) | [Artur Galdino](https://github.com/ArturFGaldino) | [`af87f42`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/af87f42) |
 | `2.0` | 15/10/2026 | Documentação da Versão 2 de modelagem UML (Giovani Coelho): Diagrama de Classes Aplicado com a inclusão de Exames Laboratoriais (BuscadorDeExames e ResultadoExame), mapeamento de papéis GoF, notação UML e princípios GRASP | [Giovani Coelho](https://github.com/Gotc2607) | [`775ef48`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/775ef48) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico aprofundado para as Versões 1 e 2 (Gamma et al., OCP, LSP, padrões GRASP) e expansão das referências bibliográficas | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
+| `3.0` | 16/10/2026 | Documentação da Versão 3 de modelagem UML: Diagrama Refinado com Medicamentos (BuscadorDeMedicamentos e ReceitaMedicamento) e embasamento teórico | [João Leles](https://github.com/joaoleless) | - |

@@ -114,15 +114,38 @@ A suíte expandida de execução e testes da Versão 2 incorpora os seguintes pr
 
 ---
 
-## 5. Versão 3 — Evidências de Execução de Medicamentos (João Leles) `[PLACEHOLDER]`
+## 5. Versão 3 — Evidências de Execução de Medicamentos (João Leles)
 
-Demonstração da execução dos testes e da tela da fatia de Medicamentos:
-- Execução da suíte de testes unitários do `BuscadorDeMedicamentos`.
-- Exibição gráfica das receitas e dispensações da Farmácia Popular.
+### 5.1. Execução da Suíte de Testes no Vitest
+
+Com a fatia de Medicamentos e Farmácia Popular, a suíte passou a contar com **43 testes** distribuídos em 7 arquivos, todos aprovados com 100% de sucesso:
+- [`ReceitaMedicamento.test.ts`](file:///code/criacional/src/padrao/__tests__/ReceitaMedicamento.test.ts): 9 testes validando instanciação, valores padrão, resumo, detalhes e validações defensivas do produto concreto.
+- [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts): 7 testes validando herança, sobreposição do Factory Method, processamento em lote, payloads nulos/parciais e receitas com múltiplos itens.
+- Testes de regressão das Versões 1 e 2 (vacinas, exames e interface): 27 testes, todos mantidos aprovados.
+
+![Execução dos Testes Automatizados Vitest - V3](../assets/subequipe01-padroes/execucao/v3-vitest-testes.png)
+
+<center><strong>Legenda:</strong> Figura 7 - Evidência de execução dos 43 testes com aprovação de 100% no Vitest (Autoria: João Leles).</center>
+
+### 5.2. Validação de Build e Checagem Estática de Tipos
+
+![Build de Produção e Tipagem estática - V3](../assets/subequipe01-padroes/execucao/v3-vitest-build.png)
+
+<center><strong>Legenda:</strong> Figura 8 - Evidência do build estático de produção e checagem de tipos compilado com sucesso (Autoria: João Leles).</center>
+
+### 5.3. Interface Gráfica — Receitas e Dispensações da Farmácia Popular
+
+A interface do Meu SUS Digital ganhou a aba **Medicamentos**, que exibe as dispensações do cidadão (anti-hipertensivos, antidiabéticos, estatinas etc.) com estabelecimento, prescritor, itens, posologia e quantidade. O botão `⚡ +Medicamento (V3)` no Dock GoF aciona em tempo de execução o método fábrica [`BuscadorDeMedicamentos.criarRegistroClinico()`](file:///code/criacional/src/padrao/BuscadorDeMedicamentos.ts), instanciando novas receitas dinamicamente.
 
 ![Execução da Fatia de Medicamentos](../assets/subequipe01-padroes/execucao/v3-execucao-medicamentos.png)
 
-<center><strong>Legenda:</strong> Figura 7 - Evidência de testes e interface da fatia de Medicamentos em execução (Autoria: João Leles - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 9 - Interface do Meu SUS Digital exibindo as dispensações de medicamentos processadas via Factory Method (Autoria: João Leles).</center>
+
+### 5.4. Embasamento Teórico da Execução e Testes (Versão 3)
+
+- **Padrão AAA (Beck, 2002):** Todos os 16 novos testes seguem Arrange-Act-Assert.
+- **Teste de Regressão:** A inclusão da terceira fatia não quebrou nenhum dos 27 testes anteriores, comprovando empiricamente o princípio Aberto/Fechado do Factory Method.
+- **Programação Defensiva:** Os testes cobrem payloads nulos, parciais e inválidos, garantindo que o criador concreto preencha valores padrão e o produto rejeite dados inconsistentes.
 
 ---
 
@@ -134,7 +157,7 @@ Demonstração da execução do histórico integrado e do seletor dinâmico:
 
 ![Execução da Integração Unificada](../assets/subequipe01-padroes/execucao/v4-execucao-unificada.png)
 
-<center><strong>Legenda:</strong> Figura 8 - Evidência de testes consolidados e visão unificada do histórico de saúde em execução (Autoria: Nicole Jovita - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 9 - Evidência de testes consolidados e visão unificada do histórico de saúde em execução (Autoria: Nicole Jovita - Em breve).</center>
 
 ## 7. Bibliografia
 
@@ -156,3 +179,4 @@ Demonstração da execução do histórico integrado e do seletor dinâmico:
 | `1.1` | 15/10/2026 | Padronização e harmonização das legendas e da numeração sequencial das Figuras 1 a 7 | [Artur Galdino](https://github.com/ArturFGaldino) | [`4f6e55c`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4f6e55c) |
 | `2.0` | 15/10/2026 | Registro das evidências de execução da Versão 2: 27 testes aprovados no Vitest (16 novos testes da fatia de exames e interface), build estático e captura da interface de laudos laboratoriais do Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`f8166ef`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f8166ef), [`4bdef88`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4bdef88) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico de testes e execução para as Versões 1 e 2 (Pirâmide de Testes, Padrão AAA, Princípios FIRST, Testes Centrados no Usuário) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
+| `3.0` | 16/10/2026 | Registro das evidências de execução da Versão 3: 43 testes aprovados (16 novos da fatia de Medicamentos), checagem de tipos e interface da Farmácia Popular | [João Leles](https://github.com/joaoleless) | - |
