@@ -162,23 +162,6 @@ A Versão 3 refina o diagrama após a validação da implementação, incorporan
 - **`BuscadorDeMedicamentos` «ConcreteCreator»**: herda de `BuscadorDeHistorico` e sobrepõe `criarRegistroClinico()`, com dependência «create» para `ReceitaMedicamento`.
 - **Cliente (`App.tsx`)**: continua dependendo apenas das abstrações, agora com três criadores concretos.
 
-```mermaid
-classDiagram
-  class RegistroClinico { <<interface>> +id +dataRegistro +tipo +getCategoria() +getResumo() +getDetalhes() }
-  class BuscadorDeHistorico { <<abstract>> +processarRegistros(colecaoBruta) +criarRegistroClinico(dadosBrutos)* +obterTipoSecao()* }
-  class BuscadorDeMedicamentos { +criarRegistroClinico(dadosBrutos) +obterTipoSecao() }
-  class ReceitaMedicamento { +itens: ItemMedicamento[] }
-  class ItemMedicamento { +principioAtivo +posologia +quantidade }
-  BuscadorDeHistorico <|-- BuscadorDeVacinas
-  BuscadorDeHistorico <|-- BuscadorDeExames
-  BuscadorDeHistorico <|-- BuscadorDeMedicamentos
-  RegistroClinico <|.. CartaoVacina
-  RegistroClinico <|.. ResultadoExame
-  RegistroClinico <|.. ReceitaMedicamento
-  ReceitaMedicamento o-- "1..*" ItemMedicamento
-  BuscadorDeMedicamentos ..> ReceitaMedicamento : create
-```
-
 - **Embasamento Teórico (Versão 3):** a terceira extensão sem alteração do núcleo confirma o OCP; a substituibilidade de `ReceitaMedicamento` por `RegistroClinico` atende ao LSP; e a atribuição da criação ao `BuscadorDeMedicamentos`, que detém os dados de inicialização, segue o GRASP *Creator* (Larman, 2004).
 
 ![Diagrama de Classes GoF Criacional - Versão 3](../assets/subequipe01-padroes/modelagem/versao-3.png)
