@@ -4,15 +4,31 @@
 
 A demonstração deve mostrar o padrão **Strategy** em execução no fluxo **Acesso à Rede de Saúde e Consulta de Conteúdo**, usando o mini-projeto independente da subequipe.
 
-- **Vídeo:** adicionar o link após gravar e revisar a demonstração.
-- **Execução local:** seguir as instruções de [Codigo.md](./Codigo.md).
-- **Modo offline:** deixar dependências instaladas e build testado previamente.
+- **Execução local:** seguir as instruções de [Codigo.md](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Codigo.md).
+- **Modo offline:** `npm run build && npm run preview` testado previamente, sem chamadas a API real (dados simulados em `dominio/`).
+
+### Trecho de Davi — núcleo (CriterioDeBusca, BuscaDeEstabelecimentos)
+
+Demo isolada (fora de `src/ui/`) usando `BuscaDeEstabelecimentos.definirCriterio()`/`buscar()` direto, gravada trocando o critério em tempo de execução.
+
+<video width="640" height="400" controls>
+  <source src="/3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/v1-nucleo-strategy-troca-criterio.webm" type="video/webm">
+</video>
+
+<center><strong>Legenda:</strong> Vídeo — troca de critério (distância → natureza → categoria → distância) via <code>BuscaDeEstabelecimentos</code>, núcleo real do padrão Strategy em execução.</center>
 
 ## Evidências
 
-![Evidência da execução](../assets/subequipe03-padroes/execucao/evidencia-1.png)
+Resultado da suíte de testes automatizados do núcleo (`npm test` em `code/comportamental/`), que também comprova a execução do padrão:
 
-Adicionar prints ou logs reais, descrevendo o comportamento observado e como ele confirma a aplicação do padrão.
+```
+ RUN  v5.0.4 code/comportamental
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+```
+
+Cobre: delegação da ordenação ao critério atual, troca de estratégia em tempo de execução, não mutação da lista original, repasse exato da referência à estratégia, lista vazia, ordenação real fim a fim e uso do critério inicial do construtor. Detalhamento em [Codigo.md](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Codigo.md#testes).
 
 ## Histórico de Versionamento
 
