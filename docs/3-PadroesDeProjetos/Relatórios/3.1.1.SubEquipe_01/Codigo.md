@@ -25,7 +25,7 @@ Para atender ao critério de divisão equilibrada e trabalho individual avaliáv
 | Versão | Responsável | Escopo e Fatia do Domínio Clínico | Status |
 | :---: | :---: | :--- | :---: |
 | **V1** | [Artur Galdino](https://github.com/ArturFGaldino) | **Fatia de Vacinas**: Criação do núcleo abstrato do Factory Method (`RegistroClinico`, `BuscadorDeHistorico`), produto concreto `CartaoVacina`, criador concreto `BuscadorDeVacinas`, mocks FHIR e interface fiel da Carteira de Vacinação ([PR #19](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/19)). | **Concluído** |
-| **V2** | [Giovani Coelho](https://github.com/Gotc2607) | **Fatia de Exames**: Implementação do produto concreto `ResultadoExame`, do criador concreto `BuscadorDeExames`, mocks de exames laboratoriais e testes unitários. | *Planejado* |
+| **V2** | [Giovani Coelho](https://github.com/Gotc2607) | **Fatia de Exames**: Implementação do produto concreto `ResultadoExame`, do criador concreto `BuscadorDeExames`, mocks de laudos da RNDS, suíte de testes unitários Vitest e integração visual no Meu SUS Digital. | **Concluído** |
 | **V3** | [João Leles](https://github.com/joaoleless) | **Fatia de Medicamentos**: Implementação do produto concreto `ReceitaMedicamento`, do criador concreto `BuscadorDeMedicamentos`, mocks da Farmácia Popular e testes unitários. | *Planejado* |
 | **V4** | [Nicole Jovita](https://github.com/nicolejovita) | **Núcleo Unificador / Seletor Dinâmico**: Implementação do `SeletorDeHistorico` para despacho dinâmico de criadores, consolidação da suíte de testes integrados e fechamento da interface unificada. | *Planejado* |
 
@@ -87,20 +87,38 @@ Apresentação gráfica em [`code/criacional/src/App.tsx`](file:///code/criacion
 
 <center><strong>Legenda:</strong> Figura 5 - Trecho de código do componente React integrando e acionando o Factory Method. O arquivo completo está disponível em `code/criacional/src/App.tsx`. Autoria: Artur Galdino.</center>
 
+### 3.5. Embasamento Teórico da Implementação (Versão 1)
+
+A implementação do código-fonte da Versão 1 reflete os seguintes fundamentos de engenharia de software e orientação a objetos:
+- **Refatoração "Replace Constructor with Factory Method" (Fowler, 2020):** A instanciação direta de cartões vacinais pelo cliente é substituída por um método fábrica especializado. Isso permite que a classe base `BuscadorDeHistorico` abstraia o fluxo de iteração e processamento de registros sem conhecer a classe concreta instanciada.
+- **Princípio da Inversão de Dependência (DIP - Martin, 2002):** A camada de interface (`App.tsx`) e a lógica de processamento operam estritamente sobre a interface abstrata `RegistroClinico` e a classe base `BuscadorDeHistorico`. Nenhuma classe cliente depende diretamente de implementações concretas de baixo nível.
+- **Segregação de Responsabilidades e Tipagem Estática:** O código do padrão em `src/padrao/` é implementado em TypeScript puro, completamente desacoplado de React, JSX ou APIs do navegador, garantindo que o núcleo possa ser executado e testado de forma portátil em qualquer ambiente Node.js.
+
 ---
 
-## 4. Versão 2 — Fatia de Exames Laboratoriais (Giovani Coelho) `[PLACEHOLDER]`
+## 4. Versão 2 — Fatia de Exames Laboratoriais (Giovani Coelho)
 
-Esta versão expandirá o catálogo de produtos concretos e criadores para comportar resultados de exames laboratoriais (hemogramas, exames citopatológicos, painéis virais):
+A Versão 2 expandiu a aplicação do padrão GoF Criacional **Factory Method** para a fatia de **Exames Laboratoriais**, permitindo que o subsistema do Meu SUS Digital processe laudos e resultados diagnósticos providos pela Rede Nacional de Dados em Saúde (RNDS) de forma desacoplada:
 
-- `ResultadoExame.ts` (*ConcreteProduct*): Implementação do contrato `RegistroClinico` para exames clínicos.
-- `BuscadorDeExames.ts` (*ConcreteCreator*): Subclasse de `BuscadorDeHistorico` instanciando exames.
-- `examesMock.ts`: Mocks simulando laudos laboratoriais da RNDS.
-- Suíte de testes unitários com Vitest em `src/padrao/__tests__/BuscadorDeExames.test.ts`.
+- **`ResultadoExame` (*ConcreteProduct*)**: Implementado em [`code/criacional/src/padrao/ResultadoExame.ts`](file:///code/criacional/src/padrao/ResultadoExame.ts), satisfaz o contrato da interface [`RegistroClinico`](file:///code/criacional/src/padrao/RegistroClinico.ts) (`tipo = 'EXAME'`). Encapsula os dados do exame, categoria clínica (Hematologia, Bioquímica, Biologia Molecular), metodologia analítica, status do laudo (`Liberado`, `Em Análise`), parecer conclusivo e tabela estruturada de parâmetros clínicos com valores de referência.
+- **`BuscadorDeExames` (*ConcreteCreator*)**: Implementado em [`code/criacional/src/padrao/BuscadorDeExames.ts`](file:///code/criacional/src/padrao/BuscadorDeExames.ts), especializa a classe abstrata [`BuscadorDeHistorico`](file:///code/criacional/src/padrao/BuscadorDeHistorico.ts) e sobrepõe o Factory Method `criarRegistroClinico()` (*GRASP Creator*). Valida os campos da carga bruta recebida da RNDS e instancia o produto concreto `ResultadoExame`.
+- **Mocks Oficiais de Exames**: Definidos em [`code/criacional/src/dominio/examesMock.ts`](file:///code/criacional/src/dominio/examesMock.ts), simulando laudos do LACEN/DF e laboratórios regionais da SES/DF (Hemograma Completo, Glicemia de Jejum, Lipidograma Completo, RT-PCR COVID-19/Influenza).
+- **Testes Unitários e de Integração**: Desenvolvidos rigorosamente de acordo com o [Padrão de Testes](../../../Projeto/ExtrasEntrega3/PadraoDeTestes.md) (Arrange-Act-Assert, em português):
+  - [`ResultadoExame.test.ts`](file:///code/criacional/src/padrao/__tests__/ResultadoExame.test.ts) (8 testes unitários cobrindo instanciação, valores padrão, formatação de resumo, detalhes e validações defensivas).
+  - [`BuscadorDeExames.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeExames.test.ts) (6 testes unitários validando herança, método fábrica, processamento em lote e tratamento de payloads nulos ou parciais).
+  - [`App.test.tsx`](file:///code/criacional/src/ui/__tests__/App.test.tsx) (2 testes de integração da interface React validando a navegação para a fatia de exames e o disparo dinâmico do Factory Method em tempo de execução).
+- **Interface Gráfica React**: Atualização em [`code/criacional/src/App.tsx`](file:///code/criacional/src/App.tsx) e [`meuSus.css`](file:///code/criacional/src/ui/meuSus.css) incorporando a aba lateral de Exames, banner com contagem de laudos da RNDS, cards completos com parâmetros laboratoriais e botão interativo no Dock GoF (`⚡ +Exame (V2)`).
 
 ![Trecho de código da fatia de Exames Laboratoriais](../assets/subequipe01-padroes/codigo/v2-fatia-exames.png)
 
-<center><strong>Legenda:</strong> Figura 6 - Trecho de código do ConcreteProduct e ConcreteCreator de Exames (código parcial ilustrativo; Autoria: Giovani Coelho - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 6 - Trecho de código do ConcreteCreator (BuscadorDeExames) sobrescrevendo o Factory Method e instanciando ResultadoExame (código parcial ilustrativo; Autoria: Giovani Coelho).</center>
+
+### 4.1. Embasamento Teórico da Implementação (Versão 2)
+
+A extensão do código-fonte para a fatia de Exames Laboratoriais concretiza os seguintes princípios teóricos:
+- **Princípio Aberto/Fechado (OCP - Meyer, 1988):** A adição de `ResultadoExame` e `BuscadorDeExames` comprova na prática que a arquitetura do código está aberta para extensão e fechada para modificação. Nenhuma linha de `RegistroClinico.ts`, `BuscadorDeHistorico.ts` ou `BuscadorDeVacinas.ts` precisou ser alterada para que os laudos laboratoriais fossem processados e exibidos.
+- **Composição sobre Herança na Agregação de Parâmetros:** A classe `ResultadoExame` utiliza composição para encapsular a lista de parâmetros laboratoriais (`ParametroExame[]`), mantendo a coesão de cada métrica (nome, resultado, unidade, faixa de referência e situação clínica) e evitando subclasses redundantes para diferentes tipos de laudos químicos ou hematológicos.
+- **Validação de Invariantes e Programação Defensiva (Meyer, 1997):** Conforme preconizado pelo princípio de *Design by Contract*, tanto o construtor de `ResultadoExame` quanto o Factory Method de `BuscadorDeExames` aplicam validações defensivas imediatas, garantindo que payloads incompletos, nulos ou malformatados oriundos da RNDS sejam tratados de forma previsível e segura, preenchendo valores padrão ou lançando exceções controladas.
 
 ---
 
@@ -158,9 +176,18 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
    npm run dev
    ```
 
+## 8. Bibliografia
+
+1. GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. **Padrões de Projeto: Soluções Reutilizáveis de Software Orientado a Objetos**. Porto Alegre: Bookman, 2000.
+2. FOWLER, Martin. **Refatoração: Aperfeiçoando o Design de Código Existente**. 2. ed. Porto Alegre: Bookman, 2020.
+3. MARTIN, Robert C. **Código Limpo: Habilidades Práticas do Agile Software**. Rio de Janeiro: Alta Books, 2009.
+4. MARTIN, Robert C. **Princípios, Padrões e Práticas Ágeis em C#**. Porto Alegre: Bookman, 2006.
+5. MEYER, Bertrand. **Object-Oriented Software Construction**. 2. ed. Upper Saddle River: Prentice Hall, 1997.
+6. LARMAN, Craig. **Utilizando UML e Padrões: Uma Introdução à Análise e ao Projeto Orientados a Objetos e ao Desenvolvimento Iterativo**. 3. ed. Porto Alegre: Bookman, 2005.
+
 ---
 
-## 8. Histórico de Versionamento
+## 9. Histórico de Versionamento
 
 | Versão | Data | Descrição / Contribuição | Autor(es) | Commit(s) |
 | :---: | :---: | :--- | :--- | :--- |
@@ -168,3 +195,6 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
 | `1.0` | 15/10/2026 | Implementação da Versão 1: Núcleo abstrato do Factory Method, fatia de Vacinas, 11 testes unitários com Vitest, interface Meu SUS Digital e estruturação dos placeholders V2, V3 e V4 com fotos | [Artur Galdino](https://github.com/ArturFGaldino) | [`90df441`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/90df441), [`45f29be`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/45f29be), [`c605056`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/c605056), [`664e603`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/664e603) |
 | `1.1` | 15/10/2026 | Ajuste nas legendas e notas das figuras indicando explicitamente trechos parciais de código e padronização da numeração sequencial das Figuras 1 a 8 | [Artur Galdino](https://github.com/ArturFGaldino) | [`d6cfdcd`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d6cfdcd), [`664e603`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/664e603) |
 | `1.2` | 15/10/2026 | Documentação dos princípios GRASP (Creator, Low Coupling, High Cohesion, Protected Variations) aplicados à arquitetura do código | [Artur Galdino](https://github.com/ArturFGaldino) | [`82f8d04`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/82f8d04) |
+| `2.0` | 15/10/2026 | Implementação da Versão 2: ConcreteProduct ResultadoExame, ConcreteCreator BuscadorDeExames, mocks de exames laboratoriais da RNDS, 16 testes unitários e de integração com Vitest, e interface gráfica integrada ao Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`1138b20`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/1138b20), [`921255f`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/921255f), [`ef66d3b`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/ef66d3b), [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`0c096ab`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/0c096ab), [`b59686e`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b59686e), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`fb9f581`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/fb9f581) |
+| `2.1` | 15/10/2026 | Inclusão de embasamento teórico da implementação para as Versões 1 e 2 (Replace Constructor with Factory Method, DIP, OCP, Programação Defensiva) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
+| `2.2` | 15/10/2026 | Anonimização de identificadores e referências pessoais na interface e nos mocks para Usuário genérico | [Giovani Coelho](https://github.com/Gotc2607) | [`d85c432`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d85c432) |
