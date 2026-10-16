@@ -1,6 +1,6 @@
 /**
  * Dados simulados do histórico de vacinação do cidadão na RNDS (Rede Nacional de Dados em Saúde).
- * Extraídos com fidelidade do perfil real do Meu SUS Digital do Artur.
+ * Extraídos com fidelidade do perfil do Meu SUS Digital.
  */
 
 export interface VacinaMockItem {
@@ -17,9 +17,9 @@ export interface VacinaMockItem {
   [key: string]: unknown;
 }
 
-export const vacinasOficiaisArturMock: VacinaMockItem[] = [
+export const vacinasOficiaisMock: VacinaMockItem[] = [
   {
-    id: 'vac-artur-01',
+    id: 'vac-usr-01',
     imunobiologico: 'vacina influenza trivalente',
     dose: 'Única',
     dataRegistro: '2024-07-17T10:00:00Z',
@@ -30,7 +30,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0010456',
   },
   {
-    id: 'vac-artur-02',
+    id: 'vac-usr-02',
     imunobiologico: 'vacina covid-19-inativada, Sinovac/Butantan (Coronavac)',
     dose: 'Reforço',
     dataRegistro: '2022-06-01T14:30:00Z',
@@ -41,7 +41,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0020789',
   },
   {
-    id: 'vac-artur-03',
+    id: 'vac-usr-03',
     imunobiologico: 'vacina covid-19-RNAm, Pfizer (Comirnaty)',
     dose: '2ª Dose',
     dataRegistro: '2021-11-12T11:15:00Z',
@@ -52,7 +52,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0031122',
   },
   {
-    id: 'vac-artur-04',
+    id: 'vac-usr-04',
     imunobiologico: 'vacina covid-19-RNAm, Pfizer (Comirnaty)',
     dose: '1ª Dose',
     dataRegistro: '2021-09-15T09:00:00Z',
@@ -63,7 +63,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0031122',
   },
   {
-    id: 'vac-artur-05',
+    id: 'vac-usr-05',
     imunobiologico: 'vacina HPV quadrivalente',
     dose: '2ª Dose',
     dataRegistro: '2018-07-16T15:20:00Z',
@@ -74,7 +74,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0049988',
   },
   {
-    id: 'vac-artur-06',
+    id: 'vac-usr-06',
     imunobiologico: 'vacina HPV quadrivalente',
     dose: '1ª Dose',
     dataRegistro: '2017-12-26T10:45:00Z',
@@ -85,7 +85,7 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
     codigoCNES: '0049988',
   },
   {
-    id: 'vac-artur-07',
+    id: 'vac-usr-07',
     imunobiologico: 'vacina meningo C',
     dose: 'Única',
     dataRegistro: '2017-12-26T10:50:00Z',
@@ -99,10 +99,10 @@ export const vacinasOficiaisArturMock: VacinaMockItem[] = [
 
 // Mocks por público para a aba de histórico/cartilha
 export const vacinasMockPorPublico = {
-  crianca: vacinasOficiaisArturMock.slice(4),
-  adolescente: vacinasOficiaisArturMock.slice(4),
-  adulto: vacinasOficiaisArturMock.slice(0, 4),
-  gestante: [vacinasOficiaisArturMock[0]],
+  crianca: vacinasOficiaisMock.slice(4),
+  adolescente: vacinasOficiaisMock.slice(4),
+  adulto: vacinasOficiaisMock.slice(0, 4),
+  gestante: [vacinasOficiaisMock[0]],
 };
 
-export const vacinasMock = vacinasOficiaisArturMock;
+export const vacinasMock = vacinasOficiaisMock;
