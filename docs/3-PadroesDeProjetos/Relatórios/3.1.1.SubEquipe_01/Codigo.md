@@ -134,18 +134,18 @@ A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia
   - [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts) (7 testes: herança, método fábrica, lote, payloads nulos/parciais e receitas com múltiplos itens).
 - **Interface Gráfica React**: [`App.tsx`](file:///code/criacional/src/App.tsx) e [`meuSus.css`](file:///code/criacional/src/ui/meuSus.css) receberam a aba lateral de Medicamentos, banner com contagem de dispensações, cards com tabela de itens e o botão `⚡ +Medicamento (V3)` no Dock GoF.
 
-```typescript
-export class BuscadorDeMedicamentos extends BuscadorDeHistorico {
-  public criarRegistroClinico(dadosBrutos: Record<string, unknown>): RegistroClinico {
-    // validação defensiva + defaults do payload da RNDS
-    return new ReceitaMedicamento(/* dados normalizados */);
-  }
-}
-```
+![Trecho de código dos testes implementados](../assets/subequipe01-padroes/codigo/v3-testes.png)
+
+<center><strong>Legenda:</strong> Figura 7 - Trecho de código do ConcreteProduct e ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
 
 ![Trecho de código da fatia de Medicamentos e Farmácia Popular](../assets/subequipe01-padroes/codigo/v3-fatia-medicamentos.png)
 
-<center><strong>Legenda:</strong> Figura 7 - Trecho de código do ConcreteProduct e ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+<center><strong>Legenda:</strong> Figura 8 - Trecho de código do ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
+![Trecho de código da fatia de Medicamentos e Farmácia Popular](../assets/subequipe01-padroes/codigo/v3-fatia-medicamentos2.png)
+
+<center><strong>Legenda:</strong> Figura 9 - Trecho de código do ConcreteProduct de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
 
 ### 5.1. Embasamento Teórico da Implementação (Versão 3)
 
