@@ -1,0 +1,158 @@
+:root {
+  --azul: #1351b4;
+  --azul-escuro: #0c326f;
+  --azul-claro: #e8f1fb;
+  --texto: #1b1b1b;
+  --texto-suave: #555;
+  --borda: #dcdcdc;
+  --fundo: #f5f7fa;
+  font-family: 'Rawline', 'Raleway', system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+}
+
+.painel {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.painel-cabecalho h1 {
+  margin: 0;
+  color: var(--azul-escuro);
+}
+
+.painel-cabecalho p {
+  margin: 4px 0 0;
+  color: var(--texto-suave);
+}
+
+.gof {
+  margin: 20px 0 28px;
+  padding: 16px;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--azul);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.gof-contagem {
+  margin: 0 0 12px;
+}
+
+.gof-busca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.gof-busca input {
+  flex: 1 1 220px;
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.gof-busca button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--azul);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gof-resultado {
+  min-height: 1.5em;
+  margin-top: 10px;
+}
+
+.secao {
+  margin-bottom: 28px;
+}
+
+.secao-titulo {
+  margin: 0;
+  color: var(--azul-escuro);
+}
+
+.secao-descricao {
+  margin: 4px 0 12px;
+  color: var(--texto-suave);
+}
+
+.secao-filhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.secao-aninhada {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  padding: 14px;
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--texto);
+  text-align: center;
+  text-decoration: none;
+}
+
+.cartao:hover,
+.cartao:focus-visible {
+  border-color: var(--azul);
+  box-shadow: 0 2px 8px rgba(19, 81, 180, 0.15);
+}
+
+.cartao-icone {
+  font-size: 1.8rem;
+}
+
+.cartao-titulo {
+  font-weight: 600;
+}
+
+.banner {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--azul-claro);
+}
+
+.banner-imagem {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.banner-titulo {
+  color: var(--azul-escuro);
+}
+
+.banner-mensagem {
+  margin: 4px 0 0;
+}
