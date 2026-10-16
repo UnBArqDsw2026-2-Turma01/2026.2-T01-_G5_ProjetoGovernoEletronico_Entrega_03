@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — painel com contarElementos() e buscarPorId() (commit 4e527b0)
 import { useState } from 'react'
 import type { FormEvent } from 'react'
 import type { Dashboard } from '../padrao/Dashboard'

@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — cliente Dashboard (commit 600b7b6)
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 import type { Secao } from './Secao'
 

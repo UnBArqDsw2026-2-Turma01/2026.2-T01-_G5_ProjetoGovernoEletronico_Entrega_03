@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — App passa a exibir o painel do Composite (commit 4e527b0)
 import { useMemo } from 'react'
 import { criarPainelSimulado } from './dominio/painelSimulado'
 import { PainelView } from './ui/PainelView'

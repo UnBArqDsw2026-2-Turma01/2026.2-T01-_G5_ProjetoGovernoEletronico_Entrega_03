@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — Component do Composite (commit 4c1c3c2)
 /**
  * Descrição de um elemento pronta para ser exibida pela interface.
  * O núcleo do padrão não depende de React: renderizar() devolve esta

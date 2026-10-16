@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — exibição recursiva dos elementos (commit 4e527b0)
 import type { ElementoRenderizado } from '../padrao/ElementoDeTela'
 
 interface Props {

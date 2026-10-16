@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — montagem da árvore do painel (commit 7e67564)
 import { BannerInformativo } from '../padrao/BannerInformativo'
 import { CartaoDeAtalho } from '../padrao/CartaoDeAtalho'
 import { Dashboard } from '../padrao/Dashboard'

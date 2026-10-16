@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — testes do cliente Dashboard (commit 600b7b6)
 import { describe, expect, it } from 'vitest'
 import { BannerInformativo } from '../BannerInformativo'
 import { CartaoDeAtalho } from '../CartaoDeAtalho'

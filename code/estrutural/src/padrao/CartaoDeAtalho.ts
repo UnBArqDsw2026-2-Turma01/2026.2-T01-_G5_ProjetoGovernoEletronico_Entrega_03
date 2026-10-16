@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — folha CartaoDeAtalho (commit ce70b45)
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 
 /**

@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — testes do composto Secao (commit d575efa)
 import { describe, expect, it } from 'vitest'
 import { BannerInformativo } from '../BannerInformativo'
 import { CartaoDeAtalho } from '../CartaoDeAtalho'

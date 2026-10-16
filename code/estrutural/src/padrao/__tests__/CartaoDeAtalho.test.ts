@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — testes da folha CartaoDeAtalho (commit ce70b45)
 import { describe, expect, it } from 'vitest'
 import { CartaoDeAtalho } from '../CartaoDeAtalho'
 

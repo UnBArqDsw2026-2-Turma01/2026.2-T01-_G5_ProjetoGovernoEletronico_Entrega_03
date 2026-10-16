@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — folha BannerInformativo (commit fd71b23)
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 
 /**

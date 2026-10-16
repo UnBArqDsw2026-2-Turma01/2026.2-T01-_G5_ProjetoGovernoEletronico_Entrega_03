@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — composto Secao (commit d575efa)
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 
 /**

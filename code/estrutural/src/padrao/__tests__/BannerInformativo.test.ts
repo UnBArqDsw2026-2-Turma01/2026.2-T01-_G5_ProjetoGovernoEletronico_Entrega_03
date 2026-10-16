@@ -1,3 +1,4 @@
+// Autoria: Victor Leandro (@Afrontoso) — testes da folha BannerInformativo (commit fd71b23)
 import { describe, expect, it } from 'vitest'
 import { BannerInformativo } from '../BannerInformativo'
 
