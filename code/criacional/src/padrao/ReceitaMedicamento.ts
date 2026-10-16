@@ -15,7 +15,7 @@ export interface ItemMedicamento {
 export interface DadosMedicamentoInput {
   id: string;
   dataRegistro: Date | string;
-  tipoReceita: 'Dispensação' | 'Prescrição' | 'Receituário';
+  tipoReceita?: 'Dispensação' | 'Prescrição' | 'Receituário';
   programaSaude: string;
   estabelecimento: string;
   profissionalPrescritor?: string;
