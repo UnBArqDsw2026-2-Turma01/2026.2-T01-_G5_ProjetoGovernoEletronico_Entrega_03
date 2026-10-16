@@ -77,3 +77,4 @@ Os dois padrões resolvem um problema parecido (variação de comportamento), ma
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
+| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Criação do guia de GoF Comportamental (Strategy e Template Method) | 16/10/2026 | [ee19f5c](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/ee19f5c8b2295576ad124559cb328ccd10238a27) |
