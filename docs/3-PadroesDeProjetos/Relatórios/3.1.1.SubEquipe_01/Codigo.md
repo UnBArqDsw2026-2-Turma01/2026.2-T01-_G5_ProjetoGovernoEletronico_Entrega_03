@@ -136,7 +136,7 @@ A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia
 
 ```typescript
 export class BuscadorDeMedicamentos extends BuscadorDeHistorico {
-  protected criarRegistroClinico(dados: unknown): RegistroClinico {
+  public criarRegistroClinico(dadosBrutos: Record<string, unknown>): RegistroClinico {
     // validação defensiva + defaults do payload da RNDS
     return new ReceitaMedicamento(/* dados normalizados */);
   }

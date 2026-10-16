@@ -164,9 +164,9 @@ A Versão 3 refina o diagrama após a validação da implementação, incorporan
 
 ```mermaid
 classDiagram
-  class RegistroClinico { <<interface>> +id +tipo +data +obterResumo() +obterDetalhes() }
-  class BuscadorDeHistorico { <<abstract>> +processarRegistros(dados) #criarRegistroClinico(dado)* }
-  class BuscadorDeMedicamentos { #criarRegistroClinico(dado) }
+  class RegistroClinico { <<interface>> +id +dataRegistro +tipo +getCategoria() +getResumo() +getDetalhes() }
+  class BuscadorDeHistorico { <<abstract>> +processarRegistros(colecaoBruta) +criarRegistroClinico(dadosBrutos)* +obterTipoSecao()* }
+  class BuscadorDeMedicamentos { +criarRegistroClinico(dadosBrutos) +obterTipoSecao() }
   class ReceitaMedicamento { +itens: ItemMedicamento[] }
   class ItemMedicamento { +principioAtivo +posologia +quantidade }
   BuscadorDeHistorico <|-- BuscadorDeVacinas
