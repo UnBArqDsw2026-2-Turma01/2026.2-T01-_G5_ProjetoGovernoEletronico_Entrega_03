@@ -134,9 +134,13 @@ A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia
   - [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts) (7 testes: herança, método fábrica, lote, payloads nulos/parciais e receitas com múltiplos itens).
 - **Interface Gráfica React**: [`App.tsx`](file:///code/criacional/src/App.tsx) e [`meuSus.css`](file:///code/criacional/src/ui/meuSus.css) receberam a aba lateral de Medicamentos, banner com contagem de dispensações, cards com tabela de itens e o botão `⚡ +Medicamento (V3)` no Dock GoF.
 
+### 5.1. Testes Implementados
+
 ![Trecho de código dos testes implementados](../assets/subequipe01-padroes/codigo/v3-testes.png)
 
 <center><strong>Legenda:</strong> Figura 7 - Trecho de código do ConcreteProduct e ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
+### 5.2. Implementação da Fatia de medicamentos
 
 ![Trecho de código da fatia de Medicamentos e Farmácia Popular](../assets/subequipe01-padroes/codigo/v3-fatia-medicamentos.png)
 
@@ -147,7 +151,7 @@ A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia
 <center><strong>Legenda:</strong> Figura 9 - Trecho de código do ConcreteProduct de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
 
 
-### 5.1. Embasamento Teórico da Implementação (Versão 3)
+### 5.3. Embasamento Teórico da Implementação (Versão 3)
 
 - **OCP (Meyer, 1988):** Nenhuma linha de `RegistroClinico`, `BuscadorDeHistorico`, vacinas ou exames foi modificada; a terceira fatia foi adicionada apenas por extensão.
 - **LSP (Liskov, 1987):** `ReceitaMedicamento` é substituível por `RegistroClinico` em todo o fluxo `processarRegistros()` e na UI.
