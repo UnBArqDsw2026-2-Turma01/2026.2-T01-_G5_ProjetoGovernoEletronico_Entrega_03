@@ -11,17 +11,14 @@ describe('PainelView', () => {
 
     expect(screen.getByRole('heading', { level: 2, name: 'Minha Saúde' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'Mini apps' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 2, name: 'Conteúdo' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: 'Mais serviços' })).toBeInTheDocument()
   })
 
-  it('exibe cartões e banners lado a lado na árvore', () => {
+  it('exibe os cartões de atalho da árvore', () => {
     render(<PainelView painel={criarPainelSimulado()} />)
 
     expect(screen.getByRole('link', { name: /Vacinas/ })).toBeInTheDocument()
-    expect(
-      screen.getByRole('complementary', { name: 'Campanha de vacinação contra a gripe' }),
-    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Hemovida/ })).toBeInTheDocument()
   })
 
   it('mostra o total calculado por contarElementos()', () => {

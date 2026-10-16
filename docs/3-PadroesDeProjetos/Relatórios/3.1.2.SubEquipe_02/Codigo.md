@@ -75,7 +75,7 @@ buscarPorId(id: string): ElementoDeTela | null {
 }
 ```
 
-O painel simulado ([`dominio/painelSimulado.ts`](../../../../code/estrutural/src/dominio/painelSimulado.ts)) usa as seções e os cartões do fluxograma da Entrega 2: **Minha Saúde** (com a subseção aninhada **Mais serviços**), **Mini apps** e **Conteúdo** (com o banner de campanha de vacinação). Ao todo, são 14 elementos.
+O painel simulado ([`dominio/painelSimulado.ts`](../../../../code/estrutural/src/dominio/painelSimulado.ts)) usa as seções e os cartões do fluxograma da Entrega 2: **Minha Saúde** (com a subseção aninhada **Mais serviços**) e **Mini apps**. Ao todo, são 12 elementos.
 
 A interface exibe as seções, a contagem calculada por `contarElementos()` e um campo de busca que chama `buscarPorId()`. O resultado da busca é exibido usando apenas a interface `ElementoDeTela`, sem verificar a classe concreta.
 
@@ -107,7 +107,7 @@ Os testes ficam em `padrao/__tests__/` (unitários das classes do padrão) e `ui
 | `BannerInformativo.test.ts` | Mesmo contrato para a nova folha | 4 |
 | `Secao.test.ts` | Soma recursiva, busca em seções aninhadas, remoção, rejeição de `null` e da própria seção, renderização da árvore | 11 |
 | `Dashboard.test.ts` | Delegação das operações às seções, remoção de seção, ordem de renderização | 5 |
-| `PainelView.test.tsx` | Exibição de seções, cartões e banner; contagem; busca por id encontrada e não encontrada | 5 |
+| `PainelView.test.tsx` | Exibição de seções e cartões; contagem; busca por id encontrada e não encontrada | 5 |
 
 Resultado da execução local (`npm test`) em 15/10/2026: **5 arquivos e 29 testes aprovados**. `npm run lint` e `npm run build` também foram executados sem erros.
 

@@ -54,7 +54,7 @@ export function PainelView({ painel }: Props) {
             id="id-buscado"
             value={idBuscado}
             onChange={(evento) => setIdBuscado(evento.target.value)}
-            placeholder="ex.: vacinas, mini-apps, campanha-gripe"
+            placeholder="ex.: vacinas, mini-apps, mais-servicos"
           />
           <button type="submit">Buscar</button>
         </form>

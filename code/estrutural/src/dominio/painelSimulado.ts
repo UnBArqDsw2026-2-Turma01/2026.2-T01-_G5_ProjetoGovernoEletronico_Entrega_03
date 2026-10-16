@@ -1,5 +1,4 @@
 // Autoria: Victor Leandro (@Afrontoso) — montagem da árvore do painel (commit 7e67564)
-import { BannerInformativo } from '../padrao/BannerInformativo'
 import { CartaoDeAtalho } from '../padrao/CartaoDeAtalho'
 import { Dashboard } from '../padrao/Dashboard'
 import { Secao } from '../padrao/Secao'
@@ -41,21 +40,9 @@ export function criarPainelSimulado(): Dashboard {
   miniApps.adicionar(new CartaoDeAtalho('peso-saudavel', 'Peso Saudável', '⚖️', '/mini-apps/peso'))
   miniApps.adicionar(new CartaoDeAtalho('acolhe-mais', 'Acolhe Mais+', '💬', '/mini-apps/acolhe'))
 
-  const conteudo = new Secao('conteudo', 'Conteúdo', 'Materiais educativos e informativos')
-  conteudo.adicionar(
-    new BannerInformativo(
-      'campanha-gripe',
-      'Campanha de vacinação contra a gripe',
-      'Procure a UBS mais próxima e mantenha sua caderneta em dia.',
-      '/banner-campanha.svg',
-    ),
-  )
-  conteudo.adicionar(new CartaoDeAtalho('publicacoes', 'Publicações de saúde', '📰', '/conteudo'))
-
   const painel = new Dashboard('painel-inicio', 'Meu SUS Digital')
   painel.adicionarSecao(minhaSaude)
   painel.adicionarSecao(miniApps)
-  painel.adicionarSecao(conteudo)
 
   return painel
 }
