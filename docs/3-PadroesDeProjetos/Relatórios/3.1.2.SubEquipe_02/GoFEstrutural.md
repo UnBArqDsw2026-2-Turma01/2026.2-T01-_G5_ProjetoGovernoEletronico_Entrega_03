@@ -37,7 +37,7 @@ Os padrões GoF (*Gang of Four*) estruturais descrevem maneiras de organizar cla
 - **Intenção:** compor objetos em estruturas hierárquicas de árvore e permitir que clientes tratem objetos individuais e composições por meio de uma interface comum.
 - **Problema que resolve:** representar uma interface de dashboard com seções que contêm cartões de atalho sem precisar implementar operações de renderização e consulta de maneira independente para cada nível da hierarquia.
 - **Solução proposta:** definir `ElementoDeTela` como interface comum, `CartaoDeAtalho` como folha (*Leaf*), `Secao` como composto (*Composite*) e `Dashboard` como raiz da composição.
-- **Participantes:** `ElementoDeTela`, `CartaoDeAtalho`, `Secao` e `Dashboard`.
+- **Participantes:** `ElementoDeTela`, `CartaoDeAtalho`, `Secao` e `Dashboard` (a V2 acrescenta a folha `BannerInformativo`).
 - **Consequências:** facilita percorrer e operar sobre a árvore de forma uniforme e permite acrescentar novos tipos de elementos. Em contrapartida, uma abstração muito genérica pode aumentar a complexidade e exige definir quais operações fazem sentido para folhas e compostos.
 - **Quando usar:** quando a interface precisa organizar itens individuais e grupos de itens em níveis hierárquicos, tratando-os de forma uniforme.
 
@@ -78,7 +78,32 @@ O objetivo desta primeira versão é validar a estrutura básica e manter o mode
 
 ### Versão 2
 
-**A desenvolver.** Registrar a revisão da V1, as mudanças feitas nas relações UML, os novos atributos/operações e a justificativa de cada alteração. Manter a rastreabilidade com os artefatos anteriores.
+![Diagrama UML de classes da V2 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V2.png)
+
+**Legenda:** Figura 2 — Diagrama UML revisado do padrão Composite. A composição passa a ligar `Secao` à interface `ElementoDeTela`, permitindo que uma seção contenha tanto cartões quanto outras seções. Foi adicionada a folha `BannerInformativo`, que mostra a inclusão de um novo tipo de elemento sem alterar o composto. `Dashboard` é explicitado como cliente e raiz da estrutura, e as notas UML descrevem o contrato das operações em cada participante.
+
+#### O que foi feito
+
+A V2 revisou a V1 com foco na **consistência UML** e nos **contratos das operações**, conforme as melhorias previstas para esta versão. A estrutura geral foi mantida, com o acréscimo de apenas uma classe folha, para que a V3 e a V4 possam evoluir o modelo em direção à interface real e ao código.
+
+| # | Problema na V1 | Alteração na V2 | Justificativa |
+| :--- | :--- | :--- | :--- |
+| 1 | A composição "Elementos" era um auto-relacionamento de `Secao` com `Secao`, indicando que uma seção só conteria outras seções. | A composição passou a sair de `Secao` (losango) e chegar em `ElementoDeTela`, com multiplicidade `0..1` no lado da seção e `0..*` no lado dos elementos. | No Composite, o composto agrega o **componente** (a interface), e não a si mesmo. Assim, uma seção pode conter cartões e outras seções, o que responde à dúvida da V1 sobre seções aninhadas. O `0..1` indica que cada elemento pertence a no máximo uma seção (seções de nível superior pertencem ao `Dashboard`). |
+| 2 | Na relação `Dashboard`–`Secao`, o losango estava do lado da `Secao` e as multiplicidades estavam invertidas. | O losango foi movido para o lado do `Dashboard`, com `1` no lado do `Dashboard` e `1..*` no lado da `Secao`. | O losango fica no lado do **todo**. É o `Dashboard` que possui as seções; quando ele deixa de existir, suas seções também deixam. |
+| 3 | `Dashboard` tinha as mesmas operações da interface, mas não a implementava, sem indicar seu papel no padrão. | `Dashboard` recebeu o estereótipo `<<Client>>` e passou a ser descrito como raiz da composição, que delega as operações às seções. | Isso resolve a dúvida registrada na V1: o `Dashboard` não é um elemento de tela aninhável, mas o ponto de entrada que usa a árvore. Manter a interface apenas para `CartaoDeAtalho` e `Secao` deixa os papéis de *Leaf* e *Composite* mais claros. |
+| 4 | Os contratos das operações não estavam definidos, principalmente para a folha. | Foram adicionadas notas UML com o comportamento de cada operação na folha, no composto e no cliente. | Deixa explícito o tratamento uniforme e recursivo, que é a ideia central do padrão, e serve de base para a implementação do código V1. |
+| 5 | `buscarPorId` não indicava o que acontece quando o id não é encontrado, e não havia uma forma de consultar o id de um elemento pela interface. | O retorno passou a ser `ElementoDeTela [0..1]`, e a interface ganhou `getId(): String`. | A busca pode não encontrar nada, e `remover` e `buscarPorId` precisam identificar os elementos pela interface comum, sem conhecer a classe concreta. |
+| 6 | Pequenas inconsistências de escrita (`BuscarPorId`, `descrição`) e item "Associação" na legenda sem uso no diagrama. | A nomenclatura foi padronizada em camelCase sem acentos (`buscarPorId`, `descricao`), e a legenda foi atualizada (remoção de "Associação", inclusão de "Nota" e "Multiplicidade"). | Mantém o diagrama coerente com a futura implementação em TypeScript e evita elementos de legenda que não aparecem no modelo. |
+| 7 | Havia apenas um tipo de folha (`CartaoDeAtalho`), o que não mostrava uma das principais consequências do padrão: a facilidade de incluir novos tipos de elemento. | Foi adicionada a folha `BannerInformativo` (`-id`, `-titulo`, `-mensagem`, `-imagem`), que representa avisos e campanhas de saúde exibidos no painel e também realiza `ElementoDeTela`. As duas folhas compartilham a mesma seta de realização. | Como `Secao` e `Dashboard` dependem apenas da interface, o novo elemento entra na árvore sem nenhuma alteração nessas classes. Isso evidencia no modelo o princípio aberto/fechado e o tratamento uniforme que motivaram a escolha do Composite. |
+
+**Contratos das operações definidos na V2:**
+
+- **`CartaoDeAtalho` (Leaf):** `renderizar()` exibe o próprio cartão (ícone, título e link); `contarElementos()` retorna `1`; `buscarPorId(id)` retorna o próprio cartão se o id for igual, ou `null` caso contrário. A folha não possui `adicionar`/`remover`.
+- **`BannerInformativo` (Leaf):** segue o mesmo contrato do `CartaoDeAtalho`; `renderizar()` exibe a imagem, o título e a mensagem do aviso.
+- **`Secao` (Composite):** `adicionar(elemento)` insere um filho e não aceita `null` nem a própria seção; `remover(elemento)` retira o filho, caso exista; `renderizar()` exibe o título da seção e chama `renderizar()` de cada filho; `contarElementos()` retorna a soma de `contarElementos()` dos filhos; `buscarPorId(id)` verifica o próprio id e, em seguida, busca recursivamente nos filhos.
+- **`Dashboard` (Client/raiz):** delega `renderizar`, `contarElementos` e `buscarPorId` para cada `Secao` da lista, sem diferenciar folhas e compostos.
+
+Ficaram para as próximas versões: associar as seções e os cartões às telas reais do Meu SUS Digital (V3), tratar a prevenção de ciclos na árvore com mais detalhes e validar o modelo com o código (V4).
 
 ### Versão 3
 
@@ -115,6 +140,7 @@ A primeira versão foi mantida em nível conceitual, usando um diagrama de class
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 | 15/10/2026 | [d0c9c93](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d0c9c93a69658413b70bb7395db5c5d9bdd26a84) |
+| [Victor Leandro](https://github.com/Afrontoso) | Versão 2 | 15/10/2026 | [PREENCHER](#) |
 
 ---
 
