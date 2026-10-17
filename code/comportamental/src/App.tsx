@@ -1,10 +1,9 @@
-function App() {
+import { redeDeSaudeSimulada } from "./dominio/redeDeSaudeSimulada";
+import { criteriosDisponiveis } from "./ui/criteriosDisponiveis";
+import { TelaRedeDeSaude } from "./ui/TelaRedeDeSaude";
 
-  return (
-    <>
-      
-    </>
-  )
+function App() {
+  return <TelaRedeDeSaude estabelecimentos={redeDeSaudeSimulada} criterios={criteriosDisponiveis} />;
 }
 
-export default App
+export default App;
