@@ -63,23 +63,33 @@ O _GoF_ Comportamental, usando o padrão _strategy_, foi aplicado no **passo 5**
 
 ## Interface do Sistema (Imagens Reais)
 
-![Tela 1 do fluxo](../assets/subequipe03-padroes/fluxograma/tela-1.png)
+### Fluxo 1 - Rede de Saude
 
-<center><strong>Legenda:</strong> Figura 1 - [PREENCHER: legenda da tela]</center>
+Passo a passo reconstruído via engenharia reversa:
 
-![Tela 2 do fluxo](../assets/subequipe03-padroes/fluxograma/tela-2.png)
+| #   | Tela                                               | Print                                                                                                   |
+| --- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1   | Home (deslogado)                                   | ![Home deslogado](../assets/subequipe03-fluxos/compartilhado/01-home-deslogado.png)                     |
+| 2   | Login Gov.br                                       | ![Login Gov.br](../assets/subequipe03-fluxos/compartilhado/02-login-govbr.png)                          |
+| 3   | Home (logado)                                      | ![Home logado](../assets/subequipe03-fluxos/compartilhado/03-home-logado.png)                           |
+| 4   | Categorias de "Rede de Saude"                      | ![Categorias Rede de Saude](../assets/subequipe03-fluxos/fluxo-rede-de-saude/01-categorias.png)         |
+| 5   | Resultado ao escolher "Maternidade" (mapa + lista) | ![Resultado Maternidade](../assets/subequipe03-fluxos/fluxo-rede-de-saude/02-maternidade-resultado.png) |
 
-<center><strong>Legenda:</strong> Figura 2 - [PREENCHER: legenda da tela]</center>
+### Fluxo 2 - Conteudo
 
-![Tela 3 do fluxo](../assets/subequipe03-padroes/fluxograma/tela-3.png)
+Passo a passo reconstruído via engenharia reversa (compartilha os passos 1-3 acima):
 
-<center><strong>Legenda:</strong> Figura 3 - [PREENCHER: legenda da tela]</center>
+| #   | Tela                                                              | Print                                                                                 |
+| --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 4   | Lista de artigos em "Conteudos"                                   | ![Lista de artigos](../assets/subequipe03-fluxos/fluxo-conteudo/01-lista-artigos.png) |
+| 5   | Artigo aberto (ex: Coronavirus), com opcao de curtir/compartilhar | ![Artigo aberto](../assets/subequipe03-fluxos/fluxo-conteudo/02-artigo-detalhe.png)   |
 
 ---
 
 ## Histórico de Versionamento
 
-| Nome do Membro                                  | Contribuição                                        | Data          | Commit                                                                                                                                                 |
-| :---------------------------------------------- | :-------------------------------------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho                     | 06/10/2026    | [d4fb78d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d4fb78d7c3e3a9508964200cb0516a8c2914c13a) |
-| [Gabriel Mota](https://github.com/Gabro-MO)     | preenchimento inicial das informaçãos do fluxograma | [f7ded61](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f7ded61dc9931b198c1a3899c9280586a4365ea9) |
+| Nome do Membro                                  | Contribuição                                        | Data       | Commit                                                                                                                                                   |
+| :---------------------------------------------- | :-------------------------------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho                     | 06/10/2026 | [d4fb78d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d4fb78d7c3e3a9508964200cb0516a8c2914c13a)   |
+| [Gabriel Mota](https://github.com/Gabro-MO)     | preenchimento inicial das informaçãos do fluxograma | 16/102026  | [f7ded61](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f7ded61dc9931b198c1a3899c9280586a4365ea9) |
+| [Gabriel Mota](https://github.com/Gabro-MO)     | preenchimento das imagens reais do fluxo            | 17/102026  | [preencher](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f7ded61dc9931b198c1a3899c9280586a4365ea9) |
