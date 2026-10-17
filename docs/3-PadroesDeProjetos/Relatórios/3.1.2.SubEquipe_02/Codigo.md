@@ -13,6 +13,7 @@ code/estrutural/src/
 │   ├── Secao.ts
 │   ├── Dashboard.ts
 │   ├── donoDoElemento.ts
+│   ├── Texto.ts
 │   └── __tests__/
 ├── dominio/       # Dados simulados do Meu SUS Digital
 │   └── painelSimulado.ts
@@ -135,6 +136,46 @@ Os testes ficam em `padrao/__tests__/` (unitários das classes do padrão) e `ui
 
 Resultado da execução local (`npm test`) em 16/10/2026: **5 arquivos e 27 testes aprovados**. `npm run lint` e `npm run build` também foram executados sem erros.
 
+---
+
+## Versão 3 ( Julia )
+
+### O que foi feito
+
+A V3 implementa a operação `buscarPorTexto(termo)` da Modelagem V4 e a usa na interface.
+
+- **Interface comum:** `ElementoDeTela` ganhou `buscarPorTexto(termo): ElementoDeTela[]`.
+- **Folhas:** `CartaoDeAtalho` compara o título; `BannerInformativo` compara o título e a mensagem.
+- **Composto (`Secao`):** reúne os resultados dos filhos, de forma recursiva, e inclui a própria seção quando o título contém o termo.
+- **Cliente (`Dashboard`):** delega a busca a cada seção de nível superior.
+- **`Texto.ts`:** função `contemTexto()`, que compara textos sem diferenciar maiúsculas nem acentos e trata termo em branco como "sem resultado".
+- **Interface (`PainelView.tsx`):** campo de busca que lista os elementos encontrados.
+
+O trecho abaixo mostra o ponto central: a `Secao` busca nos filhos pela interface comum, sem saber se cada um é folha ou seção.
+
+```ts
+buscarPorTexto(termo: string): ElementoDeTela[] {
+  const achados = this.elementos.flatMap((elemento) => elemento.buscarPorTexto(termo))
+  return contemTexto(this.titulo, termo) ? [this, ...achados] : achados
+}
+```
+
+### Diferenças em relação à Modelagem V4
+
+As folhas `MiniAppLeaf` e `CardFaqLeaf` constam no modelo, mas ainda não foram implementadas; por isso o tipo `ElementoRenderizado` tem apenas as variantes `cartao`, `banner` e `secao`.
+
+### Limitações
+
+- A unicidade dos ids na árvore não é verificada.
+- A busca de `Secao` considera apenas o título, não a descrição.
+- As rotas dos cartões continuam simuladas.
+
+### Testes da Versão 3
+
+4 novos testes em `BuscaPorText.test.ts`: folhas em seções aninhadas, acentos e maiúsculas, título da seção e termo em branco ou sem resultado.
+
+---
+
 ## Como executar
 
 ```bash
@@ -154,3 +195,4 @@ O código fonte permanece na pasta `code/`; esta página apenas documenta e apon
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Victor Leandro](https://github.com/Afrontoso) | Código V1: núcleo do Composite, dados simulados, interface e testes | 15/10/2026 | [cf84aac](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/cf84aac0d0071db1514a6902c2ce302e6f58a532) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Código V2: um pai por elemento, sem ciclos indiretos, multiplicidades do painel e criação da folha BannerInformativo | 17/10/2026 | [89d21c1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/89d21c1a9f41d7451ae1523f23c95990732232d7) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Código V3: `buscarPorTexto()` e campo de busca na interface | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
