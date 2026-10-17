@@ -233,4 +233,4 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
-| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Experimento 2 de IA  | 16/10/2026 | |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Declaração do Uso de IA| 16/10/2026 | [a528bb1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/a528bb13853f4871f6eb771c20359fe16d54c62c) |
