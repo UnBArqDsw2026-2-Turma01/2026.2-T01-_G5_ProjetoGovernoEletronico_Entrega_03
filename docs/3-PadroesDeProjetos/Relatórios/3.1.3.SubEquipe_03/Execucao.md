@@ -53,4 +53,4 @@ Resultado da suíte de testes automatizados do núcleo (`npm run test` em `code/
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Gabriel Mota](https://github.com/Gabro-MO) | Adição do video de execução e evidencia de teste| 17/10/2026 | [Preencher]() |
+| [Gabriel Mota](https://github.com/Gabro-MO) | Adição do video de execução e evidencia de teste| 17/10/2026 | [55383e5](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/55383e5e1e2ac128da56a286a21a02faba316a8a) |
