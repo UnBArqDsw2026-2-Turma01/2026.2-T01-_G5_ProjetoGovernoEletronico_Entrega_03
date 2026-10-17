@@ -1,4 +1,4 @@
-// Autoria: Gustavo Fornaciari (@GUGOFO) A classe segue o diagrama V2 (<<Leaf>> BannerInformativo) [commit: ]
+// Autoria: Gustavo Fornaciari (@GUGOFO) A classe segue o diagrama V2 (<<Leaf>> BannerInformativo) [commit: c763e51]
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 
 /**
