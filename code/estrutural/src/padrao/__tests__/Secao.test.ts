@@ -109,3 +109,110 @@ describe('Secao', () => {
     expect(historico.tipo === 'secao' && historico.filhos[0].id).toBe('exames')
   })
 })
+
+// Testes da V2: Gustavo Fornaciari (@GUGOFO). Melhoria 1: multiplicidade 0..1 da composição
+// "Elementos" do diagrama (cada elemento tem no máximo um pai).
+describe('Secao: um pai por elemento', () => {
+  it('rejeita um elemento que já pertence a outra seção', () => {
+    const { minhaSaude, vacinas } = criarArvore()
+    const outra = new Secao('outra', 'Outra')
+
+    expect(() => outra.adicionar(vacinas)).toThrow()
+
+    expect(outra.contarElementos()).toBe(0)
+    expect(minhaSaude.buscarPorId('vacinas')).toBe(vacinas)
+  })
+
+  it('rejeita o mesmo elemento adicionado duas vezes à mesma seção', () => {
+    const { minhaSaude, vacinas } = criarArvore()
+
+    expect(() => minhaSaude.adicionar(vacinas)).toThrow()
+
+    expect(minhaSaude.contarElementos()).toBe(3)
+  })
+
+  it('rejeita uma seção aninhada que já tem pai', () => {
+    const { historico } = criarArvore()
+    const outra = new Secao('outra', 'Outra')
+
+    expect(() => outra.adicionar(historico)).toThrow()
+
+    expect(outra.contarElementos()).toBe(0)
+  })
+
+  it('aceita o elemento em outra seção depois de removido da primeira', () => {
+    const { minhaSaude, vacinas } = criarArvore()
+    const outra = new Secao('outra', 'Outra')
+
+    minhaSaude.remover(vacinas)
+    outra.adicionar(vacinas)
+
+    expect(outra.buscarPorId('vacinas')).toBe(vacinas)
+    expect(minhaSaude.buscarPorId('vacinas')).toBeNull()
+  })
+
+  it('remover um elemento que não é filho não o desvincula do pai', () => {
+    const { minhaSaude, vacinas } = criarArvore()
+    const outra = new Secao('outra', 'Outra')
+
+    outra.remover(vacinas)
+
+    expect(() => outra.adicionar(vacinas)).toThrow()
+    expect(minhaSaude.contarElementos()).toBe(3)
+  })
+})
+
+// Testes da V2: Gustavo Fornaciari (@GUGOFO). Melhoria 2: amplia a nota do composto
+// ("adicionar() rejeita a própria seção") para ciclos indiretos.
+describe('Secao: sem ciclos', () => {
+  it('rejeita adicionar a uma seção filha a seção que a contém', () => {
+    const a = new Secao('a', 'A')
+    const b = new Secao('b', 'B')
+    a.adicionar(b)
+
+    expect(() => b.adicionar(a)).toThrow(/ciclo/)
+  })
+
+  it('rejeita um ciclo em vários níveis de profundidade', () => {
+    const a = new Secao('a', 'A')
+    const b = new Secao('b', 'B')
+    const c = new Secao('c', 'C')
+    a.adicionar(b)
+    b.adicionar(c)
+
+    expect(() => c.adicionar(a)).toThrow(/ciclo/)
+  })
+
+  it('mantém a árvore intacta depois de rejeitar o ciclo', () => {
+    const a = new Secao('a', 'A')
+    const b = new Secao('b', 'B')
+    a.adicionar(b)
+
+    expect(() => b.adicionar(a)).toThrow()
+
+    expect(b.contarElementos()).toBe(0)
+    expect(a.buscarPorId('b')).toBe(b)
+  })
+
+  it('aceita aninhar seções que não formam ciclo', () => {
+    const a = new Secao('a', 'A')
+    const b = new Secao('b', 'B')
+    const c = new Secao('c', 'C')
+    a.adicionar(b)
+
+    c.adicionar(a)
+
+    expect(c.buscarPorId('b')).toBe(b)
+  })
+
+  it('aceita o que antes seria ciclo depois que a seção sai da árvore', () => {
+    const a = new Secao('a', 'A')
+    const b = new Secao('b', 'B')
+    a.adicionar(b)
+    a.remover(b)
+
+    b.adicionar(a)
+
+    expect(b.buscarPorId('a')).toBe(a)
+  })
+})

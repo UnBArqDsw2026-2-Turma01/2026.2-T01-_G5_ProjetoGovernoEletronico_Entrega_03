@@ -12,6 +12,8 @@ code/estrutural/src/
 │   ├── BannerInformativo.ts
 │   ├── Secao.ts
 │   ├── Dashboard.ts
+│   ├── donoDoElemento.ts
+│   ├── Texto.ts
 │   └── __tests__/
 ├── dominio/       # Dados simulados do Meu SUS Digital
 │   └── painelSimulado.ts
@@ -41,13 +43,13 @@ code/estrutural/src/
 
 ---
 
-## Versão 1
+## Versão 1 ( Victor )
 
 ### O que foi feito
 
-A V1 implementa os cinco participantes da Modelagem V2 e os contratos definidos nas notas do diagrama:
+A V1 implementa as quatro participantes da Modelagem V1 e os contratos definidos nas notas do diagrama:
 
-- **Folhas (`CartaoDeAtalho` e `BannerInformativo`):** `contarElementos()` retorna `1`; `buscarPorId(id)` retorna o próprio objeto quando o id é igual e `null` caso contrário.
+- **Folha (`CartaoDeAtalho`):** `contarElementos()` retorna `1`; `buscarPorId(id)` retorna o próprio objeto quando o id é igual e `null` caso contrário.
 - **Composto (`Secao`):** `adicionar()` rejeita `null` e a própria seção; `remover()` ignora elementos que não são filhos; `renderizar()`, `contarElementos()` e `buscarPorId()` percorrem os filhos de forma recursiva, sem saber se cada filho é folha ou composto.
 - **Cliente (`Dashboard`):** guarda as seções de nível superior e delega as três operações para cada uma delas.
 
@@ -97,6 +99,29 @@ Sugere-se que a Modelagem V3 incorpore o retorno de `renderizar()`, para manter 
 
 Esses pontos ficam como sugestão para as próximas versões do código.
 
+## Versão 2 ( Gustavo )
+
+### O que foi feito
+
+A V2 não acrescenta classes nem operações ao modelo. Ela faz o código respeitar o que a Modelagem V2 já desenha, resolvendo as limitações que a V1 deixou registradas. As mudanças ficam em `adicionar()` e `remover()` de `Secao` e em `adicionarSecao()` e `removerSecao()` de `Dashboard`.
+
+| Melhoria | O que entrou | Onde está na Modelagem V2 |
+| :---: | :--- | :--- |
+| 1. Um pai por elemento | `Secao.adicionar()` rejeita elemento que já pertence a uma seção ou painel; `remover()` o libera para ser adicionado em outro lugar. | Multiplicidade `0..1` da composição `Elementos`. |
+| 2. Sem ciclos | `Secao.adicionar()` rejeita ciclo indireto (A contém B, que passaria a conter A), além da própria seção. | Nota do composto: "`adicionar()` rejeita `null` e a própria seção". |
+| 3. Multiplicidades do painel | `Dashboard.adicionarSecao()` rejeita seção nula ou que já tem dono; `removerSecao()` não deixa o painel sem seções. | Multiplicidades `1` (painel por seção) e `1..*` (seções por painel). |
+
+O dono de cada elemento fica em `donoDoElemento.ts`, um registro interno. Assim `ElementoDeTela` não ganha atributo nem método, e o diagrama continua o mesmo.
+
+### Limitações
+
+- **Resolvidas:** ciclos indiretos e o mesmo elemento em duas seções, as duas pendências listadas na V1.
+- **Mantida:** as rotas dos cartões continuam simuladas.
+
+### Testes da Versão 2
+
+22 novos testes em `Secao.test.ts` (10), `Dashboard.test.ts` (8) e `BannerInformativo.test.ts` (4), um grupo por melhoria mais o grupo da folha. Resultado da execução (`npm test`, `npm run lint` e `npm run build`): a registrar após a execução local.
+
 ## Testes
 
 Os testes ficam em `padrao/__tests__/` (unitários das classes do padrão) e `ui/__tests__/` (interface com React Testing Library).
@@ -110,6 +135,46 @@ Os testes ficam em `padrao/__tests__/` (unitários das classes do padrão) e `ui
 | `PainelView.test.tsx` | Exibição de seções e cartões; contagem | 3 |
 
 Resultado da execução local (`npm test`) em 16/10/2026: **5 arquivos e 27 testes aprovados**. `npm run lint` e `npm run build` também foram executados sem erros.
+
+---
+
+## Versão 3 ( Julia )
+
+### O que foi feito
+
+A V3 implementa a operação `buscarPorTexto(termo)` da Modelagem V4 e a usa na interface.
+
+- **Interface comum:** `ElementoDeTela` ganhou `buscarPorTexto(termo): ElementoDeTela[]`.
+- **Folhas:** `CartaoDeAtalho` compara o título; `BannerInformativo` compara o título e a mensagem.
+- **Composto (`Secao`):** reúne os resultados dos filhos, de forma recursiva, e inclui a própria seção quando o título contém o termo.
+- **Cliente (`Dashboard`):** delega a busca a cada seção de nível superior.
+- **`Texto.ts`:** função `contemTexto()`, que compara textos sem diferenciar maiúsculas nem acentos e trata termo em branco como "sem resultado".
+- **Interface (`PainelView.tsx`):** campo de busca que lista os elementos encontrados.
+
+O trecho abaixo mostra o ponto central: a `Secao` busca nos filhos pela interface comum, sem saber se cada um é folha ou seção.
+
+```ts
+buscarPorTexto(termo: string): ElementoDeTela[] {
+  const achados = this.elementos.flatMap((elemento) => elemento.buscarPorTexto(termo))
+  return contemTexto(this.titulo, termo) ? [this, ...achados] : achados
+}
+```
+
+### Diferenças em relação à Modelagem V4
+
+As folhas `MiniAppLeaf` e `CardFaqLeaf` constam no modelo, mas ainda não foram implementadas; por isso o tipo `ElementoRenderizado` tem apenas as variantes `cartao`, `banner` e `secao`.
+
+### Limitações
+
+- A unicidade dos ids na árvore não é verificada.
+- A busca de `Secao` considera apenas o título, não a descrição.
+- As rotas dos cartões continuam simuladas.
+
+### Testes da Versão 3
+
+4 novos testes em `BuscaPorText.test.ts`: folhas em seções aninhadas, acentos e maiúsculas, título da seção e termo em branco ou sem resultado.
+
+---
 
 ## Como executar
 
@@ -129,3 +194,5 @@ O código fonte permanece na pasta `code/`; esta página apenas documenta e apon
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Victor Leandro](https://github.com/Afrontoso) | Código V1: núcleo do Composite, dados simulados, interface e testes | 15/10/2026 | [cf84aac](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/cf84aac0d0071db1514a6902c2ce302e6f58a532) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Código V2: um pai por elemento, sem ciclos indiretos, multiplicidades do painel e criação da folha BannerInformativo | 17/10/2026 | [89d21c1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/89d21c1a9f41d7451ae1523f23c95990732232d7) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Código V3: `buscarPorTexto()` e campo de busca na interface | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |

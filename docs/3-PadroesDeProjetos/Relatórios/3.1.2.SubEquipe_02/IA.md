@@ -122,7 +122,7 @@ As sugestões do NotebookLM foram utilizadas como apoio, cabendo à integrante a
 
 ---
 
-### Experimento 04: Julia Oliveira Patricio — [Título do experimento]
+### Experimento 04: Julia Oliveira Patricio — Planejamento da Modelagem e do Código
 
 #### Integrante Responsável
 
@@ -131,21 +131,21 @@ As sugestões do NotebookLM foram utilizadas como apoio, cabendo à integrante a
 
 #### Objetivo
 
-[Descrever o objetivo da utilização da IA Generativa na atividade realizada pela integrante.]
+Planejar a consolidação da modelagem e a implementação do Código V3 a partir dos documentos da subequipe.
 
 #### Prompt Utilizado
 
 ```text
-[Inserir o prompt efetivamente utilizado pela integrante.]
+com base nos dados sobre o projeto e quero que você me oriente de forma simplificada sobre o ponto em que estamos.
 ```
 
 #### Resultado Obtido
 
-[Descrever o resultado gerado pela IA e indicar quais sugestões foram aproveitadas.]
+A IA propôs a divisão do trabalho em modelagem e código com base nas partes em que foram me incubidas, portanto me orientou em qual direção seguir e o que poderia ser implementado.
 
 #### Análise Crítica e Intervenção Humana
 
-[Registrar os acertos, as limitações identificadas e as decisões tomadas pela integrante para corrigir, adaptar ou descartar as sugestões.]
+A primeira proposta da IA estava desatualizada: ela sugeria validar ciclos e elementos duplicados em `Secao.adicionar()`, mas V2 do código já fazia isso por meio de `donoDoElemento.ts`. Isso só foi percebido ao ler o código real da branch `codigoV2SubEquipe2`, e a V4 foi refeita para registrar o que o código já garantia.
 
 ---
 
@@ -215,6 +215,16 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 
 ---
 
+### Julia Oliveira Patricio
+
+* **GitHub:** [@juliapat18](https://github.com/juliapat18)
+
+* **Uso da IA Generativa (Senso Crítico):** Usei o Claude para planejar a V4, o Código V3 e a documentação. A IA acelerou o planejamento, mas começou propondo mudanças que o código do Gustavo já havia feito, porque não via o repositório. Só percebi ao ler o código real. Também errou comandos para o meu ambiente. Aprendi a conferir cada sugestão contra o código e a rodar os testes antes de documentar.
+
+* **Lições Aprendidas:** O Composite permite tratar folhas e composições pela mesma interface, mas acrescentar uma operação à interface obriga todas as folhas a implementá-la. Na V4 percebi também que a união fechada de `ElementoRenderizado` enfraquece o princípio aberto/fechado: uma folha nova exige uma variante nova. Aprendi que documentar o limite de uma garantia vale mais do que omiti-lo.
+
+---
+
 ## 6. Síntese do Aprendizado da Subequipe
 
 [PREENCHER]
@@ -234,3 +244,4 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Declaração do Uso de IA| 16/10/2026 | [a528bb1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/a528bb13853f4871f6eb771c20359fe16d54c62c) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Registro do uso de IA Generativa | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |

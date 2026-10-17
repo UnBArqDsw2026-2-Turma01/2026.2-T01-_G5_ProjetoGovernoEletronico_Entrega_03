@@ -1,5 +1,6 @@
 // Autoria: Victor Leandro (@Afrontoso) — folha CartaoDeAtalho (commit ce70b45)
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
+import { contemTexto } from './Texto'
 
 /**
  * Folha (Leaf) no padrão GoF Composite.
@@ -38,5 +39,9 @@ export class CartaoDeAtalho implements ElementoDeTela {
 
   buscarPorId(id: string): ElementoDeTela | null {
     return this.id === id ? this : null
+  }
+
+  buscarPorTexto(termo: string): ElementoDeTela[] {
+    return contemTexto(this.titulo, termo) ? [this] : []
   }
 }

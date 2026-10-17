@@ -36,4 +36,5 @@ export interface ElementoDeTela {
   renderizar(): ElementoRenderizado
   contarElementos(): number
   buscarPorId(id: string): ElementoDeTela | null
+  buscarPorTexto(termo: string): ElementoDeTela[]
 }
