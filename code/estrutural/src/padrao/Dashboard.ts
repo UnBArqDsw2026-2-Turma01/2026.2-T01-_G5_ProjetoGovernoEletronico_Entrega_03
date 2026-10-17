@@ -77,4 +77,8 @@ export class Dashboard {
     }
     return null
   }
+
+  buscarPorTexto(termo: string): ElementoDeTela[] {
+    return this.secoes.flatMap((secao) => secao.buscarPorTexto(termo))
+  }
 }

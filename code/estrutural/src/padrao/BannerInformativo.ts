@@ -1,5 +1,6 @@
 // Autoria: Gustavo Fornaciari (@GUGOFO) A classe segue o diagrama V2 (<<Leaf>> BannerInformativo) [commit: c763e51]
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
+import { contemTexto } from './Texto'
 
 /**
  * Folha (Leaf) no padrão GoF Composite.
@@ -39,5 +40,9 @@ export class BannerInformativo implements ElementoDeTela {
 
   buscarPorId(id: string): ElementoDeTela | null {
     return this.id === id ? this : null
+  }
+
+  buscarPorTexto(termo: string): ElementoDeTela[] {
+    return contemTexto(this.titulo, termo) || contemTexto(this.mensagem, termo) ? [this] : []
   }
 }

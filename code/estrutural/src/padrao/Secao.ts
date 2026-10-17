@@ -2,6 +2,7 @@
 // Evolução do código (V2): Gustavo Fornaciari (@GUGOFO). Melhorias 1 e 2 em adicionar() e remover()
 import { definirDono, liberarDono, obterDono } from './donoDoElemento'
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
+import { contemTexto } from './Texto'
 
 /**
  * Composto (Composite) no padrão GoF Composite.
@@ -81,6 +82,11 @@ export class Secao implements ElementoDeTela {
       }
     }
     return null
+  }
+
+  buscarPorTexto(termo: string): ElementoDeTela[] {
+    const achados = this.elementos.flatMap((elemento) => elemento.buscarPorTexto(termo))
+    return contemTexto(this.titulo, termo) ? [this, ...achados] : achados
   }
 
   // Melhoria 2 (Gustavo): sobe pela cadeia de pais a partir desta seção e informa se o
