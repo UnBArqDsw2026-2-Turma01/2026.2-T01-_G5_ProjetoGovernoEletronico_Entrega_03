@@ -618,3 +618,173 @@ body {
   opacity: 0.9;
 }
 
+/* FATIA DE MEDICAMENTOS / FARMÁCIA POPULAR (Versão 3) */
+.medicamentos-container {
+  padding: 1rem 1.5rem;
+  max-width: 720px;
+}
+
+.card-medicamento {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 1px solid #D8B4FE;
+  border-radius: 12px;
+  background: #FFFFFF;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.06);
+}
+
+.card-medicamento:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+}
+
+.card-medicamento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.medicamento-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #F3E8FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7C3AED;
+  flex-shrink: 0;
+}
+
+.medicamento-title-area {
+  flex: 1;
+}
+
+.medicamento-title-area h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1B1F;
+}
+
+.medicamento-subinfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 12px;
+  color: #5F6368;
+}
+
+.badge-programa {
+  background: #F3E8FF;
+  color: #6D28D9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-dispensacao {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-dispensacao.dispensado {
+  background: #E6F4EA;
+  color: #137333;
+}
+
+.badge-dispensacao.pendente {
+  background: #FEF7E0;
+  color: #B06000;
+}
+
+.badge-dispensacao.cancelado {
+  background: #FCE8E6;
+  color: #C5221F;
+}
+
+.medicamento-body {
+  border-top: 1px dashed #E9D5FF;
+  padding-top: 10px;
+}
+
+.medicamento-metadados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 12px;
+  color: #484649;
+  margin-bottom: 10px;
+}
+
+.medicamento-metadados strong {
+  color: #1C1B1F;
+}
+
+.medicamento-obs-box {
+  background: #FAF5FF;
+  border-left: 3px solid #7C3AED;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #2D3748;
+  margin-bottom: 10px;
+}
+
+.itens-medicamento-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.itens-medicamento-table th {
+  text-align: left;
+  background: #F5F3FF;
+  padding: 6px 10px;
+  color: #484649;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.itens-medicamento-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #F0F0F8;
+  color: #1C1B1F;
+}
+
+.banner-medicamentos-card {
+  margin: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+  color: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+  max-width: 660px;
+}
+
+.banner-medicamentos-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.banner-medicamentos-info p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+

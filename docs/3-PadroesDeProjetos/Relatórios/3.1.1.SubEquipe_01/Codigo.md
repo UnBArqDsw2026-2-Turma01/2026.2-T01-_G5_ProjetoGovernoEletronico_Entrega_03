@@ -122,18 +122,41 @@ A extensão do código-fonte para a fatia de Exames Laboratoriais concretiza os 
 
 ---
 
-## 5. Versão 3 — Fatia de Medicamentos e Farmácia Popular (João Leles) `[PLACEHOLDER]`
+## 5. Versão 3 — Fatia de Medicamentos e Farmácia Popular (João Leles)
 
-Esta versão adicionará suporte à emissão e consulta de dispensações farmacêuticas e prescrições do Programa Farmácia Popular:
+A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia Popular**, permitindo consultar dispensações farmacêuticas e prescrições registradas na RNDS sem alterar o núcleo abstrato:
 
-- `ReceitaMedicamento.ts` (*ConcreteProduct*): Implementação do contrato `RegistroClinico` para medicamentos.
-- `BuscadorDeMedicamentos.ts` (*ConcreteCreator*): Subclasse de `BuscadorDeHistorico` instanciando dispensações e prescrições.
-- `medicamentosMock.ts`: Mocks de dispensações registradas na RNDS.
-- Suíte de testes unitários com Vitest em `src/padrao/__tests__/BuscadorDeMedicamentos.test.ts`.
+- **`ReceitaMedicamento` (*ConcreteProduct*)**: Implementado em [`code/criacional/src/padrao/ReceitaMedicamento.ts`](file:///code/criacional/src/padrao/ReceitaMedicamento.ts), realiza o contrato [`RegistroClinico`](file:///code/criacional/src/padrao/RegistroClinico.ts) (`tipo = 'MEDICAMENTO'`). Encapsula estabelecimento dispensador, prescritor, programa (Farmácia Popular, CBAF), status da dispensação, observações e a lista composta de itens (`ItemMedicamento[]`: princípio ativo, concentração, forma farmacêutica, posologia e quantidade).
+- **`BuscadorDeMedicamentos` (*ConcreteCreator*)**: Implementado em [`code/criacional/src/padrao/BuscadorDeMedicamentos.ts`](file:///code/criacional/src/padrao/BuscadorDeMedicamentos.ts), herda de [`BuscadorDeHistorico`](file:///code/criacional/src/padrao/BuscadorDeHistorico.ts) e sobrepõe `criarRegistroClinico()` (*GRASP Creator*), validando a carga bruta e preenchendo valores padrão para payloads parciais.
+- **Mocks de Dispensações**: Definidos em [`code/criacional/src/dominio/medicamentosMock.ts`](file:///code/criacional/src/dominio/medicamentosMock.ts), com anti-hipertensivos, antidiabéticos e estatinas do Farmácia Popular e itens do componente básico da assistência farmacêutica.
+- **Testes Unitários** (padrão AAA, em português):
+  - [`ReceitaMedicamento.test.ts`](file:///code/criacional/src/padrao/__tests__/ReceitaMedicamento.test.ts) (9 testes: instanciação, valores padrão, resumo, detalhes e validações defensivas).
+  - [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts) (7 testes: herança, método fábrica, lote, payloads nulos/parciais e receitas com múltiplos itens).
+- **Interface Gráfica React**: [`App.tsx`](file:///code/criacional/src/App.tsx) e [`meuSus.css`](file:///code/criacional/src/ui/meuSus.css) receberam a aba lateral de Medicamentos, banner com contagem de dispensações, cards com tabela de itens e o botão `⚡ +Medicamento (V3)` no Dock GoF.
+
+### 5.1. Testes Implementados
+
+![Trecho de código dos testes implementados](../assets/subequipe01-padroes/codigo/v3-testes.png)
+
+<center><strong>Legenda:</strong> Figura 7 - Trecho de código do ConcreteProduct e ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
+### 5.2. Implementação da Fatia de medicamentos
 
 ![Trecho de código da fatia de Medicamentos e Farmácia Popular](../assets/subequipe01-padroes/codigo/v3-fatia-medicamentos.png)
 
-<center><strong>Legenda:</strong> Figura 7 - Trecho de código do ConcreteProduct e ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 8 - Trecho de código do ConcreteCreator de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
+![Trecho de código da fatia de Medicamentos e Farmácia Popular](../assets/subequipe01-padroes/codigo/v3-fatia-medicamentos2.png)
+
+<center><strong>Legenda:</strong> Figura 9 - Trecho de código do ConcreteProduct de Medicamentos (código parcial ilustrativo; Autoria: João Leles).</center>
+
+
+### 5.3. Embasamento Teórico da Implementação (Versão 3)
+
+- **OCP (Meyer, 1988):** Nenhuma linha de `RegistroClinico`, `BuscadorDeHistorico`, vacinas ou exames foi modificada; a terceira fatia foi adicionada apenas por extensão.
+- **LSP (Liskov, 1987):** `ReceitaMedicamento` é substituível por `RegistroClinico` em todo o fluxo `processarRegistros()` e na UI.
+- **Composição:** Os itens da receita são agregados via `ItemMedicamento[]`, evitando subclasses por tipo de medicamento.
+- **Programação Defensiva (Meyer, 1997):** Payloads nulos/inválidos geram exceções controladas; campos ausentes recebem valores padrão.
 
 ---
 
@@ -198,3 +221,4 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
 | `2.0` | 15/10/2026 | Implementação da Versão 2: ConcreteProduct ResultadoExame, ConcreteCreator BuscadorDeExames, mocks de exames laboratoriais da RNDS, 16 testes unitários e de integração com Vitest, e interface gráfica integrada ao Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`1138b20`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/1138b20), [`921255f`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/921255f), [`ef66d3b`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/ef66d3b), [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`0c096ab`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/0c096ab), [`b59686e`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b59686e), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`fb9f581`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/fb9f581) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico da implementação para as Versões 1 e 2 (Replace Constructor with Factory Method, DIP, OCP, Programação Defensiva) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
 | `2.2` | 15/10/2026 | Anonimização de identificadores e referências pessoais na interface e nos mocks para Usuário genérico | [Giovani Coelho](https://github.com/Gotc2607) | [`d85c432`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d85c432) |
+| `3.0` | 16/10/2026 | Implementação da Versão 3: ConcreteProduct ReceitaMedicamento, ConcreteCreator BuscadorDeMedicamentos, mocks da Farmácia Popular, 16 testes unitários e aba de Medicamentos na interface | [João Leles](https://github.com/joaoleless) | - |
