@@ -22,6 +22,7 @@
     - [Entrega 3](./Projeto/ExtrasEntrega3/README.md)
         - [Padrão de Testes (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoDeTestes.md)
         - [Guia de GoF Estrutural (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md)
+        - [Guia de GoF Comportamental](./Projeto/ExtrasEntrega3/GuiaGoFComportamental.md)
 
 
 - **Atas**
