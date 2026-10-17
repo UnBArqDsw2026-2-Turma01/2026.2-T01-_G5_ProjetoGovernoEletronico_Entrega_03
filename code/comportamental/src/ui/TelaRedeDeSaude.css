@@ -1,49 +1,262 @@
-.rede-de-saude {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 24px 16px;
-  font-family: system-ui, sans-serif;
-  color: #1e1e1e;
+.pagina-rede-saude .campo-pesquisa input::placeholder {
+  color: #929baa;
 }
 
-.rede-de-saude__cabecalho h1 {
-  margin: 0;
-  color: #1351b4;
+.secao-redes {
+  margin-top: 39px;
 }
 
-.rede-de-saude__cabecalho p {
-  margin: 4px 0 20px;
-  color: #555;
+.cabecalho-redes__titulos {
+  min-width: 0;
 }
 
-.rede-de-saude__seletor {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-  font-weight: 600;
+.cabecalho-redes__titulos p {
+  margin: 5px 0 0;
+  color: #858b97;
+  font-size: 11px;
+  line-height: 1.35;
 }
 
-.rede-de-saude__seletor select {
-  padding: 6px 8px;
-  font-size: 1rem;
-}
-
-.rede-de-saude__lista {
+.grade-redes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 24px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.rede-de-saude__item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 0;
-  border-bottom: 1px solid #ddd;
+.cartao-rede {
+  min-width: 0;
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 106px;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #dedede;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
-.rede-de-saude__item span {
-  color: #555;
-  font-size: 0.9rem;
+.cartao-rede:hover {
+  border-color: #c5dafa;
+  box-shadow: 0 4px 13px rgb(29 78 140 / 8%);
+  transform: translateY(-1px);
+}
+
+.cartao-rede__corpo {
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cartao-rede__categoria {
+  margin: 0 0 8px;
+  color: #0068cc;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.cartao-rede h3 {
+  margin: 0 0 8px;
+  color: #4a4a4d;
+  font-size: 15px;
+  font-weight: 720;
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+
+.cartao-rede__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 9px;
+}
+
+.cartao-rede__tags span {
+  display: inline-block;
+  max-width: 100%;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: #0876cf;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.cartao-rede__descricao {
+  margin: 0;
+  color: #5e5e61;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.cartao-rede__endereco {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 9px 0 0;
+  color: #7b828d;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.cartao-rede__endereco span {
+  color: #0876cf;
+  font-size: 14px;
+  line-height: 11px;
+}
+
+.cartao-rede__ilustracao {
+  position: relative;
+  width: 106px;
+  height: 116px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 23% 18%, rgb(255 255 255 / 88%) 0 17px, transparent 18px),
+    radial-gradient(circle at 88% 81%, #d9e8ff 0 27px, transparent 28px),
+    linear-gradient(145deg, #e8f4ff 0%, #f7f4ff 54%, #fce9e4 100%);
+}
+
+.cartao-rede:nth-child(3n + 2) .cartao-rede__ilustracao {
+  background:
+    radial-gradient(circle at 20% 18%, rgb(255 255 255 / 90%) 0 18px, transparent 19px),
+    radial-gradient(circle at 93% 87%, #d9f1e7 0 30px, transparent 31px),
+    linear-gradient(145deg, #e5f8ef 0%, #edf5ff 60%, #fff0dc 100%);
+}
+
+.cartao-rede:nth-child(3n) .cartao-rede__ilustracao {
+  background:
+    radial-gradient(circle at 16% 82%, #ffe4d7 0 23px, transparent 24px),
+    radial-gradient(circle at 88% 14%, #dce8ff 0 26px, transparent 27px),
+    linear-gradient(145deg, #eef1ff 0%, #f7f3ff 52%, #fff0e4 100%);
+}
+
+.cartao-rede__simbolo {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 8px;
+  min-width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: #fff;
+  color: #0876cf;
+  font-size: 9px;
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgb(20 75 135 / 8%);
+}
+
+.cartao-rede__ilustracao svg {
+  position: relative;
+  width: 89px;
+  height: 89px;
+  margin-top: 12px;
+  overflow: visible;
+}
+
+.icone-unidade__predio {
+  fill: #fff;
+  stroke: #5f98d7;
+  stroke-width: 2.3;
+  stroke-linejoin: round;
+}
+
+.icone-unidade__detalhe {
+  fill: none;
+  stroke: #90bce7;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+}
+
+.icone-unidade__cruz {
+  fill: none;
+  stroke: #0876cf;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.icone-unidade__base {
+  fill: none;
+  stroke: #5f98d7;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+}
+
+.pagina-rede-saude .estado-vazio {
+  margin-top: 4px;
+}
+
+@media (max-width: 1100px) {
+  .grade-redes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .secao-redes {
+    margin-top: 29px;
+  }
+
+  .cabecalho-artigos {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 14px;
+  }
+
+  .controle-ordenacao {
+    align-self: flex-start;
+  }
+
+  .grade-redes {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cartao-rede {
+    min-height: 166px;
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .cartao-rede__ilustracao {
+    width: 96px;
+    height: 104px;
+  }
+
+  .cartao-rede__ilustracao svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cartao-rede {
+    grid-template-columns: minmax(0, 1fr) 78px;
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .cartao-rede__ilustracao {
+    width: 78px;
+    height: 90px;
+  }
+
+  .cartao-rede__ilustracao svg {
+    width: 69px;
+    height: 69px;
+  }
 }

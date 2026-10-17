@@ -1,0 +1,240 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 296px;
+  width: 296px;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1px solid #d0d0d0;
+  background: #fff;
+  color: #174a80;
+}
+
+.sidebar__marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 145px;
+  padding: 27px 18px 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.marca-sus {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #4f61a6;
+}
+
+.marca-sus__simbolo {
+  position: relative;
+  width: 79px;
+  height: 77px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 19px;
+  background: #4f61a6;
+  color: #fff;
+  font-size: 19px;
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+
+.marca-sus__simbolo span {
+  position: relative;
+  z-index: 2;
+  margin-left: -18px;
+}
+
+.marca-sus__simbolo svg {
+  position: absolute;
+  right: 7px;
+  top: 23px;
+  width: 36px;
+  height: 36px;
+  fill: #fff;
+  opacity: 0.96;
+}
+
+.marca-sus__nome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.5px;
+}
+
+.marca-sus__nome strong {
+  font-size: 31px;
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin-top: 8px;
+  padding: 0 13px 22px 0;
+}
+
+.sidebar__item {
+  position: relative;
+  width: 100%;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 22px 12px 29px;
+  border: 0;
+  border-radius: 0 17px 17px 0;
+  background: transparent;
+  color: #174a80;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.sidebar__item:not(:disabled):hover {
+  background: #edf4fb;
+}
+
+.sidebar__item.is-ativo {
+  min-height: 72px;
+  background: #194d81;
+  color: #fff;
+}
+
+.sidebar__item:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.sidebar__icone {
+  width: 31px;
+  height: 31px;
+  flex: 0 0 31px;
+  display: grid;
+  place-items: center;
+}
+
+.sidebar__icone svg {
+  width: 31px;
+  height: 31px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar__item:nth-child(1) .sidebar__icone svg,
+.sidebar__item:nth-child(4) .sidebar__icone svg {
+  fill: none;
+  stroke-width: 2.7;
+}
+
+.sidebar__item:nth-child(2) .sidebar__icone svg {
+  stroke: none;
+}
+
+.sidebar__item:nth-child(3) .sidebar__icone svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (max-width: 820px) {
+  .sidebar {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: 1px solid #d0d0d0;
+  }
+
+  .sidebar__marca {
+    justify-content: flex-start;
+    min-height: 88px;
+    padding: 12px 18px;
+  }
+
+  .marca-sus__simbolo {
+    width: 55px;
+    height: 54px;
+    border-radius: 14px;
+    font-size: 14px;
+  }
+
+  .marca-sus__simbolo span {
+    margin-left: -12px;
+  }
+
+  .marca-sus__simbolo svg {
+    top: 16px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .marca-sus__nome {
+    font-size: 17px;
+  }
+
+  .marca-sus__nome strong {
+    font-size: 24px;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+    gap: 6px;
+    margin: 0;
+    padding: 0 10px 10px;
+    overflow-x: auto;
+  }
+
+  .sidebar__item,
+  .sidebar__item.is-ativo {
+    width: auto;
+    min-width: max-content;
+    min-height: 47px;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .sidebar__icone,
+  .sidebar__icone svg {
+    width: 23px;
+    height: 23px;
+    flex-basis: 23px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar__marca {
+    min-height: 75px;
+  }
+
+  .sidebar__item,
+  .sidebar__item.is-ativo {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
