@@ -1,4 +1,6 @@
 // Autoria: Victor Leandro (@Afrontoso) — cliente Dashboard (commit 600b7b6)
+// Evolução do código (V2): Gustavo Fornaciari (@GUGOFO).
+import { definirDono, liberarDono, obterDono } from './donoDoElemento'
 import type { ElementoDeTela, ElementoRenderizado } from './ElementoDeTela'
 import type { Secao } from './Secao'
 
@@ -23,15 +25,32 @@ export class Dashboard {
     this.titulo = titulo
   }
 
+  // Melhoria 3 (Gustavo): no diagrama cada Secao de topo pertence a exatamente 1 Dashboard
+  // (multiplicidade "1" do lado do Dashboard). Rejeita seção nula e seção que já tem dono,
+  // seja outro painel, seja outra seção.
   adicionarSecao(secao: Secao): void {
+    if (secao == null) {
+      throw new Error('Não é possível adicionar uma seção nula ao painel.')
+    }
+    if (obterDono(secao) !== undefined) {
+      throw new Error(`A seção "${secao.getId()}" já pertence a um painel ou a outra seção.`)
+    }
     this.secoes.push(secao)
+    definirDono(secao, this)
   }
 
+  // Melhoria 3 (Gustavo): o diagrama declara 1..* seções por Dashboard, então um painel já
+  // montado não pode ficar sem nenhuma. Seções que não são do painel continuam sendo ignoradas.
   removerSecao(secao: Secao): void {
     const indice = this.secoes.indexOf(secao)
-    if (indice !== -1) {
-      this.secoes.splice(indice, 1)
+    if (indice === -1) {
+      return
     }
+    if (this.secoes.length === 1) {
+      throw new Error('O painel precisa manter ao menos uma seção.')
+    }
+    this.secoes.splice(indice, 1)
+    liberarDono(secao)
   }
 
   renderizar(): DashboardRenderizado {
