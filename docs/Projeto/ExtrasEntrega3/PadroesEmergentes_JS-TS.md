@@ -368,4 +368,4 @@ REFACTORING.GURU. **Command in TypeScript: Design Patterns**. [S. l.], [s. d.]. 
 
 REFACTORING.GURU. **Design Patterns in TypeScript**. [S. l.], [s. d.]. Disponível em: https://refactoring.guru/design-patterns/typescript. Acesso em: 18 out. 2026.
 
-| [Gabriel Mota](https://github.com/Gabro-MO)     | Adição da iniciativa extra de Padrões de Projeto em JavaScript e TypeScript | 18/10/2026 | [Preenchet](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/55383e5e1e2ac128da56a286a21a02faba316a8a) |
+| [Gabriel Mota](https://github.com/Gabro-MO)     | Adição da iniciativa extra de Padrões de Projeto em JavaScript e TypeScript | 18/10/2026 | [a01933c](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/a01933c5524a4cbc09c8857078f9a6e221a2ae9d) |
