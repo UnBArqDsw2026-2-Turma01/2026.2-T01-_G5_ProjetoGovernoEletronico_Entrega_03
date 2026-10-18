@@ -10,6 +10,8 @@ code/estrutural/src/
 │   ├── ElementoDeTela.ts
 │   ├── CartaoDeAtalho.ts
 │   ├── BannerInformativo.ts
+│   ├── MiniAppLeaf.ts
+│   ├── CardFaqLeaf.ts
 │   ├── Secao.ts
 │   ├── Dashboard.ts
 │   ├── donoDoElemento.ts
@@ -38,6 +40,8 @@ code/estrutural/src/
 | `ElementoDeTela` | Component | [`padrao/ElementoDeTela.ts`](../../../../code/estrutural/src/padrao/ElementoDeTela.ts) |
 | `CartaoDeAtalho` | Leaf | [`padrao/CartaoDeAtalho.ts`](../../../../code/estrutural/src/padrao/CartaoDeAtalho.ts) |
 | `BannerInformativo` | Leaf | [`padrao/BannerInformativo.ts`](../../../../code/estrutural/src/padrao/BannerInformativo.ts) |
+| `MiniAppLeaf` (Modelagem V4) | Leaf | [`padrao/MiniAppLeaf.ts`](../../../../code/estrutural/src/padrao/MiniAppLeaf.ts) |
+| `CardFaqLeaf` (Modelagem V4) | Leaf | [`padrao/CardFaqLeaf.ts`](../../../../code/estrutural/src/padrao/CardFaqLeaf.ts) |
 | `Secao` | Composite | [`padrao/Secao.ts`](../../../../code/estrutural/src/padrao/Secao.ts) |
 | `Dashboard` | Client (raiz) | [`padrao/Dashboard.ts`](../../../../code/estrutural/src/padrao/Dashboard.ts) |
 
@@ -162,7 +166,7 @@ buscarPorTexto(termo: string): ElementoDeTela[] {
 
 ### Diferenças em relação à Modelagem V4
 
-As folhas `MiniAppLeaf` e `CardFaqLeaf` constam no modelo, mas ainda não foram implementadas; por isso o tipo `ElementoRenderizado` tem apenas as variantes `cartao`, `banner` e `secao`.
+Na V3, as folhas `MiniAppLeaf` e `CardFaqLeaf` ainda não estavam implementadas. Essa pendência foi resolvida na V4, descrita a seguir.
 
 ### Limitações
 
@@ -173,6 +177,26 @@ As folhas `MiniAppLeaf` e `CardFaqLeaf` constam no modelo, mas ainda não foram 
 ### Testes da Versão 3
 
 4 novos testes em `BuscaPorText.test.ts`: folhas em seções aninhadas, acentos e maiúsculas, título da seção e termo em branco ou sem resultado.
+
+---
+
+## Versão 4 (Ana Beatriz)
+
+### O que foi feito
+
+A V4 acrescenta as duas folhas previstas na Modelagem V4 ao núcleo do Composite, sem modificar a lógica de `Secao` ou `Dashboard`.
+
+- **`MiniAppLeaf`**: representa um cartão de miniaplicativo, com `id`, `nomeApp`, `descricao` e `icone`.
+- **`CardFaqLeaf`**: representa um cartão de perguntas frequentes, com `id`, `pergunta`, `resposta` e `categoria`.
+- **Interface comum (`ElementoDeTela.ts`)**: amplia o tipo `ElementoRenderizado` com as variantes `miniapp` e `faq`, para que a interface receba os dados específicos de cada folha.
+- **Busca por texto**: `MiniAppLeaf` pesquisa no nome e na descrição; `CardFaqLeaf`, na pergunta e na resposta. Ambas reutilizam `contemTexto()` para ignorar diferenças entre maiúsculas/minúsculas e acentos, além de não retornar resultados para termos em branco.
+- **Integração com o Composite**: as novas folhas implementam `getId()`, `renderizar()`, `contarElementos()`, `buscarPorId()` e `buscarPorTexto()`. Cada folha conta como um elemento e pode ser encontrada por id ou texto quando inserida em uma `Secao` ou em um `Dashboard`.
+
+A mudança mantém o núcleo independente de React. As classes devolvem descrições tipadas, e a camada de interface é responsável por apresentá-las.
+
+### Testes da Versão 4
+
+Foram adicionados 26 testes: 13 em `MiniAppLeaf.test.ts` e 13 em `CardFaqLeaf.test.ts`. Eles cobrem identificação, contagem, busca por id, estrutura retornada por `renderizar()`, busca por texto e integração das folhas com a árvore do Composite. Os testes também verificam casos sem correspondência e termos em branco.
 
 ---
 
@@ -195,4 +219,5 @@ O código fonte permanece na pasta `code/`; esta página apenas documenta e apon
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Victor Leandro](https://github.com/Afrontoso) | Código V1: núcleo do Composite, dados simulados, interface e testes | 15/10/2026 | [cf84aac](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/cf84aac0d0071db1514a6902c2ce302e6f58a532) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Código V2: um pai por elemento, sem ciclos indiretos, multiplicidades do painel e criação da folha BannerInformativo | 17/10/2026 | [89d21c1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/89d21c1a9f41d7451ae1523f23c95990732232d7) |
-| [Julia Oliveira Patricio](https://github.com/juliapat18) | Código V3: `buscarPorTexto()` e campo de busca na interface | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Código V3: `buscarPorTexto()` e campo de busca na interface | 17/10/2026 | [83ed491](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/83ed491a98bbf07ed33a607bf89ca918458a746d) |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Código V4: implementação das folhas `MiniAppLeaf` e `CardFaqLeaf`, extensão do tipo `ElementoRenderizado` e testes unitários de integração com o Composite | 17/10/2026 | [d0bb352](https://github.com/UnBArqDsw2026-2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d0bb3527fd695b65a3710cff9888ce9c00c4edf0) |
