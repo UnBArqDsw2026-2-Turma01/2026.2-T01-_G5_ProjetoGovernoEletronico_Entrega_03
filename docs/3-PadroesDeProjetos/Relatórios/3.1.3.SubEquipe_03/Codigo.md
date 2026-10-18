@@ -75,7 +75,12 @@ O ZIP contém 11 arquivos de teste, com 50 declarações `it` distribuídas entr
 - `src/ui/__tests__/TelaRedeDeSaude.test.tsx` - ordenação, filtros de categoria, pesquisa sem acentos, apresentação dos dados e presença das 11 categorias.
 - `src/ui/__tests__/TelaBuscaDeConteudos.test.tsx` - listagem inicial, pesquisa sem acentos, filtro por tema, integração da estratégia `PorCategoria` e limpeza de filtros.
 
-O ZIP inclui um cache do Vitest no qual as 11 suítes aparecem sem falhas na última execução registrada. A execução dos testes não pôde ser repetida durante esta revisão porque o `node_modules` empacotado não contém o binding nativo do Rolldown necessário no ambiente atual. Para validar em um ambiente de desenvolvimento, instale as dependências e execute os comandos da próxima seção.
+Executado em 18/10/2026 (`npm install && npm test`), a partir de `node_modules` limpo: as 11 suítes passam, 50/50 testes.
+
+```
+ Test Files  11 passed (11)
+      Tests  50 passed (50)
+```
 
 ## Como executar
 
@@ -107,3 +112,4 @@ Os registros abaixo são os que já constavam no documento original.
 | [Gabriel Mota](https://github.com/Gabro-MO)                  | adição das entidades do fluxo de conteúdos e modificação das outras entidades para apresentanção na pagina                            | 17/102026  | [ceb8172](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/ceb8172b8cba2601aaa07f50196992adb890d75b) |
 | [Gabriel Mota](https://github.com/Gabro-MO)                  | adição do codigo do fluxo de conteudos e adição das estrategias faltantes                                                             | 17/102026  | [fd62c72](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/fd62c72033a30f3f37f437a0d76dbcaa79ff02e3) |
 | [Gabriel Mota](https://github.com/Gabro-MO)                  | adição do frontend dos fluxos propostos                                                                                               | 17/102026  | [8287800](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/828780099ec16df7de9226e303c3293974d2816d) |
+| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Verificação da suíte completa de testes (11/11 arquivos, 50/50 testes) e correção do link quebrado do vídeo de execução em `Execucao.md` | 18/10/2026 | *(preencher no commit)* |
