@@ -10,15 +10,15 @@ import { examesMock } from './dominio/examesMock';
 import { medicamentosMock } from './dominio/medicamentosMock';
 import './ui/meuSus.css';
 
-type TelaAtiva = 'primeiraPagina' | 'detalheCarteira' | 'exames' | 'medicamentos';
+type TelaAtiva = 'inicio' | 'vacinas' | 'detalheCarteira' | 'exames' | 'medicamentos';
 type AbaAtiva = 'documentos' | 'historico';
 
 export function App() {
-  const [telaAtual, setTelaAtual] = useState<TelaAtiva>('primeiraPagina');
+  const [telaAtual, setTelaAtual] = useState<TelaAtiva>('inicio');
   const [abaAtual, setAbaAtual] = useState<AbaAtiva>('documentos');
   const [mostrarDockGof, setMostrarDockGof] = useState<boolean>(true);
   const [logGof, setLogGof] = useState<string>(
-    'Factory Method pronto: BuscadorDeVacinas (V1), BuscadorDeExames (V2) e BuscadorDeMedicamentos (V3) ativos.'
+    'Factory Method V4 Final: BuscadorDeVacinas (V1), BuscadorDeExames (V2) e BuscadorDeMedicamentos (V3) ativos.'
   );
 
   // Instâncias dos Criadores Concretos (GoF Factory Method)
@@ -218,48 +218,49 @@ export function App() {
 
           <ul className="meusus-menu-list">
             <li
-              className={`meusus-menu-item ${telaAtual === 'primeiraPagina' || telaAtual === 'detalheCarteira' ? 'active' : ''}`}
-              onClick={() => setTelaAtual('primeiraPagina')}
+              className={`meusus-menu-item ${telaAtual === 'inicio' ? 'active' : ''}`}
+              onClick={() => setTelaAtual('inicio')}
             >
-              <svg width="22" height="22" viewBox="0 0 30 31" fill="currentColor">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M4.09 10.86C3.38 11.19 2.51 10.92 2.15 10.26C1.8 9.6 2.09 8.8 2.8 8.47L14.35 3.14C14.76 2.95 15.24 2.95 15.65 3.14L27.2 8.47C27.91 8.8 28.2 9.6 27.85 10.26C27.49 10.92 26.62 11.19 25.91 10.86L15 5.82L4.09 10.86ZM23.82 11.37L15.96 8.18C15.36 7.94 14.65 7.94 14.04 8.18L6.18 11.37C5.46 11.67 5 12.27 5 12.93V25.39C5 26.61 5 27.25 5.32 27.6C5.7 28 6.5 28 8.21 28H12V23.67C12 22.19 13.34 21 15 21C16.66 21 18 22.19 18 23.67V28H21.79C23.67 28 24.45 28 24.77 27.62C25 27.34 25 26.88 25 26.08V12.93C25 12.27 24.54 11.67 23.82 11.37Z"
-                />
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
               </svg>
-              <span>Vacinas (V1)</span>
+              <span>Início</span>
             </li>
 
-            <li
-              className={`meusus-menu-item ${telaAtual === 'exames' ? 'active' : ''}`}
-              onClick={() => setTelaAtual('exames')}
-            >
+            <li className="meusus-menu-item disabled">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M14 2v6a2 2 0 0 0 2 2h6" />
-                <path d="M4 16a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h10l6 6v6a2 2 0 0 1-2 2" />
-                <path d="M6 18h12" />
-                <path d="M6 14h12" />
-                <path d="M6 10h6" />
-                <path d="M9 22h6" />
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
               </svg>
-              <span>Exames (V2)</span>
+              <span>Aplicações</span>
             </li>
 
-            <li
-              className={`meusus-menu-item ${telaAtual === 'medicamentos' ? 'active' : ''}`}
-              onClick={() => setTelaAtual('medicamentos')}
-            >
+            <li className="meusus-menu-item disabled">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3" />
-                <circle cx="17" cy="17" r="3" />
-                <path d="M17 14v6" />
-                <path d="M14 17h6" />
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
               </svg>
-              <span>Medicamentos (V3)</span>
+              <span>Minha saúde</span>
             </li>
 
-            <li className="meusus-menu-item">
+            <li className="meusus-menu-item disabled">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+              <span>Conteúdos</span>
+            </li>
+
+            <li className="meusus-menu-item disabled">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>Meu perfil</span>
+            </li>
+
+            <li className="meusus-menu-item disabled">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
@@ -275,7 +276,7 @@ export function App() {
         </div>
       </aside>
 
-      {/* 2. ÁREA DE CONTEÚDO */}
+      {/* 2. ÁREA DE CONTEÚDO PRINCIPAL */}
       <main className="meusus-content">
         {/* Banner GoF Didático */}
         {mostrarDockGof && (
@@ -322,7 +323,7 @@ export function App() {
             <div className="box-card">
               <div className="box-info">
                 <label>Usuário</label>
-                <span>CPF: ***.325.000-**</span>
+                <span>CPF: ***.000.000-**</span>
               </div>
               <div className="box-foto">
                 <img src="/avatar-default.svg" alt="Avatar Usuário" />
@@ -337,12 +338,59 @@ export function App() {
         </div>
 
         {/* ======================================================== */}
+        {/* TELA 0: INÍCIO (DASHBOARD MINHA SAÚDE)                     */}
+        {/* ======================================================== */}
+        {telaAtual === 'inicio' && (
+          <div className="dashboard-container">
+            <h2 className="dashboard-title">Minha Saúde</h2>
+            <div className="minha-saude-grid">
+              {/* CARD VACINAS */}
+              <div className="card-servico-fatia" onClick={() => setTelaAtual('vacinas')}>
+                <div className="icon-box">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="m18 2 4 4-2 2-4-4 2-2Z" />
+                    <path d="m17 7 3-3" />
+                    <path d="M19 9 8.7 19.3c-.4.4-1 .4-1.4 0l-2.6-2.6c-.4-.4-.4-1 0-1.4L15 5" />
+                    <path d="m9 11 4 4" />
+                    <path d="m5 19-3 3" />
+                  </svg>
+                </div>
+                <span>Vacinas</span>
+              </div>
+
+              {/* CARD EXAMES */}
+              <div className="card-servico-fatia" onClick={() => setTelaAtual('exames')}>
+                <div className="icon-box">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 18h12" />
+                    <path d="M10 2v7.5L4.5 19.5A2 2 0 0 0 6.2 22h11.6a2 2 0 0 0 1.7-2.5L14 9.5V2" />
+                    <path d="M8.5 2h7" />
+                  </svg>
+                </div>
+                <span>Exames</span>
+              </div>
+
+              {/* CARD MEDICAMENTOS */}
+              <div className="card-servico-fatia" onClick={() => setTelaAtual('medicamentos')}>
+                <div className="icon-box">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="m10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v3" />
+                    <circle cx="17" cy="17" r="3" />
+                  </svg>
+                </div>
+                <span>Medicamentos</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ======================================================== */}
         {/* TELA 1: PRIMEIRA PÁGINA (/vacinas)                       */}
         {/* ======================================================== */}
-        {telaAtual === 'primeiraPagina' && (
+        {telaAtual === 'vacinas' && (
           <div>
             <div className="meusus-subheader">
-              <button className="meusus-btn-voltar">
+              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('inicio')}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
@@ -437,13 +485,13 @@ export function App() {
         {telaAtual === 'detalheCarteira' && (
           <div>
             <div className="meusus-subheader">
-              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('primeiraPagina')}>
+              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('vacinas')}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
               </button>
               <span className="meusus-subheader-title">Carteira de vacinação</span>
-              <button className="meusus-btn-ajuda" onClick={() => setTelaAtual('primeiraPagina')}>
+              <button className="meusus-btn-ajuda" onClick={() => setTelaAtual('vacinas')}>
                 Fechar
               </button>
             </div>
@@ -485,7 +533,7 @@ export function App() {
         {telaAtual === 'exames' && (
           <div>
             <div className="meusus-subheader">
-              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('primeiraPagina')}>
+              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('inicio')}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
@@ -599,7 +647,7 @@ export function App() {
         {telaAtual === 'medicamentos' && (
           <div>
             <div className="meusus-subheader">
-              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('primeiraPagina')}>
+              <button className="meusus-btn-voltar" onClick={() => setTelaAtual('inicio')}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
@@ -712,7 +760,7 @@ export function App() {
             Universidade de Brasília (UnB - FGA)
           </p>
           <p className="meusus-footer-sub">
-            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method - Versão 3)
+            Grupo 05 • Meu SUS Digital • SubEquipe 01: GoF Criacional (Factory Method)
           </p>
         </footer>
       </main>
