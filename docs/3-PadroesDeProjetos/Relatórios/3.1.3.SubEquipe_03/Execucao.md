@@ -32,7 +32,7 @@ Cobre: delegação da ordenação ao critério atual, troca de estratégia em te
 
 ### Trecho de Gabriel - Fluxo de Conteudos
 
-<iframe width="100%" height="500" src=https://youtu.be/uOvFTHGM2Q" title="Apresentação da Entrega 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="500" src=https://youtu.be/uOvFTHGM2QI" title="Apresentação da Entrega 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <center><a href="https://youtu.be/uOvFTHGM2QI">link caso o video não carregue</a></center>
 
