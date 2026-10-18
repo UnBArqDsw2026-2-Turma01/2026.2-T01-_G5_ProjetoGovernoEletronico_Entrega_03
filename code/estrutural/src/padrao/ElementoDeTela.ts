@@ -26,6 +26,22 @@ export type ElementoRenderizado =
       descricao: string
       filhos: ElementoRenderizado[]
     }
+  // ACRESCENTADO por Ana Beatriz (@AnnaBeatrizAraujo) — Código V4.
+  
+  | {
+      tipo: 'miniapp'
+      id: string
+      titulo: string
+      descricao: string
+      icone: string
+    }
+  | {
+      tipo: 'faq'
+      id: string
+      titulo: string
+      resposta: string
+      categoria: string
+    }
 
 /**
  * Componente (Component) no padrão GoF Composite.
@@ -36,4 +52,5 @@ export interface ElementoDeTela {
   renderizar(): ElementoRenderizado
   contarElementos(): number
   buscarPorId(id: string): ElementoDeTela | null
+  buscarPorTexto(termo: string): ElementoDeTela[]
 }

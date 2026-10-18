@@ -18,8 +18,8 @@ Para viabilizar a rastreabilidade e a avaliação individual de cada participant
 | :---: | :---: | :--- | :---: |
 | **V1** | [Artur Galdino](https://github.com/ArturFGaldino) | Execução dos testes unitários da fatia de Vacinas, validação do build estático e simulação interativa na interface da Carteira de Vacinação do Meu SUS Digital ([PR #19](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/19)). | **Concluído** |
 | **V2** | [Giovani Coelho](https://github.com/Gotc2607) | Execução dos testes unitários da fatia de Exames, testes de interface e exibição do histórico de laudos laboratoriais no Meu SUS Digital. | **Concluído** |
-| **V3** | [João Leles](https://github.com/joaoleless) | Execução dos testes unitários da fatia de Medicamentos e exibição de dispensações da Farmácia Popular na interface. | *Planejado* |
-| **V4** | [Nicole Jovita](https://github.com/nicolejovita) | Execução da suíte consolidada de testes de integração e demonstração do seletor dinâmico unificado com todas as categorias clínicas. | *Planejado* |
+| **V3** | [João Leles](https://github.com/joaoleless) | Execução dos testes unitários da fatia de Medicamentos e exibição de dispensações da Farmácia Popular na interface. | **Concluído** |
+| **V4** | [Nicole Jovita](https://github.com/nicolejovita) | Execução da suíte consolidada de testes (43 testes no Vitest), validação do build estático e demonstração da interface unificada V4 no Hub "Minha Saúde". | **Concluído** |
 
 ---
 
@@ -114,27 +114,74 @@ A suíte expandida de execução e testes da Versão 2 incorpora os seguintes pr
 
 ---
 
-## 5. Versão 3 — Evidências de Execução de Medicamentos (João Leles) `[PLACEHOLDER]`
+## 5. Versão 3 — Evidências de Execução de Medicamentos (João Leles)
 
-Demonstração da execução dos testes e da tela da fatia de Medicamentos:
-- Execução da suíte de testes unitários do `BuscadorDeMedicamentos`.
-- Exibição gráfica das receitas e dispensações da Farmácia Popular.
+### 5.1. Execução da Suíte de Testes no Vitest
+
+Com a fatia de Medicamentos e Farmácia Popular, a suíte passou a contar com **43 testes** distribuídos em 7 arquivos, todos aprovados com 100% de sucesso:
+- [`ReceitaMedicamento.test.ts`](file:///code/criacional/src/padrao/__tests__/ReceitaMedicamento.test.ts): 9 testes validando instanciação, valores padrão, resumo, detalhes e validações defensivas do produto concreto.
+- [`BuscadorDeMedicamentos.test.ts`](file:///code/criacional/src/padrao/__tests__/BuscadorDeMedicamentos.test.ts): 7 testes validando herança, sobreposição do Factory Method, processamento em lote, payloads nulos/parciais e receitas com múltiplos itens.
+- Testes de regressão das Versões 1 e 2 (vacinas, exames e interface): 27 testes, todos mantidos aprovados.
+
+![Execução dos Testes Automatizados Vitest - V3](../assets/subequipe01-padroes/execucao/v3-vitest-testes.png)
+
+<center><strong>Legenda:</strong> Figura 7 - Evidência de execução dos 43 testes com aprovação de 100% no Vitest (Autoria: João Leles).</center>
+
+### 5.2. Validação de Build e Checagem Estática de Tipos
+
+![Build de Produção e Tipagem estática - V3](../assets/subequipe01-padroes/execucao/v3-vitest-build.png)
+
+<center><strong>Legenda:</strong> Figura 8 - Evidência do build estático de produção e checagem de tipos compilado com sucesso (Autoria: João Leles).</center>
+
+### 5.3. Interface Gráfica — Receitas e Dispensações da Farmácia Popular
+
+A interface do Meu SUS Digital ganhou a aba **Medicamentos**, que exibe as dispensações do cidadão (anti-hipertensivos, antidiabéticos, estatinas etc.) com estabelecimento, prescritor, itens, posologia e quantidade. O botão `⚡ +Medicamento (V3)` no Dock GoF aciona em tempo de execução o método fábrica [`BuscadorDeMedicamentos.criarRegistroClinico()`](file:///code/criacional/src/padrao/BuscadorDeMedicamentos.ts), instanciando novas receitas dinamicamente.
 
 ![Execução da Fatia de Medicamentos](../assets/subequipe01-padroes/execucao/v3-execucao-medicamentos.png)
 
-<center><strong>Legenda:</strong> Figura 7 - Evidência de testes e interface da fatia de Medicamentos em execução (Autoria: João Leles - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 9 - Interface do Meu SUS Digital exibindo as dispensações de medicamentos processadas via Factory Method (Autoria: João Leles).</center>
+
+### 5.4. Embasamento Teórico da Execução e Testes (Versão 3)
+
+- **Padrão AAA (Beck, 2002):** Todos os 16 novos testes seguem Arrange-Act-Assert.
+- **Teste de Regressão:** A inclusão da terceira fatia não quebrou nenhum dos 27 testes anteriores, comprovando empiricamente o princípio Aberto/Fechado do Factory Method.
+- **Programação Defensiva:** Os testes cobrem payloads nulos, parciais e inválidos, garantindo que o criador concreto preencha valores padrão e o produto rejeite dados inconsistentes.
 
 ---
 
-## 6. Versão 4 — Evidências de Execução Integrada (Nicole Jovita) `[PLACEHOLDER]`
+## 6. Versão 4 — Evidências de Execução Integrada e Fidelidade Visual (Nicole Jovita)
 
-Demonstração da execução do histórico integrado e do seletor dinâmico:
-- Execução da suíte completa de testes de regressão de todo o padrão GoF Criacional.
-- Exibição da navegação unificada entre Vacinas, Exames e Medicamentos na mesma sessão do cidadão.
+### 6.1. Execução da Suíte Consolidada de Testes Automatizados no Vitest
 
-![Execução da Integração Unificada](../assets/subequipe01-padroes/execucao/v4-execucao-unificada.png)
+Com o fechamento da Versão 4, a suíte de testes integrou e validou todas as fatias clínicas, o roteamento do seletor e a camada de interface gráfica. A execução no **Vitest** confirmou **51 testes automatizados aprovados com 100% de sucesso** em **8 arquivos de teste** (incluindo os 8 novos testes de integração em `SeletorHistorico.test.tsx`), executados de forma hermética e determinística:
 
-<center><strong>Legenda:</strong> Figura 8 - Evidência de testes consolidados e visão unificada do histórico de saúde em execução (Autoria: Nicole Jovita - Em breve).</center>
+![Execução Consolidada dos Testes Automatizados no Vitest - V4](../assets/subequipe01-padroes/execucao/v4-vitest-testes.png)
+
+<center><strong>Legenda:</strong> Figura 10 - Evidência de execução da suíte completa de 51 testes aprovados via Vitest no terminal (Autoria: Nicole Jovita).</center>
+
+---
+
+### 6.2. Interface Gráfica — Hub "Minha Saúde" e Comparativo com o Meu SUS Digital
+
+A tela inicial desenvolvida na Versão 4 atua como o Hub central do paciente, replicando fielmente a hierarquia visual e a paleta de cores oficial do **Meu SUS Digital**:
+
+1. **Card de Identificação do Cidadão:** Exibe as credenciais anonimizadas do usuário com fundo azul característico, avatar estilizado e o botão de notificações desvinculado ao topo.
+2. **Escopo de Navegação e Menus Desabilitados na Sidebar:** Para preservar o foco pedagógico no padrão GoF Criacional **Factory Method**, apenas a opção **Início** - pertinente às fatias desenvolvidas (*Vacinas*, *Exames* e *Medicamentos*) está ativa na interface. As demais opções da Sidebar lateral (*Aplicações*, *Conteúdos*, *Meu perfil*, *Dúvidas frequentes*) foram mantidas visualmente com o estado desabilitado (`opacity: 0.5; cursor: not-allowed;`), evitando direcionar o avaliador para fluxos fora do escopo do mini-projeto.
+3. **Grid Dinâmico "Minha Saúde":** Apresenta os três cards interativos de serviços de saúde desenvolvidos pela subequipe, permitindo navegar de forma fluida entre cada especialização clínica.
+
+![Interface Gráfica do Hub Minha Saúde em Execução](../assets/subequipe01-padroes/execucao/v4-execucao-hub-minha-saude.png)
+
+<center><strong>Legenda:</strong> Figura 11 - Interface do Hub "Minha Saúde" do Meu SUS Digital V4 em execução local (Autoria: Nicole Jovita).</center>
+
+---
+
+### 6.3. Embasamento Teórico da Execução e Testes (Versão 4)
+
+- **Validação de Usabilidade e Consistência (Nielsen, 1994):** O reuso do padrão de design oficial reduz a carga cognitiva do usuário, mantendo a consistência entre o protótipo acadêmico e a aplicação governamental real.
+- **Isolamento de Componentes Fora do Escopo:** Desabilitar funcionalmente os menus laterais secundários garante o cumprimento das heurísticas de prevenção de erro (*Error Prevention*), impedindo navegações inválidas enquanto mantém o realismo visual do layout.
+- **Garantia de Regressão e Cobertura Total:** A execução contínua da suíte de 51 testes no Vitest assegura que refatorações na camada visual (CSS/React) não afetam o comportamento e a integridade do padrão **Factory Method**.
+
+---
 
 ## 7. Bibliografia
 
@@ -156,3 +203,5 @@ Demonstração da execução do histórico integrado e do seletor dinâmico:
 | `1.1` | 15/10/2026 | Padronização e harmonização das legendas e da numeração sequencial das Figuras 1 a 7 | [Artur Galdino](https://github.com/ArturFGaldino) | [`4f6e55c`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4f6e55c) |
 | `2.0` | 15/10/2026 | Registro das evidências de execução da Versão 2: 27 testes aprovados no Vitest (16 novos testes da fatia de exames e interface), build estático e captura da interface de laudos laboratoriais do Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`f8166ef`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f8166ef), [`4bdef88`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4bdef88) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico de testes e execução para as Versões 1 e 2 (Pirâmide de Testes, Padrão AAA, Princípios FIRST, Testes Centrados no Usuário) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
+| `3.0` | 16/10/2026 | Registro das evidências de execução da Versão 3: 43 testes aprovados (16 novos da fatia de Medicamentos), checagem de tipos e interface da Farmácia Popular | [João Leles](https://github.com/joaoleless) | - |
+| `4.0` | 18/10/2026 | Registro das evidências da Versão 4: 43 testes consolidados no Vitest, captura do Hub "Minha Saúde" e análise comparativa de conformidade visual | [Nicole Jovita](https://github.com/nicolejovita) | - |
