@@ -107,11 +107,62 @@ Ficaram para as próximas versões: associar as seções e os cartões às telas
 
 ### Versão 3
 
-**A desenvolver.** Refinar a modelagem conforme o feedback da V2 e a implementação inicial. Conferir se as operações recursivas e a hierarquia correspondem ao comportamento esperado.
+![Diagrama UML de classes da V3 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V3.png)
+
+**Legenda:** Figura 3 — Diagrama UML do padrão Composite com foco na extensibilidade da interface do Meu SUS Digital. A versão inclui duas novas classes concretas, `MiniAppLeaf` e `CardFaqLeaf`, que permitem representar diferentes componentes visuais sem alterar a estrutura das classes existentes.
+
+#### O que foi feito
+
+Na V3, o diagrama foi ampliado com duas novas classes folha (`Leaf`), aproximando a estrutura do padrão Composite dos componentes presentes na interface do Meu SUS Digital e facilitando sua implementação com React e TypeScript.
+
+- **`MiniAppLeaf`**: representa os cartões dos miniaplicativos disponíveis na plataforma, como *Acolhe Mais+*, *Peso Saudável* e *Equidade SUS*. Seus atributos são `nomeApp`, `descricao` e `icone`.
+
+- **`CardFaqLeaf`**: representa os cartões de perguntas frequentes, que apresentam dúvidas e respostas para orientar os usuários. Seus atributos são `pergunta`, `resposta` e `categoria`.
+
+A inclusão dessas classes demonstra como o padrão Composite permite adicionar novos tipos de componentes sem precisar modificar as classes que já existem. Tanto `Secao` quanto `Dashboard` continuam trabalhando com os elementos por meio da interface comum `ElementoDeTela`, mantendo a organização e a flexibilidade da estrutura.
+
+Dessa forma, a V3 evidencia o Princípio Aberto/Fechado (OCP), segundo o qual o sistema deve permitir a inclusão de novas funcionalidades sem exigir alterações constantes no código existente. 
 
 ### Versão 4
 
-**A desenvolver.** Consolidar o modelo após validação com o código e a execução local. Documentar limitações conhecidas, decisões finais e eventuais diferenças entre a proposta conceitual e a implementação.
+![Diagrama UML de classes da V4 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V4.png)
+
+**Legenda:** Figura 4 — Diagrama UML consolidado do padrão Composite aplicado ao Dashboard Pós-Login do Meu SUS Digital. A versão alinha o modelo ao código: `renderizar()` retorna os tipos `ElementoRenderizado` e `DashboardRenderizado` (`<<DTO>>`, ligados por dependência `<<usa>>`), as notas registram as regras de `adicionar()` e `adicionarSecao()` garantidas em execução e a operação `buscarPorTexto()` passa a fazer parte da interface comum. As setas tracejadas com ponta vazada indicam realização, as tracejadas abertas indicam dependência e os losangos preenchidos indicam composição.
+
+#### O que foi feito
+
+A V4 consolida o modelo depois das versões de código V1, V2 e V3, validadas localmente com testes. A estrutura de participantes foi mantida: a interface `ElementoDeTela`, as folhas `CartaoDeAtalho`, `BannerInformativo`, `MiniAppLeaf` e `CardFaqLeaf`, o composto `Secao` e o cliente `Dashboard`. As alterações registram no diagrama o que o código passou a garantir e a operação nova de busca, conforme [Codigo.md](./Codigo.md).
+
+| # | Ponto na V3 | Alteração na V4 | Justificativa |
+| :--- | :--- | :--- | :--- |
+| 1 | `renderizar()` retornava `void` no diagrama, enquanto o código devolve uma descrição do elemento. | `renderizar()` passa a retornar `ElementoRenderizado`, e `Dashboard.renderizar()` retorna `DashboardRenderizado`. Os dois tipos entram como `<<DTO>>`, ligados por dependência (`<<usa>>`). | Mantém o núcleo do padrão sem dependência de React: a recursão fica em `padrao/` e a camada `ui/` apenas desenha a descrição recebida (Código V1). |
+| 2 | A multiplicidade `0..1` do lado do elemento e a rejeição de ciclos eram apenas notação, e o Código V1 as registrava como limitações. | As notas de `Secao.adicionar()` e da composição passam a listar as rejeições garantidas: `null`, a própria seção, elemento que já tem dono e ciclo indireto. O dono de cada elemento fica em um registro interno do código (`donoDoElemento.ts`), que não aparece como classe porque a interface não ganha atributo nem método. | O Código V2 passou a respeitar o `0..1`: quem já pertence a uma seção ou painel não pode ser adicionado de novo, e a árvore não admite ciclos. |
+| 3 | A multiplicidade `1..*` do `Dashboard` e a operação `removerSecao()` não estavam relacionadas. | A nota do `Dashboard` registra que `adicionarSecao()` rejeita `null` e seção que já tem dono, e que `removerSecao()` mantém ao menos uma seção. | O Código V2 impede remover a última seção, tornando o `1..*` uma regra em execução. |
+| 4 | A busca existia apenas por id. | Inclusão de `buscarPorTexto(termo): ElementoDeTela [0..*]` em `ElementoDeTela` e em todos os participantes. Folhas retornam a si mesmas quando um texto exibido contém o termo; `Secao` e `Dashboard` propagam a busca recursivamente. | Um campo de busca precisa localizar elementos pelo texto exibido. A operação mantém o tratamento uniforme: o cliente busca na árvore sem saber se cada nó é folha ou composição. |
+
+**Estrutura dos tipos acrescentados na V4:**
+
+- **`ElementoRenderizado` (DTO):** `tipo` (`'cartao'`, `'banner'` ou `'secao'`), `id` e `titulo`, mais os campos de cada tipo: `icone` e `url` (cartão), `mensagem` e `imagem` (banner), `descricao` e `filhos: ElementoRenderizado [0..*]` (seção).
+- **`DashboardRenderizado` (DTO):** `id`, `titulo` e `secoes: ElementoRenderizado [0..*]`.
+
+**Contratos acrescentados ou alterados na V4:**
+
+- **`ElementoDeTela` (Component):** `buscarPorTexto(termo): ElementoDeTela [0..*]`.
+- **Folhas:** `buscarPorTexto(termo)` retorna a si mesma, em uma lista, quando algum texto exibido contém o termo (sem diferenciar acentos nem maiúsculas), ou uma lista vazia caso contrário. Em `CartaoDeAtalho` o texto é o título; em `BannerInformativo`, o título e a mensagem.
+- **`Secao` (Composite):** `buscarPorTexto(termo)` concatena os resultados dos filhos e inclui a própria seção quando o título contém o termo. `adicionar(elemento)` rejeita `null`, a própria seção, elemento que já tem dono e ciclo indireto. `remover(elemento)` libera o dono.
+- **`Dashboard` (Client/raiz):** `buscarPorTexto(termo)` delega a busca a cada seção de nível superior. `adicionarSecao(secao)` rejeita `null` e seção que já tem dono. `removerSecao(secao)` mantém ao menos uma seção.
+
+#### Limitações e decisões finais
+
+- O dono de cada elemento fica em um registro externo às classes (`donoDoElemento.ts`). A decisão evita acrescentar atributo ou método à interface, mas deixa parte do estado do modelo fora do diagrama.
+- A descrição retornada por `renderizar()` é uma união fechada de três tipos. Incluir uma folha nova exige acrescentar uma variante ao tipo, o que enfraquece, na camada de renderização, o princípio aberto/fechado destacado na V3.
+- Acrescentar uma operação à interface obriga todas as folhas a implementá-la. É o custo, já citado na fundamentação teórica, de uma abstração muito genérica, e foi aceito porque a busca por texto é necessária à interface.
+- A unicidade dos ids na árvore não é verificada: se dois elementos tiverem o mesmo id, `buscarPorId()` retorna o primeiro encontrado.
+- As rotas dos cartões continuam simuladas: o clique não navega para outra tela.
+
+#### Conferência modelo × código
+
+O Código V1 implementou o item 1, o Código V2 implementou os itens 2 e 3 e o Código V3 implementa o item 4, com `buscarPorTexto()` em `CartaoDeAtalho`, `BannerInformativo`, `Secao` e `Dashboard`, busca insensível a acentos e maiúsculas e campo de busca na interface. As folhas `MiniAppLeaf` e `CardFaqLeaf` constam no modelo, mas ainda não foram implementadas no código, e esta é a diferença entre a V4 e a implementação. Os detalhes e os testes estão em [Codigo.md](./Codigo.md).
 
 ---
 
@@ -141,6 +192,8 @@ A primeira versão foi mantida em nível conceitual, usando um diagrama de class
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 | 15/10/2026 | [d0c9c93](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d0c9c93a69658413b70bb7395db5c5d9bdd26a84) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 2 | 15/10/2026 | [1aed3f4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/1aed3f4e382a5fc9601bc0377684a12e2586e436) |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Versão 3 | 16/10/2026 | [f4c335b](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f4c335b211615e4335c070de2c01479d6c1ed358) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Versão 4 | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
 
 ---
 

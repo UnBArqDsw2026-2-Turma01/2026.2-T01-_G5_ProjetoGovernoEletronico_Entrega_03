@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="t d">
+  <title id="t">Prevenção de infecções</title><desc id="d">Ilustração de um escudo protegendo contra microrganismos.</desc>
+  <rect width="360" height="360" rx="24" fill="#eaf5ff"/>
+  <circle cx="67" cy="77" r="35" fill="#c9e4fa"/><circle cx="296" cy="286" r="47" fill="#c5e6df"/>
+  <g stroke="#2e8bcc" stroke-width="5" stroke-linecap="round">
+    <path d="M78 163 v-14 M78 200 v14 M54 188 l-12 10 M102 165 l12 -10 M55 166 l-10 -10 M102 196 l11 10"/>
+    <circle cx="78" cy="181" r="22" fill="#81c9ee"/>
+    <path d="M277 99 v-13 M277 130 v13 M257 121 l-11 8 M297 103 l11 -8"/>
+    <circle cx="277" cy="114" r="18" fill="#f7b6a6" stroke="#db8878"/>
+  </g>
+  <path d="M180 79 L260 108 V178 C260 231 227 273 180 295 C133 273 100 231 100 178 V108 Z" fill="#1676c5"/>
+  <path d="M180 99 L241 121 V177 C241 218 217 250 180 270 C143 250 119 218 119 177 V121 Z" fill="#ffffff"/>
+  <path d="M149 181 L169 201 L214 151" fill="none" stroke="#24a88a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

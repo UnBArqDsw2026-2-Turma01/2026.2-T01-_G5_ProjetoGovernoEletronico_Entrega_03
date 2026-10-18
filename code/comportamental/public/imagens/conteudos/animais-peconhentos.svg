@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="t d">
+  <title id="t">Animal peçonhento</title><desc id="d">Ilustração de um escorpião em um fundo claro.</desc>
+  <rect width="360" height="360" rx="24" fill="#fff4e9"/>
+  <circle cx="270" cy="80" r="52" fill="#ffd8c7"/>
+  <circle cx="76" cy="294" r="62" fill="#f9dfac"/>
+  <g fill="none" stroke="#234d42" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M112 207 C88 172 111 142 146 147 C174 151 187 180 168 199 C147 217 129 202 137 185"/>
+    <path d="M173 184 C204 165 224 172 235 194 C244 212 268 213 280 193 C295 169 276 151 259 157 C246 162 249 177 260 178"/>
+    <path d="M116 194 L89 178 L75 191 M126 208 L95 226 L82 217 M162 207 L176 232 L165 248 M180 197 L204 220 L218 211"/>
+    <path d="M281 190 C304 171 300 141 279 129 C258 118 255 99 272 81 C282 70 294 71 301 81"/>
+  </g>
+  <g fill="#234d42"><circle cx="143" cy="170" r="5"/><circle cx="158" cy="173" r="5"/></g>
+  <path d="M181 55 L204 95 L158 95 Z" fill="#ffbd4a" stroke="#a45e13" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M181 69 V82 M181 88 V89" stroke="#75420d" stroke-width="5" stroke-linecap="round"/>
+</svg>
