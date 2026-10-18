@@ -190,4 +190,4 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Giovani Coelho](https://github.com/Gotc2607) | Adição do experimento de IA com Google Gemini para a fatia de Exames (V2) e ponto de vista individual | 18/10/2026 | - |
+| [Giovani Coelho](https://github.com/Gotc2607) | Adição do experimento de IA com Google Gemini para a fatia de Exames (V2) e ponto de vista individual | 18/10/2026 | [e87e841](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e87e841) |
