@@ -18,7 +18,7 @@
 
 ## 2. Versão Final do Modelo
 
-![Versão final do modelo do padrão Criacional](../assets/subequipe01-padroes/modelagem/versao-final.png)
+![Versão final do modelo do padrão Criacional](../assets/subequipe01-padroes/modelagem/versao-final.jpg)
 
 <center><strong>Legenda:</strong> Figura 1 - Diagrama de Classes UML consolidado (Versão Final) do padrão GoF Factory Method aplicado ao Meu SUS Digital (Autoria: SubEquipe 01 - Em breve).</center>
 
@@ -128,7 +128,7 @@ A Versão 1 estabelece a correspondência formal entre a estrutura canônica do 
 
 A Versão 2 evolui o diagrama de classes UML para o **Diagrama Aplicado**, incorporando ao catálogo do Meu SUS Digital a fatia de **Exames Laboratoriais** da Rede Nacional de Dados em Saúde (RNDS) e comprovando na prática o princípio *Open/Closed* (Aberto para Extensão, Fechado para Modificação):
 
-![Diagrama de Classes GoF Criacional - Versão 2](../assets/subequipe01-padroes/modelagem/versao-2.png)
+![Diagrama de Classes GoF Criacional - Versão 2](../assets/subequipe01-padroes/modelagem/versao-2.jpg)
 
 <center><strong>Legenda:</strong> Figura 3 - Modelagem UML do Factory Method — Versão 2: Diagrama Aplicado com Vacinas e Exames Laboratoriais, estereótipos formais e princípios GRASP (Autoria: Giovani Coelho).</center>
 
@@ -164,19 +164,40 @@ A Versão 3 refina o diagrama após a validação da implementação, incorporan
 
 - **Embasamento Teórico (Versão 3):** a terceira extensão sem alteração do núcleo confirma o OCP; a substituibilidade de `ReceitaMedicamento` por `RegistroClinico` atende ao LSP; e a atribuição da criação ao `BuscadorDeMedicamentos`, que detém os dados de inicialização, segue o GRASP *Creator* (Larman, 2004).
 
-![Diagrama de Classes GoF Criacional - Versão 3](../assets/subequipe01-padroes/modelagem/versao-3.png)
+![Diagrama de Classes GoF Criacional - Versão 3](../assets/subequipe01-padroes/modelagem/versao-3.jpg)
 
 <center><strong>Legenda:</strong> Figura 4 - Modelagem UML do Factory Method — Versão 3: Diagrama Refinado com Medicamentos (Autoria: João Leles).</center>
 
 ---
 
-### 6.4. Versão 4 — Consolidação Final com Seletor (Nicole Jovita) `[PLACEHOLDER]`
+### 6.4. Versão 4 — Consolidação Final com Seletor Dinâmico de Histórico (Nicole Jovita)
 
-Diagrama consolidado final com a classe orquestradora `SeletorDeHistorico` e a visão completa das três fatias de produtos clínicos integrados:
+A Versão 4 consolida a arquitetura do padrão **Factory Method** no Meu SUS Digital, introduzindo a classe orquestradora de interface e seletor dinâmico (`SeletorDeHistorico` / `App`). Esta versão unifica as três fatias clínicas (Vacinas, Exames Laboratoriais e Medicamentos) sob um ponto de navegação polimórfico e desacoplado no Hub "Minha Saúde":
 
-![Diagrama de Classes GoF Criacional - Versão 4 / Final](../assets/subequipe01-padroes/modelagem/versao-final.png)
+![Diagrama de Classes GoF Criacional - Versão 4 / Final](../assets/subequipe01-padroes/modelagem/versao-final.jpg)
 
-<center><strong>Legenda:</strong> Figura 5 - Modelagem UML consolidada com o Seletor Dinâmico de Histórico (Autoria: Nicole Jovita - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 5 - Modelagem UML consolidada do Factory Method — Versão 4: Diagrama Final com Seletor Dinâmico de Histórico e integração polimórfica das três fatias clínicas (Autoria: Nicole Jovita).</center>
+
+- **Mapeamento do Orquestrador e Participantes na V4:**
+  - `Orchestrator / Client` --> `SeletorDeHistorico` (`App`): Componente de alto nível que gerencia o estado da navegação na UI e seleciona dinamicamente qual `BuscadorDeHistorico` concreto deve ser acionado para processar os dados da RNDS (*GRASP: Controller & Indirection*).
+  - `Creator` --> `BuscadorDeHistorico`: Mantida como a base abstrata e estável do padrão, declarando o método fábrica `criarRegistroClinico()` e o processamento em lote `processarRegistros()`.
+  - `ConcreteCreators` --> `BuscadorDeVacinas`, `BuscadorDeExames` e `BuscadorDeMedicamentos`: Subclasses concretas que estendem a base abstrata e respondem pela instanciação dos seus respectivos produtos clínicos (*GRASP: Creator & Polymorphism*).
+  - `Product` --> `RegistroClinico`: Interface comum mantida como barreira estável de abstração para a UI (*Protected Variations*).
+  - `ConcreteProducts` --> `CartaoVacina`, `ResultadoExame` e `ReceitaMedicamento`: Produtos concretos especializados em suas regras de negócio e metadados de saúde.
+
+- **Notação e Elementos UML Adicionados na Versão 4:**
+  - Classe Concreta `SeletorDeHistorico` representando a camada de orquestração da UI.
+  - Associação `1` para `3..*` de `SeletorDeHistorico` para `BuscadorDeHistorico`, evidenciando o gerenciamento da coleção de criadores.
+  - Dependência de Uso (`..>`) com o estereótipo `<<uses>>` entre `SeletorDeHistorico` e a interface `RegistroClinico`, demonstrando o consumo polimórfico dos dados de saúde pela interface gráfica.
+  - Etiqueta explicativa **`GRASP: Controller / Indirection`**.
+
+---
+
+### 6.5. Embasamento Teórico da Modelagem (Versão 4)
+
+- **Padrão GRASP Controller (Controlador - Larman, 2005):** A introdução do `SeletorDeHistorico` atribui a um objeto de alto nível a responsabilidade de coordenar as operações do sistema (troca de abas no Hub e despacho da busca), evitando colocar regras de decisão diretamente nos componentes visuais de apresentação.
+- **Padrão GRASP Indirection (Indireção - Larman, 2005):** Ao intermediar o acesso entre a interface gráfica e a hierarquia do Factory Method, o seletor delega o roteamento a um componente intermediário, garantindo que a UI não precise conhecer qual criador concreto instanciar para cada categoria.
+- **Inversão de Dependência e Polimorfismo Completo (DIP - Martin, 2002):** A UI do Meu SUS Digital V4 depende exclusivamente das abstrações `BuscadorDeHistorico` e `RegistroClinico`. O seletor injeta o criador correto em tempo de execução de forma transparente, permitindo a coexistência de fatias heterogêneas sem alterar o contrato base da aplicação.
 
 ---
 
@@ -216,3 +237,4 @@ Registros das atas de reunião e planejamento interno estão documentados em [Pl
 | `2.0` | 15/10/2026 | Documentação da Versão 2 de modelagem UML (Giovani Coelho): Diagrama de Classes Aplicado com a inclusão de Exames Laboratoriais (BuscadorDeExames e ResultadoExame), mapeamento de papéis GoF, notação UML e princípios GRASP | [Giovani Coelho](https://github.com/Gotc2607) | [`775ef48`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/775ef48) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico aprofundado para as Versões 1 e 2 (Gamma et al., OCP, LSP, padrões GRASP) e expansão das referências bibliográficas | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
 | `3.0` | 16/10/2026 | Documentação da Versão 3 de modelagem UML: Diagrama Refinado com Medicamentos (BuscadorDeMedicamentos e ReceitaMedicamento) e embasamento teórico | [João Leles](https://github.com/joaoleless) | - |
+| `4.0` | 18/10/2026 | Documentação da Versão 4 da modelagem UML: Consolidação final com o Seletor Dinâmico de Histórico (`SeletorDeHistorico`), integração polimórfica das três fatias clínicas e adição dos princípios GRASP Controller e Indirection | [Nicole Jovita](https://github.com/nicolejovita) | - |
