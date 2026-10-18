@@ -26,8 +26,8 @@ Para atender ao critério de divisão equilibrada e trabalho individual avaliáv
 | :---: | :---: | :--- | :---: |
 | **V1** | [Artur Galdino](https://github.com/ArturFGaldino) | **Fatia de Vacinas**: Criação do núcleo abstrato do Factory Method (`RegistroClinico`, `BuscadorDeHistorico`), produto concreto `CartaoVacina`, criador concreto `BuscadorDeVacinas`, mocks FHIR e interface fiel da Carteira de Vacinação ([PR #19](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/19)). | **Concluído** |
 | **V2** | [Giovani Coelho](https://github.com/Gotc2607) | **Fatia de Exames**: Implementação do produto concreto `ResultadoExame`, do criador concreto `BuscadorDeExames`, mocks de laudos da RNDS, suíte de testes unitários Vitest e integração visual no Meu SUS Digital. | **Concluído** |
-| **V3** | [João Leles](https://github.com/joaoleless) | **Fatia de Medicamentos**: Implementação do produto concreto `ReceitaMedicamento`, do criador concreto `BuscadorDeMedicamentos`, mocks da Farmácia Popular e testes unitários. | *Planejado* |
-| **V4** | [Nicole Jovita](https://github.com/nicolejovita) | **Núcleo Unificador / Seletor Dinâmico**: Implementação do `SeletorDeHistorico` para despacho dinâmico de criadores, consolidação da suíte de testes integrados e fechamento da interface unificada. | *Planejado* |
+| **V3** | [João Leles](https://github.com/joaoleless) | **Fatia de Medicamentos**: Implementação do produto concreto `ReceitaMedicamento`, do criador concreto `BuscadorDeMedicamentos`, mocks da Farmácia Popular e testes unitários. | **Concluído** |
+| **V4** | [Nicole Jovita](https://github.com/nicolejovita) | **Núcleo Unificador / Seletor Dinâmico**: Refatoração do design system do Meu SUS Digital, consolidação da suíte de testes integrados e fechamento da interface unificada V4. | **Concluído** |
 
 ---
 
@@ -160,17 +160,37 @@ A Versão 3 estendeu o Factory Method para a fatia de **Medicamentos e Farmácia
 
 ---
 
-## 6. Versão 4 — Unificação e Seletor Dinâmico de Histórico (Nicole Jovita) `[PLACEHOLDER]`
+## 6. Versão 4 — Unificação, Seletor Dinâmico de Histórico e Hub "Minha Saúde" (Nicole Jovita)
 
-Esta versão consolidará a camada de despacho e consumo centralizado do padrão GoF Criacional:
+A Versão 4 encerra o ciclo de desenvolvimento do mini-projeto unificando as fatias clínicas (Vacinas, Exames e Medicamentos) por meio de um **seletor dinâmico de histórico** e construindo a **página inicial integrada de saúde ("Minha Saúde")**, além de elevar a fidelidade estética ao design system oficial do **Meu SUS Digital**:
 
-- `SeletorDeHistorico.ts`: Fachada/orquestrador que seleciona o criador adequado em tempo de execução com base no tipo de registro solicitado.
-- Unificação das abas clínicas na interface do Meu SUS Digital.
-- Suíte integrada de testes unitários e testes de regressão do padrão completo.
+- **Seletor Dinâmico de Histórico e Despacho de Criadores**: Implementação do mecanismo de seleção no fluxo de controle de `App.tsx`, permitindo redirecionar as chamadas de busca e criação ao criador concreto correto (`BuscadorDeVacinas`, `BuscadorDeExames` ou `BuscadorDeMedicamentos`) em tempo de execução, desacoplando completamente a UI da instanciação dos produtos.
+- **Criação da Página Inicial Integrada ("Minha Saúde")**: Desenvolvimento do Hub central do paciente que substituiu a navegação direta e isolada das versões anteriores. A nova tela inicial apresenta o grid dinâmico com os três cards principais (*Vacinas*, *Exames* e *Medicamentos*), aproximando a experiência de uso da tela inicial real do aplicativo Meu SUS Digital.
+- **Refatoração Visual e Fidelidade ao Meu SUS Digital**: Redesenho e fidelização dos componentes visuais em [`App.tsx`](file:///code/criacional/src/App.tsx) e [`meuSus.css`](file:///code/criacional/src/ui/meuSus.css), incluindo a Sidebar de navegação lateral com estados ativo/desabilitado, o card do Usuário no padrão azul com avatar estilizado e botão de notificações independente, além do rodapé institucional com marcas do Gov.br e UnB.
+- **Unificação dos Criadores de Histórico no Dock GoF**: O painel superior GoF (Dock) foi atualizado para exibir os contadores acumulados de todas as fatias em tempo real `(7 Vacinas, 4 Exames, 4 Medicamentos)`, permitindo disparar interativamente instâncias dinâmicas via Factory Method para qualquer uma das 3 especializações (`⚡ +Vacina (V1)`, `⚡ +Exame (V2)` e `⚡ +Medicamento (V3)`).
+- **Ajuste e Compatibilização dos Testes de Interface**: Atualização do arquivo de teste de interface [`App.test.tsx`](file:///code/criacional/src/ui/__tests__/App.test.tsx) para suportar os novos seletores e a presença de múltiplos elementos da marca GoF no DOM, garantindo 100% de aprovação na suíte de testes (43 testes passando em 7 arquivos).
 
-![Trecho de código da unificação e seletor dinâmico](../assets/subequipe01-padroes/codigo/v4-integracao-seletor.png)
+### 6.1. Seletor Dinâmico e Refatoração Visual do Hub "Minha Saúde" no App.tsx e CSS
 
-<center><strong>Legenda:</strong> Figura 8 - Trecho de código da integração consolidada e despacho dinâmico do histórico de saúde (código parcial ilustrativo; Autoria: Nicole Jovita - Em breve).</center>
+![Trecho de código da refatoração visual e do seletor dinâmico no App.tsx e CSS](../assets/subequipe01-padroes/codigo/v4-interface-refatoracao.png)
+
+<center><strong>Legenda:</strong> Figura 10 - Trecho de código do componente React App.tsx refatorado no padrão visual oficial do Meu SUS Digital V4, contendo a estrutura da página inicial "Minha Saúde" e o roteamento/seletor dinâmico de criadores. </center>
+
+---
+
+### 6.2. Testes de Integração e Interface da V4 (Vitest + Testing Library)
+
+![Trecho de código dos testes automatizados de interface na V4](../assets/subequipe01-padroes/codigo/v4-testes-interface.png)
+
+<center><strong>Legenda:</strong> Figura 11 - Trecho de código dos testes automatizados de interface (App.test.tsx) atualizados para a V4. </center>
+
+---
+
+### 6.3. Embasamento Teórico da Implementação (Versão 4)
+
+- **Princípio da Responsabilidade Única (SRP - Martin, 2002):** A camada de visualização e o seletor em `App.tsx` dedicam-se exclusivamente à orquestração dos estados e da navegação na interface React, delegando a criação e as regras de negócio de cada registro clínico às instâncias concretas de `BuscadorDeHistorico`.
+- **Inversão de Controle (IoC) e Polimorfismo na UI**: A tela inicial integrada não precisa saber como os registros clínicos de vacinas, exames ou medicamentos são construídos internamente. O seletor despacha o comando para o criador adequado e a interface consome apenas a abstração polimórfica `RegistroClinico`, invocando `.getResumo()` e `.getDetalhes()` de maneira uniforme.
+- **Testabilidade de Interface sem Acoplamento Direto**: O ajuste realizado na suíte de testes do Testing Library foca na validação do comportamento visível pelo usuário (navegação pelo Hub "Minha Saúde", disparo dos botões do Dock GoF e criação das entidades), preservando o desacoplamento das regras de baixo nível do GoF Criacional.
 
 ---
 
@@ -222,3 +242,4 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico da implementação para as Versões 1 e 2 (Replace Constructor with Factory Method, DIP, OCP, Programação Defensiva) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
 | `2.2` | 15/10/2026 | Anonimização de identificadores e referências pessoais na interface e nos mocks para Usuário genérico | [Giovani Coelho](https://github.com/Gotc2607) | [`d85c432`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d85c432) |
 | `3.0` | 16/10/2026 | Implementação da Versão 3: ConcreteProduct ReceitaMedicamento, ConcreteCreator BuscadorDeMedicamentos, mocks da Farmácia Popular, 16 testes unitários e aba de Medicamentos na interface | [João Leles](https://github.com/joaoleless) | - |
+| `4.0` | 18/10/2026 | Implementação da Versão 4: Refatoração visual do Meu SUS Digital (Sidebar, Header e Minha Saúde Grid), unificação do Dock GoF com contadores em tempo real e atualização dos testes de interface no Vitest | [Nicole Jovita](https://github.com/nicolejovita) | - |
