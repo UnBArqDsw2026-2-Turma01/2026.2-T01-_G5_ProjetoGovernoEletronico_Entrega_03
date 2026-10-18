@@ -7,8 +7,6 @@ A demonstração deve mostrar o padrão **Strategy** em execução no fluxo **Ac
 - **Execução local:** seguir as instruções de [Codigo.md](./3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Codigo.md).
 - **Modo offline:** `npm run build && npm run preview` testado previamente, sem chamadas a API real (dados simulados em `dominio/`).
 
-
-
 ### Trecho de Davi — núcleo (CriterioDeBusca, BuscaDeEstabelecimentos)
 
 Demo isolada (fora de `src/ui/`) usando `BuscaDeEstabelecimentos.definirCriterio()`/`buscar()` direto, gravada trocando o critério em tempo de execução.
@@ -34,11 +32,9 @@ Cobre: delegação da ordenação ao critério atual, troca de estratégia em te
 
 ### Trecho de Gabriel - Fluxo de Conteudos
 
-<video width="640" height="400" controls>
-  <source src="/3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/Execucao_Gabro.mp4" type="video/webm">
-</video>
+<iframe width="100%" height="500" src=https://youtu.be/uOvFTHGM2Q" title="Apresentação da Entrega 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<center><strong>Video:</strong> <a href="docs\3-PadroesDeProjetos\Relatórios\assets\subequipe03-padroes\execucao\Execucao_Gabro.mp4">link caso o video não carregue</a></center>
+<center><a href="https://youtu.be/uOvFTHGM2QI">link caso o video não carregue</a></center>
 
 <center><strong>Legenda:</strong> Vídeo - troca de critério do fluxo de  conteudos via <code>BuscaDeConteudos</code>, núcleo real do padrão Strategy em execução.</center>
 
@@ -50,7 +46,7 @@ Resultado da suíte de testes automatizados do núcleo (`npm run test` em `code/
 
 ## Histórico de Versionamento
 
-| Nome do Membro | Contribuição | Data | Commit |
-| :--- | :--- | :--- | :--- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Gabriel Mota](https://github.com/Gabro-MO) | Adição do video de execução e evidencia de teste| 17/10/2026 | [55383e5](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/55383e5e1e2ac128da56a286a21a02faba316a8a) |
+| Nome do Membro                                  | Contribuição                                     | Data       | Commit                                                                                                                                                   |
+| :---------------------------------------------- | :----------------------------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado                         | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8)   |
+| [Gabriel Mota](https://github.com/Gabro-MO)     | Adição do video de execução e evidencia de teste | 17/10/2026 | [55383e5](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/55383e5e1e2ac128da56a286a21a02faba316a8a) |
