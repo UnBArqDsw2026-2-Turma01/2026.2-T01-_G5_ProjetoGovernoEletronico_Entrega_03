@@ -1,6 +1,6 @@
 :root {
-  --ion-color-primary: #0070D1;
-  --ion-color-primary-shade: #003771;
+  --ion-color-primary: #003399; /* Atualizado para Azul SUS Oficial */
+  --ion-color-primary-shade: #002266;
   --ion-color-primary-tint: #EDF6FD;
   --ion-color-dark: #484649;
   --ion-color-dark-shade: #1C1B1F;
@@ -51,6 +51,7 @@ body {
   margin: 1rem 0;
 }
 
+/* ITEM PADRÃO DA SIDEBAR (Não Selecionado) */
 .meusus-menu-item {
   display: flex;
   align-items: center;
@@ -58,20 +59,34 @@ body {
   padding: 12px 24px;
   margin: 0.5rem 0 0.5rem 1rem;
   border-radius: 0 16px 16px 0;
-  color: #16497F;
+  color: #003399; /* Azul SUS */
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
-.meusus-menu-item.active {
-  background: #E7F2FB;
-  color: #0070D1;
+.meusus-menu-item ion-icon,
+.meusus-menu-item svg,
+.meusus-menu-item i {
+  color: #003399;
 }
 
 .meusus-menu-item:hover {
-  background: rgba(225, 242, 255, 0.5);
+  background: #E8F0FE;
+}
+
+/* ITEM ATIVO / ABA SELECIONADA NA SIDEBAR */
+.meusus-menu-item.active {
+  background: #003399; /* Fundo Azul Escuro SUS */
+  color: #FFFFFF;       /* Texto Branco */
+}
+
+.meusus-menu-item.active ion-icon,
+.meusus-menu-item.active svg,
+.meusus-menu-item.active i {
+  color: #FFFFFF !important; /* Ícone Branco no ativo */
+  fill: #FFFFFF !important;
 }
 
 .meusus-sidebar .bottom-box {
@@ -111,7 +126,7 @@ body {
 }
 
 .box-welcome b {
-  color: #0070D1;
+  color: #003399;
 }
 
 .box-actions {
@@ -123,41 +138,73 @@ body {
 .box-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: #e8f4fd; /* Fundo azul bem claro */
+  padding: 12px 20px;
+  border-radius: 20px;       /* Borda bem arredondada do card */
 }
 
 .box-info {
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: left; /* Texto alinhado à esquerda */
+  gap: 4px;
 }
 
 .box-info label {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 12px;
-  color: #1C1B1F;
+  color: #0066ff; /* Azul azul vibrante do nome */
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
 }
 
 .box-info span {
-  font-size: 11px;
-  color: #787579;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0066ff; /* Azul correspondente do CPF */
+  opacity: 0.85;
 }
 
-.box-foto img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #F4F7FC;
+.box-foto {
+  width: 54px;
+  height: 54px;
+  background-color: #ffffff; /* Fundo branco do quadrado da foto */
+  border-radius: 16px;       /* Cantos arredondados (quadrado suave) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.box-foto img,
+.box-foto ion-icon,
+.box-foto svg {
+  width: 32px;
+  height: 32px;
+  color: #0066ff;
+  border-radius: 0;
 }
 
 .notification-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #0070D1;
+  color: #0066ff;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  padding: 4px;
+}
+
+.notification-btn ion-icon,
+.notification-btn svg {
+  width: 26px;
+  height: 26px;
+  fill: #0066ff;
+  color: #0066ff;
 }
 
 /* SUBHEADER (Toolbar com Voltar e Título) */
@@ -190,7 +237,7 @@ body {
 .meusus-btn-ajuda {
   background: none;
   border: none;
-  color: #0070D1;
+  color: #003399;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -205,7 +252,7 @@ body {
   width: 100%;
   max-width: 460px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.15);
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -234,8 +281,8 @@ body {
 }
 
 .menu-horizontal .btn-tab.active {
-  color: #0070D1;
-  border-bottom: 2px solid #0070D1;
+  color: #003399;
+  border-bottom: 2px solid #003399;
   font-weight: 600;
 }
 
@@ -278,8 +325,8 @@ body {
 }
 
 .btn-certificado:hover {
-  border-color: #0070D1;
-  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.08);
+  border-color: #003399;
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.08);
 }
 
 .btn-certificado span {
@@ -297,7 +344,7 @@ body {
 .certificado-icon span {
   font-weight: 500;
   font-size: 12px;
-  color: #0070D1;
+  color: #003399;
 }
 
 /* LISTA DE VACINAS (TELA DE DETALHE) */
@@ -320,8 +367,8 @@ body {
 }
 
 .card-vacina:hover {
-  border-color: #0070D1;
-  box-shadow: 0 4px 12px rgba(0, 112, 209, 0.08);
+  border-color: #003399;
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.08);
 }
 
 .card-vacina .img-box {
@@ -332,7 +379,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0070D1;
+  color: #003399;
   flex-shrink: 0;
 }
 
@@ -352,7 +399,7 @@ body {
 .card-vacina .dose {
   font-size: 10px;
   font-weight: 700;
-  color: #0070D1;
+  color: #003399;
   background: #EDF6FD;
   padding: 3px 8px;
   border-radius: 4px;
@@ -400,7 +447,7 @@ body {
 }
 
 .gof-btn-action {
-  background: #0070D1;
+  background: #003399;
   color: #FFFFFF;
   border: none;
   padding: 6px 14px;
@@ -427,7 +474,7 @@ body {
 }
 
 .meusus-footer strong {
-  color: #0070D1;
+  color: #003399;
 }
 
 .meusus-footer-sub {
@@ -436,7 +483,7 @@ body {
   color: #787579;
 }
 
-/* FATIA DE EXAMES LABORATORIAIS (Versão 2) */
+/* FATIA DE EXAMES LABORATORIAIS */
 .exames-container {
   padding: 1rem 1.5rem;
   max-width: 680px;
@@ -452,12 +499,12 @@ body {
   background: #FFFFFF;
   margin-bottom: 16px;
   transition: all 0.2s;
-  box-shadow: 0 2px 6px rgba(0, 112, 209, 0.04);
+  box-shadow: 0 2px 6px rgba(0, 51, 153, 0.04);
 }
 
 .card-exame:hover {
-  border-color: #0070D1;
-  box-shadow: 0 4px 14px rgba(0, 112, 209, 0.1);
+  border-color: #003399;
+  box-shadow: 0 4px 14px rgba(0, 51, 153, 0.1);
 }
 
 .card-exame-header {
@@ -475,7 +522,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0070D1;
+  color: #003399;
   flex-shrink: 0;
 }
 
@@ -545,7 +592,7 @@ body {
 
 .exame-laudo-box {
   background: #F8FBFD;
-  border-left: 3px solid #0070D1;
+  border-left: 3px solid #003399;
   padding: 8px 12px;
   border-radius: 4px;
   font-size: 12px;
@@ -595,14 +642,14 @@ body {
 
 .banner-exames-card {
   margin: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #0070D1 0%, #004D99 100%);
+  background: linear-gradient(135deg, #003399 0%, #002266 100%);
   color: #FFFFFF;
   padding: 1.5rem;
   border-radius: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 14px rgba(0, 112, 209, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 51, 153, 0.25);
   max-width: 630px;
 }
 
@@ -618,7 +665,7 @@ body {
   opacity: 0.9;
 }
 
-/* FATIA DE MEDICAMENTOS / FARMÁCIA POPULAR (Versão 3) */
+/* FATIA DE MEDICAMENTOS / FARMÁCIA POPULAR */
 .medicamentos-container {
   padding: 1rem 1.5rem;
   max-width: 720px;
@@ -788,3 +835,68 @@ body {
   opacity: 0.9;
 }
 
+/* ESTILOS DA TELA PRINCIPAL (DASHBOARD MINHA SAÚDE) */
+.dashboard-container {
+  padding: 1.5rem 2rem;
+}
+
+.dashboard-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1C1B1F;
+  margin-bottom: 1.25rem;
+}
+
+.minha-saude-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-servico-fatia {
+  width: 120px;
+  height: 110px;
+  background: #F4F6F8;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+  padding: 8px;
+  text-align: center;
+}
+
+.card-servico-fatia:hover {
+  background: #E7F2FB;
+  border-color: #003399;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.12);
+}
+
+.card-servico-fatia .icon-box {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #003399;
+}
+
+.card-servico-fatia span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1C1B1F;
+}
+
+.meusus-menu-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.meusus-menu-item.disabled:hover {
+  background: transparent;
+}
