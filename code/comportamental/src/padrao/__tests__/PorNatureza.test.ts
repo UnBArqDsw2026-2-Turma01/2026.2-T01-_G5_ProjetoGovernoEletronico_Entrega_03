@@ -71,6 +71,11 @@ describe("PorNatureza", () => {
 
     const resultado = busca.buscar(redeDeSaudeSimulada);
 
-    expect(resultado.map((u) => u.id)).toEqual(["6", "4", "9", "2", "7", "1", "5", "3", "10", "8"]);
+    expect(resultado.map((u) => u.id)).toEqual([
+      "3", "6", "20", "4", // municipais, por distância
+      "17", "9", "13", "2", "7", "12", // estaduais, por distância
+      "1", "11", "5", "21", "16", "19", "23", // públicas, por distância
+      "10", "8", "14", "15", "22", "18", // privadas, por distância
+    ]);
   });
 });

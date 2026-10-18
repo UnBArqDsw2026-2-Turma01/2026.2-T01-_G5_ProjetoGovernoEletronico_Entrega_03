@@ -93,9 +93,9 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 
 * **GitHub:** [@Gabro-MO](https://github.com/Gabro-MO)
 
-* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+* **Uso da IA Generativa (Senso Crítico):** Utilizei o ChatGPT como apoio à evolução e à documentação do codigo. A ferramenta auxiliou na organização das descrições das classes, na revisão textual da documentação da V3.
 
-* **Lições Aprendidas:** [PREENCHER]
+* **Lições Aprendidas:** Aprendi que o padrão _GoF Strategy_ permite organizar as multiplas maneiras de fazer algo em estruturas organizadas, tratando elementos individuais e divisões de trabalho de forma simples. Compreendi como essa estrutura facilita a implementação de novas estrategias. Também aprendi que a IA pode auxiliar no codigo e na documentação, mas suas sugestões precisam ser analisadas e validadas para garantir a coerência com o padrão e os objetivos do projeto.
 
 ---
 
@@ -118,6 +118,7 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 ## 7. Referências e Ferramentas Utilizadas
 
 1. Claude (Anthropic), via Claude Code — https://claude.com/claude-code — acesso em 15/10/2026.
+2. ChatGPT (OpenAI), via https://chatgpt.com/ - acesso em 17/10/2026
 
 ---
 
@@ -127,3 +128,4 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Experimento 01 (revisão do núcleo do Strategy via Claude) e depoimento individual | 15/10/2026 | [0403bc3](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/0403bc3b776fedea710dfa2aa03967dd4a183041) |
+| [Gabriel Mota](https://github.com/Gabro-MO)                                                     | adição do uso de IA na entrega | 17/10/2026 | [4e643da](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/4e643dad085fcb37935e810d1c93d1447a0a13e9)                                                                                                                                            |

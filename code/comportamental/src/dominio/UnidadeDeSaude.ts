@@ -4,4 +4,8 @@ export interface UnidadeDeSaude {
   distanciaKm: number;
   natureza: "estadual" | "municipal" | "publica" | "privada";
   categoria: string;
+  endereco?: string;
+  descricao?: string;
+  telefone?: string;
+  horario?: string;
 }

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="t d">
+  <title id="t">Saúde da família</title><desc id="d">Ilustração de pessoas próximas umas das outras.</desc>
+  <rect width="360" height="360" rx="24" fill="#f0f7ef"/>
+  <circle cx="277" cy="79" r="47" fill="#ffe4bd"/><circle cx="69" cy="284" r="57" fill="#d4ead7"/>
+  <path d="M71 283 C79 230 112 204 149 216 C170 223 181 245 185 283 Z" fill="#79bcb0"/>
+  <path d="M172 287 C179 224 219 190 259 211 C283 224 292 250 297 287 Z" fill="#ec9b83"/>
+  <path d="M114 285 C122 235 151 214 181 226 C202 234 212 255 216 285 Z" fill="#f5c55d"/>
+  <circle cx="126" cy="167" r="39" fill="#9e674d"/><path d="M87 164 C85 113 124 102 153 122 C169 133 166 153 161 163 C142 150 124 146 105 154 Z" fill="#47352e"/>
+  <circle cx="181" cy="169" r="38" fill="#e5ad82"/><path d="M145 160 C139 114 177 106 203 124 C218 135 220 149 216 164 C196 151 171 148 153 160 Z" fill="#493b35"/>
+  <circle cx="258" cy="161" r="36" fill="#c78660"/><path d="M222 158 C222 112 259 103 283 126 C295 137 294 151 289 165 C271 150 247 148 230 161 Z" fill="#5a4439"/>
+  <path d="M144 248 C159 234 178 233 194 248" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M177 253 l8 8 17 -20" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
