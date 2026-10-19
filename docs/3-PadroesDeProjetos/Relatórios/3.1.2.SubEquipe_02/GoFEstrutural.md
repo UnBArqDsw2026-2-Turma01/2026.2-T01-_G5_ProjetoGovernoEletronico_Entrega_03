@@ -193,16 +193,4 @@ A primeira versão foi mantida em nível conceitual, usando um diagrama de class
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 | 15/10/2026 | [d0c9c93](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/d0c9c93a69658413b70bb7395db5c5d9bdd26a84) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 2 | 15/10/2026 | [1aed3f4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/1aed3f4e382a5fc9601bc0377684a12e2586e436) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Versão 3 | 16/10/2026 | [f4c335b](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f4c335b211615e4335c070de2c01479d6c1ed358) |
-| [Julia Oliveira Patricio](https://github.com/juliapat18) | Versão 4 | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
-
----
-
-## Melhorias previstas para as próximas versões
-
-- **V2 — consistência UML:** revisar se `Dashboard` deve implementar `ElementoDeTela` ou atuar apenas como cliente/raiz; explicitar multiplicidades e composições; definir se `Secao` pode conter outra `Secao`.
-- **V2 — operações:** detalhar contratos de `adicionar`, `remover`, `renderizar`, `contarElementos` e `buscarPorId`, incluindo o comportamento de uma folha.
-- **V3 — alinhamento com a interface:** relacionar os nomes das seções e cartões às telas e aos fluxos observados nas entregas anteriores; registrar evidências e limites da engenharia reversa.
-- **V3 — qualidade:** discutir acessibilidade/usabilidade e como a hierarquia facilita localizar serviços, sem afirmar ganhos de desempenho sem medição.
-- **V4 — validação com código:** conferir se as classes implementadas correspondem ao diagrama; documentar testes de composição, busca, remoção e renderização recursiva.
-- **V4 — rastreabilidade completa:** substituir referências genéricas por links/IDs específicos de telas, passos de fluxo, requisitos ou issues; verificar os caminhos dos links no repositório.
-- **Todas as versões:** registrar autor, data, commit/PR, motivação das mudanças e uma imagem exportada do Figma.
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Versão 4 | 17/10/2026 | [83ed491](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/83ed491a98bbf07ed33a607bf89ca918458a746d) |
