@@ -12,10 +12,13 @@ A demonstração deve mostrar o padrão **Strategy** em execução no fluxo **Ac
 Demo isolada (fora de `src/ui/`) usando `BuscaDeEstabelecimentos.definirCriterio()`/`buscar()` direto, gravada trocando o critério em tempo de execução.
 
 <video width="640" height="400" controls>
-  <source src="/3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/v1-nucleo-strategy-troca-criterio.webm" type="video/webm">
+  <source src="3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/v1-nucleo-strategy-troca-criterio.mp4" type="video/mp4">
+  <source src="3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/v1-nucleo-strategy-troca-criterio.webm" type="video/webm">
 </video>
 
 <center><strong>Legenda:</strong> Vídeo — troca de critério (distância → natureza → categoria → distância) via <code>BuscaDeEstabelecimentos</code>, núcleo real do padrão Strategy em execução.</center>
+
+<center><a href="3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/execucao/v1-nucleo-strategy-troca-criterio.mp4">Link reserva, caso o vídeo não carregue</a></center>
 
 ## Evidências
 
@@ -32,7 +35,7 @@ Cobre: delegação da ordenação ao critério atual, troca de estratégia em te
 
 ### Trecho de Gabriel - Fluxo de Conteudos
 
-<iframe width="100%" height="500" src=https://youtu.be/uOvFTHGM2QI" title="Apresentação da Entrega 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="100%" height="500" src="https://www.youtube.com/embed/uOvFTHGM2QI" title="Apresentação da Entrega 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <center><a href="https://youtu.be/uOvFTHGM2QI">link caso o video não carregue</a></center>
 
@@ -50,3 +53,4 @@ Resultado da suíte de testes automatizados do núcleo (`npm run test` em `code/
 | :---------------------------------------------- | :----------------------------------------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado                         | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8)   |
 | [Gabriel Mota](https://github.com/Gabro-MO)     | Adição do video de execução e evidencia de teste | 17/10/2026 | [55383e5](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/55383e5e1e2ac128da56a286a21a02faba316a8a) |
+| [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Corrige link do vídeo quebrado (bug de subpath do GitHub Pages), adiciona fonte MP4 e corrige aspa quebrada no iframe do YouTube | 19/10/2026 | *(preencher no commit)* |
