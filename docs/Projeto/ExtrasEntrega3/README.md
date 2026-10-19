@@ -5,12 +5,12 @@ Essa pasta possui as atividades extras da Entrega 3, são elas:
 | **Documento** | **Responsavel** |
 | ------------- | --------------- |
 | ??? | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
-| ??? | [Artur Galdino](https://github.com/ArturFGaldino) |
+| [Padrão de Issue (SubEquipe 1)](/Projeto/ExtrasEntrega3/PadraoDeIssue.md) | [Artur Galdino](https://github.com/ArturFGaldino) |
 | [Guia de GoF Comportamental](/Projeto/ExtrasEntrega3/GuiaGoFComportamental.md) | [Davi Oliveira](https://github.com/DaviUrsulino) |
 | ??? | [Gabriel Mota](https://github.com/Gabro-MO) |
 | [Padrão de Testes (SubEquipe 1)](/Projeto/ExtrasEntrega3/PadraoDeTestes.md) | [Giovani Coelho](https://github.com/Gotc2607)|
 | Organização do Repositório e Issues | [Gustavo Fornaciari](https://github.com/GUGOFO) |
 | [Guia de Padrões GoF Criacionais](/Projeto/ExtrasEntrega3/GuiaGoFCriacional.md) | [João Eduardo](https://github.com/joaoleless) |
-| ??? | [Nicole Jovita](https://github.com/nicolejovita) |
+| [Padrão de Pull Requests](/Projeto/ExtrasEntrega3/PadraoPullRequests.md) | [Nicole Jovita](https://github.com/nicolejovita) |
 | ??? | [Victor Leandro](https://github.com/Afrontoso) |
 | ??? | [Yasmim Santos](https://github.com/eii-yahs) |

@@ -45,13 +45,13 @@ A Versão 1 estabeleceu os contratos fundamentais da arquitetura do Factory Meth
 
 ![Trecho de código da interface RegistroClinico](../assets/subequipe01-padroes/codigo/v1-nucleo-abstrato1.png)
 
-<center><strong>Legenda:</strong> Figura 1 - Trecho de código da interface RegistroClinico (Product abstrato). O código completo está disponível em `code/criacional/src/padrao/RegistroClinico.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 1 - Trecho de código da interface RegistroClinico (Product abstrato). O código completo está disponível em `code/criacional/src/padrao/RegistroClinico.ts` (Autoria: Artur Galdino).</center>
 
 <br>
 
 ![Trecho de código da classe abstrata BuscadorDeHistorico](../assets/subequipe01-padroes/codigo/v1-nucleo-abstrato2.png)
 
-<center><strong>Legenda:</strong> Figura 2 - Trecho de código da classe abstrata BuscadorDeHistorico (Creator) declarando o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeHistorico.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 2 - Trecho de código da classe abstrata BuscadorDeHistorico (Creator) declarando o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeHistorico.ts` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -63,7 +63,7 @@ Na fatia de imunização:
 
 ![Trecho de código do criador concreto BuscadorDeVacinas](../assets/subequipe01-padroes/codigo/v1-fatia-vacinas.png)
 
-<center><strong>Legenda:</strong> Figura 3 - Trecho de código do criador concreto BuscadorDeVacinas (ConcreteCreator) sobrescrevendo o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeVacinas.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 3 - Trecho de código do criador concreto BuscadorDeVacinas (ConcreteCreator) sobrescrevendo o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeVacinas.ts` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -75,7 +75,7 @@ Para garantir a confiabilidade do padrão, foram desenvolvidos testes unitários
 
 ![Trecho de código dos testes unitários](../assets/subequipe01-padroes/codigo/v1-testes-unitarios.png)
 
-<center><strong>Legenda:</strong> Figura 4 - Trecho de código dos testes automatizados validando o Factory Method no Vitest. A suíte completa está disponível em `code/criacional/src/padrao/__tests__/`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 4 - Trecho de código dos testes automatizados validando o Factory Method no Vitest. A suíte completa está disponível em `code/criacional/src/padrao/__tests__/` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -85,7 +85,7 @@ Apresentação gráfica em [`code/criacional/src/App.tsx`](file:///code/criacion
 
 ![Trecho de código da interface React no App.tsx](../assets/subequipe01-padroes/codigo/v1-interface-react.png)
 
-<center><strong>Legenda:</strong> Figura 5 - Trecho de código do componente React integrando e acionando o Factory Method. O arquivo completo está disponível em `code/criacional/src/App.tsx`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 5 - Trecho de código do componente React integrando e acionando o Factory Method. O arquivo completo está disponível em `code/criacional/src/App.tsx` (Autoria: Artur Galdino).</center>
 
 ### 3.5. Embasamento Teórico da Implementação (Versão 1)
 
@@ -174,7 +174,7 @@ A Versão 4 encerra o ciclo de desenvolvimento do mini-projeto unificando as fat
 
 ![Trecho de código da refatoração visual e do seletor dinâmico no App.tsx e CSS](../assets/subequipe01-padroes/codigo/v4-interface-refatoracao.png)
 
-<center><strong>Legenda:</strong> Figura 10 - Trecho de código do componente React App.tsx refatorado no padrão visual oficial do Meu SUS Digital V4, contendo a estrutura da página inicial "Minha Saúde" e o roteamento/seletor dinâmico de criadores. </center>
+<center><strong>Legenda:</strong> Figura 10 - Trecho de código do componente React App.tsx refatorado no padrão visual oficial do Meu SUS Digital V4, contendo a estrutura da página inicial "Minha Saúde" e o roteamento/seletor dinâmico de criadores (Autoria: Nicole Jovita). </center>
 
 ---
 
@@ -182,7 +182,7 @@ A Versão 4 encerra o ciclo de desenvolvimento do mini-projeto unificando as fat
 
 ![Trecho de código dos testes automatizados de interface na V4](../assets/subequipe01-padroes/codigo/v4-testes-interface.png)
 
-<center><strong>Legenda:</strong> Figura 11 - Trecho de código dos testes automatizados de interface (App.test.tsx) atualizados para a V4. </center>
+<center><strong>Legenda:</strong> Figura 11 - Trecho de código dos testes automatizados de interface (App.test.tsx) atualizados para a V4 (Autoria: Nicole Jovita). </center>
 
 ---
 
@@ -241,5 +241,5 @@ O ambiente de execução foi padronizado utilizando Node.js (v22+) e NPM. Para r
 | `2.0` | 15/10/2026 | Implementação da Versão 2: ConcreteProduct ResultadoExame, ConcreteCreator BuscadorDeExames, mocks de exames laboratoriais da RNDS, 16 testes unitários e de integração com Vitest, e interface gráfica integrada ao Meu SUS Digital | [Giovani Coelho](https://github.com/Gotc2607) | [`1138b20`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/1138b20), [`921255f`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/921255f), [`ef66d3b`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/ef66d3b), [`f62ad72`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/f62ad72), [`359aaa5`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/359aaa5), [`0c096ab`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/0c096ab), [`b59686e`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b59686e), [`e32794a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e32794a), [`fb9f581`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/fb9f581) |
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico da implementação para as Versões 1 e 2 (Replace Constructor with Factory Method, DIP, OCP, Programação Defensiva) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
 | `2.2` | 15/10/2026 | Anonimização de identificadores e referências pessoais na interface e nos mocks para Usuário genérico | [Giovani Coelho](https://github.com/Gotc2607) | [`d85c432`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d85c432) |
-| `3.0` | 16/10/2026 | Implementação da Versão 3: ConcreteProduct ReceitaMedicamento, ConcreteCreator BuscadorDeMedicamentos, mocks da Farmácia Popular, 16 testes unitários e aba de Medicamentos na interface | [João Leles](https://github.com/joaoleless) | - |
-| `4.0` | 18/10/2026 | Implementação da Versão 4: Refatoração visual do Meu SUS Digital (Sidebar, Header e Minha Saúde Grid), unificação do Dock GoF com contadores em tempo real e atualização dos testes de interface no Vitest | [Nicole Jovita](https://github.com/nicolejovita) | - |
+| `3.0` | 16/10/2026 | Implementação da Versão 3: ConcreteProduct ReceitaMedicamento, ConcreteCreator BuscadorDeMedicamentos, mocks da Farmácia Popular, 16 testes unitários e aba de Medicamentos na interface | [João Leles](https://github.com/joaoleless) | [`b0d2108`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b0d2108), [`cdf3d93`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/cdf3d93), [`eccb01c`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/eccb01c), [`59028ff`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/59028ff) |
+| `4.0` | 18/10/2026 | Implementação da Versão 4: Refatoração visual do Meu SUS Digital (Sidebar, Header e Minha Saúde Grid), arquitetura do seletor em `App.tsx`, unificação do Dock GoF com contadores em tempo real, atualização dos testes no Vitest e 8 novos testes de integração | [Nicole Jovita](https://github.com/nicolejovita) | [`6063fcf`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6063fcf), [`295fec3`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/295fec3), [`b383941`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b383941), [`6193b30`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6193b30), [`82d2d7e`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/82d2d7e), [`2f117fd`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/2f117fd), [`e3194f2`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e3194f2), [PR #42](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/42) |
