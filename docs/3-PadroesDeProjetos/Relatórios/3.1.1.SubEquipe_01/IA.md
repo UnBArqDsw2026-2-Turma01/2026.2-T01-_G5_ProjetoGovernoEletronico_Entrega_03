@@ -171,19 +171,19 @@ A ferramenta de IA generativa produziu uma maquete visual de alta resolução re
 
 ![Mockup de Medicamentos gerado por IA Generativa](../assets/subequipe01-padroes/IA/v3-ia-mockup-medicamentos.jpeg)
 
-<center><strong>Figura 1:</strong> Mockup conceitual da interface de Medicamentos gerado pelo Google Gemini a partir de engenharia de prompt (Autoria: João Leles via Google Gemini).</center>
+<center><strong>Figura 4:</strong> Mockup conceitual da interface de Medicamentos gerado pelo Google Gemini a partir de engenharia de prompt (Autoria: João Leles via Google Gemini).</center>
 
 <br>
 
-Para fins de rastreabilidade e análise comparativa, a **Figura 2** apresenta a tela real desenvolvida e em execução na aplicação React/TypeScript da SubEquipe 01, na qual o padrão GoF Factory Method opera de forma dinâmica sobre os laudos da RNDS:
+Para fins de rastreabilidade e análise comparativa, a **Figura 5** apresenta a tela real desenvolvida e em execução na aplicação React/TypeScript da SubEquipe 01, na qual o padrão GoF Factory Method opera de forma dinâmica sobre os laudos da RNDS:
 
 ![Interface real desenvolvida para a fatia de Medicamentos](../assets/subequipe01-padroes/execucao/v3-execucao-medicamentos.png)
 
-<center><strong>Figura 2:</strong> Interface real do Meu SUS Digital desenvolvida em React/TypeScript na Versão 3, com despacho do Factory Method e Dock GoF interativo (Autoria: João Leles; extraído de Execucao.md).</center>
+<center><strong>Figura 5:</strong> Interface real do Meu SUS Digital desenvolvida em React/TypeScript na Versão 3, com despacho do Factory Method e Dock GoF interativo (Autoria: João Leles; extraído de Execucao.md).</center>
 
 #### Análise Crítica e Intervenção Humana:
 
-A comparação entre o mockup gerado pela IA (**Figura 1**) e a tela real implementada (**Figura 2**) mostra que, mesmo com um prompt bem mais detalhado que o da Versão 2, a IA acerta a "casca" visual, mas erra justamente nos dados que dão sentido ao domínio farmacêutico:
+A comparação entre o mockup gerado pela IA (**Figura 4**) e a tela real implementada (**Figura 5**) mostra que, mesmo com um prompt bem mais detalhado que o da Versão 2, a IA acerta a "casca" visual, mas erra justamente nos dados que dão sentido ao domínio farmacêutico:
 
 1. **Convergências e Acertos Visuais:**
    - **Layout geral:** barra lateral azul com logotipo do SUS, item "Medicamentos" destacado, cabeçalho com CPF mascarado, avatar e sino de notificação, todos fiéis ao que foi descrito.
@@ -236,7 +236,7 @@ A Inteligência Artificial produziu um componente estilizado em tom escuro (*dar
 
 </div>
 
-<center><strong>Figura 3:</strong> Interface gráfica da Versão 4 gerada pela IA generativa a partir de prompt puramente textual sem diretrizes visuais. Nota-se a criação de um "painel de depuração em dark mode" com vazamento de nomes de classes e consoles de logs de engenharia (Autoria: Nicole Jovita).</center>
+<center><strong>Figura 6:</strong> Interface gráfica da Versão 4 gerada pela IA generativa a partir de prompt puramente textual sem diretrizes visuais. Nota-se a criação de um "painel de depuração em dark mode" com vazamento de nomes de classes e consoles de logs de engenharia (Autoria: Nicole Jovita).</center>
 
 <br>
 
@@ -248,13 +248,13 @@ Para fins de contraste e fundamentação da análise crítica, apresenta-se abai
 
 </div>
 
-<center><strong>Figura 4:</strong> Interface real do Hub "Minha Saúde" (Versão 4) desenvolvida com fidelidade estética ao Meu SUS Digital, grid de cards intuitivo, sidebar oficial e isolamento do padrão GoF no Dock de demonstração (Autoria: Nicole Jovita).</center>
+<center><strong>Figura 7:</strong> Interface real do Hub "Minha Saúde" (Versão 4) desenvolvida com fidelidade estética ao Meu SUS Digital, grid de cards intuitivo, sidebar oficial e isolamento do padrão GoF no Dock de demonstração (Autoria: Nicole Jovita).</center>
 
 <br>
 
 #### Análise Crítica e Intervenção Humana:
 
-A confrontação detalhada entre o protótipo gerado pela IA (Figura 3) e a aplicação oficial desenvolvida para a V4 (Figura 4) revelou graves incompatibilidades conceituais, ergonômicas e arquiteturais:
+A confrontação detalhada entre o protótipo gerado pela IA (Figura 6) e a aplicação oficial desenvolvida para a V4 (Figura 7) revelou graves incompatibilidades conceituais, ergonômicas e arquiteturais:
 
 1. **Vazamento da Arquitetura na Camada Visual (*Leaky Abstraction*)**  
    A IA estampou nos botões de ação e nos cards de exibição do paciente expressões internas do código-fonte como `BuscadorDeVacinas`, `BuscadorDeExames`, `BuscadorDeMedicamentos`, `Classe Concreta: CartaoVacina`, `ResultadoExame` e `ReceitaMedicamento`. Sob os princípios de engenharia de software (Gamma et al., 1995; Martin, 2002), o padrão de projeto Factory Method e o orquestrador `SeletorDeHistorico` pertencem ao domínio e ao controle da aplicação. Expor nomes de classes e métodos da infraestrutura interna para o cidadão viola diretamente o encapsulamento e a usabilidade.
