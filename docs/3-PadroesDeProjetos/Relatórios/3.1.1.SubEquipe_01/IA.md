@@ -97,30 +97,56 @@ A confrontação detalhada entre o resultado fabricado pela IA (Figura 1) e a ap
 
 ---
 
-### Experimento 02: [PREENCHER: Título do Experimento — Giovani Coelho]
+### Experimento 02: Prototipação Visual de Interface vs. Implementação Real do Factory Method (Fatia de Exames Laboratoriais — Versão 2)
 
 #### Integrante Responsável
 
 * **Nome:** [Giovani Coelho](https://github.com/Gotc2607)
 * **Foco / Papel:** Versão 2: Extensão do Factory Method para Exames Laboratoriais (`BuscadorDeExames` e `ResultadoExame`)
+* **Artefatos Relacionados:** [GoFCriacional.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/GoFCriacional.md) (Versão 2), [Codigo.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Codigo.md) (Versão 2), [Execucao.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Execucao.md) (Versão 2).
 
 #### Objetivo:
 
-[PREENCHER: Descrever o objetivo da experimentação com IA Generativa realizada pelo integrante, como apoio na modelagem da V2, geração de código de exames, testes unitários no Vitest ou validação de princípios GoF/GRASP]
+Avaliar a capacidade de um modelo generativo em sintetizar a experiência visual e a densidade de informações clínicas de uma interface governamental de saúde ("Meu SUS Digital — Exames Laboratoriais"), e contrapor criticamente o artefato visual gerado à implementação real da arquitetura de software orientada ao padrão GoF Factory Method (`BuscadorDeExames` e `ResultadoExame`).
 
 #### Prompt Utilizado:
 
 ```text
-[PREENCHER: Inserir o prompt exato fornecido à ferramenta]
+Interface moderna de aplicativo web desktop para o sistema público de saúde brasileiro "Meu SUS Digital", estilo visual oficial Gov.br nas cores azul marinho e branco limpo. A tela ativa é "Exames Laboratoriais". O painel exibe cartões modernos de histórico de exames clínicos realizados: Hemograma Completo, Glicemia de Jejum e Lipidograma Completo. Cada cartão contém identificação do laboratório (LACEN/DF), categoria clínica, tag de status "Liberado" em verde e tabela clínica estruturada com parâmetros, resultados, unidades de medida (mg/dL) e valores de referência. Estilo mockup de UI/UX do Figma, design limpo, institucional e de alta fidelidade para saúde digital.
 ```
+
+*(Prompt equivalente em inglês utilizado para refinamento da renderização de layout: `Modern desktop web application interface of the Brazilian public health system "Meu SUS Digital", official Gov.br design system aesthetics with navy blue and clean white palette. The active section is "Exames Laboratoriais" (Laboratory Clinical Exams). The screen displays modern medical cards showing completed diagnostic lab tests: Complete Blood Count (Hemograma), Fasting Blood Glucose (Glicemia), and Lipid Panel. Each card highlights the issuing laboratory (LACEN/DF), exam category, status tag "Liberado" in green, and an expandable structured clinical table with parameters, detected values, measurement units (mg/dL, cells/mm³), and standard reference ranges. Clean corporate government dashboard, Figma UI mockup style, high resolution, minimalist healthcare UX design, no blur.`)*
 
 #### Resultado Obtido:
 
-[PREENCHER: Descrever a resposta, código ou modelo produzido pela ferramenta, inserindo imagens comprobatórias se houver]
+A ferramenta de IA generativa (Google Gemini) produziu uma maquete visual de alta resolução representando o painel web do Meu SUS Digital:
+
+<div align="center">
+
+![Mockup de Exames Laboratoriais gerado por IA Generativa](../assets/subequipe01-padroes/IA/v2-ia-mockup-exames.jpeg)
+
+</div>
+
+<center><strong>Figura 3:</strong> Mockup conceitual da interface de Exames Laboratoriais gerado pelo Google Gemini a partir de engenharia de prompt (Autoria: Giovani Coelho via Google Gemini).</center>
+
+<br>
 
 #### Análise Crítica e Intervenção Humana:
 
-[PREENCHER: Avaliar o que a IA acertou, o que errou ou omitiu, e quais decisões técnicas foram tomadas para corrigir ou adaptar o resultado]
+1. **Aderência Visual e Estética (O que a IA acertou):**
+   - **Paleta Institucional e Identidade:** A IA absorveu muito bem as diretrizes do Design System do Gov.br (DS-Gov), utilizando a tipografia sem serifa limpa, cabeçalhos em tons sóbrios de azul marinho (`#1351b4`) e fundos neutros.
+   - **Estruturação Clínica:** A disposição dos dados em cartões individuais para cada laudo (Hemograma Completo, Glicemia de Jejum, Lipidograma Completo), o uso de tags verdes de status ("Liberado") e a apresentação de tabelas com parâmetros, resultados e valores de referência demonstraram boa apreensão do domínio conceitual de laudos laboratoriais.
+
+2. **Divergências, Alucinações e Erros de Domínio:**
+   - **Alucinação Semântica e Textual:** A IA apresentou artefatos clássicos de modelos de difusão de texto em imagens: no subtítulo superior, gerou uma repetição incoerente (*"Histórico de exames clínicos e para os histórico de exames clínicos."*); na categoria do hemograma, alucinou o termo inexistente *"Humacattática"* em vez de *"Hematologia"*; e nas datas dos exames, grafou erros tipográficos como *"21 aun. 2023"*.
+   - **Inconsistência Fisiológica dos Dados:** Os valores numéricos nos parâmetros laboratoriais gerados pela IA não possuem base clínica real: no hemograma, a IA indicou uma hemoglobina de `1,6 g/dL` com faixa de referência de `0,2 a 1,0` (valores clinicamente impossíveis ou incompatíveis com a vida). Em contrapartida, no código real do projeto ([`examesMock.ts`](file:///code/criacional/src/dominio/examesMock.ts)), foram pesquisados e implementados valores e unidades fisiológicas consistentes da RNDS e do LACEN/DF (ex.: Hemoglobina `14.8 g/dL`, referência de `13.0 a 17.5 g/dL`, com situação clínica calculada como `NORMAL`).
+
+3. **O Limite Insuperável: A Ausência de Arquitetura de Software:**
+   - **Casca Visual vs. Padrão GoF Factory Method:** A imagem da IA é uma representação puramente estática e cosmética. Ela não tem consciência de nenhum princípio de Orientação a Objetos. Na aplicação real, cada exame é uma instância do produto concreto `ResultadoExame`, criado exclusivamente pelo criador concreto `BuscadorDeExames` que sobrepõe o método fábrica `criarRegistroClinico()` da classe base `BuscadorDeHistorico`.
+   - **Interatividade e Despacho Polimórfico:** A interface real desenvolvida conta com o **Dock GoF interativo** (`⚡ +Exame (V2)`), permitindo que o usuário ou avaliador dispare a fábrica em tempo de execução, consuma novos payloads brutos e visualize o registro sendo instanciado e renderizado reativamente pelo React. A imagem da IA não provê nenhuma dinamicidade.
+   - **Robustez e Tipagem Estática:** A implementação humana assegurou tipagem rigorosa em TypeScript (`ParametroExame[]`), validação defensiva de payloads malformatados e uma suíte com **27 testes unitários e de integração** aprovados no Vitest, garantindo a integridade do sistema contra regressões.
+
+**Conclusão do Experimento:** O experimento comprovou que a IA generativa é um recurso ágil para exploração de ideias e benchmarking de interfaces de usuário, mas a concepção da arquitetura, a fidelidade dos dados clínicos, a garantia dos padrões de projeto GoF/GRASP e a implementação do código executável dependem estritamente da intervenção e do rigor da engenharia humana.
 
 ---
 
@@ -198,7 +224,7 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 | Integrante | O que aprendi | Uso de IA Generativa |
 | :--- | :--- | :--- |
 | [Artur Galdino](https://github.com/ArturFGaldino) | Prompts puramente textuais sem contexto multimodal causam delírio na IA, que mistura código interno de debug na UI; o padrão GoF deve ficar isolado no domínio. | Prototipação de interface com ChatGPT GPT-4o, análise comparativa de alucinações visuais e estruturação da documentação. |
-| [Giovani Coelho](https://github.com/Gotc2607) | *[PREENCHER]* | *[PREENCHER]* |
+| [Giovani Coelho](https://github.com/Gotc2607) | Compreendi na prática o contraste entre uma maquete visual estática gerada por IA e a engenharia de software real: a IA sintetiza bem a identidade visual de governo, mas alucina dados clínicos e não tem noção da arquitetura GoF (Factory Method), exigindo intervenção humana em 100% da lógica e dos testes. | Geração de mockup de interface no Google Gemini a partir de engenharia de prompt e comparação crítica com o protótipo real e a arquitetura da Versão 2 (Exames Laboratoriais). |
 | [João Leles](https://github.com/joaoleless) | *[PREENCHER]* | *[PREENCHER]* |
 | [Nicole Jovita](https://github.com/nicolejovita) | *[PREENCHER]* | *[PREENCHER]* |
 
@@ -224,10 +250,10 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 * **GitHub:** [@Gotc2607](https://github.com/Gotc2607)
 
 * **Uso da IA Generativa (Senso Crítico):**  
-  *[PREENCHER: Relato pessoal do integrante sobre o uso da IA nesta entrega, decisões de aceitação/rejeição e visão crítica]*
+  Utilizei o Google Gemini para gerar uma imagem conceitual de interface representando a fatia de Exames Laboratoriais do Meu SUS Digital, comparando o resultado obtido com o código e a interface que implementei na Versão 2. Meu objetivo foi avaliar até onde a IA consegue antecipar a experiência do usuário de um sistema de governo eletrônico e onde ela falha. Exercendo o senso crítico, constatei que a imagem gerada é esteticamente coerente com o Gov.br, mas apresenta falhas de alucinação de texto e valores laboratoriais fisiologicamente incorretos (como hemoglobina letal), além de ser puramente uma maquete estática. Não adotei nenhum código ou dado gerado cegamente pela IA; toda a arquitetura do Factory Method (`BuscadorDeExames` instanciando `ResultadoExame`), a tipagem TypeScript, a tabela de parâmetros e a suíte de 27 testes unitários e de integração no Vitest foram construídos com rigor técnico manual.
 
 * **Lições Aprendidas:**  
-  *[PREENCHER: Lições práticas e conceituais extraídas do uso das ferramentas na entrega de padrões criacionais]*
+  Aprendi que IAs generativas de imagem são úteis para brainstorming e exploração preliminar de layout, mas não têm qualquer capacidade de estruturar arquitetura de software, garantir integridade de dados clínicos ou atender aos princípios GoF e GRASP (Creator, Polymorphism, Low Coupling). A engenharia de software reside na correta separação de responsabilidades e na garantia de qualidade do código executável, algo que depende essencialmente do julgamento e da atuação humana.
 
 ---
 
@@ -286,4 +312,5 @@ Dessa forma, a SubEquipe 01 reafirma a premissa de que a IA Generativa deve ser 
 | :---: | :---: | :--- | :--- | :--- |
 | `0.1` | 06/10/2026 | Início do template do trabalho | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`18b6195`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | `0.2` | 14/10/2026 | Template mais detalhado de IA Generativa | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`7c66f78`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| `1.0` | 18/10/2026 | Documentação completa do Experimento 01 de IA Generativa por Artur Galdino (análise da interface alucinada versus design system real do Meu SUS Digital, ausência de contexto multimodal, vazamento de abstrações), fundamentação crítica, relato e ponto de vista individual e estruturação de placeholders para os demais integrantes | [Artur Galdino](https://github.com/ArturFGaldino) | Em breve |
+| `1.0` | 18/10/2026 | Documentação completa do Experimento 01 de IA Generativa por Artur Galdino (análise da interface alucinada versus design system real do Meu SUS Digital, ausência de contexto multimodal, vazamento de abstrações), fundamentação crítica, relato e ponto de vista individual e estruturação de placeholders para os demais integrantes | [Artur Galdino](https://github.com/ArturFGaldino) | [`b7e1a9e`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b7e1a9e) |
+| `2.0` | 18/10/2026 | Documentação do Experimento 02 de IA Generativa por Giovani Coelho (Google Gemini na prototipação visual de exames laboratoriais versus arquitetura real do Factory Method, alucinação de dados clínicos) e ponto de vista da V2 | [Giovani Coelho](https://github.com/Gotc2607) | [`e87e841`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e87e841) |
