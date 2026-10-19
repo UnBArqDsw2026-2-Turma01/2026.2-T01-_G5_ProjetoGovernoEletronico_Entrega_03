@@ -6,7 +6,30 @@ A demonstração prática exibe o padrão **Factory Method** operando sobre os d
 
 - **Ambiente de Demonstração Local:** Inicializado em `http://localhost:5173/` via Vite Dev Server.
 - **Modo 100% Offline:** O projeto não depende de conexão externa ou credenciais ativas do Gov.br para ser executado e avaliado.
-- **Vídeo de Demonstração:** `[PLACEHOLDER: Link para o vídeo no YouTube/Loom com a demonstração gravada pela subequipe]`
+
+### 1.1. Vídeos Explicativos e de Demonstração da Execução
+
+#### Vídeo 1: Demonstração da Interface e Execução do Meu SUS Digital (SubEquipe 01)
+
+> Apresentação prática do mini-projeto em execução, exibindo a fidelidade visual com o Meu SUS Digital, o Hub "Minha Saúde", a navegação pelas fatias clínicas (Vacinas, Exames Laboratoriais e Medicamentos) e a instanciação dinâmica polimórfica via Dock GoF.
+
+* **Link de Acesso Direto:** [Assistir Vídeo 1 - Demonstração do Site e da Execução (Google Drive)](https://drive.google.com/file/d/1YTv_szqc-FaIdf2uZoig1M4VEgHl0wOF/view?usp=sharing)
+
+<iframe src="https://drive.google.com/file/d/1YTv_szqc-FaIdf2uZoig1M4VEgHl0wOF/preview" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
+
+<center><strong>Vídeo 1:</strong> Gravação demonstrativa da interface do Meu SUS Digital e funcionamento prático do Factory Method (Autoria: SubEquipe 01).</center>
+
+---
+
+#### Vídeo 2: Explicação Técnica do Código Fonte e Padrão Factory Method (Giovani Coelho)
+
+> Explicação detalhada da arquitetura de software e implementação do padrão GoF Criacional: Creator Abstrato (`BuscadorDeHistorico`), Criador Concreto (`BuscadorDeExames`), Product Abstrato (`RegistroClinico`), Product Concreto (`ResultadoExame`), tratamento de dados da RNDS e bateria de testes automatizados com Vitest.
+
+* **Link de Acesso Direto:** [Assistir Vídeo 2 - Explicação Técnica do Código Fonte (Google Drive)](https://drive.google.com/file/d/1pQ0NaZrIldaOUmyHGidsoNlY0HKlQSq5/view?usp=drivesdk)
+
+<iframe src="https://drive.google.com/file/d/1pQ0NaZrIldaOUmyHGidsoNlY0HKlQSq5/preview" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
+
+<center><strong>Vídeo 2:</strong> Gravação explicativa da arquitetura em código, classes do padrão e testes automatizados (Autoria: Giovani Coelho).</center>
 
 ---
 
@@ -99,6 +122,8 @@ A interface gráfica do Meu SUS Digital foi expandida para contemplar o catálog
 ![Execução da Fatia de Exames Laboratoriais](../assets/subequipe01-padroes/execucao/v2-execucao-exames.png)
 
 <center><strong>Legenda:</strong> Figura 6 - Interface do Meu SUS Digital em execução exibindo os laudos de exames laboratoriais processados via Factory Method (Autoria: Giovani Coelho).</center>
+
+> **Gravação Explicativa do Código (Versão 2):** A explicação detalhada da arquitetura da fatia de exames, da herança do `BuscadorDeHistorico` e dos testes unitários/integração desenvolvidos por Giovani Coelho está disponível no [Vídeo 2 da Seção 1](#video-2-explicacao-tecnica-do-codigo-fonte-e-padrao-factory-method-giovani-coelho) ([Acesso Direto no Google Drive](https://drive.google.com/file/d/1pQ0NaZrIldaOUmyHGidsoNlY0HKlQSq5/view?usp=drivesdk)).
 
 ### 4.3. Embasamento Teórico da Execução e Testes (Versão 2)
 
@@ -205,3 +230,5 @@ A tela inicial desenvolvida na Versão 4 atua como o Hub central do paciente, re
 | `2.1` | 15/10/2026 | Inclusão de embasamento teórico de testes e execução para as Versões 1 e 2 (Pirâmide de Testes, Padrão AAA, Princípios FIRST, Testes Centrados no Usuário) e adição da bibliografia | [Giovani Coelho](https://github.com/Gotc2607) | [`6eed676`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/6eed676) |
 | `3.0` | 16/10/2026 | Registro das evidências de execução da Versão 3: 43 testes aprovados (16 novos da fatia de Medicamentos), checagem de tipos e interface da Farmácia Popular | [João Leles](https://github.com/joaoleless) | [`2dcae9a`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/2dcae9a), [`323eb48`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/323eb48), [`b0d2108`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b0d2108) |
 | `4.0` | 18/10/2026 | Registro das evidências da Versão 4: 51 testes consolidados no Vitest, captura do Hub "Minha Saúde" e análise comparativa de conformidade visual | [Nicole Jovita](https://github.com/nicolejovita) | [`b792e62`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b792e62), [`2f117fd`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/2f117fd), [PR #42](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/42) |
+| `4.1` | 19/10/2026 | Inclusão dos vídeos explicativos e de demonstração prática do Meu SUS Digital (SubEquipe 01) e do código fonte do Factory Method (Giovani Coelho) | [Giovani Coelho](https://github.com/Gotc2607) | [`d35a0d6`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/d35a0d6) |
+
