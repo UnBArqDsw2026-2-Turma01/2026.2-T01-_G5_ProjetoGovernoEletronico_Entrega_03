@@ -171,4 +171,4 @@ npm run build
 | Nome do membro | Contribuição | Data | Commit |
 | --- | --- | --- | --- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Estrutura inicial do documento de execução | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Registro das evidências de execução, testes da suíte integrada, lint e build; inserir hash do commit desta atualização | 19/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Registro das evidências de execução, testes da suíte integrada, lint e build | 19/10/2026 | [0ddc440](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/0ddc4403c379563ab9306193cc3927c50746f363) |
