@@ -20,7 +20,7 @@
 
 ![Versão final do modelo do padrão Criacional](../assets/subequipe01-padroes/modelagem/versao-final.jpg)
 
-<center><strong>Legenda:</strong> Figura 1 - Diagrama de Classes UML consolidado (Versão Final) do padrão GoF Factory Method aplicado ao Meu SUS Digital (Autoria: SubEquipe 01 - Em breve).</center>
+<center><strong>Legenda:</strong> Figura 1 - Diagrama de Classes UML consolidado (Versão Final) do padrão GoF Factory Method aplicado ao Meu SUS Digital (Autoria: SubEquipe 01).</center>
 
 ---
 
@@ -207,8 +207,6 @@ A SubEquipe 01 adotou uma metodologia iterativa e incremental de fatiamento arqu
 1. **Fatiamento Funcional:** Em vez de realizar todo o trabalho de forma monolítica ou dispersa, o domínio clínico do Meu SUS Digital foi particionado em fatias temáticas (Vacinas, Exames, Medicamentos e Seletor Unificador).
 2. **Atuação nos Três Focos Obrigatórios:** Cada membro é diretamente responsável pelos 3 focos de sua versão: **Modelagem UML**, **Código Fonte** e **Execução/Evidências**.
 3. **Padrão de Qualidade e Isolamento:** O código foi construído em repositório desacoplado (`code/criacional/`), garantindo execução offline e testes automatizados sem acoplamento a serviços externos.
-
-Registros das atas de reunião e planejamento interno estão documentados em [Planejamento de Issues](#/3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/PlanejamentoIssues).
 
 ---
 
