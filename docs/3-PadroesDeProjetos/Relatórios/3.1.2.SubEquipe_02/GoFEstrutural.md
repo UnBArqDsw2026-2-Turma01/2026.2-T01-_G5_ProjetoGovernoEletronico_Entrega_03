@@ -8,9 +8,9 @@
 
 ## Versão Final
 
-![Versão final do modelo do padrão Estrutural](../assets/subequipe02-padroes/versao-final.png)
+![Diagrama UML de classes da V4 do Composite](../assets/subequipe02-padroes/modelagem/GoF_Composite_V4.png)
 
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
+<center><strong>Legenda:</strong> Modelagem final</center>
 
 ---
 
