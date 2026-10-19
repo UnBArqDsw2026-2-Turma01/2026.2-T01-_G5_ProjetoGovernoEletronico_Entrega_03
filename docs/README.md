@@ -22,7 +22,7 @@
 
 ## Sobre o projeto
 
-Esta entrega explora três padrões de projeto do catálogo GoF a partir de fluxos inspirados no **Meu SUS Digital**, plataforma do Ministério da Saúde que reúne serviços e informações digitais de saúde, como histórico de vacinação, resultados de exames, medicamentos e localização de estabelecimentos de saúde. A plataforma oficial é descrita no [portal do Ministério da Saúde](https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/meususdigital).
+Esta entrega explora três padrões de projeto do catálogo GoF a partir de fluxos inspirados no **Meu SUS Digital**, plataforma do Ministério da Saúde que reúne serviços e informações digitais de saúde, como histórico de vacinação, resultados de exames, medicamentos e localização de estabelecimentos de saúde. A plataforma oficial é descrita no [portal do Ministério da Saúde](https://meususdigital.saude.gov.br/login).
 
 O grupo desenvolveu três miniaplicações independentes em **React, TypeScript e Vite** para demonstrar como os padrões podem organizar responsabilidades e facilitar a evolução do software:
 
@@ -57,20 +57,6 @@ A modelagem final organiza dois fluxos de consulta: busca de estabelecimentos de
 ![Modelagem UML final — Strategy V3](3-PadroesDeProjetos/Relatórios/assets/subequipe03-padroes/versao-3.png)
 
 Documentação: [modelagem e fundamentação](3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/GoFComportamental.md) · [código](3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Codigo.md) · [execução](3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/Execucao.md) · [uso de IA](3-PadroesDeProjetos/Relatórios/3.1.3.SubEquipe_03/IA.md).
-
-## Screenshots da terceira entrega
-
-As capturas abaixo ilustram seções da interface demonstrativa usadas no fluxo de dashboard pós-login e navegação do Meu SUS Digital.
-
-**Seção “Minha Saúde”**
-
-![Screenshot da seção Minha Saúde](3-PadroesDeProjetos/Relatórios/assets/subequipe02-padroes/fluxograma/MinhaSaude.png)
-
-**Seção “Mini apps”**
-
-![Screenshot da seção Mini apps](3-PadroesDeProjetos/Relatórios/assets/subequipe02-padroes/fluxograma/MiniApps.png)
-
-Outras evidências de interface, código, testes e execução estão nos relatórios individuais de cada subequipe, listados acima.
 
 ## Há algo a ser executado?
 
@@ -116,13 +102,6 @@ npm run lint
 ```
 
 As três aplicações usam dados simulados e não necessitam de chaves de API ou conexão com serviços de saúde externos.
-
-## Informações complementares
-
-- [Visão geral dos Padrões de Projeto da Entrega 03](3-PadroesDeProjetos/3.PadroesDeProjetos.md)
-- [Quadro geral de participações e contribuições](3-PadroesDeProjetos/3.2.ParticipacoesPadroesDeProjetos.md)
-- [Iniciativas extras](3-PadroesDeProjetos/3.3.IniciativasExtras.md)
-- [Código-fonte das três aplicações](../code/)
 
 ### Referências
 
