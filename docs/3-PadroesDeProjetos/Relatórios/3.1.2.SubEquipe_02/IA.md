@@ -32,30 +32,34 @@ Esta seção apresenta um experimento individual para cada integrante da SubEqui
 Os experimentos devem ser preenchidos pelos próprios integrantes, com base em suas interações reais com as ferramentas.
 
 
-### Experimento 01:  Gustavo Fornaciari 
+### Experimento 01: Gustavo Fornaciari — Refinamento da V2 do padrão Composite
 
 #### Integrante Responsável
 
 - **Nome:** Gustavo Fornaciari
 - **GitHub:** [@GUGOFO](https://github.com/GUGOFO)
 
-#### Objetivo:
+#### Objetivo
 
-[PREENCHER]
+Utilizar o NotebookLM como apoio para revisar a modelagem e os contratos do padrão Composite na V2, especialmente as responsabilidades de `Secao` e `Dashboard`, a inclusão da folha `BannerInformativo` e as regras para impedir que um elemento tenha mais de um pai ou que a composição forme ciclos. O objetivo foi organizar essas decisões para que a implementação e a documentação permanecessem coerentes com a modelagem.
 
-#### Prompt Utilizado:
+#### Prompt Utilizado
 
+*Prompt representativo reconstruído a partir da atividade documentada; não é uma transcrição literal da conversa.*
+
+```text
+Com base na documentação do nosso projeto e na modelagem V2 do padrão GoF Composite, ajude a revisar as responsabilidades de ElementoDeTela, CartaoDeAtalho, BannerInformativo, Secao e Dashboard. Explique os contratos de adicionar, remover, renderizar, contar elementos e buscar por id. Considere que cada elemento só pode pertencer a uma seção ou painel, que a composição não pode formar ciclos e que o Dashboard deve manter ao menos uma seção. Mantenha o escopo somente no Composite e organize as recomendações para a documentação, sem adicionar integrações externas nem classes que não sejam necessárias.
 ```
-[PREENCHER: prompt]
-```
 
-#### Resultado Obtido:
+#### Resultado Obtido
 
-[PREENCHER]
+O NotebookLM foi utilizado como apoio para organizar as responsabilidades das classes e explicitar os contratos das operações da V2. A análise ajudou a estruturar a documentação das regras de composição: um elemento não deve ter dois pais, a inserção de uma seção não pode criar um ciclo indireto e o `Dashboard` deve preservar ao menos uma seção. Também serviu de apoio à descrição de `BannerInformativo` como uma nova folha (*Leaf*) que segue a interface comum do Composite.
 
-#### Análise Crítica e Intervenção Humana:
+#### Análise Crítica e Intervenção Humana
 
-[PREENCHER] O que a IA acertou, o que errou ou omitiu, e o que a equipe corrigiu manualmente.
+As sugestões da IA foram tratadas como um ponto de partida para a documentação, não como validação automática do código. Foi necessário conferir cada regra contra a implementação real e os testes. Na V2, a responsabilidade de controlar a associação de um elemento a um único pai foi mantida em `donoDoElemento.ts`, sem acrescentar estado à interface `ElementoDeTela`; as operações de `Secao` e `Dashboard` foram avaliadas de acordo com esses contratos. A prevenção de ciclos, as regras de remoção e a multiplicidade de seções também precisavam ser verificadas nos métodos e nos testes existentes.
+
+A principal lição foi que a IA pode ajudar a organizar conceitos e tornar explícitas as regras do padrão, mas não comprova que a implementação está correta. A decisão final dependeu da comparação com a modelagem V2, o código e os testes do projeto.
 
 ### Experimento 02: Ana Beatriz — Modelagem, Evolução e Refinamento do Padrão Composite (Meu SUS Digital)
 
@@ -187,9 +191,9 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 
 * **GitHub:** [@GUGOFO](https://github.com/GUGOFO)
 
-* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+* **Uso da IA Generativa (Senso Crítico):** Utilizei o NotebookLM como apoio à revisão e à documentação da V2 do padrão Composite. A ferramenta ajudou a organizar as responsabilidades de `Secao`, `Dashboard` e `BannerInformativo` e a explicitar regras como a existência de um único pai por elemento, a prevenção de ciclos e a manutenção de ao menos uma seção no painel. As sugestões foram comparadas com o código e os testes antes de serem consideradas adequadas; a IA não foi tratada como prova de correção da implementação.
 
-* **Lições Aprendidas:** [PREENCHER]
+* **Lições Aprendidas:** Aprendi que o Composite permite tratar folhas e composições por uma interface comum, mas exige contratos claros para adicionar e remover elementos. As regras de composição precisam ser garantidas no código, não apenas representadas no diagrama UML. Também aprendi que a IA é útil para organizar ideias e documentação, porém pode omitir detalhes de implementação; por isso, é necessário validar suas sugestões com o código real e os testes.
 
 ---
 
@@ -245,3 +249,4 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Declaração do Uso de IA| 16/10/2026 | [a528bb1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/a528bb13853f4871f6eb771c20359fe16d54c62c) |
 | [Julia Oliveira Patricio](https://github.com/juliapat18) | Registro do uso de IA Generativa | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
+| [Gustavo Gomes Fornaciari](https://github.com/GUGOFO) | Declaracao de IA | 19/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
