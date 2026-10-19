@@ -11,6 +11,6 @@ Essa pasta possui as atividades extras da Entrega 3, são elas:
 | [Padrão de Testes (SubEquipe 1)](/Projeto/ExtrasEntrega3/PadraoDeTestes.md) | [Giovani Coelho](https://github.com/Gotc2607)|
 | Organização do Repositório e Issues | [Gustavo Fornaciari](https://github.com/GUGOFO) |
 | [Guia de Padrões GoF Criacionais](/Projeto/ExtrasEntrega3/GuiaGoFCriacional.md) | [João Eduardo](https://github.com/joaoleless) |
-| ??? | [Nicole Jovita](https://github.com/nicolejovita) |
+| [Padrão de Pull Requests](/Projeto/ExtrasEntrega3/PadraoPullRequests.md) | [Nicole Jovita](https://github.com/nicolejovita) |
 | ??? | [Victor Leandro](https://github.com/Afrontoso) |
 | ??? | [Yasmim Santos](https://github.com/eii-yahs) |
