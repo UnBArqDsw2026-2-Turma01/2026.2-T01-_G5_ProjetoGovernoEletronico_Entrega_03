@@ -45,13 +45,13 @@ A Versão 1 estabeleceu os contratos fundamentais da arquitetura do Factory Meth
 
 ![Trecho de código da interface RegistroClinico](../assets/subequipe01-padroes/codigo/v1-nucleo-abstrato1.png)
 
-<center><strong>Legenda:</strong> Figura 1 - Trecho de código da interface RegistroClinico (Product abstrato). O código completo está disponível em `code/criacional/src/padrao/RegistroClinico.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 1 - Trecho de código da interface RegistroClinico (Product abstrato). O código completo está disponível em `code/criacional/src/padrao/RegistroClinico.ts` (Autoria: Artur Galdino).</center>
 
 <br>
 
 ![Trecho de código da classe abstrata BuscadorDeHistorico](../assets/subequipe01-padroes/codigo/v1-nucleo-abstrato2.png)
 
-<center><strong>Legenda:</strong> Figura 2 - Trecho de código da classe abstrata BuscadorDeHistorico (Creator) declarando o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeHistorico.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 2 - Trecho de código da classe abstrata BuscadorDeHistorico (Creator) declarando o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeHistorico.ts` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -63,7 +63,7 @@ Na fatia de imunização:
 
 ![Trecho de código do criador concreto BuscadorDeVacinas](../assets/subequipe01-padroes/codigo/v1-fatia-vacinas.png)
 
-<center><strong>Legenda:</strong> Figura 3 - Trecho de código do criador concreto BuscadorDeVacinas (ConcreteCreator) sobrescrevendo o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeVacinas.ts`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 3 - Trecho de código do criador concreto BuscadorDeVacinas (ConcreteCreator) sobrescrevendo o Factory Method. O código completo está disponível em `code/criacional/src/padrao/BuscadorDeVacinas.ts` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -75,7 +75,7 @@ Para garantir a confiabilidade do padrão, foram desenvolvidos testes unitários
 
 ![Trecho de código dos testes unitários](../assets/subequipe01-padroes/codigo/v1-testes-unitarios.png)
 
-<center><strong>Legenda:</strong> Figura 4 - Trecho de código dos testes automatizados validando o Factory Method no Vitest. A suíte completa está disponível em `code/criacional/src/padrao/__tests__/`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 4 - Trecho de código dos testes automatizados validando o Factory Method no Vitest. A suíte completa está disponível em `code/criacional/src/padrao/__tests__/` (Autoria: Artur Galdino).</center>
 
 ---
 
@@ -85,7 +85,7 @@ Apresentação gráfica em [`code/criacional/src/App.tsx`](file:///code/criacion
 
 ![Trecho de código da interface React no App.tsx](../assets/subequipe01-padroes/codigo/v1-interface-react.png)
 
-<center><strong>Legenda:</strong> Figura 5 - Trecho de código do componente React integrando e acionando o Factory Method. O arquivo completo está disponível em `code/criacional/src/App.tsx`. Autoria: Artur Galdino.</center>
+<center><strong>Legenda:</strong> Figura 5 - Trecho de código do componente React integrando e acionando o Factory Method. O arquivo completo está disponível em `code/criacional/src/App.tsx` (Autoria: Artur Galdino).</center>
 
 ### 3.5. Embasamento Teórico da Implementação (Versão 1)
 
@@ -174,7 +174,7 @@ A Versão 4 encerra o ciclo de desenvolvimento do mini-projeto unificando as fat
 
 ![Trecho de código da refatoração visual e do seletor dinâmico no App.tsx e CSS](../assets/subequipe01-padroes/codigo/v4-interface-refatoracao.png)
 
-<center><strong>Legenda:</strong> Figura 10 - Trecho de código do componente React App.tsx refatorado no padrão visual oficial do Meu SUS Digital V4, contendo a estrutura da página inicial "Minha Saúde" e o roteamento/seletor dinâmico de criadores. </center>
+<center><strong>Legenda:</strong> Figura 10 - Trecho de código do componente React App.tsx refatorado no padrão visual oficial do Meu SUS Digital V4, contendo a estrutura da página inicial "Minha Saúde" e o roteamento/seletor dinâmico de criadores (Autoria: Nicole Jovita). </center>
 
 ---
 
@@ -182,7 +182,7 @@ A Versão 4 encerra o ciclo de desenvolvimento do mini-projeto unificando as fat
 
 ![Trecho de código dos testes automatizados de interface na V4](../assets/subequipe01-padroes/codigo/v4-testes-interface.png)
 
-<center><strong>Legenda:</strong> Figura 11 - Trecho de código dos testes automatizados de interface (App.test.tsx) atualizados para a V4. </center>
+<center><strong>Legenda:</strong> Figura 11 - Trecho de código dos testes automatizados de interface (App.test.tsx) atualizados para a V4 (Autoria: Nicole Jovita). </center>
 
 ---
 
