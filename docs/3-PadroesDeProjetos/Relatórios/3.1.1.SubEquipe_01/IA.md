@@ -15,7 +15,7 @@
 ### Ferramentas Empregadas
 
 * **Google Gemini (Google DeepMind / Gemini 2.5):** Utilizado por Giovani Coelho na geração de imagem conceitual de interface da fatia de Exames Laboratoriais (Versão 2) para fins de comparação com a implementação real.
-* **[PREENCHER: ferramenta e versão]:** [PREENCHER: para que foi usada]
+* **Google Gemini (Google DeepMind):** Utilizado por João Leles na geração de imagem conceitual de interface da fatia de Medicamentos e Farmácia Popular (Versão 3) para fins de comparação com a implementação real.
 
 ---
 
@@ -81,25 +81,62 @@ A confrontação direta entre a imagem gerada pela IA (**Figura 1**) e o softwar
 
 ---
 
-### Experimento 01: [PREENCHER: título]
+### Experimento — João Leles: Prototipação Visual de Interface vs. Implementação Real do Factory Method (Fatia de Medicamentos - Versão 3)
+
+* **Responsável:** [João Leles](https://github.com/joaoleless)
+* **Artefatos Relacionados:** [GoFCriacional.md](./GoFCriacional.md) (Versão 3), [Codigo.md](./Codigo.md) (Versão 3), [Execucao.md](./Execucao.md) (Versão 3).
 
 #### Objetivo:
 
-[PREENCHER]
+Avaliar se um modelo generativo de imagens, a partir de um prompt detalhado com a estrutura real da tela, consegue reproduzir com fidelidade a interface de "Medicamentos e Farmácia Popular" do Meu SUS Digital e os dados farmacêuticos do domínio (concentração, forma, posologia, quantidade e via), contrapondo criticamente o artefato visual à implementação real do padrão GoF Factory Method (`BuscadorDeMedicamentos` e `ReceitaMedicamento`).
 
 #### Prompt Utilizado:
 
-```
-[PREENCHER: prompt]
+```text
+Interface moderna de aplicativo web desktop para o sistema público de saúde brasileiro "Meu SUS Digital", estilo visual oficial Gov.br nas cores azul-índigo, roxo e branco limpo. Barra lateral esquerda com logotipo do SUS e menu: Vacinas, Exames, Medicamentos (ativo, destacado em azul-claro) e Dúvidas frequentes. Cabeçalho com "Olá, Usuário", CPF mascarado, avatar e sino de notificação. A tela ativa é "Medicamentos e Farmácia Popular", com um banner em gradiente roxo mostrando "Farmácia Popular e Assistência Farmacêutica SUS" e o contador "4 Receitas Registradas". Abaixo, cartões modernos de histórico de dispensações: Losartana Potássica 50mg + Hidroclorotiazida 25mg, Metformina 850mg, Sinvastatina 20mg e Omeprazol 20mg. Cada cartão contém o ícone de pasta roxo, a tag "Farmácia Popular do Brasil", o selo verde "DISPENSADO", data da dispensação, número da receita, prescritor com CRM, estabelecimento (drogaria em Brasília/DF), caixa de observações clínicas em lilás-claro e tabela estruturada com medicamento, concentração, forma, posologia, quantidade e via. Estilo mockup de UI/UX do Figma, design limpo, institucional e de alta fidelidade para saúde digital.
 ```
 
 #### Resultado Obtido:
 
-[PREENCHER]
+A ferramenta de IA generativa produziu uma maquete visual de alta resolução representando o painel web do Meu SUS Digital:
+
+![Mockup de Medicamentos gerado por IA Generativa](../assets/subequipe01-padroes/IA/v3-ia-mockup-medicamentos.jpeg)
+
+<center><strong>Figura 1:</strong> Mockup conceitual da interface de Medicamentos gerado pelo Google Gemini a partir de engenharia de prompt (Autoria: João Leles via Google Gemini).</center>
+
+<br>
+
+Para fins de rastreabilidade e análise comparativa, a **Figura 2** apresenta a tela real desenvolvida e em execução na aplicação React/TypeScript da SubEquipe 01, na qual o padrão GoF Factory Method opera de forma dinâmica sobre os laudos da RNDS:
+
+![Interface real desenvolvida para a fatia de Medicamentos](../assets/subequipe01-padroes/execucao/v3-execucao-medicamentos.png)
+
+<center><strong>Figura 2:</strong> Interface real do Meu SUS Digital desenvolvida em React/TypeScript na Versão 3, com despacho do Factory Method e Dock GoF interativo (Autoria: João Leles; extraído de Execucao.md).</center>
 
 #### Análise Crítica e Intervenção Humana:
 
-[PREENCHER] O que a IA acertou, o que errou ou omitiu, e o que a equipe corrigiu manualmente.
+A comparação entre o mockup gerado pela IA (**Figura 1**) e a tela real implementada (**Figura 2**) mostra que, mesmo com um prompt bem mais detalhado que o da Versão 2, a IA acerta a "casca" visual, mas erra justamente nos dados que dão sentido ao domínio farmacêutico:
+
+1. **Convergências e Acertos Visuais:**
+   - **Layout geral:** barra lateral azul com logotipo do SUS, item "Medicamentos" destacado, cabeçalho com CPF mascarado, avatar e sino de notificação, todos fiéis ao que foi descrito.
+   - **Banner e contador:** o banner em gradiente roxo com "Farmácia Popular e Assistência Farmacêutica SUS" e o contador "4 Receitas Registradas" ficaram muito próximos da tela real.
+   - **Estrutura dos cartões:** os quatro medicamentos pedidos aparecem com ícone de pasta roxo, tag "Farmácia Popular do Brasil", selo verde "DISPENSADO", blocos de prescritor/estabelecimento, caixa de observações em lilás e tabela de itens, mesma organização adotada em `ReceitaMedicamento`.
+
+2. **Divergências, Alucinações e Erros de Domínio:**
+   - **Dados farmacêuticos inventados ou incoerentes:**
+     - A Losartana aparece com concentração `500mg` na tabela, contradizendo o `50mg` do próprio título do cartão.
+     - A coluna "Forma" traz palavras inexistentes (*"Harnalena"*, *"Harmalna"*, *"Harmaira"*) no lugar de "Comprimido" ou "Cápsula".
+     - A coluna "Posologia" mostra *"1-Psologia"* / *"1-Pologa"*, sem nenhuma instrução de uso real; a "Quantidade" é sempre `0` e a "Via" repete literalmente o texto *"Via"*.
+     - No cartão combinado (Losartana + Hidroclorotiazida), a tabela tem apenas uma linha e omite a coluna "Quantidade", perdendo a ideia de receita com múltiplos itens.
+   - **Dados repetidos e sem rastreabilidade:** todas as receitas têm o mesmo número (`332827824`), o mesmo prescritor (*"Dr. Marcos Lins - CRM 3378"*, sem UF), o mesmo estabelecimento e a mesma data (`15/10/2026`). As caixas de "Observações Clínicas" estão vazias.
+   - **Desobediência ao prompt e risco de privacidade:** o prompt pedia "Olá, Usuário", mas a IA escreveu um nome próprio no cabeçalho, contrariando a anonimização adotada no projeto (versão 2.2 do [Codigo.md](./Codigo.md)). A IA também trocou "Dúvidas frequentes" por "Perguntas Frequentes" e acrescentou um botão "Sair" não solicitado.
+   - **Correção humana:** no código real ([`medicamentosMock.ts`](file:///code/criacional/src/dominio/medicamentosMock.ts)), cada dispensação tem número de receita próprio (ex.: `REC-2024-110589`), prescritor com CRM e UF (`CRM 18.452/DF`), estabelecimentos distintos, observações coerentes com o tratamento (ex.: *"Paciente hipertenso estágio 1"*) e itens completos com princípio ativo, forma, posologia, quantidade (`30 comprimidos`) e via (`Oral`).
+
+3. **O Limite Insuperável: A Ausência de Arquitetura de Software:**
+   - **Imagem estática vs. Factory Method:** na aplicação real, cada cartão é uma instância de `ReceitaMedicamento` criada exclusivamente por `BuscadorDeMedicamentos.criarRegistroClinico()`, que sobrepõe o método fábrica de `BuscadorDeHistorico`, sem nenhuma alteração no núcleo abstrato (OCP).
+   - **Interatividade:** a tela real tem o botão `⚡ +Medicamento (V3)` no Dock GoF, que instancia novas receitas em tempo de execução e atualiza o contador do banner; a imagem da IA não tem comportamento algum.
+   - **Robustez e testes:** a implementação humana conta com tipagem TypeScript (`ItemMedicamento[]`, `DadosMedicamentoInput`), validação defensiva de payloads nulos/parciais e 16 novos testes no Vitest (total de 43 aprovados). O próprio `npm run build` revelou um erro de tipagem (`tipoReceita` obrigatório no tipo de entrada, mas tratado como opcional no construtor) que só foi percebido e corrigido por verificação humana.
+
+* **Conclusão:** detalhar mais o prompt melhorou a fidelidade do layout, mas não a dos dados: a IA continua gerando textos e números sem significado clínico e ignorando instruções explícitas, como a anonimização do usuário. O mockup serve como referência visual rápida, mas os dados, a arquitetura do Factory Method e o código testável dependem inteiramente da intervenção humana.
 
 ---
 
@@ -124,7 +161,7 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 | --- | --- | --- |
 | [Artur Galdino](https://github.com/ArturFGaldino) | [PREENCHER] | [PREENCHER] |
 | [Giovani Coelho](https://github.com/Gotc2607) | Compreendi na prática o contraste entre uma maquete visual estática gerada por IA e a engenharia de software real: a IA sintetiza bem a identidade visual de governo, mas alucina dados clínicos e não tem noção da arquitetura GoF (Factory Method), exigindo intervenção humana em 100% da lógica e dos testes. | Geração de mockup de interface no Google Gemini a partir de engenharia de prompt e comparação crítica com o protótipo real e a arquitetura da Versão 2 (Exames Laboratoriais). |
-| [João Leles](https://github.com/joaoleless) | [PREENCHER] | [PREENCHER] |
+| [João Leles](https://github.com/joaoleless) | Percebi que um prompt mais detalhado melhora o layout gerado pela IA, mas não a correção dos dados: concentrações, posologias e formas farmacêuticas foram inventadas, e a IA ainda ignorou a instrução de anonimizar o usuário. A arquitetura e os dados confiáveis vieram do trabalho humano. | Geração de mockup da tela de Medicamentos e Farmácia Popular no Google Gemini e comparação crítica com a interface e o código reais da Versão 3. |
 | [Nicole Jovita](https://github.com/nicolejovita) | [PREENCHER] | [PREENCHER] |
 
 ---
@@ -155,9 +192,9 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 
 * **GitHub:** [@joaoleless](https://github.com/joaoleless)
 
-* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+* **Uso da IA Generativa (Senso Crítico):** Usei o Google Gemini para gerar uma imagem conceitual da tela de Medicamentos e Farmácia Popular do Meu SUS Digital, escrevendo um prompt que descrevia quase toda a estrutura da interface que implementei na Versão 3. A IA reproduziu bem o visual (barra lateral, banner roxo, contador e cartões de dispensação), mas os dados vieram errados: Losartana com `500mg` na tabela e `50mg` no título, formas farmacêuticas inexistentes, posologia sem sentido, quantidade zerada e o mesmo número de receita, prescritor e data em todos os cartões. Além disso, a IA colocou um nome próprio no cabeçalho, mesmo com o prompt pedindo "Usuário". Por isso, não aproveitei nenhum dado ou estrutura da imagem: os mocks da Farmácia Popular, as classes `BuscadorDeMedicamentos` e `ReceitaMedicamento`, a interface React e os testes foram feitos e revisados manualmente.
 
-* **Lições Aprendidas:** [PREENCHER]
+* **Lições Aprendidas:** Aprendi que a IA generativa de imagens ajuda a visualizar rapidamente uma ideia de tela, mas não é confiável para dados de saúde, onde um erro de concentração ou posologia seria grave. Também vi que ela não segue todas as instruções do prompt, então tudo o que ela gera precisa ser conferido. O valor do trabalho está na arquitetura (Factory Method permitindo adicionar a fatia de Medicamentos sem alterar o núcleo), na tipagem, nos testes e na verificação humana, como no erro de tipagem que só apareceu ao rodar o `npm run build`.
 
 ---
 
@@ -173,14 +210,12 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 
 ## 6. Síntese do Aprendizado da Subequipe
 
-[PREENCHER]
 
 ---
 
 ## 7. Referências e Ferramentas Utilizadas
 
 1. **Google Gemini (Google DeepMind):** Ferramenta de Inteligência Artificial Generativa multimodelo utilizada na geração e prototipação de imagens conceituais de interface. Disponível em: <https://gemini.google.com/>. Acesso em: 18 out. 2026.
-2. [PREENCHER: ferramenta, endereço e data de acesso.]
 
 ---
 
@@ -191,3 +226,4 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | [Giovani Coelho](https://github.com/Gotc2607) | Adição do experimento de IA com Google Gemini para a fatia de Exames (V2) e ponto de vista individual | 18/10/2026 | [e87e841](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/e87e841) |
+| [João Leles](https://github.com/joaoleless) | Adição do experimento de IA com Google Gemini para a fatia de Medicamentos (V3), análise crítica e ponto de vista individual | 18/10/2026 | - |
