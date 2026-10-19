@@ -12,46 +12,35 @@
 | [Julia Oliveira Patricio](https://github.com/juliapat18) |
 ---
 
+
 ## Mapeamento do Fluxo
 
 ### Nome do Fluxo
-
-Navegação Principal e Dashboard Pós-Login
-
-### Origem e Justificativa da Escolha
-
-[PREENCHER] Explique de onde veio o fluxo (por exemplo, o fluxograma da Modelagem ou outro artefato do projeto), com link, e por que ele foi escolhido para aplicar o padrão GoF Estrutural.
-
-* **Artefato de origem:** [PREENCHER: nome com link](https://link)
-* **Motivo da escolha:** [PREENCHER]
+Navegação Principal e Dashboard Pós-Login no MEU SUS DIGITAL
 
 ### Passo a Passo do Fluxo
 
-1. **[PREENCHER: título do passo]:** [PREENCHER] Descreva o que o usuário faz e como o sistema responde.
-2. **[PREENCHER: título do passo]:** [PREENCHER] Descreva o que o usuário faz e como o sistema responde.
-3. **[PREENCHER: título do passo]:** [PREENCHER] Descreva o que o usuário faz e como o sistema responde.
-4. **[PREENCHER: título do passo]:** [PREENCHER] Descreva o que o usuário faz e como o sistema responde.
-5. **[PREENCHER: título do passo]:** [PREENCHER] Descreva o que o usuário faz e como o sistema responde.
-
-### Ponto de Aplicação do Padrão
-
-[PREENCHER] Indique em quais passos do fluxo o padrão GoF Estrutural foi aplicado. O detalhamento do modelo, do código e da execução está em [GoFEstrutural](./GoFEstrutural.md).
+1. **Autenticação e Acesso ao Dashboard:** O cidadão realiza a autenticação na plataforma (via gov.br). O sistema valida o token de sessão e renderiza a tela inicial (*Dashboard*), exibindo o menu lateral (*Sidebar*) e o painel de serviços centrais.
+2. **Visualização das Seções da Tela Inicial:** A interface disponibiliza três áreas principais de interação: a seção **Minha Saúde** (registros e serviços clínicos diretos), a seção **Mini apps** (ecossistema de aplicativos integrados) e a seção **Conteúdo** (materiais educativos e informativos).
+3. **Interação com a Seção "Minha Saúde":** O cidadão pode selecionar cartões de acesso rápido para consultar serviços como *Médicos Especialistas*, *Vacinas*, *Exames*, *Medicamentos*, *Dignidade Menstrual*, *Rede de Saúde*, *Agendamentos* e *Atendimentos e Internação*.
+4. **Interação com a Seção "Mini apps":** O usuário pode navegar e acionar ferramentas governamentais e de utilidade pública em saúde (como *Acolhe Mais+*, *Modera Brasil*, *Peso Saudável*, *Hemovida*, *Caderneta da Criança*, *Ligue 180*, entre outros).
+5. **Navegação Global via Menu Lateral:** A qualquer momento durante a sessão, o usuário pode utilizar a *Sidebar* para transitar entre *Início*, *Aplicações*, *Minha saúde*, *Conteúdos*, *Meu perfil* e *Dúvidas frequentes*, ou optar pelo encerramento seguro da sessão.
 
 ---
 
 ## Interface do Sistema (Imagens Reais)
 
-![Tela 1 do fluxo](../assets/subequipe02-padroes/fluxograma/tela-1.png)
+![Visão Geral da Dashboard Pós-Login](../assets/subequipe02-padroes/fluxograma/TelaInicial.png)
 
-<center><strong>Legenda:</strong> Figura 1 - [PREENCHER: legenda da tela]</center>
+<center><strong>Legenda:</strong> Figura 1 - Visão Geral do Painel Principal (Dashboard) e Menu Lateral após a autenticação do cidadão no MEU SUS DIGITAL</center>
 
-![Tela 2 do fluxo](../assets/subequipe02-padroes/fluxograma/tela-2.png)
+![Seção Minha Saúde](../assets/subequipe02-padroes/fluxograma/MinhaSaude.png)
 
-<center><strong>Legenda:</strong> Figura 2 - [PREENCHER: legenda da tela]</center>
+<center><strong>Legenda:</strong> Figura 2 - Detalhamento dos cartões de atalho da seção "Minha Saúde"</center>
 
-![Tela 3 do fluxo](../assets/subequipe02-padroes/fluxograma/tela-3.png)
+![Seção Mini Apps](../assets/subequipe02-padroes/fluxograma/MiniApps.png)
 
-<center><strong>Legenda:</strong> Figura 3 - [PREENCHER: legenda da tela]</center>
+<center><strong>Legenda:</strong> Figura 3 - Detalhamento da grade de atalhos e serviços da seção "Mini apps"</center>
 
 ---
 
@@ -61,3 +50,4 @@ Navegação Principal e Dashboard Pós-Login
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Teamplate mais detalhado | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionando o fluxo | 19/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
