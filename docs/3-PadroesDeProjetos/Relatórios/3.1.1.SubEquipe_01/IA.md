@@ -111,9 +111,8 @@ Avaliar a capacidade de um modelo generativo em sintetizar a experiência visual
 
 #### Prompt Utilizado:
 
-```text
-Interface moderna de aplicativo web desktop para o sistema público de saúde brasileiro "Meu SUS Digital", estilo visual oficial Gov.br nas cores azul marinho e branco limpo. A tela ativa é "Exames Laboratoriais". O painel exibe cartões modernos de histórico de exames clínicos realizados: Hemograma Completo, Glicemia de Jejum e Lipidograma Completo. Cada cartão contém identificação do laboratório (LACEN/DF), categoria clínica, tag de status "Liberado" em verde e tabela clínica estruturada com parâmetros, resultados, unidades de medida (mg/dL) e valores de referência. Estilo mockup de UI/UX do Figma, design limpo, institucional e de alta fidelidade para saúde digital.
-```
+
+> Interface moderna de aplicativo web desktop para o sistema público de saúde brasileiro "Meu SUS Digital", estilo visual oficial Gov.br nas cores azul marinho e branco limpo. A tela ativa é "Exames Laboratoriais". O painel exibe cartões modernos de histórico de exames clínicos realizados: Hemograma Completo, Glicemia de Jejum e Lipidograma Completo. Cada cartão contém identificação do laboratório (LACEN/DF), categoria clínica, tag de status "Liberado" em verde e tabela clínica estruturada com parâmetros, resultados, unidades de medida (mg/dL) e valores de referência. Estilo mockup de UI/UX do Figma, design limpo, institucional e de alta fidelidade para saúde digital.
 
 *(Prompt equivalente em inglês utilizado para refinamento da renderização de layout: `Modern desktop web application interface of the Brazilian public health system "Meu SUS Digital", official Gov.br design system aesthetics with navy blue and clean white palette. The active section is "Exames Laboratoriais" (Laboratory Clinical Exams). The screen displays modern medical cards showing completed diagnostic lab tests: Complete Blood Count (Hemograma), Fasting Blood Glucose (Glicemia), and Lipid Panel. Each card highlights the issuing laboratory (LACEN/DF), exam category, status tag "Liberado" in green, and an expandable structured clinical table with parameters, detected values, measurement units (mg/dL, cells/mm³), and standard reference ranges. Clean corporate government dashboard, Figma UI mockup style, high resolution, minimalist healthcare UX design, no blur.`)*
 
@@ -163,9 +162,7 @@ A ferramenta de IA generativa (Google Gemini) produziu uma maquete visual de alt
 
 #### Prompt Utilizado:
 
-```text
-[PREENCHER: Inserir o prompt exato fornecido à ferramenta]
-```
+> [PREENCHER: Inserir o prompt exato fornecido à ferramenta]
 
 #### Resultado Obtido:
 
@@ -190,9 +187,7 @@ A ferramenta de IA generativa (Google Gemini) produziu uma maquete visual de alt
 
 #### Prompt Utilizado:
 
-```text
-[PREENCHER: Inserir o prompt exato fornecido à ferramenta]
-```
+> [PREENCHER: Inserir o prompt exato fornecido à ferramenta]
 
 #### Resultado Obtido:
 
