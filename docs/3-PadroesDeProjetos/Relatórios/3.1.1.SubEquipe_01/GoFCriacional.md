@@ -81,13 +81,13 @@ A modelagem e implementação do Factory Method foram diretamente enriquecidas c
 
 ### 5.1. Onde o Padrão foi Aplicado
 
-O padrão foi aplicado no subsistema de **Histórico de Saúde e Emissão de Documentos Clínicos** do Meu SUS Digital. A partir da autenticação via Gov.br e da concessão de consentimento nos termos da LGPD (mapeados no fluxo da Entrega 2 em [fluxograma.md](./fluxograma.md)), a aplicação requisita os registros à RNDS. Em vez de acoplar a visualização à estrutura crua de cada resposta de API, o subsistema aciona o criador especializado que instancia o produto clínico padronizado.
+O padrão foi aplicado no subsistema de **Histórico de Saúde e Emissão de Documentos Clínicos** do Meu SUS Digital. A partir da autenticação via Gov.br e da concessão de consentimento nos termos da LGPD (mapeados no fluxo da Entrega 2 em [fluxograma.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md)), a aplicação requisita os registros à RNDS. Em vez de acoplar a visualização à estrutura crua de cada resposta de API, o subsistema aciona o criador especializado que instancia o produto clínico padronizado.
 
 ### 5.2. Rastreabilidade e Elos com Outros Artefatos
 
 | Artefato Relacionado | Referência / Link | Relação com o Padrão GoF e Princípios GRASP |
 | :--- | :--- | :--- |
-| **Fluxograma de Processo (Entrega 2)** | [fluxograma.md](docs/3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md) | O Factory Method é acionado na etapa posterior à verificação de consentimento LGPD, processando a carga de dados brutos retornada pela RNDS. |
+| **Fluxograma de Processo (Entrega 2)** | [fluxograma.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/fluxograma.md) | O Factory Method é acionado na etapa posterior à verificação de consentimento LGPD, processando a carga de dados brutos retornada pela RNDS. |
 | **Diagrama de Pacotes (Entrega 2)** | [2.1.1.DiagramaDePacotes.md](../../../2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md) | Fundamenta a separação em camadas arquiteturais (UI, Domínio Clínico e Núcleo do Padrão), garantindo Baixo Acoplamento e Alta Coesão. |
 | **Diagrama de Colaboração (Entrega 2)** | [2.1.4.DiagramaDeColaboracao.md](../../../2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md) | Mapeia o fluxo de mensagens entre o cidadão autenticado, o controlador de histórico e a RNDS no momento da busca. |
 | **Código Fonte e Pull Request** | [Codigo.md](../../../3-PadroesDeProjetos/Relatórios/3.1.1.SubEquipe_01/Codigo.md), [PR #19](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/pull/19) | Implementação executável das classes modeladas no diagrama e Pull Request da Versão 1. |
