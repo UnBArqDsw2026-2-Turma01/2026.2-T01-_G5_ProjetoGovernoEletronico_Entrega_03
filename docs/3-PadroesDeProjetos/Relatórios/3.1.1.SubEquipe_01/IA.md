@@ -16,11 +16,11 @@ A coleta de dados, registros de experimentos e reflexões críticas é realizada
 
 ### Ferramentas Empregadas
 
-* **ChatGPT (OpenAI - GPT-4o / Canvas):** Utilizado em experimentos de geração de código para prototipação de interfaces web e testes de layouts a partir de especificações em linguagem natural.
-* **Claude (Anthropic - Claude 3.5 Sonnet):** Empregado na revisão sintática de código TypeScript, validação de tipagem estática e auxílio na formatação de relatórios em Markdown.
-* **Google Gemini (Advanced / 1.5 Pro):** Utilizado para confrontar modelos conceituais de design patterns e apoiar análises comparativas de requisitos do ecossistema governamental.
-* **Google Gemini (Google DeepMind / Gemini 2.5):** Utilizado por Giovani Coelho na geração de imagem conceitual de interface da fatia de Exames Laboratoriais (Versão 2) para fins de comparação com a implementação real.
-* **Google Gemini (Google DeepMind):** Utilizado por João Leles na geração de imagem conceitual de interface da fatia de Medicamentos e Farmácia Popular (Versão 3) para fins de comparação com a implementação real.
+- **ChatGPT (OpenAI - GPT-4o / Canvas):** Utilizado por Artur Galdino (Experimento 01) e Nicole Jovita (Experimento 04) em experimentos de geração de código para prototipação de interfaces web, orquestração de seletores e testes de layouts a partir de especificações em linguagem natural.
+- **Claude (Anthropic - Claude 3.5 Sonnet):** Empregado por Artur Galdino e Nicole Jovita na revisão sintática de código TypeScript, validação de tipagem estática e auxílio na formatação de relatórios em Markdown.
+- **Google Gemini (Advanced / 1.5 Pro):** Utilizado para confrontar modelos conceituais de design patterns e apoiar análises comparativas de requisitos do ecossistema governamental.
+- **Google Gemini (Google DeepMind / Gemini 2.5):** Utilizado por Giovani Coelho na geração de imagem conceitual de interface da fatia de Exames Laboratoriais (Versão 2) para fins de comparação com a implementação real.
+- **Google Gemini (Google DeepMind):** Utilizado por João Leles na geração de imagem conceitual de interface da fatia de Medicamentos e Farmácia Popular (Versão 3) para fins de comparação com a implementação real.
 
 ---
 
