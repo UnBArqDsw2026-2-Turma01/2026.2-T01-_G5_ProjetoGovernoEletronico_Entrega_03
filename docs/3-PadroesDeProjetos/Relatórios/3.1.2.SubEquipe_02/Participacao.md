@@ -14,4 +14,4 @@ Este documento consolida as contribuições identificáveis nos históricos de v
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do template mais detalhado de participações | 14/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Consolidação das contribuições documentadas nas versões UML e de código, com explicitação das evidências e lacunas de execução | 19/10/2026 | [7c66f78](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Consolidação das contribuições documentadas nas versões UML e de código, com explicitação das evidências e lacunas de execução | 19/10/2026 | [5ec5637](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/5ec563727a7ab9c542201848f4912e936acdee51) |
