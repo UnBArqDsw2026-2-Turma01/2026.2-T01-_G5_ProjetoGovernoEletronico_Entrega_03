@@ -19,7 +19,6 @@ A coleta de dados, registros de experimentos e reflexões críticas é realizada
 * **ChatGPT (OpenAI - GPT-4o / Canvas):** Utilizado em experimentos de geração de código para prototipação de interfaces web e testes de layouts a partir de especificações em linguagem natural.
 * **Claude (Anthropic - Claude 3.5 Sonnet):** Empregado na revisão sintática de código TypeScript, validação de tipagem estática e auxílio na formatação de relatórios em Markdown.
 * **Google Gemini (Advanced / 1.5 Pro):** Utilizado para confrontar modelos conceituais de design patterns e apoiar análises comparativas de requisitos do ecossistema governamental.
-* *[PREENCHER: Ferramentas adicionais utilizadas pelos demais integrantes]*
 
 ---
 
@@ -151,30 +150,69 @@ A confrontação detalhada entre o resultado fabricado pela IA (Figura 1) e a ap
 
 ---
 
-### Experimento 04: [PREENCHER: Título do Experimento — Nicole Jovita]
+### Experimento 04: Geração do Seletor Dinâmico e Hub com IA sem Contexto Visual — O Fenômeno do "Console de Depuração de Software" e a Falta de Ergonomia no Meu SUS Digital
 
 #### Integrante Responsável
 
-* **Nome:** [Nicole Jovita](https://github.com/nicolejovita)
-* **Foco / Papel:** Versão 4: Consolidação Final, Seletor Dinâmico de Histórico, Hub "Minha Saúde" e Suíte Consolidada de Testes
+- **Nome:** [Nicole Jovita](https://github.com/nicolejovita)
+- **Foco / Papel:** Versão 4: Consolidação Final, Seletor Dinâmico de Histórico (`SeletorDeHistorico`), Hub "Minha Saúde" e Suíte Consolidada de Testes
 
 #### Objetivo:
 
-[PREENCHER: Descrever o objetivo da experimentação com IA Generativa na orquestração do Seletor de Histórico, integração das 3 fatias clínicas ou auditoria visual do Hub]
+Investigar a capacidade e os limites de um modelo de Inteligência Artificial Generativa (ChatGPT GPT-4o) ao ser solicitado para prototipar em React/TypeScript a **Versão 4 (Seletor Dinâmico de Histórico e Hub "Minha Saúde")**, orquestrando as três fatias clínicas (*Vacinas*, *Exames Laboratoriais* e *Medicamentos*) via **Factory Method**, **sem o fornecimento prévio de capturas de tela do aplicativo oficial, protótipos do Figma ou diretrizes do Design System do Governo Federal (DS-Gov)**.
+
+O experimento buscou testar a hipótese de que, na ausência de diretrizes estéticas e de um fluxo de uso centrado no cidadão, a IA criaria uma interface altamente artificial (em *dark mode* e estilo dashboard de desenvolvimento backend), misturando botões de disparo da fábrica, consoles de logs internos de engenharia e tags exibindo explicitamente os nomes das classes concretas orientadas a objetos.
 
 #### Prompt Utilizado:
 
-```text
-[PREENCHER: Inserir o prompt exato fornecido à ferramenta]
-```
+> Crie um componente React em TypeScript e CSS para a Versão 4 da nossa aplicação do Meu SUS Digital. A tela deve atuar como a página inicial (Hub "Minha Saúde") integrando o padrão de projeto GoF Criacional Factory Method com um Seletor Dinâmico de Histórico (SeletorDeHistorico). Mostre um painel com botões para despachar dinamicamente a busca de Vacinas (BuscadorDeVacinas), Exames (BuscadorDeExames) e Medicamentos (BuscadorDeMedicamentos), exibindo um console de logs de depuração das instâncias criadas e a tela do paciente.
 
 #### Resultado Obtido:
 
-[PREENCHER: Descrever o retorno da ferramenta com respectivas capturas de tela e explicações]
+A Inteligência Artificial produziu um componente estilizado em tom escuro (*dark mode*), concentrando controles de despacho, o estado atual do seletor e uma janela textual de depuração, conforme demonstrado na imagem a seguir:
+
+<div align="center">
+
+![Interface Alucinada da Versão 4 Gerada pela IA Generativa](../assets/subequipe01-padroes/ia/exp-ia-seletor-alucinada.png)
+
+</div>
+
+<center><strong>Figura 3:</strong> Interface gráfica da Versão 4 gerada pela IA generativa a partir de prompt puramente textual sem diretrizes visuais. Nota-se a criação de um "painel de depuração em dark mode" com vazamento de nomes de classes e consoles de logs de engenharia (Autoria: Nicole Jovita).</center>
+
+<br>
+
+Para fins de contraste e fundamentação da análise crítica, apresenta-se abaixo a **interface real da Versão 4**, desenvolvida manualmente no padrão visual oficial do **Meu SUS Digital**:
+
+<div align="center">
+
+![Interface Real da Versão 4 Desenvolvida pela Equipe](../assets/subequipe01-padroes/execucao/v4-execucao-hub-minha-saude.png)
+
+</div>
+
+<center><strong>Figura 4:</strong> Interface real do Hub "Minha Saúde" (Versão 4) desenvolvida com fidelidade estética ao Meu SUS Digital, grid de cards intuitivo, sidebar oficial e isolamento do padrão GoF no Dock de demonstração (Autoria: Nicole Jovita).</center>
+
+<br>
 
 #### Análise Crítica e Intervenção Humana:
 
-[PREENCHER: Análise crítica, decisões de engenharia adotadas e correções manuais realizadas no artefato final]
+A confrontação detalhada entre o protótipo gerado pela IA (Figura 3) e a aplicação oficial desenvolvida para a V4 (Figura 4) revelou graves incompatibilidades conceituais, ergonômicas e arquiteturais:
+
+1. **Vazamento da Arquitetura na Camada Visual (*Leaky Abstraction*)**  
+   A IA estampou nos botões de ação e nos cards de exibição do paciente expressões internas do código-fonte como `BuscadorDeVacinas`, `BuscadorDeExames`, `BuscadorDeMedicamentos`, `Classe Concreta: CartaoVacina`, `ResultadoExame` e `ReceitaMedicamento`. Sob os princípios de engenharia de software (Gamma et al., 1995; Martin, 2002), o padrão de projeto Factory Method e o orquestrador `SeletorDeHistorico` pertencem ao domínio e ao controle da aplicação. Expor nomes de classes e métodos da infraestrutura interna para o cidadão viola diretamente o encapsulamento e a usabilidade.
+
+2. **Criação de um "Console de Logs de Depuração" (*Toy Showcase*)**  
+   Sem entender o contexto do Meu SUS Digital, a IA assumiu que uma aplicação de demonstração acadêmica de padrões de projeto deveria ter um terminal escuro lateral intitulado *"CONSOLE DE LOGS INTERNOS (DEBUG DE ENGENHARIA)"*, imprimindo mensagens como `[FACTORY METHOD] SeletorDeHistorico acionou BuscadorDeVacinas`. Em um sistema governamental de produção, logs técnicos são direcionados ao backend/monitoramento, nunca para a interface do paciente.
+
+3. **Incompatibilidade Estética e Ergonômica (Dark Mode e Tema Industrial)**  
+   Visualmente, a IA adotou um fundo azul-escuro chapado (`#0f172a`), tipografia monoespaçada típica de editores de código e botões em cores primárias desalinhadas do Design System do Governo Federal (DS-Gov), divergindo completamente da identidade oficial do Meu SUS Digital (fundo claro, sidebar azul institucional `#0056AC`, cards brancos e tipografia limpa).
+
+4. **Intervenção Humana e Decisão Técnica:**  
+   O código e a tela sugeridos pela IA foram **completamente descartados**. A equipe optou por:
+   - Desenvolver a interface do Hub "Minha Saúde" de forma manual e fidedigna ao aplicativo oficial, utilizando cards limpos para *Vacinas*, *Exames* e *Medicamentos*.
+   - Encapsular o `SeletorDeHistorico` em `App.tsx` para operar transparentemente na troca de telas, consumindo polimorficamente as abstrações `BuscadorDeHistorico` e `RegistroClinico`.
+   - Manter a área de demonstração técnica do Factory Method isolada no "Dock GoF" no topo da página, preservando o realismo da aplicação principal.
+
+**Conclusão do Experimento:** O teste comprovou empiricamente que requisições textuais de interfaces com padrões de projeto levam a IA a misturar depuração técnica e telas do usuário. A intervenção humana é indispensável para aplicar o devido encapsulamento arquitetural e garantir a fidelidade ergonômica ao ecossistema do SUS.
 
 ---
 
@@ -200,7 +238,7 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 | [Artur Galdino](https://github.com/ArturFGaldino) | Prompts puramente textuais sem contexto multimodal causam delírio na IA, que mistura código interno de debug na UI; o padrão GoF deve ficar isolado no domínio. | Prototipação de interface com ChatGPT GPT-4o, análise comparativa de alucinações visuais e estruturação da documentação. |
 | [Giovani Coelho](https://github.com/Gotc2607) | *[PREENCHER]* | *[PREENCHER]* |
 | [João Leles](https://github.com/joaoleless) | *[PREENCHER]* | *[PREENCHER]* |
-| [Nicole Jovita](https://github.com/nicolejovita) | *[PREENCHER]* | *[PREENCHER]* |
+| [Nicole Jovita](https://github.com/nicolejovita) | A IA mistura consoles de debug e nomes de classes internas na UI ao criar seletores/orquestradores; o seletor deve rodar encapsulado no controle e a UI precisa seguir o Design System do Meu SUS Digital. | Prototipação do seletor V4 com ChatGPT GPT-4o, análise comparativa da interface alucinada, suporte de síntese textual e estruturação da documentação. |
 
 ---
 
@@ -245,13 +283,14 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 ### Nicole Jovita
 
-* **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
+- **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
 
-* **Uso da IA Generativa (Senso Crítico):**  
-  *[PREENCHER: Relato pessoal da integrante sobre o apoio da IA na consolidação da V4, fidelidade visual e testes de interface]*
+- **Uso da IA Generativa (Senso Crítico):**  
+  Na Entrega 3, utilizei a IA Generativa para investigar a capacidade dos modelos de linguagem em projetar a unificação de fatias clínicas e a orquestração do seletor dinâmico de histórico da Versão 4. Conduzi o Experimento 04 requisitando que a ferramenta criasse um Hub central em React/TypeScript integrando os três criadores concretos via Factory Method.  
+  O resultado reforçou categoricamente a tendência observada no Experimento 01: a IA gerou um painel escuro de depuração técnica contendo um console de logs e botões estampados com nomes de classes internas (`BuscadorDeVacinas`, `CartaoVacina`), alucinando uma interface de desenvolvedor backend completamente descolada do design do Meu SUS Digital. Esse comportamento confirmou que a IA não entende a separação entre a camada de controle/domínio (onde reside o Factory Method e o `SeletorDeHistorico`) e a camada de apresentação do cidadão. Optei por descartar integralmente o código gerado e implementar a Versão 4 de forma manual, garantindo que a orquestração operasse com total encapsulamento e a interface mantivesse alta fidelidade visual ao ecossistema do SUS.
 
-* **Lições Aprendidas:**  
-  *[PREENCHER: Lições e conclusões da integrante sobre o papel da IA no ciclo de desenvolvimento]*
+- **Lições Aprendidas:**  
+  A principal lição aprendida foi que a orquestração de padrões de projeto e a experiência de usuário (UX) em sistemas governamentais exigem estrito encapsulamento arquitetural. A IA tende a cometer o erro de "vazar" abstrações técnicas para a interface do usuário quando solicitada a demonstrar um padrão GoF. Compreendi que ferramentas generativas servem como co-pilotos para exploração sintática e rascunhos, mas a separação de responsabilidades (SoC), a conformidade com design systems oficiais e a garantia de usabilidade dependem exclusivamente da análise crítica e da engenharia humana.
 
 ---
 
@@ -287,3 +326,4 @@ Dessa forma, a SubEquipe 01 reafirma a premissa de que a IA Generativa deve ser 
 | `0.1` | 06/10/2026 | Início do template do trabalho | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`18b6195`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | `0.2` | 14/10/2026 | Template mais detalhado de IA Generativa | [Gustavo Fornaciari](https://github.com/GUGOFO) | [`7c66f78`](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/7c66f78dc795f080bc43dc01f094e8976462d5b8) |
 | `1.0` | 18/10/2026 | Documentação completa do Experimento 01 de IA Generativa por Artur Galdino (análise da interface alucinada versus design system real do Meu SUS Digital, ausência de contexto multimodal, vazamento de abstrações), fundamentação crítica, relato e ponto de vista individual e estruturação de placeholders para os demais integrantes | [Artur Galdino](https://github.com/ArturFGaldino) | Em breve |
+| `4.0` | 18/10/2026 | Documentação completa do Experimento 04 por Nicole Jovita (análise da interface alucinada do seletor V4 x Hub Minha Saúde real, vazamento de abstrações, console de debug e dark mode autogerado), relato pessoal, lições aprendidas e atualização da síntese | [Nicole Jovita](https://github.com/nicolejovita) | - |
