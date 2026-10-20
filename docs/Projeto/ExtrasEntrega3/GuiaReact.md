@@ -86,4 +86,4 @@ VITE. **Vite: Getting Started**. [S. l.], [s. d.]. Disponível em: https://vite.
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Victor Leandro](https://github.com/Afrontoso) | Criação do Guia de React | 19/10/2026 | |
+| [Victor Leandro](https://github.com/Afrontoso) | Criação do Guia de React | 19/10/2026 | [b03ca29](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b03ca29c125085f3026d6d972b39ac8342b794d5) |
