@@ -20,8 +20,15 @@ O servidor informa o endereço local no terminal. Na captura feita em 19/10/2026
 
 A equipe gravou um vídeo com os quatro integrantes da SubEquipe 02 executando a aplicação e explicando as respectivas contribuições. Inserir o link compartilhável antes da entrega final.
 
-- **Vídeo de demonstração:** [INSERIR LINK COMPARTILHÁVEL DO VÍDEO]
-- **Conteúdo demonstrado:** aplicação em execução, estrutura do painel, comportamento do Composite e explicação das contribuições de Victor Leandro, Gustavo Fornaciari, Julia Oliveira Patricio e Ana Beatriz.
+<iframe
+  src="https://www.youtube.com/embed/ZQoBThfKVys"
+  width="100%"
+  height="500"
+  title="Vídeo do YouTube"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
 ## 3. Evidências da aplicação
 
