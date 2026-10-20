@@ -107,7 +107,7 @@ Esses pontos ficam como sugestão para as próximas versões do código.
 
 ### O que foi feito
 
-A V2 não acrescenta classes nem operações ao modelo. Ela faz o código respeitar o que a Modelagem V2 já desenha, resolvendo as limitações que a V1 deixou registradas. As mudanças ficam em `adicionar()` e `remover()` de `Secao` e em `adicionarSecao()` e `removerSecao()` de `Dashboard`.
+A V2 Acrecenta a Leafe BannerInformativo. Ela faz o código respeitar o que a Modelagem V2 já desenha, resolvendo as limitações que a V1 deixou registradas. As mudanças ficam em `adicionar()` e `remover()` de `Secao` e em `adicionarSecao()` e `removerSecao()` de `Dashboard`.
 
 | Melhoria | O que entrou | Onde está na Modelagem V2 |
 | :---: | :--- | :--- |
