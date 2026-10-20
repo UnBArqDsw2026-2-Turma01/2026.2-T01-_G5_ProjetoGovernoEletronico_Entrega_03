@@ -251,7 +251,16 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 
 ## 6. Síntese do Aprendizado da Subequipe
 
-[PREENCHER]
+**Sobre o padrão Composite.** A subequipe consolidou que o valor central do Composite está na interface comum: `CartaoDeAtalho`, `BannerInformativo`, `MiniAppLeaf` e `CardFaqLeaf` (folhas) e `Secao` (composto) são tratados da mesma forma pelo `Dashboard`, que atua como cliente. Isso permitiu aninhar seções, percorrer a árvore sem alterar o código do cliente e remover itens do painel sem mexer nas classes do padrão. Também ficou claro que o padrão exige contratos explícitos: um único pai por elemento, prevenção de ciclos e manutenção de ao menos uma seção no `Dashboard` precisam ser garantidos no código e nos testes, e não apenas desenhados no diagrama UML. Por fim, a equipe observou os custos do padrão: acrescentar uma operação à interface (como `buscarPorTexto()`) obriga todas as folhas a implementá-la, e a união fechada `ElementoRenderizado` enfraquece o princípio aberto/fechado, pois cada folha nova exige uma nova variante.
+
+**Sobre o uso da IA Generativa.** O NotebookLM e o Claude Code foram úteis para organizar responsabilidades, estruturar a documentação, executar tarefas repetitivas e diagnosticar problemas de Git. Em todos os experimentos, porém, foi necessária intervenção humana: a IA sugeriu o padrão Flyweight e folhas dependentes de dados médicos, fora do escopo; propôs validações que o código da V2 já fazia, por trabalhar sem ver o repositório; incluiu no painel uma seção que não seria apresentada; e conduziu ações de Git sem verificar o estado da `main`. Em cada caso, a correção veio de comparar a sugestão com o código real, a modelagem e os testes.
+
+**Lições comuns.**
+- Delimitar o escopo e a tecnologia nos prompts reduz sugestões fora do padrão.
+- Respostas plausíveis não comprovam que o código funciona nem que o diagrama está correto; a validação é feita com testes e leitura do repositório.
+- Ações difíceis de desfazer (commits, pushes, merges) devem ser revisadas antes de executadas.
+- Documentar o limite de uma garantia do código vale mais do que omiti-lo.
+- A responsabilidade pelas decisões e pelo conteúdo final continua sendo dos integrantes, e a IA funciona como apoio.
 
 ---
 

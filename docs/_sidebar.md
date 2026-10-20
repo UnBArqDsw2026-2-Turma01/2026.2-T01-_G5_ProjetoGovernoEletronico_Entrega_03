@@ -23,10 +23,12 @@
         - [Padrão de Testes (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoDeTestes.md)
         - [Padrão de Issue (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoDeIssue.md)
         - [Padrão de Pull Requests (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoPullRequests.md)
+        - [Guia de GoF Criacional (SubEquipe 1)](./Projeto/ExtrasEntrega3/GuiaGoFCriacional.md)
         - [Guia de GoF Estrutural (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md)
-        - [Guia de GoF Comportamental](./Projeto/ExtrasEntrega3/GuiaGoFComportamental.md)
         - [Guia de React (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaReact.md)
+        - [Guia de GoF Comportamental (SubEquipe 3)](./Projeto/ExtrasEntrega3/GuiaGoFComportamental.md)
         - [Diagrama de Sequência do Strategy (SubEquipe 3)](./Projeto/ExtrasEntrega3/DiagramaSequenciaStrategy.md)
+        - [Padrões Emergentes JS/TS](./Projeto/ExtrasEntrega3/PadroesEmergentes_JS-TS.md)
 
 
 - **Atas**
@@ -59,7 +61,7 @@
         - [Atas SubEquipe 2](./Atas/Entrega3/AtasSub2/README.md)
             - [Ata - 14 de Outubro](./Atas/Entrega3/AtasSub2/Ata-14-10.md)
         - [Atas SubEquipe 3](./Atas/Entrega3/AtasSub3/README.md)
-            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub3/Ata-DD-MM.md)\
+            - [Ata - DD de Mes](./Atas/Entrega3/AtasSub3/Ata-DD-MM.md)
     - [Modelo de Ata](./Atas/Atas-Modelo.md)
 
 - **1. Desenho de Software**
