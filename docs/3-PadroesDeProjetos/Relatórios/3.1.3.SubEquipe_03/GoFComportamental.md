@@ -5,7 +5,7 @@
 <iframe 
   width="768" 
   height="432" 
-  src="" 
+  src="https://embed.figma.com/board/7x87f2SoZBkPkXK6OGR0R4/GoF-Comportamental---Strategy-V3--SubEquipe-03---Copy-?node-id=0-1&embed-host=share" 
   frameborder="0" 
   scrolling="no" 
   allow="fullscreen; clipboard-read; clipboard-write" 
@@ -16,9 +16,9 @@
 
 ## Versão Final
 
-![Versão final do modelo do padrão Comportamental](../assets/subequipe03-padroes/versao-final.png)
+![Versão final do modelo do padrão Comportamental](../assets/subequipe03-padroes/versao-3.png)
 
-<center><strong>Legenda:</strong> [PREENCHER: legenda da imagem]</center>
+<center><strong>Legenda:</strong> Diagrama de Classes aplicado do padrão Strategy ao fluxo Acesso à Rede de Saúde do Meu SUS Digital e ao fluxo de Acesso à Conteúdos. Os papéis do GoF aparecem como estereótipos, a tela React entra como cliente, a entidade <code>UnidadeDeSaude</code>, <code>Conteudo</code> e a enumeração <code>Natureza</code> mostram os dados que cada estratégia ordena, e as notas registram o contrato de cada operação.</center>
 
 ---
 

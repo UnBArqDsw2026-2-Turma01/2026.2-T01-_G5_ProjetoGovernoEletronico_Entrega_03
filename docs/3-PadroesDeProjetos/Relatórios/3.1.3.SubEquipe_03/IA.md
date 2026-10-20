@@ -72,7 +72,7 @@ Pontos de vista de cada membro da equipe sobre as lições aprendidas e o uso da
 | Integrante | O que aprendi | Uso de IA Generativa |
 | --- | --- | --- |
 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | IA como revisor de código independente pega bug que inspeção visual não pegaria | Claude revisando núcleo Strategy (build, lint, testes) |
-| [Gabriel Mota Oliveira](https://github.com/Gabro-MO) | [PREENCHER] | [PREENCHER] |
+| [Gabriel Mota Oliveira](https://github.com/Gabro-MO) | Compreendi como IA pode ajudar a montar o padrão GoF Strategy facilita a organização e a expansão de estratégias, além da importância de validar criticamente as sugestões da IA.| Utilizei o ChatGPT para auxiliar na evolução do código e na revisão da documentação da V3, validando suas sugestões conforme os objetivos do projeto. |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs) | [PREENCHER] | [PREENCHER] |
 
 ---
