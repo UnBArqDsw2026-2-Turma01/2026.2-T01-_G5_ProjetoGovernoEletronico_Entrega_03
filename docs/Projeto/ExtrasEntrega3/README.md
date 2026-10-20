@@ -13,5 +13,5 @@ Essa pasta possui as atividades extras da Entrega 3, são elas:
 | [Guia de Padrões GoF Criacionais](/Projeto/ExtrasEntrega3/GuiaGoFCriacional.md) | [João Eduardo](https://github.com/joaoleless) |
 | [Padrão de Pull Requests](/Projeto/ExtrasEntrega3/PadraoPullRequests.md) | [Nicole Jovita](https://github.com/nicolejovita) |
 | [Guia de React](/Projeto/ExtrasEntrega3/GuiaReact.md) | [Victor Leandro](https://github.com/Afrontoso) |
-| ??? | [Yasmim Santos](https://github.com/eii-yahs) |
+| [Diagrama de Sequência do Strategy](/Projeto/ExtrasEntrega3/DiagramaSequenciaStrategy.md) | [Yasmim Santos](https://github.com/eii-yahs) |
 | [Guia de GoF Estrutural](/Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md) | [Julia Patricio](https://github.com/juliapat18) |

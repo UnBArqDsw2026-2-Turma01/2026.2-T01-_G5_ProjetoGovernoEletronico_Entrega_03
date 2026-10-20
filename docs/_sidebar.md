@@ -26,6 +26,7 @@
         - [Guia de GoF Estrutural (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md)
         - [Guia de GoF Comportamental](./Projeto/ExtrasEntrega3/GuiaGoFComportamental.md)
         - [Guia de React (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaReact.md)
+        - [Diagrama de Sequência do Strategy (SubEquipe 3)](./Projeto/ExtrasEntrega3/DiagramaSequenciaStrategy.md)
 
 
 - **Atas**
