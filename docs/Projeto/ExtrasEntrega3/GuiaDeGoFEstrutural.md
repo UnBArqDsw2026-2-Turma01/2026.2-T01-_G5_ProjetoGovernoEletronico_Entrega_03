@@ -176,4 +176,4 @@ SERRANO, Milene. **Arquitetura e desenho de software: aula GoFs estruturais**. U
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Adição do guia de GoF Estrutural | 16/10/2026 | [b237eef](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/b237eef) |
-| [Julia Oliveira Patricio](https://github.com/juliapat18) | Inclusão de Bridge, Composite e Flyweight; tabela comparativa; consequências e exemplos de aplicação | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Inclusão de Bridge, Composite e Flyweight; tabela comparativa; consequências e exemplos de aplicação | 17/10/2026 | [484ba2e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/484ba2e) |
