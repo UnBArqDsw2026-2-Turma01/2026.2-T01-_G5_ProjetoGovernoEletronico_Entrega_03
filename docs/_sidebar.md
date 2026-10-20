@@ -25,6 +25,7 @@
         - [Padrão de Pull Requests (SubEquipe 1)](./Projeto/ExtrasEntrega3/PadraoPullRequests.md)
         - [Guia de GoF Estrutural (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md)
         - [Guia de GoF Comportamental](./Projeto/ExtrasEntrega3/GuiaGoFComportamental.md)
+        - [Guia de React (SubEquipe 2)](./Projeto/ExtrasEntrega3/GuiaReact.md)
 
 
 - **Atas**
