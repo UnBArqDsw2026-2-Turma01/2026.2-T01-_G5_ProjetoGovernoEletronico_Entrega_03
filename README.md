@@ -53,7 +53,7 @@ Projeto G5 - Governo Eletrônico, com ênfase em Privacidade de Dados e Usabilid
     <td align="center">
       <a href="https://github.com/juliapat18">
         <img src="https://github.com/juliapat18.png" width="100px;" alt="Julia Oliveira Patricio"/><br />
-        <sub><b>Matrícula<br/>Julia Oliveira Patricio</b></sub>
+        <sub><b>231027140<br/>Julia Oliveira Patricio</b></sub>
       </a>
     </td>
   </tr>
