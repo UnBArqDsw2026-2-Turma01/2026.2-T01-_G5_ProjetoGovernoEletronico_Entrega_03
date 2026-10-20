@@ -48,4 +48,4 @@ Uma diferença em relação ao código: a tela chama `definirCriterio()` toda ve
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Yasmim de Souza Santos](https://github.com/eii-yahs) | Criação do diagrama de sequência do padrão Strategy como iniciativa extra | 19/10/2026 | [PREENCHER: hash do commit] |
+| [Yasmim de Souza Santos](https://github.com/eii-yahs) | Criação do diagrama de sequência do padrão Strategy como iniciativa extra | 19/10/2026 | [21c728e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/21c728e81a1e3f64548bdcd40a82bf094d557337) |
