@@ -21,7 +21,7 @@ Após os registros individuais, a equipe apresenta uma análise crítica conjunt
 ### Ferramentas Empregadas
 
 * **NotebookLM (Google)::** Utilizado como apoio aos estudos e à consulta das fontes da disciplina, auxiliando na compreensão dos conceitos relacionados aos padrões de projeto e na fundamentação das decisões de modelagem.
-* **[PREENCHER: ferramenta e versão]:** [PREENCHER: para que foi usada]
+* **Claude Code (Anthropic):** Agente de IA executado no VS Code com acesso ao repositório, utilizado no planejamento da V4 e do Código V3 e na revisão e integração do Código V1, incluindo a execução de testes e operações de Git.
 
 ---
 
@@ -99,7 +99,7 @@ As sugestões do NotebookLM foram utilizadas como apoio, cabendo à integrante a
 
 ---
 
-### Experimento 03: Victor Leandro — [Título do experimento]
+### Experimento 03: Victor Leandro — Revisão e Integração do Código V1 do Composite
 
 #### Integrante Responsável
 
@@ -108,21 +108,41 @@ As sugestões do NotebookLM foram utilizadas como apoio, cabendo à integrante a
 
 #### Objetivo
 
-[Descrever o objetivo da utilização da IA Generativa na atividade realizada pelo integrante.]
+Utilizar o Claude Code, um agente de IA que trabalha no próprio repositório pelo VS Code, como apoio para revisar o Código V1 do Composite antes da apresentação: marcar nos arquivos a parte implementada pelo integrante, retirar do painel o que estava fora do escopo, manter testes e documentação coerentes com essas mudanças e integrar o código à `main` por pull request, depois que o envio direto à `main` foi revertido no PR #23.
 
 #### Prompt Utilizado
 
+*Mensagens enviadas ao agente durante a atividade, transcritas literalmente.*
+
 ```text
-[Inserir o prompt efetivamente utilizado pelo integrante.]
+na parte do meu codigo, que fiz os commits ontem coloque uns comentarios marcando as minha partes fiz, vou ter que fazer um video com meus colegas de equipe e vamos que ter que mostrar a parte do codigo que fizemos
+```
+
+```text
+retira isso do codigo isso esta fora do escopo
+```
+
+
+```text
+abrira um PR pra fazer o merge com a main
 ```
 
 #### Resultado Obtido
 
-[Descrever o resultado gerado pela IA e indicar quais sugestões foram aproveitadas.]
+O agente localizou os commits do integrante e adicionou um cabeçalho de autoria, com o hash do commit correspondente, nos 15 arquivos do Código V1. Em seguida, removeu do painel simulado a seção **Conteúdo** (banner de campanha e cartão de publicações) e o campo de busca da interface, e ajustou os testes da interface e o [Codigo.md](./Codigo.md). A cada alteração, o agente executou os testes (Vitest), a checagem de tipos, o lint e o build. A suíte passou de 29 para 27 testes, com todos aprovados.
+
+Na integração, o agente identificou que o push era recusado por um ruleset do repositório que exige pull request em todas as branches. Também percebeu que a `main` tinha revertido o Código V1 e fez um merge que trouxe as mudanças novas da `main` sem perder os arquivos do Composite. O código foi integrado pelo PR #25.
 
 #### Análise Crítica e Intervenção Humana
 
-[Registrar os acertos, as limitações identificadas e as decisões tomadas pelo integrante para corrigir, adaptar ou descartar as sugestões.]
+As decisões de escopo foram do integrante. O agente apresentou a seção Conteúdo como parte do fluxograma da Entrega 2, mas o integrante decidiu retirá-la, por não fazer parte do que seria apresentado. A proposta foi aceita, e as remoções ficou restritas à interface e aos dados simulados.
+
+Também houve falhas que exigiram intervenção:
+
+1. **Verificação tardia da `main`:** o primeiro pull request foi preparado antes de conferir se a `main` tinha mudado. Só depois o agente percebeu o revert do Código V1, o que exigiu o merge descrito acima.
+2. **Comando incorreto:** um comando de consulta deixou o repositório em *detached HEAD*. O agente percebeu o erro e voltou à branch de trabalho, sem perda de alterações.
+
+A principal lição foi que o agente acelera tarefas repetitivas e diagnósticos de Git, mas ações difíceis de desfazer, como commits e pushes, precisam ser revisadas antes de serem executadas, principalmente em um repositório com regras que impedem a correção do histórico.
 
 ---
 
@@ -213,9 +233,9 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 
 * **GitHub:** [@Afrontoso](https://github.com/Afrontoso)
 
-* **Uso da IA Generativa (Senso Crítico):** [PREENCHER]
+* **Uso da IA Generativa (Senso Crítico):** Usei o Claude Code para revisar o Código V1 do Composite antes da apresentação: marcar a autoria dos arquivos, retirar do painel a seção Conteúdo e o campo de busca e integrar o código pelo PR #25. A ferramenta executou os testes a cada mudança e ajudou a entender por que o push era recusado.
 
-* **Lições Aprendidas:** [PREENCHER]
+* **Lições Aprendidas:** Aprendi que no Composite o cliente trata uma folha e uma seção pela mesma interface, e que isso permite colocar uma seção dentro de outra sem mudar o código que percorre a árvore. Também aprendi que separar o núcleo do padrão da interface em React facilitou as mudanças: retirar itens do painel não exigiu alterar nenhuma classe do padrão. Sobre a IA, aprendi que ela é útil para tarefas repetitivas e diagnósticos, mas a decisão sobre o escopo e a revisão de ações irreversíveis continuam sendo responsabilidade do integrante.
 
 ---
 
@@ -238,7 +258,7 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 ## 7. Referências e Ferramentas Utilizadas
 
 1. **Google. NotebookLM.** Disponível em: https://notebook.google.com/. Acesso em: 16 out. 2026.
-2. [PREENCHER]: ferramenta, endereço e data de acesso.
+2. **Anthropic. Claude Code.** Disponível em: https://claude.com/claude-code. Acesso em: 19 out. 2026.
 
 ---
 
@@ -248,5 +268,6 @@ Durante o processo, foi importante delimitar o escopo das solicitações e avali
 | :--- | :--- | :--- | :--- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Inicio do Teamplate do trabalho | 06/10/2026 | [18b6195](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/tree/18b61958e419b67f95469d4a704ddcb9629b9803) |
 | [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) | Declaração do Uso de IA| 16/10/2026 | [a528bb1](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/a528bb13853f4871f6eb771c20359fe16d54c62c) |
-| [Julia Oliveira Patricio](https://github.com/juliapat18) | Registro do uso de IA Generativa | 17/10/2026 | [HASH](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/HASH) |
+| [Julia Oliveira Patricio](https://github.com/juliapat18) | Registro do uso de IA Generativa | 17/10/2026 | [83ed491](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/83ed491a98bbf07ed33a607bf89ca918458a746d) |
 | [Gustavo Gomes Fornaciari](https://github.com/GUGOFO) | Declaracao de IA | 19/10/2026 | [22e6266](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_03/commit/22e6266b658bc3f42daa10b0e32a54e9623a45dd) |
+| [Victor Leandro](https://github.com/Afrontoso) | Registro do Experimento 03 e do ponto de vista individual sobre o uso de IA | 19/10/2026 | |

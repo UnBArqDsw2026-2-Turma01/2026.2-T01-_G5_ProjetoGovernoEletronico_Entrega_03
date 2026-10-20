@@ -69,11 +69,11 @@ Passo a passo reconstruído via engenharia reversa:
 
 | #   | Tela                                               | Print                                                                                                   |
 | --- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| 1   | Home (deslogado)                                   | ![Home deslogado](../assets/subequipe03-fluxos/compartilhado/01-home-deslogado.png)                     |
-| 2   | Login Gov.br                                       | ![Login Gov.br](../assets/subequipe03-fluxos/compartilhado/02-login-govbr.png)                          |
-| 3   | Home (logado)                                      | ![Home logado](../assets/subequipe03-fluxos/compartilhado/03-home-logado.png)                           |
-| 4   | Categorias de "Rede de Saude"                      | ![Categorias Rede de Saude](../assets/subequipe03-fluxos/fluxo-rede-de-saude/01-categorias.png)         |
-| 5   | Resultado ao escolher "Maternidade" (mapa + lista) | ![Resultado Maternidade](../assets/subequipe03-fluxos/fluxo-rede-de-saude/02-maternidade-resultado.png) |
+| 1   | Home (deslogado)                                   | ![Home deslogado](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/compartilhado/01-home-deslogado.png)                     |
+| 2   | Login Gov.br                                       | ![Login Gov.br](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/compartilhado/02-login-govbr.png)                          |
+| 3   | Home (logado)                                      | ![Home logado](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/compartilhado/03-home-logado.png)                           |
+| 4   | Categorias de "Rede de Saude"                      | ![Categorias Rede de Saude](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/fluxo-rede-de-saude/01-categorias.png)         |
+| 5   | Resultado ao escolher "Maternidade" (mapa + lista) | ![Resultado Maternidade](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/fluxo-rede-de-saude/02-maternidade-resultado.png) |
 
 ### Fluxo 2 - Conteudo
 
@@ -81,8 +81,8 @@ Passo a passo reconstruído via engenharia reversa (compartilha os passos 1-3 ac
 
 | #   | Tela                                                              | Print                                                                                 |
 | --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| 4   | Lista de artigos em "Conteudos"                                   | ![Lista de artigos](../assets/subequipe03-fluxos/fluxo-conteudo/01-lista-artigos.png) |
-| 5   | Artigo aberto (ex: Coronavirus), com opcao de curtir/compartilhar | ![Artigo aberto](../assets/subequipe03-fluxos/fluxo-conteudo/02-artigo-detalhe.png)   |
+| 4   | Lista de artigos em "Conteudos"                                   | ![Lista de artigos](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/fluxo-conteudo/01-lista-artigos.png) |
+| 5   | Artigo aberto (ex: Coronavirus), com opcao de curtir/compartilhar | ![Artigo aberto](../../../1-DesenhoDeSoftware/Relatórios/assets/subequipe03-fluxos/fluxo-conteudo/02-artigo-detalhe.png)   |
 
 ---
 
