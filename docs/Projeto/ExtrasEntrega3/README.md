@@ -14,3 +14,4 @@ Essa pasta possui as atividades extras da Entrega 3, são elas:
 | [Padrão de Pull Requests](/Projeto/ExtrasEntrega3/PadraoPullRequests.md) | [Nicole Jovita](https://github.com/nicolejovita) |
 | ??? | [Victor Leandro](https://github.com/Afrontoso) |
 | ??? | [Yasmim Santos](https://github.com/eii-yahs) |
+| [Guia de GoF Estrutural](/Projeto/ExtrasEntrega3/GuiaDeGoFEstrutural.md) | [Julia Patricio](https://github.com/juliapat18) |
